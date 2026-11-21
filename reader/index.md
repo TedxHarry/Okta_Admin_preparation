@@ -1,6 +1,6 @@
 # Okta Administrator preparation
 
-Follow Devi from her first day in Finance to signing in to the expense app. Use your Integrator org for the first lesson.
+Learn what Okta does, how its pieces work together, and where to verify the result. Use your Integrator org for the first lesson.
 
 [Read Lesson 1 · Your Okta org](week-01-foundations/lessons/01-your-okta-org.md){ .md-button .md-button--primary }
 
