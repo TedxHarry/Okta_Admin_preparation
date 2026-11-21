@@ -1,1 +1,27 @@
-# Okta_Admin_preparation
+# Okta Administrator preparation
+
+Start with [Lesson 1 · Your Okta org](week-01-foundations/lessons/01-your-okta-org.md). Each lesson combines theory, practice, and questions that ask you to explain the outcome.
+
+## Course outline
+
+1. [foundations](week-01-foundations/)
+2. [directory and lifecycle](week-02-directory-and-lifecycle/)
+3. [saml and mappings](week-03-saml-and-mappings/)
+4. [ad and ldap](week-04-ad-and-ldap/)
+5. [behavior detection](week-05-behavior-detection/)
+6. [device assurance](week-06-device-assurance/)
+7. [troubleshooting](week-07-troubleshooting/)
+8. [exam rehearsals](week-08-exam-rehearsals/)
+
+Each week has a lessons folder for instruction and a labs folder for independent scenarios.
+
+## Week 1 sequence
+
+1. Your Okta org and the two consoles
+2. Users, profiles, and activation
+3. Groups and membership rules
+4. App assignment and the employee dashboard
+5. System Log and the first access investigation
+6. Independent Finance joiner and mover exercise
+
+[Official Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)
