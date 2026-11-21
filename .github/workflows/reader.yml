@@ -1,10 +1,13 @@
-name: Build course reader
+name: Publish course reader
 on:
   push:
     branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,6 +22,20 @@ jobs:
           cp -R reader .site_docs
           for week in week-*; do cp -R "$week" .site_docs/; done
       - run: mkdocs build --strict
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
