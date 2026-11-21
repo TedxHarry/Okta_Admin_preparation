@@ -7,7 +7,7 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 ## Week 1 · Foundations
 
 1. [Your Okta org](week-01-foundations/lessons/01-your-okta-org.md)
-2. Users, profiles, and activation
+2. [Users, profiles, and activation](week-01-foundations/lessons/02-users-profiles-and-activation.md)
 3. Groups and membership rules
 4. Application assignment and the employee dashboard
 5. System Log and access investigations

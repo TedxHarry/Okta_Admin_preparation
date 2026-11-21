@@ -52,3 +52,4 @@ nav:
   - Course outline: index.md
   - Week 1 · Foundations:
       - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
+      - Lesson 2 · Users, profiles, and activation: week-01-foundations/lessons/02-users-profiles-and-activation.md

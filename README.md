@@ -18,7 +18,7 @@ Each week has a lessons folder for instruction and a labs folder for independent
 ## Week 1 sequence
 
 1. Your Okta org and the two consoles
-2. Users, profiles, and activation
+2. [Users, profiles, and activation](week-01-foundations/lessons/02-users-profiles-and-activation.md)
 3. Groups and membership rules
 4. App assignment and the employee dashboard
 5. System Log and the first access investigation
