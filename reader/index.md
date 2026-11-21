@@ -9,7 +9,7 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 1. [Your Okta org](week-01-foundations/lessons/01-your-okta-org.md)
 2. [Users, profiles, and activation](week-01-foundations/lessons/02-users-profiles-and-activation.md)
 3. [Groups and membership rules](week-01-foundations/lessons/03-groups-and-membership-rules.md)
-4. Application assignment and the employee dashboard
+4. [Application assignment and the End-User Dashboard](week-01-foundations/lessons/04-application-assignment-and-dashboard.md)
 5. System Log and access investigations
 6. Independent exercise with a Finance joiner and mover
 

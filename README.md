@@ -20,7 +20,7 @@ Each week has a lessons folder for instruction and a labs folder for independent
 1. Your Okta org and the two consoles
 2. [Users, profiles, and activation](week-01-foundations/lessons/02-users-profiles-and-activation.md)
 3. [Groups and membership rules](week-01-foundations/lessons/03-groups-and-membership-rules.md)
-4. App assignment and the employee dashboard
+4. [Application assignment and the End-User Dashboard](week-01-foundations/lessons/04-application-assignment-and-dashboard.md)
 5. System Log and the first access investigation
 6. Independent Finance joiner and mover exercise
 
