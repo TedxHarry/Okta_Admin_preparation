@@ -4,7 +4,7 @@
 
     An Okta **org** is one environment. It holds the users, groups, app integrations, and policies you work with. Your Integrator org has its own records and settings. A Workforce trial has its own records and settings too. If you open the trial and search for a user you created in your Integrator org, that user record will still be in the Integrator org. The org you open determines which data and settings you see.
 
-    That makes the org name and hostname the first things to check before you investigate an issue or change a setting. Okta's standard Admin Console hostname includes `-admin`. The org hostname and its corresponding admin hostname can lead to different views of the same environment.
+    That makes the org name and hostname the first things to check before you investigate an issue or change a setting. Okta's standard Admin Console hostname includes `-admin`. The org hostname and its corresponding admin hostname can lead to different views of the same environment. The **Admin Console** is where you manage the org. The **End-User Dashboard** shows app tiles for the signed-in user.
 
     ## What Okta knows about a user
 
@@ -40,7 +40,9 @@
 
     ## Where to see each part
 
-    The **Admin Console** shows the configuration and records you administer. The **End-User Dashboard** shows the signed-in user's view, including the app tiles available to them on that dashboard.
+    **People** and **Groups** appear under the same **Directory** menu. Open **People** to inspect one account and its profile. Open **Groups** to inspect who belongs to a group and which rules can manage that membership.
+
+    ![Okta Admin Console with the Directory menu expanded to show People and Groups](../../assets/okta-directory-menu.svg)
 
     | What you want to establish | Where to look |
     | --- | --- |
@@ -69,33 +71,32 @@
 
     ## Lab 1 · Find your way around Okta
 
-    Start on the End-User Dashboard in your Integrator org.
+    Sign in to your Integrator org with your administrator account. This walkthrough opens pages and reads what is already there.
 
-    ### 1. Identify the org and open both views
+    If you are reading without an org, follow the screenshot and page descriptions to see where each kind of information lives. You can return to the steps when you have access.
 
-    If you are reading without an org, follow the menu paths to see where each record lives. The steps are here when you have access.
+    ### 1. Open the Admin Console and End-User Dashboard
 
-    1. Start on the **End-User Dashboard**. Note the org name and hostname in your browser.
-    2. Select **Admin** near the top of the dashboard. If the button is missing, check that you are signed in with the administrator account for this Integrator org.
-    3. Look at the tab that opens. Confirm you can see the administration navigation, including **Directory** and **Applications**. Compare its hostname with the dashboard hostname. The standard Admin Console hostname adds `-admin` to the org's subdomain.
+    1. Open your Integrator org. If Okta takes you to the **End-User Dashboard**, select **Admin** near the top of the page. If sign-in takes you to the **Admin Console**, you are ready for the next step.
+    2. In the Admin Console header, open **Okta apps** and select **Okta End-User Dashboard**. Use this menu if opening the dashboard directly sends you back to the console. [Okta Support explains this Integrator redirect](https://support.okta.com/help/s/article/okta-integrator-administrator-is-redirected-to-the-admin-console-when-accessing-the-end-user-dashboard).
+    3. Compare what each page shows. The console has navigation such as **Directory** and **Applications and Resources**. The dashboard shows apps available to the signed-in account. The standard console hostname also includes `-admin`. Return to the Admin Console for the remaining steps.
 
     ### 2. Find a user and inspect the profile
 
     ![Okta Admin Console sidebar with Directory expanded, showing People and Groups](../../assets/okta-directory-menu.svg)
 
-    1. In the Admin Console sidebar, open **Directory → People**.
-    2. Search for your own account. Look at the account status.
-    3. Open the account and select **Profile**. Find one attribute, such as **First name** or **Login**.
+    1. In the left sidebar, expand **Directory**, then select **People**.
+    2. Find your account by name or login in the People list. Read its **Status**.
+    3. Select your name to open the user record, then choose **Profile**. Look for **First name** or **Login**. These fields describe the user. Status describes the account's lifecycle state.
 
-    ### 3. Find membership and rules
+    ### 3. Find group members and group rules
 
-    1. Go to **Directory → Groups**.
-    2. Open **Everyone** if it appears, or select another group already in your org. Open the **People** tab to see its members.
-    3. Return to **Directory → Groups** and select **Rules**. An empty list is fine. You will create a rule in Lab 3.
+    1. In the sidebar, go to **Directory → Groups**. On the Groups page, open **Everyone** or another group already in your org.
+    2. Select **People** on the group page to see its members. This tab shows the people in that group. **Directory → People** opens the org's user list.
+    3. Go back to **Directory → Groups** and select **Rules** on the Groups list. This is where Okta lists group rules for the org. An empty list is fine. You will create a rule in Lab 3.
 
     ### 4. Find app assignments
 
-    1. In the sidebar, go to **Applications and Resources → Applications**.
-    2. If the list contains an editable app integration with an **Assignments** tab, open it and select that tab. Identify where you can inspect people and group assignments.
-    3. If you have no suitable integration yet, stop at the Applications list. You will revisit the assignment view when you configure an app in Lab 4.
-    4. Switch back to the End-User Dashboard. Compare what the dashboard shows with what you just inspected in the Admin Console.
+    1. In the sidebar, expand **Applications and Resources**, then select **Applications**.
+    2. Select the name of an existing app integration to open its settings. Select **Assignments** and look for **People** and **Groups**. These views show the users and groups assigned to that integration.
+    3. If you cannot find an integration with an **Assignments** tab, stop at the Applications list. You will return to that tab when you configure an integration in Lab 4. [Manage app integration assignments](https://help.okta.com/oie/en-us/Content/Topics/apps/apps-manage-assignments.htm)
