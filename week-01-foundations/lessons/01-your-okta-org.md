@@ -81,6 +81,8 @@
 
     ### 2. Find a user and inspect the profile
 
+    ![Okta Admin Console sidebar with Directory expanded, showing People and Groups](../../assets/okta-directory-menu.svg)
+
     1. In the Admin Console sidebar, open **Directory → People**.
     2. Search for your own account. Look at the account status.
     3. Open the account and select **Profile**. Find one attribute, such as **First name** or **Login**.
