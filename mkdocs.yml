@@ -17,6 +17,7 @@ theme:
     - toc.follow
     - search.suggest
     - search.highlight
+    - content.tabs.link
     - content.code.copy
     - content.code.annotate
   palette:
@@ -37,6 +38,9 @@ plugins:
 
 
 markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - tables
   - attr_list
   - toc:
