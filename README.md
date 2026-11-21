@@ -24,4 +24,8 @@ Each week has a lessons folder for instruction and a labs folder for independent
 5. [System Log and access investigations](week-01-foundations/lessons/05-system-log-and-access-investigations.md)
 6. [Week 1 capstone · Finance joiner and mover](week-01-foundations/labs/06-finance-joiner-and-mover.md)
 
+## Week 2 · Universal Directory and lifecycle
+
+1. [Universal Directory and profile attributes](week-02-directory-and-lifecycle/lessons/01-universal-directory-and-profile-attributes.md)
+
 [Official Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)
