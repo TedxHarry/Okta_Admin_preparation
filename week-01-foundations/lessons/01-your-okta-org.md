@@ -28,7 +28,7 @@
 
     Follow those two relationships in order. First, establish that the user is in the group. Then open the app integration and establish that the group is assigned. Both relationships are needed for this path. A user can also have an assignment through a different group or a direct assignment, so check the source of the assignment before explaining why the user has it.
 
-    You can inspect this from **Applications → Applications**. Open an app integration and select **Assignments**. That view helps you understand who receives the integration. Later, when we study provisioning, we will check separately whether the connected application has an account for the user.
+    You can inspect this from **Applications and Resources → Applications**. Open an app integration and select **Assignments**. That view helps you understand who receives the integration. Later, when we study provisioning, we will check separately whether the connected application has an account for the user.
 
     ## What happens when the user opens the app
 
@@ -48,7 +48,7 @@
     | Which status and profile values the user has | Open the user under **Directory → People**. |
     | Which users belong to a group | Open the group under **Directory → Groups**. |
     | What condition drives membership | Open **Directory → Groups → Rules**. |
-    | How the app integration is assigned | Open the integration under **Applications → Applications**, then select **Assignments**. |
+    | How the app integration is assigned | Open the integration under **Applications and Resources → Applications**, then select **Assignments**. |
     | What the user sees | Open the **End-User Dashboard** as that user. |
 
     ## Check your understanding
@@ -73,6 +73,8 @@
 
     ### 1. Identify the org and open both views
 
+    If you are reading without an org, follow the menu paths to see where each record lives. The steps are here when you have access.
+
     1. Start on the **End-User Dashboard**. Note the org name and hostname in your browser.
     2. Select **Admin** near the top of the dashboard. If the button is missing, check that you are signed in with the administrator account for this Integrator org.
     3. Look at the tab that opens. Confirm you can see the administration navigation, including **Directory** and **Applications**. Compare its hostname with the dashboard hostname. The standard Admin Console hostname adds `-admin` to the org's subdomain.
@@ -91,7 +93,7 @@
 
     ### 4. Find app assignments
 
-    1. In the sidebar, go to **Applications → Applications**.
+    1. In the sidebar, go to **Applications and Resources → Applications**.
     2. If the list contains an editable app integration with an **Assignments** tab, open it and select that tab. Identify where you can inspect people and group assignments.
     3. If you have no suitable integration yet, stop at the Applications list. You will revisit the assignment view when you configure an app in Lab 4.
     4. Switch back to the End-User Dashboard. Compare what the dashboard shows with what you just inspected in the Admin Console.
