@@ -1,4 +1,5 @@
 site_name: Okta Administrator preparation
+site_url: https://tedxharry.github.io/Okta_Admin_preparation/
 docs_dir: .site_docs
 theme:
   name: material
