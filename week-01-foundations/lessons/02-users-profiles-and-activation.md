@@ -51,33 +51,35 @@
 
     Use your Integrator org and two distinct test logins in email format. Use email addresses you control for the **Primary email** values. The lab sends activation messages, so use inboxes you can open. Keep your Admin Console open in one browser profile and use a separate browser profile or private window to open the activation links as the test users.
 
-    ### 1. Open Add Person
+    Work through the task tabs in order. Task 1 leaves the first form open for Task 2.
 
-    1. In the **Admin Console**, open **Directory → People**.
-    2. Select **Add person** above the search field.
+    === "1. Open Add Person"
 
-    ![Admin Console sidebar with Directory expanded and the People page showing Add person and search](../../assets/okta-people-navigation.svg)
+        1. In the **Admin Console**, open **Directory → People**.
+        2. Select **Add person** above the search field.
 
-    3. In **Add Person**, leave **User type** set to **User**. Enter a test first and last name, an email-format **Username**, and the **Primary email** you control. Leave **Secondary email** and **Groups** blank for this lab.
+        ![Admin Console sidebar with Directory expanded and the People page showing Add person and search](../../assets/okta-people-navigation.svg)
 
-    ![Full Add Person form with the Activation menu open and both Activate now and Activate later visible](../../assets/okta-add-person-activation.svg)
+        3. In **Add Person**, leave **User type** set to **User**. Enter a test first and last name, an email-format **Username**, and the **Primary email** you control. Leave **Secondary email** and **Groups** blank for this lab.
 
-    ### 2. Save the first account with Activate now
+        ![Full Add Person form with the Activation menu open and both Activate now and Activate later visible](../../assets/okta-add-person-activation.svg)
 
-    1. Set **Activation** to **Activate now**. Leave **I will set password** unchecked so you can work through the user setup path.
-    2. Select **Save**. Back on **People**, use the search field to find the account by its username. Read the **Status** column before opening the inbox. If setup is still required, expect **Pending user action**.
-    3. Open the activation message in the test inbox. Follow its link in the separate browser session and complete the setup Okta asks for.
-    4. Refresh **Directory → People** in the Admin Console. Find the same account and look for **Active**.
+    === "2. Activate now"
 
-    ### 3. Save the second account with Activate later
+        1. Set **Activation** to **Activate now**. Leave **I will set password** unchecked so you can work through the user setup path.
+        2. Select **Save**. Back on **People**, use the search field to find the account by its username. Read the **Status** column before opening the inbox. If setup is still required, expect **Pending user action**.
+        3. Open the activation message in the test inbox. Follow its link in the separate browser session and complete the setup Okta asks for.
+        4. Refresh **Directory → People** in the Admin Console. Find the same account and look for **Active**.
 
-    1. Return to **Directory → People → Add person**. Enter the second test user's name, username, and primary email.
-    2. Set **Activation** to **Activate later**, then select **Save**.
-    3. Search for this second account on **People**. It should show **Staged**. The first user and the second user now have separate records, and the second account is still awaiting activation.
-    4. Use **Activate** in the second user's **Status** column. In the **Activate Person** dialog, select **Activate User**.
-    5. Open the second activation message and finish setup in the separate browser session. Refresh **People** and read the second account's status. If it remains **Pending user action**, check whether setup was completed for the correct account.
+    === "3. Activate later"
 
-    ### 4. Open a profile and confirm the stored information
+        1. Return to **Directory → People → Add person**. Enter the second test user's name, username, and primary email.
+        2. Set **Activation** to **Activate later**, then select **Save**.
+        3. Search for this second account on **People**. It should show **Staged**. The first user and the second user now have separate records, and the second account is still awaiting activation.
+        4. Use **Activate** in the second user's **Status** column. In the **Activate Person** dialog, select **Activate User**.
+        5. Open the second activation message and finish setup in the separate browser session. Refresh **People** and read the second account's status. If it remains **Pending user action**, check whether setup was completed for the correct account.
 
-    1. In **Directory → People**, select either test user's name.
-    2. Open **Profile**. Locate the username and primary email you entered. The profile shows the information Okta saved. Return to the People list to see the account's **Status** alongside the user record.
+    === "4. Inspect the profile"
+
+        1. In **Directory → People**, select either test user's name.
+        2. Open **Profile**. Locate the username and primary email you entered. The profile shows the information Okta saved. Return to the People list to see the account's **Status** alongside the user record.
