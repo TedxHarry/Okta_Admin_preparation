@@ -1,43 +1,53 @@
 # Lesson 1 · Your Okta org
 
-Devi joins Finance and asks for the expense app. You open Okta as an administrator. Before creating anything, you need to answer three questions. Which environment am I in? Where does Devi's identity live? Where would I check what she can access?
+When you open Okta, the first thing to check is which **org** you are in. An org is one Okta environment. It has its own users, groups, app connections, and rules for signing in. Your Integrator org and a Workforce trial are two separate environments. Each keeps its own configuration, so the org you open determines which accounts and settings you see.
 
-## What an org contains
+## What lives in an org?
 
-An Okta organization, usually called an **org**, is an independent environment with its own users, groups, app integrations, policies, and configuration. Your Integrator org is where you will do this lesson. When you later open a Workforce trial, it will have its own directory. Creating Devi in one org does not automatically create her in the other.
+A **user account** is the record Okta uses to identify someone in that org. The **user profile** is the information stored on that record. Login, email, and department are profile fields. The account also has a **status**, which tells you where it is in its lifecycle. If you are trying to understand why someone cannot sign in, the status is one of the first things to check.
 
-| Term | What it means in Devi's case |
-|---|---|
-| User | The account that identifies Devi in this org. |
-| Profile | The attributes stored for that user, such as her login and department. |
-| Group | A collection of users. Finance employees can share an app assignment through a group. |
-| App integration | The configuration connecting this org to an application, such as the expense service. |
-| Assignment | The relationship that gives a user or group access to an app integration. |
-| Authentication | The process by which Devi proves her identity when signing in. |
+A **group** is a collection of users. Groups let you manage a set of people together. An administrator can add people to a group directly, or a **group rule** can use information on their profiles to manage membership. When you see a department value on a user profile, you are looking at data. To see whether that data affected access, check the group rule and the resulting membership.
 
-## How these pieces work together
+An **app integration** is how you connect Okta to an application or represent it in Okta. An **assignment** tells Okta which users or groups the integration is available to. When you assign an app to a group, its members receive that assignment through the group.
 
-Suppose an administrator assigns the expense app to a Finance group. Devi's department is Finance. Will she receive the assignment? You need one more fact: is she actually a member of the assigned group? Storing a department value and creating a group with the same name do not connect them automatically. An administrator can add Devi directly, or configure a rule that uses her profile to manage membership.
+## How Okta gets from a profile to app access
 
-Now suppose Devi sees the app on her dashboard but receives another authentication prompt when she opens it. Assignment explains why the app is available to her. The app's sign-in requirements explain what she must prove before access succeeds. Keeping those decisions separate helps you choose where to investigate.
+1. **Read the profile.** An active group rule looks at the Okta profile field it was configured to evaluate.
+2. **Determine group membership.** The rule can place the user in its target group when the condition matches.
+3. **Determine app assignment.** If that group is assigned to an app integration, the user receives that assignment. A user can also receive an assignment directly.
+4. **Evaluate the sign-in requirements.** When the user opens the app, Okta evaluates the applicable sign-in policy. It may ask the user for another form of proof, depending on the rule that applies and what the user has already proved.
+
+These steps give you a way to debug access. If someone expected an app from a group, look at the membership and assignment. If they reach a sign-in prompt or denial, look at the authentication requirements and the sign-in event. Each check answers a different question.
+
+## Where you look in Okta
+
+The **Admin Console** is where administrators read and manage the org's configuration. The **End-User Dashboard** is where the signed-in user sees app tiles available to them. The dashboard shows that user's view. Use the Admin Console to find the configuration behind it.
+
+| What you want to check | Where to start |
+| --- | --- |
+| A user's account status or profile | **Directory → People** |
+| Who belongs to a group | **Directory → Groups**, then open the group |
+| What automatically puts users in a group | **Directory → Groups → Rules** |
+| Which people or groups an app is assigned to | **Applications → Applications**, then open the app and select **Assignments** |
+| What the signed-in user sees | **End-User Dashboard** |
+
+The standard Admin Console hostname includes `-admin`. For example, `example-admin.okta.com` is the admin hostname for `example.okta.com`. Check the org name as well, especially once you have the Integrator and trial open at the same time.
 
 ## Guided practice in your Integrator org
 
-1. Open your existing Integrator org and locate the **Admin Console**. Observe the org hostname and the administrator hostname. Okta's standard administrator hostname includes `-admin`. Record fictional equivalents such as `example.okta.com` and `example-admin.okta.com`.
-2. Open **Directory → People** and locate your own account. Identify one profile attribute and the account status. Explain what each tells you.
-3. Open **Directory → Groups**, then **Applications → Applications**. Identify where you would inspect Finance group membership and where you would inspect the expense app's assignments. The navigation exercise works even if the training group and app have not been created yet.
-4. Open your end-user dashboard using your org's dashboard link. Compare the actions available there with the Admin Console. Use the console to manage configuration and the dashboard to inspect the signed-in user's app experience.
+1. Open the **Admin Console** and **End-User Dashboard**. Identify which tab shows configuration and which shows apps for the signed-in user.
+2. In the Admin Console, open **Directory → People** and open your own record. Identify its status and one profile field. Say out loud what each tells you.
+3. Open **Directory → Groups**. Find where membership appears on a group and where you would inspect a group rule.
+4. Open **Applications → Applications**. If an app integration is present, open it and locate **Assignments**. Identify where Okta shows user and group assignments. If the list is empty, record the navigation path and leave the org ready for the application lab.
 
 ## Check your understanding
 
-- Your colleague creates Devi in a trial org. Your search in the Integrator org returns nothing. What would you verify before creating a duplicate?
-- Devi's profile says Finance. What evidence would show that she receives the expense app through the Finance group?
-- Devi signs in to Okta successfully. What does that establish, and what must you still check to explain her access to a specific app?
-
-Reply with your answers and the two console locations you found. In the next lesson you will create two test users and observe what changes as their accounts become active.
+- Why can the same person have a separate record in each of your two orgs?
+- If a profile field has the value you expect, what would you check next to prove that an app was assigned through a group?
+- If a user can sign in to Okta and sees an app tile, what could still explain an additional prompt when they open the app?
 
 ## Official reading
 
-- [Okta organizations](https://developer.okta.com/docs/concepts/okta-organizations/) covers the org boundary, hostnames, and environment types.
-- [Integrator Free Plan configuration](https://developer.okta.com/docs/reference/org-defaults/) describes the features and limits of your lab.
-- [Group rules](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-create-group-rules.htm) explains how a profile attribute can drive membership.
+- [Okta organizations](https://developer.okta.com/docs/concepts/okta-organizations/)
+- [Integrator Free Plan configuration](https://developer.okta.com/docs/reference/org-defaults/)
+- [Create group rules](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-create-group-rules.htm)
