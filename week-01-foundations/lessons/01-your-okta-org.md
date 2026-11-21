@@ -69,7 +69,7 @@
 
     ## Lab 1 · Find your way around Okta
 
-    Use your signed-in Integrator org. Keep the Admin Console and End-User Dashboard open in separate tabs so you can compare them. This is a read-only walkthrough.
+    Start on the End-User Dashboard in your Integrator org.
 
     ### 1. Identify the org and open both views
 
@@ -77,23 +77,17 @@
     2. Select **Admin** near the top of the dashboard. If the button is missing, check that you are signed in with the administrator account for this Integrator org.
     3. Look at the tab that opens. Confirm you can see the administration navigation, including **Directory** and **Applications**. Compare its hostname with the dashboard hostname. The standard Admin Console hostname adds `-admin` to the org's subdomain.
 
-    **Checkpoint.** You can point to the tab that shows apps for the signed-in user and the tab that lets you inspect org settings.
-
     ### 2. Find a user and inspect the profile
 
     1. In the Admin Console sidebar, open **Directory → People**.
-    2. Search for your own account. Read the status shown for that account.
+    2. Search for your own account. Look at the account status.
     3. Open the account and select **Profile**. Find one attribute, such as **First name** or **Login**.
-
-    **Checkpoint.** Write down the status and the name of one attribute. Explain what each tells you. You can leave the attribute's actual value out of your notes.
 
     ### 3. Find membership and rules
 
     1. Go to **Directory → Groups**.
     2. Open **Everyone** if it appears, or select another group already in your org. Open the **People** tab to see its members.
-    3. Return to **Directory → Groups** and select **Rules**. If there are no rules, observe where Okta would list them after you create one in Lab 3.
-
-    **Checkpoint.** You can show where to answer “Who belongs to this group?” and where to answer “Which rule is configured to manage membership?”
+    3. Return to **Directory → Groups** and select **Rules**. An empty list is fine. You will create a rule in Lab 3.
 
     ### 4. Find app assignments
 
@@ -101,11 +95,3 @@
     2. If the list contains an editable app integration with an **Assignments** tab, open it and select that tab. Identify where you can inspect people and group assignments.
     3. If you have no suitable integration yet, stop at the Applications list. You will revisit the assignment view when you configure an app in Lab 4.
     4. Switch back to the End-User Dashboard. Compare what the dashboard shows with what you just inspected in the Admin Console.
-
-    **Checkpoint.** You can identify where an administrator checks who receives an integration and where a user checks which app tiles they see.
-
-    ### What to bring back
-
-    - The console paths you used to find the user profile, group membership, and app assignments.
-    - The account status you observed and one profile field you located.
-    - One observation that explains how the Admin Console and End-User Dashboard serve different purposes.
