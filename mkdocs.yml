@@ -1,0 +1,49 @@
+site_name: Okta Administrator preparation
+docs_dir: .site_docs
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/shield-key-outline
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.footer
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: luxury-light
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: luxury-dark
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font: false
+
+plugins:
+  - search
+
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - toc:
+      permalink: true
+extra_css:
+  - assets/stylesheets/luxury.css
+  - assets/stylesheets/readability-v3.css
+nav:
+  - Course outline: index.md
+  - Week 1 · Foundations:
+      - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
