@@ -22,6 +22,6 @@ Each week has a lessons folder for instruction and a labs folder for independent
 3. [Groups and membership rules](week-01-foundations/lessons/03-groups-and-membership-rules.md)
 4. [Application assignment and the End-User Dashboard](week-01-foundations/lessons/04-application-assignment-and-dashboard.md)
 5. [System Log and access investigations](week-01-foundations/lessons/05-system-log-and-access-investigations.md)
-6. Independent Finance joiner and mover exercise
+6. [Week 1 capstone · Finance joiner and mover](week-01-foundations/labs/06-finance-joiner-and-mover.md)
 
 [Official Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)
