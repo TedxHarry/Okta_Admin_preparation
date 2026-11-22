@@ -105,7 +105,11 @@
 
     ### Where do you choose AND or OR in the console?
 
-    **IF** is the section of the form. Inside it, Okta offers **Use basic condition** and **Use Okta Expression Language (advanced)**. In the advanced editor, put `AND` or `OR` between the two membership checks. Okta's guide confirms you can select multiple groups in the basic editor. The guide leaves the picker’s combining behavior unspecified, so this lab uses the advanced editor to make the choice explicit. [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
+    **IF** is the section of the form. Inside it, you can choose **Use basic condition** or **Use Okta Expression Language (advanced)**.
+
+    In **Use basic condition**, select **Group membership**. The words beside it say **includes any of the following**. That means **OR**. If you select Source A and Source B and your test user belongs only to Source A, **Preview** should show **User matches rule**. If you selected two target groups under **Then Assign to**, a matching user qualifies for both targets when the rule runs.
+
+    If you need the user to belong to **both** source groups, choose **Use Okta Expression Language (advanced)** and join the two checks with `AND`. You can also write `OR` in the advanced editor if either source is enough. [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
 
     First, get the **group ID** for each source. A group ID is the unique value Okta uses to identify exactly one group, even when group names repeat. Open each source under **Directory → Groups** and copy the ID at the end of the browser address. In the expressions below, replace `SOURCE_A_ID` and `SOURCE_B_ID` with what you copied. Keep the quotation marks. Each `isMemberOfGroup(...)` check asks, “Does the user belong to this group?” [Okta · Find the group ID](https://support.okta.com/help/s/article/how-to-find-group-ids-through-the-okta-user-interface) · [Okta · Group functions](https://developer.okta.com/docs/reference/okta-expression-language/#group-functions)
 
@@ -242,7 +246,8 @@
 
         1. In **Directory → Groups → Add group**, create two Okta groups. `LAB-Rule-Source-B` is the second group the rule will check. `LAB-Rule-Target-C` is a third group the rule will assign. Leave the new target empty.
         2. Keep the first test user in the original source group, `LAB-Rule-Source`. Open **LAB-Rule-Source-B → People → Assign people** and add only the second test user. Each user should be in exactly one source.
-        3. Open each source group and copy its group ID from the end of the address in your browser. Keep track of which ID belongs to which group. [Okta · Find the group ID](https://support.okta.com/help/s/article/how-to-find-group-ids-through-the-okta-user-interface)
+        3. In **Directory → Groups → Rules → Add Rule**, enter a temporary name such as `LAB-Basic-Preview`. Under **IF → Use basic condition → Group membership**, select both sources. Read **includes any of the following** beside the picker. Under **Then Assign to**, select the three lab targets. In **Preview**, select the first test user, who belongs only to the original source. Confirm **User matches rule**. Try the second user, who belongs only to the second source. They should match too. Select **Cancel** to close the preview without saving another rule.
+        4. Open each source group and copy its group ID from the end of the address in your browser. Keep track of which ID belongs to which group. [Okta · Find the group ID](https://support.okta.com/help/s/article/how-to-find-group-ids-through-the-okta-user-interface)
 
         ### 12. Test a rule where either source is enough
 
