@@ -28,5 +28,6 @@ Each week has a lessons folder for instruction and a labs folder for independent
 
 1. [Universal Directory and profile attributes](week-02-directory-and-lifecycle/lessons/01-universal-directory-and-profile-attributes.md)
 2. [Profile mappings](week-02-directory-and-lifecycle/lessons/02-profile-mappings.md)
+3. [Suspend, deactivate, and restore a user](week-02-directory-and-lifecycle/lessons/03-user-account-lifecycle.md)
 
 [Official Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)

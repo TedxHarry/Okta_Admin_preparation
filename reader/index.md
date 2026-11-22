@@ -17,6 +17,7 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 
 1. [Universal Directory and profile attributes](week-02-directory-and-lifecycle/lessons/01-universal-directory-and-profile-attributes.md)
 2. [Profile mappings](week-02-directory-and-lifecycle/lessons/02-profile-mappings.md)
+3. [Suspend, deactivate, and restore a user](week-02-directory-and-lifecycle/lessons/03-user-account-lifecycle.md)
 
 ## Course outline
 
