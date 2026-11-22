@@ -27,6 +27,25 @@
 
     In **SP-initiated** sign-in, the user starts at the app. The app sends a SAML authentication request through the browser to Okta. After Okta verifies the user as required, the browser carries the response to the app's ACS. In a trace, compare the request and response to see where the sign-in began.
 
+    ## Follow one response from the browser to the app
+
+    1. **Okta builds the response.** The assertion identifies the user and names the app it is intended for. Okta signs the response or assertion according to the SAML settings.
+    2. **The browser delivers it.** In the HTTP POST flow used in this lab, the browser submits a form field named `SAMLResponse` to the ACS. A SAML tracer can decode that field so you can read the XML. The ACS is the address the browser posts to. The Audience is a value *inside* the assertion that identifies the intended SP.
+    3. **The SP validates the message.** The SP uses the configured public certificate to verify the signature and check for changes to the signed content. It checks that the issuer is its configured IdP and that the response is intended for this app. It also checks whether the assertion is valid at the time it arrives. An SP-initiated flow can check that the response corresponds to the request the app started.
+    4. **The SP matches the user.** The SP reads the subject identifier and uses its matching configuration to find the app-side user. For example, if the SP expects a full login like `alex@example.test` and receives only `alex` in NameID, the message can pass signature validation and still fail account matching. Check the application username sent by Okta and the value the SP has for that user.
+
+    ## Where to find the pieces in the XML
+
+    Use this table with the preview and again when you have a live trace. A trace can show namespace prefixes such as `saml:`. The table gives you the element names to look for.
+
+    | Find | What to read |
+    | --- | --- |
+    | `Response` and `Assertion` | The response is the outer message. A successful response can carry an assertion with the user information. |
+    | `Issuer` | The identity provider identifier. Compare it with the IdP issuer configured on the SP. |
+    | `Subject → NameID` | The identifier for this user. Compare its value and format with what the SP uses to match the account. |
+    | `Conditions → AudienceRestriction → Audience` | The intended SP identifier. Compare it with the SP Entity ID. |
+    | `AttributeStatement` | Additional named values the app can consume. Later in Week 3 we will follow a custom value from the Okta profile, through a mapping, into this part of the assertion. |
+
     ## Follow the evidence to the right system
 
     An **Okta assignment** determines who can use that app integration through Okta. After authentication, the SP checks the response and opens its own session if the checks pass. Depending on its configuration, it may check the signature and signing certificate, issuer, audience, destination or recipient, time conditions, and the subject it can map to an app user.
