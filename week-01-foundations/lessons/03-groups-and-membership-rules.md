@@ -20,7 +20,15 @@
 
     An **Okta group** is a group managed inside Okta. Administrators can create one and manage its members directly or use rules. An **imported group** comes from a connected directory or application. For example, a group imported from Active Directory represents a group that exists in AD. When AD owns the group's membership, start in AD to understand why a user belongs to it and check the import to see how that membership reached Okta. We'll practice the directory side later.
 
-    **Everyone** is a built-in group you can inspect in Okta. We'll create separate groups for the exercises so you can see exactly what each lab action changes.
+    **Everyone** is the built-in group that contains the org's users. Check the audience before assigning an app to it. **Okta Administrators** is another built-in group. Okta maintains its membership and uses it for sign-on policies. Its member count is hidden, and you cannot assign it to an app. We'll use separate groups for the exercises. [Okta · Groups](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-about-groups.htm)
+
+    ### Find the right group and check its members
+
+    **Directory → Groups** searches by the beginning of a name by default. If you remember only a word in the middle, try **Advanced Search → Contains** on the name or description. Give it at least three characters. To see how someone became a member, open the group and look for that person under **People**. A number in the Groups list may lag behind a membership change because it refreshes on a two-hour schedule. [Okta · Groups](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-about-groups.htm) · [Okta · View and edit group attributes](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-view-edit-group-attributes.htm) · [Okta · Verify membership](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-verify-group-membership.htm)
+
+    ### Read imported membership one group at a time
+
+    A **nested group** is a group placed inside another group. Okta does not store groups inside groups. When an import resolves nested directory membership, Okta represents the result as the user belonging to each applicable group. If you see two copies of a group name, check each group's source before changing a rule. For example, the same group can reach Okta through an AD import and through an Office 365 integration that also imports it. Use the group's ID when an expression needs to check one specific record. [Okta · Manage groups](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-groups-main.htm) · [Okta · Office 365 group duplication](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-group-duplication-365.htm)
 
     ## What a group rule does
 
@@ -147,6 +155,8 @@
 
     A rule condition must return true or false. Use `==` to compare values, `AND` when both checks must pass, and `OR` when either check is enough. You can reference attributes on the Okta user profile and supported group functions. If the data comes from a connected app or directory, map it into an Okta user attribute before using it in a group rule. Use the variable name from **Profile Editor** when writing the expression.
 
+    **Preview before you activate.** An active rule can affect eligible users across the org. An **import safeguard** can block an import that would unassign too many users, but Okta says it does not trigger when a group rule reduces app membership. Test an expected match and an expected miss before changing a rule linked to app access. [Okta · Group rules best practices](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-group-rules-best.htm)
+
     ## Official reading
 
     - [Groups](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-about-groups.htm)
@@ -185,7 +195,7 @@
 
         1. Open `LAB-Manual` and select **Assign people**.
         2. Find the second test user by username. Select **Assign** beside that user, then select **Done**.
-        3. Open **People** in `LAB-Manual` and verify that only that test user is a member. Look for **Manually** in the membership information.
+        3. Open **People** in `LAB-Manual` and verify that only that test user is a member. Look for **Manually** in the membership information. Use the person's row to verify the change while the directory's summary count catches up.
 
         ### 4. Compare membership with profile data
 

@@ -34,7 +34,7 @@
 
     ## Choose where the agent runs
 
-    Okta supports physical or virtual Windows Server hosts and recommends a domain-joined **member server**. In an isolated VMware lab, the supported Windows Server virtual machine (VM) that runs your domain controller can also host the agent. That gives you a working single-host setup for the first import. For agent high availability, use separate hosts in the domain and keep their agent versions aligned. A single VM cannot demonstrate that another host takes over if it goes down.
+    Use a supported Windows Server **member server** in the same AD forest. A member server joins the domain and runs the Okta agent. Your domain controller continues running AD DS. In VMware, you can keep your existing domain controller and use a second Windows Server virtual machine (VM) as the member server. One agent on that member server is enough to practice the first import. For **high availability**, install agents on at least two separate computers so another host can take over if one goes down. Okta calls for at least three agents when there are more than 30,000 users. Keep agents in the same domain on the same version. A mixed-version deployment can limit that domain's agents to the oldest installed version. [Okta · AD agent prerequisites](https://help.okta.com/oie/en-us/Content/Topics/Directory/ad-agent-prerequisites.htm)
 
     ## Official reading
 
@@ -64,7 +64,7 @@
 
         Look for the expected lab controller address in the first result and `TcpTestSucceeded : True` in the second. If the name lookup fails, check which DNS server the agent host uses and the controller name you entered. If the name resolves but the port check fails, check whether the LDAP service is reachable from that host. The port check establishes TCP connectivity for the selected port. The working agent and import validate the integration itself.
 
-        If the agent runs on a separate VMware member server, confirm it is joined to the lab domain. In Okta, select **Directory → Directory Integrations → Add Directory → Add Active Directory → Set Up Active Directory → Download Agent**. [Resolve-DnsName](https://learn.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname) · [Test-NetConnection](https://learn.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection)
+        On the Windows Server VM that will run the agent, confirm it is joined to the lab domain. In Okta, select **Directory → Directory Integrations → Add Directory → Add Active Directory → Set Up Active Directory → Download Agent**. [Resolve-DnsName](https://learn.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname) · [Test-NetConnection](https://learn.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection)
 
         **3. Install using the lab domain.** Run the downloaded installer on the Windows Server with the appropriate installer permissions. Verify that it detected your lab domain. Select **Create or use the Okta Service account**, or use a lab service account with the documented rights. Record the account name for the Windows service check.
 

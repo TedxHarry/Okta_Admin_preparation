@@ -48,6 +48,8 @@
 
     **Check both NameID settings.** **Application username** determines the value Okta uses, such as the user's email. **Name ID format** labels the kind of identifier sent. Compare both the value and the format in a fresh assertion with what the receiving app expects. If the service provider sends a `NameIDPolicy` in its authentication request, it is asking for a particular format. The Name ID format in Okta must match that request. [Okta · SAML field reference](https://help.okta.com/en-us/Content/Topics/Apps/aiw-saml-reference.htm)
 
+    **Check NameID format as well as its value.** The value identifies the user. The format tells the app how to interpret that value. When the app starts sign-in, it can send a `NameIDPolicy` in its request. If it does, the Name ID format you configure in Okta must match what the request specifies. Inspect the request and the **Subject → NameID** element in the response when troubleshooting a mismatch. [Okta · SAML field reference](https://help.okta.com/en-us/Content/Topics/Apps/aiw-saml-reference.htm)
+
     ## Follow the evidence to the right system
 
     An **Okta assignment** determines who can use that app integration through Okta. After authentication, the SP checks the response and opens its own session if the checks pass. Depending on its configuration, it may check the signature and signing certificate, issuer, audience, destination or recipient, time conditions, and the subject it can map to an app user.

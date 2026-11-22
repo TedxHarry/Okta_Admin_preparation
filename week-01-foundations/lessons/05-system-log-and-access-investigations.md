@@ -24,6 +24,8 @@
 
     When investigating an extra authentication prompt, look for related events in the same time window. In Identity Engine, `user.authentication.auth_via_mfa` is relevant to authenticator verification. Expand the event and inspect the outcome and the available authenticator details before naming the factor used. A session event by itself cannot tell you which factor satisfied a later challenge.
 
+    **Check the date range before rewriting your filter.** The System Log opens on the last seven days by default and Okta retains events for 90 days. If you are investigating an older attempt, widen the date range within that limit and confirm the display time zone. [Okta · System Log filters and search](https://help.okta.com/oie/en-us/Content/topics/reports/syslog-filters.htm)
+
     ## Narrow a search one condition at a time
 
     A **filter** is a condition that selects matching events. Start with the time window, then add an event type. An equality check uses `eq`, and `and` requires both conditions to be true. For example, paste this into the System Log search bar:

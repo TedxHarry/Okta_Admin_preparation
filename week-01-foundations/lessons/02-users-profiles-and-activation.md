@@ -39,7 +39,7 @@
 
     If an account stays **Staged**, start by checking whether activation was initiated. If it shows **Pending user action**, start with the activation message and any unfinished setup. The status tells you which part of the process to investigate first.
 
-    **If the activation link expires.** In Okta Identity Engine, the user can open the expired link page and select **Request activation email**. Have them use the new message for the same test account. In **Directory → People**, check the user’s status to see whether setup is still pending or has completed. [Okta · Expired activation links](https://support.okta.com/help/s/article/okta-user-activation-flow-when-the-activation-email-link-expires)
+    **If the activation link expires.** Okta documents a default validity period of seven days, which the org can configure. In Okta Identity Engine, the user can open the expired link page and select **Request activation email**. Have them use the new message for the same test account. In **Directory → People**, check the user’s status to see whether setup is still pending or has completed. [Okta · Expired activation links](https://support.okta.com/help/s/article/okta-user-activation-flow-when-the-activation-email-link-expires)
 
     ## Official reading
 

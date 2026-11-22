@@ -34,6 +34,8 @@
 
     An override tells Okta where a field can come from. The inbound mapping still needs to read the right source field. If the result is blank, open the source account and look for a value, then inspect the relevant inbound mapping and import result.
 
+    **A lower-priority source does not fill an unmapped field automatically.** Suppose HR is the primary source and has no mapping into the Okta Department field. AD being next on the list does not make Okta take Department from AD for that user. First check the field's **Source priority**, then open the chosen integration's **App to Okta User** mapping. If you explicitly override the source for that field, map the field from the source you chose. [Okta · Map profile attributes](https://help.okta.com/oie/en-us/content/Topics/users-groups-profiles/usgp-map-profile-attribute.htm)
+
     ## Follow a change from the source to app access
 
     Start with **Department** in the source system. When its integration processes an update, Okta can store the new Department on the matched user's profile. An active Okta group rule that reads Department can then change the user's membership. If that group grants an app, the user's group-based assignment can change too. Check the profile first, then the group, then the app. If a user also has a direct assignment or another qualifying group, they may retain access.

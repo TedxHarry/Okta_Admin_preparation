@@ -23,6 +23,12 @@
 
     On an integration that supports **Group Linking**, you can attach an Okta group to an existing target group instead of creating a new target group. Before linking, inspect its current members. Once Okta manages the group, a **Push Now** can replace the target app's membership with Okta's membership. Check the connector documentation for its behavior. For Active Directory, Okta documents that **Push Now** sends the newest members and keeps existing memberships.
 
+    ### An import and a link move group information in different directions
+
+    **Import Groups** brings existing groups from a supported app into Okta. Check **Provisioning → Integration** on the app, then find the imported group's source under **Directory → Groups**. Clearing **Import Groups** removes the imported groups on the next scheduled or manual import. Review assignments, mappings, and rules that depend on those groups before changing it. Some dependencies block disabling import. [Okta · Enable group import](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-import-groups-app-provisioning.htm) · [Okta · Remove imported groups](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-delete-groups-provisioning-apps.htm)
+
+    **Link Group** starts with an Okta group and connects it to a group already present in the receiving app. Check that the connector supports linking and that provisioning is enabled. In the app's **Push Groups** tab, select **Refresh App Groups** if the target is missing from the picker. After linking, Okta shows the link on **Push Groups** and hides the separate imported app-group entry under **Directory → Groups**. Unlinking makes that entry visible again if the app group is kept. Verify the group and its members in the receiving app. [Okta · Configure Group Linking](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-configure-enhanced-group-push.htm)
+
     ## What to check when the group is empty
 
     An empty group tells you that there is a group object in the app. Look up one missing user. Do they have an app assignment? Do they have an active account in the target? Are they active in Okta and a member of the push group? In **Push Groups → Errors**, open the push status details and address the cause before retrying. In the target app, verify the membership directly.

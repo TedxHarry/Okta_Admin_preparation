@@ -21,6 +21,14 @@
 
     **Converting an assignment changes who manages it.** On the user's **Applications** view, **Individual** means Okta manages that assignment for the user. A group name means the group manages it. If you need to convert an individual assignment, assign the app to the intended group first, then use **Convert Assignments** where available. Verify the group name afterward. The group can now supply the user's app settings as well as their access. [Okta · Convert app assignments to group managed](https://help.okta.com/oie/en-us/content/topics/apps/apps-convert-to-group-managed.htm)
 
+    ### When two groups assign different app values
+
+    A user can get the same integration through two groups. Some apps let you set values such as the user's app role on each group assignment. If the values differ, **group priority** determines which group's assignment data the user gets. Open the app's **Assignments → Groups** to inspect the order. You can drag a group to change its priority. After changing the order in a test app, check the user's app assignment and compare the actual values with the intended ones. [Okta · Prioritize application groups](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-prioritize-app-group.htm)
+
+    Supported app fields that hold a list can use **Combine values across groups**. In **Directory → Profile Editor**, open the app's profile and inspect the field. For example, this can combine license values from two groups in Office 365. A bookmark has no app role or license field to compare. [Okta · Attribute group priority](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-assign-app-group-priority.htm) · [Okta · Combine values across groups](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-combine-values-use.htm)
+
+    For one app and several groups, start at the app's **Assignments → Assign → Assign to Groups**. For several apps and one group, open that group under **Directory → Groups** and select **Manage Apps**. [Okta · Assign one app to groups](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-assign-app-group.htm) · [Okta · Assign multiple apps to one group](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-assign-multiple-app-group.htm)
+
     ## Three things to check when a user asks for access
 
     1. **Assignment** tells you whether Okta has made the integration available to the user. Check the integration’s **Assignments** tab.
