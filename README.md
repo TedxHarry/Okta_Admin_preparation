@@ -32,6 +32,7 @@ Each week has a lessons folder for instruction and a labs folder for independent
 4. [Profile sourcing and source priority](week-02-directory-and-lifecycle/lessons/04-profile-sourcing-and-source-priority.md)
 5. [Application provisioning](week-02-directory-and-lifecycle/lessons/05-application-provisioning.md)
 6. [Group Push](week-02-directory-and-lifecycle/lessons/06-group-push.md)
+7. [Okta Workflows for lifecycle management](week-02-directory-and-lifecycle/lessons/07-okta-workflows.md)
 
 [Exam coverage and planned labs](reader/exam/coverage.md)
 
