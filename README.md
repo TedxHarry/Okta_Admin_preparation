@@ -37,6 +37,7 @@ Each week has a lessons folder for instruction and a labs folder for independent
 ## Week 3 · SAML and attribute mappings
 
 1. [SAML sign-in with Okta](week-03-saml-and-mappings/lessons/01-saml-sign-in.md)
+2. [Custom SAML attributes and group assignment](week-03-saml-and-mappings/lessons/02-custom-saml-attributes-and-group-assignment.md)
 
 [Exam coverage and planned labs](reader/exam/coverage.md)
 

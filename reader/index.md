@@ -26,6 +26,7 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 ## Week 3 · SAML and attribute mappings
 
 1. [SAML sign-in with Okta](week-03-saml-and-mappings/lessons/01-saml-sign-in.md)
+2. [Custom SAML attributes and group assignment](week-03-saml-and-mappings/lessons/02-custom-saml-attributes-and-group-assignment.md)
 
 ## Course outline
 
