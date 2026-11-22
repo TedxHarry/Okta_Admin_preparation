@@ -19,6 +19,8 @@
 
     If a user leaves an assigned group, that path to the app goes away. To explain whether the user should still receive the app, check for another assignment path. When more than one assigned group applies, the group priority can also matter for application settings supplied by those groups. We will use separate users for the two assignment methods in this lab so the result is easy to trace.
 
+    **Converting an assignment changes who manages it.** On the user's **Applications** view, **Individual** means Okta manages that assignment for the user. A group name means the group manages it. If you need to convert an individual assignment, assign the app to the intended group first, then use **Convert Assignments** where available. Verify the group name afterward. The group can now supply the user's app settings as well as their access. [Okta · Convert app assignments to group managed](https://help.okta.com/oie/en-us/content/topics/apps/apps-convert-to-group-managed.htm)
+
     ## Three things to check when a user asks for access
 
     1. **Assignment** tells you whether Okta has made the integration available to the user. Check the integration’s **Assignments** tab.

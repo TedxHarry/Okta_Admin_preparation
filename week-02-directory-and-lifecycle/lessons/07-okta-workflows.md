@@ -62,7 +62,9 @@
 
     === "2. Test both outcomes"
 
-        **1. Activate the matching user.** Once the flow is on and ready to receive events, go to **Directory → People** and activate the staged user whose Department is `Lab-Workflow-Onboarding`. In Workflows, open the flow's **Execution History** and find the run for that activation. Check that the membership action ran. Verify the user under **LAB-Workflow-Activation → People**.
+        **1. Activate the matching user.** After saving and turning on the flow, wait one minute before activating the user. Okta documents this delay so the flow can start receiving events. If you activated the user too soon and see no run, generate a fresh activation with a separate staged test account after the flow is ready. [Okta · Build and test a flow](https://help.okta.com/wf/en-us/content/topics/workflows/workflows-build-a-flow.htm)
+
+        Then go to **Directory → People** and activate the staged user whose Department is `Lab-Workflow-Onboarding`. In Workflows, open the flow's **Execution History** and find the run for that activation. Check that the membership action ran. Verify the user under **LAB-Workflow-Activation → People**.
 
         **2. Activate the control user.** Repeat with the staged user whose Department is `Lab-Workflow-Control`. Find the second run. The condition should stop the flow before **Add User to Group**. Verify the control user stays outside the group even though their Okta account was activated.
 

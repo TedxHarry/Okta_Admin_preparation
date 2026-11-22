@@ -29,6 +29,8 @@
 
     **Save Mappings** keeps the rule. **Apply updates now** applies the saved mapping to existing assignments as applicable. **Provisioning** is a separate capability through which Okta can create or update an account in a connected application. To verify a real downstream update, you need a configured connection and evidence from the receiving system. In this lab the evidence ends at the app profile inside Okta. Week 3 will use a SAML attribute statement to put a value into a sign-in message.
 
+    **Check if a later profile edit should run the mapping.** Where the integration exposes mapping timing, **Apply mapping on user create only** uses the mapping on creation. **Apply mapping on user create and update** also uses it for profile changes. If a value is correct in Preview but stale on an existing assignment, check this setting before rewriting the expression. Profile Push can send the full app-user profile when it sends an update, so mapping timing and the fields included in a request answer different questions. [Okta · Profile Push](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-about-selective-profile-push.htm)
+
     ## Official reading
 
     - [Map Okta attributes to app attributes](https://help.okta.com/en-us/Content/Topics/users-groups-profiles/usgp-map-attributes.htm)

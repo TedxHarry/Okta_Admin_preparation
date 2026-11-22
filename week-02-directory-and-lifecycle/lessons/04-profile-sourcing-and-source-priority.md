@@ -40,6 +40,8 @@
 
     A source can also drive account status changes. On an integration that offers **Profile & Lifecycle Sourcing**, inspect how Okta should respond when the source deactivates or reactivates a user. The source order applies to the user profile, and the integration's lifecycle settings tell Okta how to act on a status change. Selecting a different source for one field changes who supplies that field. For a write-back in the other direction, inspect the outbound mapping and the connector's supported update settings.
 
+    **A field override leaves the lifecycle source decision separate.** If an external source can suspend or deactivate an Okta user, Okta checks whether it is the highest-priority profile source for that user and applies that source's configured lifecycle action. Giving AD priority for just the Department field does not give it control of account status. When investigating a status change, inspect the user's applicable profile source and its lifecycle settings. [Okta · Active Directory as a profile source](https://help.okta.com/oie/en-us/Content/Topics/Directory/Directory_AD_Enable_Profile_Source.htm)
+
     ## Official reading
 
     - [Profile sourcing](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-about-profile-sourcing.htm)

@@ -48,6 +48,8 @@
 
     After you save and reactivate, Okta automatically updates group membership based on the edited settings. If a target group grants app access, also check its app assignments for the affected users. Use a dedicated lab group to practice the change. [Okta · Edit group rules](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-edit-group-rules.htm)
 
+    **Deactivation keeps existing rule-managed members in the group.** It pauses rule processing. To understand what happens to access, check the group's current **People** list and the apps assigned to it. Deleting the rule is a separate operation. Its dialog gives you the choice to leave or remove the memberships the rule created. [Okta · Deactivating and deleting group rules](https://support.okta.com/help/s/article/what-happens-if-group-rules-are-deactivated-and-deleted)
+
     ## Manual membership and rule-managed membership
 
     An administrator can select a user and add them to an Okta group. The group can show that membership as **Manually** managed. When a rule manages the membership, the group can show the rule responsible for it.
@@ -184,4 +186,4 @@
         1. Use the active `LAB-Finance-Expression` rule from Task 8. In **Rules**, open **Actions** and find **View** and **Deactivate**. Check that the rule targets the dedicated `LAB-Finance-Expression` group. The original Finance rule remains available for the next lesson.
         2. Deactivate the expression rule and confirm **Inactive**. Choose **Actions → Edit** and change the condition to `user.department == "Lab-Operations"`. Keep the target group and the exception from Task 8. Save and activate.
         3. After processing, check `LAB-Finance-Expression → People`. Expect the second test user, whose Department is `Lab-Operations`, to appear. The first test user should stay outside. Check the saved Department, rule status, target, and exceptions if the result differs.
-        4. Repeat the edit sequence to restore `user.department == "Lab-Finance"`. Save and activate. Verify the second user leaves the expression group and the first user's exception still applies. Check that the first user still belongs to the original `LAB-Finance` group.
+        4. Deactivate the expression rule again. Before editing, open **People** in the expression group and check that the second user's existing membership is still there. Return to **Rules → Actions → Edit** and restore `user.department == "Lab-Finance"`. Save and activate. Verify the second user leaves the expression group and the first user's exception still applies. Check that the first user still belongs to the original `LAB-Finance` group.

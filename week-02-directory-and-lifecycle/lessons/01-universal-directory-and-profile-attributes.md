@@ -29,6 +29,8 @@
 
     Field settings affect every user of the selected type. The values you edit in the lab affect only the two test accounts. Pick the profile definition first, then make the smallest change needed for the exercise.
 
+    **An empty text field can still have a stored value.** When you leave a user attribute value empty and save in the Admin Console, Okta documents that it stores an empty string (`""`). A null value represents the absence of a value. A search that asks whether the field is present can still return a profile with an empty string. When you investigate a rule or mapping, check the value the rule actually compares. [Okta · Custom user attributes](https://help.okta.com/oie/en-us/content/Topics/users-groups-profiles/usgp-add-custom-user-attributes.htm)
+
     ## Okta profiles and app profiles
 
     A user's **Okta profile** stores the value inside Okta. An **app user profile** represents the user's attributes for a particular integration. The app might call a field something different or expect a different format. A **profile mapping** tells Okta which source value supplies which destination field and whether the value needs to be transformed. Adding a field to the Okta user profile makes it available for use in mappings.

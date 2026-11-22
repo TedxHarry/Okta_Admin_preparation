@@ -21,7 +21,7 @@
 
     When you select **Find groups by name**, you choose the Okta group to push. **Find groups by rule** selects groups based on criteria. That rule chooses which *groups* to send. A Directory group rule decides which *users* belong to an Okta group.
 
-    On an integration that supports **Group Linking**, you can attach an Okta group to an existing target group instead of creating a new target group. Before linking, inspect its current members. Once Okta manages the group, a **Push Now** can replace the target app's membership with Okta's membership. Check the connector documentation for its behavior. AD has different **Push Now** behavior from the app scenario in this lesson.
+    On an integration that supports **Group Linking**, you can attach an Okta group to an existing target group instead of creating a new target group. Before linking, inspect its current members. Once Okta manages the group, a **Push Now** can replace the target app's membership with Okta's membership. Check the connector documentation for its behavior. For Active Directory, Okta documents that **Push Now** sends the newest members and keeps existing memberships.
 
     ## What to check when the group is empty
 
@@ -56,7 +56,7 @@
 
         **2. Make one controlled membership change.** In **Directory → Groups**, remove the test user from **LAB-SCIM-Push-Members**. Compare Okta's empty group with the target group, where the member is still present while synchronization is paused. Check that the test user still appears on the app's **Assignments** tab through **LAB-SCIM-App-Users**.
 
-        **3. Resume and reconcile.** Return to **Push Groups**, activate the push again, and check the target group. If it still shows the old member, use **Push Now** for this dedicated test group and verify that the membership is removed. If an error appears, open **Errors** and read **Push Status** before retrying. Confirm that the app account remains active.
+        **3. Resume and reconcile.** Return to **Push Groups**, activate the push again, and check the target group. If it still shows the old member, confirm the intended membership on the Okta group before selecting **Push Now**. On this app, membership maintained directly in the target can be overwritten. Use **Push Now** for this dedicated test group and verify that the membership is removed. If an error appears, open **Errors** and read **Push Status** before retrying. Confirm that the app account remains active.
 
         **4. Remove the assignment last.** Once the target membership is gone, remove the test user from **LAB-SCIM-App-Users**. Verify the assignment is gone and the receiving account is inactive if **Deactivate Users** is enabled. Compare the two outcomes. One action removed group membership inside the app. The other removed the app assignment and initiated deprovisioning.
 
