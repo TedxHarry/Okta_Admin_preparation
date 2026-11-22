@@ -20,6 +20,7 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 3. [Suspend, deactivate, and restore a user](week-02-directory-and-lifecycle/lessons/03-user-account-lifecycle.md)
 4. [Profile sourcing and source priority](week-02-directory-and-lifecycle/lessons/04-profile-sourcing-and-source-priority.md)
 5. [Application provisioning](week-02-directory-and-lifecycle/lessons/05-application-provisioning.md)
+6. [Group Push](week-02-directory-and-lifecycle/lessons/06-group-push.md)
 
 ## Course outline
 
