@@ -1,0 +1,82 @@
+/* Lesson lab tabs are nested inside the Hands-on Lab pane. Capstones use top-level tabs. */
+@media screen {
+  .md-typeset .tabbed-content .tabbed-set,
+  .md-typeset:has(> h1[id*="capstone"]) > .tabbed-set {
+    > .tabbed-labels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, max(9rem, calc((100% - 0.8rem) / 3))), 1fr));
+      gap: 0.4rem;
+      max-width: 100%;
+      margin: 0 0 0.8rem;
+      padding: 0;
+      overflow: visible;
+      box-shadow: none;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+
+      > label {
+        width: auto;
+        min-width: 0;
+        min-height: 2.65rem;
+        margin: 0;
+        padding: 0.55rem 0.65rem;
+        line-height: 1.35;
+        color: var(--md-default-fg-color--light);
+        white-space: normal;
+        overflow-wrap: anywhere;
+        border: 1px solid var(--md-default-fg-color--lightest);
+        border-radius: 0.45rem;
+
+        &:hover {
+          color: var(--md-default-fg-color);
+          border-color: var(--md-accent-fg-color);
+        }
+      }
+
+      &.tabbed-labels--linked > label {
+        display: flex;
+        padding: 0;
+
+        > a {
+          display: flex;
+          flex: 1;
+          align-items: center;
+          min-width: 0;
+          padding: 0.55rem 0.65rem;
+        }
+      }
+    }
+
+    > .tabbed-control {
+      display: none;
+    }
+
+    > input:nth-child(1):checked ~ .tabbed-labels > label:nth-child(1),
+    > input:nth-child(2):checked ~ .tabbed-labels > label:nth-child(2),
+    > input:nth-child(3):checked ~ .tabbed-labels > label:nth-child(3),
+    > input:nth-child(4):checked ~ .tabbed-labels > label:nth-child(4),
+    > input:nth-child(5):checked ~ .tabbed-labels > label:nth-child(5),
+    > input:nth-child(6):checked ~ .tabbed-labels > label:nth-child(6),
+    > input:nth-child(7):checked ~ .tabbed-labels > label:nth-child(7),
+    > input:nth-child(8):checked ~ .tabbed-labels > label:nth-child(8),
+    > input:nth-child(9):checked ~ .tabbed-labels > label:nth-child(9),
+    > input:nth-child(10):checked ~ .tabbed-labels > label:nth-child(10),
+    > input:nth-child(11):checked ~ .tabbed-labels > label:nth-child(11),
+    > input:nth-child(12):checked ~ .tabbed-labels > label:nth-child(12),
+    > input:nth-child(13):checked ~ .tabbed-labels > label:nth-child(13),
+    > input:nth-child(14):checked ~ .tabbed-labels > label:nth-child(14),
+    > input:nth-child(15):checked ~ .tabbed-labels > label:nth-child(15),
+    > input:nth-child(16):checked ~ .tabbed-labels > label:nth-child(16),
+    > input:nth-child(17):checked ~ .tabbed-labels > label:nth-child(17),
+    > input:nth-child(18):checked ~ .tabbed-labels > label:nth-child(18),
+    > input:nth-child(19):checked ~ .tabbed-labels > label:nth-child(19),
+    > input:nth-child(20):checked ~ .tabbed-labels > label:nth-child(20) {
+      color: var(--md-default-fg-color);
+      background: var(--md-accent-fg-color--transparent);
+      border-color: var(--md-accent-fg-color);
+    }
+  }
+}
