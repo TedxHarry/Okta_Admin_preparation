@@ -1,0 +1,42 @@
+.md-header__inner button.course-sidebar-toggle {
+  display: none;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-header__inner button.course-sidebar-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    min-width: 5.1rem;
+    min-height: 1.75rem;
+    margin-inline: .4rem .15rem;
+    padding: 0 .6rem;
+    border: 1px solid #f4d99b;
+    border-radius: .25rem;
+    background: #f4d99b;
+    color: #172033;
+    font-size: .7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .md-header__inner button.course-sidebar-toggle:hover {
+    background: #fff0c9;
+  }
+
+  .md-header__inner button.course-sidebar-toggle:focus-visible {
+    outline: 2px solid #fff8ea;
+    outline-offset: 3px;
+  }
+
+  body.course-nav-collapsed .md-sidebar--primary {
+    display: none !important;
+  }
+
+  body.course-nav-collapsed .md-content__inner {
+    max-width: 1160px !important;
+  }
+}

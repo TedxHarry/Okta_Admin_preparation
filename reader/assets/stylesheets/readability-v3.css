@@ -125,51 +125,12 @@ body {
     max-width: 1040px;
     margin-inline: auto;
   }
-
-  body.course-nav-collapsed .md-sidebar--primary {
-    display: none !important;
-  }
-
-  body.course-nav-collapsed .md-content__inner {
-    max-width: 1160px !important;
-  }
 }
 
 /* Course navigation toggle */
 .course-nav-toggle,
 .sidebar-toggle-button {
   display: none !important;
-}
-
-.course-sidebar-toggle {
-  display: none;
-}
-
-@media screen and (min-width: 76.25em) {
-  .course-sidebar-toggle {
-    display: inline-flex;
-    align-items: center;
-    flex: none;
-    min-height: 1.65rem;
-    margin-inline: .35rem .1rem;
-    padding-inline: .5rem;
-    border: 1px solid currentColor;
-    border-radius: .25rem;
-    color: inherit;
-    font-size: .65rem;
-    font-weight: 700;
-    white-space: nowrap;
-    cursor: pointer;
-  }
-
-  .course-sidebar-toggle:hover {
-    background: color-mix(in srgb, currentColor 10%, transparent);
-  }
-
-  .course-sidebar-toggle:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
-  }
 }
 
 /* Diagram shell */
