@@ -64,12 +64,17 @@
 
     ## How one group can add a user to two other groups
 
-    Look at the rule from the lab. It asks one question about the test user.
+    In this lab, you create three separate Okta groups under **Directory → Groups**.
+
+    - `LAB-Rule-Source` is the group you add the test user to yourself.
+    - `LAB-Rule-Target-A` and `LAB-Rule-Target-B` are two groups you leave empty at first. Okta adds the test user to them when the rule matches.
+
+    The rule asks one question about the test user.
 
     - **If** this user belongs to `LAB-Rule-Source`
     - **Then** add that user to `LAB-Rule-Target-A` and `LAB-Rule-Target-B`
 
-    Start by adding your test user to `LAB-Rule-Source`. That's the **source group** because it's the group Okta checks. When the active rule sees the user there, it adds the user to both **target groups**. Those are the two groups you selected under **Then Assign to**. Open the **People** tab in each group. You should see the same user listed in all three groups.
+    `LAB-Rule-Source` is called the **source group** because it's the group Okta checks. When the active rule sees the user there, it adds the user to both **target groups**. Those are the two groups you selected under **Then Assign to**. Open the **People** tab in each group. You should see the same user listed in all three groups.
 
     Now remove that user from `LAB-Rule-Source`. Okta checks the rule again and sees that the user no longer meets the **If** condition. In this lab, the rule was the only reason the user belonged to either target group. After Okta processes the change, the user should disappear from both target groups' **People** tabs.
 
