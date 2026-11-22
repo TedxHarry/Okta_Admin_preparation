@@ -27,7 +27,7 @@
 
     **Preview** evaluates your proposed mapping with a user you select. Read the resulting value as well as the color. Okta can mark a mapping green even when the source supplies no value. Red indicates an invalid mapping. An empty mapping column means the destination has no mapping.
 
-    **Save Mappings** keeps the rule. **Apply updates now** applies the saved mapping to existing assignments as applicable. **Provisioning** is a separate capability through which Okta can create or update an account in a connected application. To verify a real downstream update, you need a configured connection and evidence from the receiving system. In this lab the evidence ends at the app profile inside Okta. Week 3 will use a SAML attribute statement to put a value into a sign-in message.
+    **Save Mappings** keeps the rule. **Apply updates now** applies the saved mapping to existing assignments as applicable. **Provisioning** is a separate capability through which Okta can create or update an account in a connected application. To verify a real downstream update, you need a configured connection and evidence from the receiving system. In this lab the evidence ends at the app profile inside Okta. **SAML** is a standard that lets Okta send sign-in information to an app. In Week 3 you will use a **SAML attribute statement** to tell Okta what name and value to include in that message.
 
     **Check if a later profile edit should run the mapping.** Where the integration exposes mapping timing, **Apply mapping on user create only** uses the mapping on creation. **Apply mapping on user create and update** also uses it for profile changes. If a value is correct in Preview but stale on an existing assignment, check this setting before rewriting the expression. Profile Push can send the full app-user profile when it sends an update, so mapping timing and the fields included in a request answer different questions. [Okta · Profile Push](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-about-selective-profile-push.htm)
 
@@ -39,7 +39,7 @@
 
 === "Hands-on Lab"
 
-    Use your Integrator org, an administrator who can manage integrations and profile mappings, and the two test users from [Lesson 1](01-universal-directory-and-profile-attributes.md). Work through the two tabs in order. The first gives you a private practice integration with a destination field. The second lets you see what the mapping produces and what an assignment stores.
+    Use your Integrator org, an administrator who can manage integrations and profile mappings, and the two test users from [Lesson 1](01-universal-directory-and-profile-attributes.md). Work through the two tabs in order. First create `LAB-Profile-Mappings`, an Okta app integration for mapping practice. Add **Cost Center Code** (`costCenterCode`) as the field that will receive the value from **Lab Cost Center** (`labCostCenter`) on the Okta user. The setup uses the SAML wizard to create the integration. Its sign-in address and app identifier are placeholders here. In the second tab you will preview the result and check what Okta stores when you assign a user.
 
     === "1. Prepare the two profiles"
 

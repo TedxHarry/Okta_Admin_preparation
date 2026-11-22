@@ -18,7 +18,7 @@
 
     ## Follow the two connections
 
-    The Windows service starts an **outbound HTTPS connection** to Okta. Outbound means the agent starts the connection from your network. HTTPS protects the data on that connection. Okta uses TCP port 443 for this web traffic. A **port** identifies which network service should receive a connection. The agent host also needs **DNS**, which lets it find the domain controller by name, and a network path to reach that server. If the agent is on a member server or in a segmented network, check those two paths independently. Okta documents additional AD-side ports for a DMZ deployment.
+    The Windows service starts an **outbound HTTPS connection** to Okta. Outbound means the agent starts the connection from your network. HTTPS protects the data on that connection. Okta uses TCP port 443 for this web traffic. **TCP** is a network protocol the agent uses to open a connection. A **port** identifies which network service should receive a connection. The agent host also needs **DNS**, which lets it find the domain controller by name, and a network path to reach that server. If the agent is on a member server or in a segmented network, check those two paths independently. Okta documents additional AD-side ports for a DMZ deployment.
 
     During a directory import, the agent reads AD data so Okta can process it. With delegated authentication enabled, the agent can also help AD validate a user's password when they sign in to Okta. An agent showing healthy establishes that the integration is communicating. The Import tab and a delegated sign-in test provide evidence for those individual operations.
 
@@ -34,7 +34,7 @@
 
     ## Choose where the agent runs
 
-    Okta supports physical or virtual Windows Server hosts and recommends a domain-joined **member server**. In an isolated VMware lab, the supported domain controller VM can also host the agent. That gives you a working single-host setup for the first import. For agent high availability, use separate hosts in the domain and keep their agent versions aligned. A single VM cannot demonstrate that another host takes over if it goes down.
+    Okta supports physical or virtual Windows Server hosts and recommends a domain-joined **member server**. In an isolated VMware lab, the supported Windows Server virtual machine (VM) that runs your domain controller can also host the agent. That gives you a working single-host setup for the first import. For agent high availability, use separate hosts in the domain and keep their agent versions aligned. A single VM cannot demonstrate that another host takes over if it goes down.
 
     ## Official reading
 
@@ -51,11 +51,11 @@
 
     === "1. Prepare the lab and install the agent"
 
-        **1. Prepare a test OU.** On your VMware lab server, open **Active Directory Users and Computers**. Under the lab domain, create the OU `Okta-Lab`. Inside it, create a standard test user named `okta-lab-import` and a security group named `Okta-Lab-Users`. Add the user to the group. Open the user's **Account** tab and note the full user principal name (UPN). Use your lab domain's actual suffix.
+        **1. Prepare a test OU.** On your VMware lab server, open **Active Directory Users and Computers**. Under the lab domain, create the OU `Okta-Lab`. Inside it, create a standard test user named `okta-lab-import` and a security group named `Okta-Lab-Users`. Add the user to the group. Open the user's **Account** tab and note the full **user principal name (UPN)**. This is the AD sign-in name in a format such as `okta-lab-import@example.test`. Copy the actual value shown for your lab user.
 
         **2. Confirm both network paths.** From the agent host, open your Okta org in the browser. Then check the path from the agent host to the domain controller. **DNS resolution** looks up the controller's name to find its address. A **port check** asks whether the host can open a connection to a specific service at that address.
 
-        In PowerShell on the agent host, substitute your lab controller's full DNS name in the commands below. This example checks the standard LDAP TCP port. Use the port your lab is configured to use if it differs.
+        In PowerShell on the agent host, substitute your lab controller's full DNS name in the commands below. The second command checks whether the agent host can connect to the standard **LDAP** port. LDAP stands for Lightweight Directory Access Protocol. Software uses it to read information from a directory. Use the port your lab is configured to use if it differs.
 
         ```powershell
         Resolve-DnsName -Name "dc01.lab.example"

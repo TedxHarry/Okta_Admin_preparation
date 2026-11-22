@@ -6,7 +6,7 @@ An Okta-managed test user needs access while their Department is `Lab-W2-Finance
 
 - Use a dedicated test user you are allowed to suspend and deactivate. You need an email address you control if the test user goes through email activation.
 - Use a new Okta group named `LAB-W2-Finance-Access` and an unprivileged test integration. For the Okta-only path, use a dedicated bookmark for assignment checks and the app profile from [Week 2, Lesson 2](../lessons/02-profile-mappings.md) for mapping checks. A bookmark gives you a dashboard result to inspect.
-- Use the optional string `labCostCenter` from [Week 2, Lesson 1](../lessons/01-universal-directory-and-profile-attributes.md). Restrict the rule to the lab Department and keep other access paths out of this exercise.
+- Use **Lab Cost Center**, the optional text field on the Okta user profile whose variable name is `labCostCenter`, from [Week 2, Lesson 1](../lessons/01-universal-directory-and-profile-attributes.md). Restrict the rule to the lab Department and keep other access paths out of this exercise.
 - The extensions require the supported test targets or Workflows permissions listed in their lessons.
 
 === "1. Establish access and trace the profile"
@@ -30,7 +30,7 @@ An Okta-managed test user needs access while their Department is `Lab-W2-Finance
     1. With a supported test application, configure the outbound mapping for an available test attribute and enable the supported create, update, and deactivate actions. Give this user an app assignment and record the receiving account ID. Verify an update on the same ID using [Application provisioning](../lessons/05-application-provisioning.md).
     2. If the target supports **Group Push**, use a separate push group and show the user's downstream membership. Remove the user from that push group first and verify the receiving group's membership. Use [Group Push](../lessons/06-group-push.md).
     3. Remove the user's app assignment. Verify the receiving account becomes inactive and record the target ID and state in your notes.
-    4. If you have **Workflows**, run a separate test activation for an eligible user and a control user using [the lifecycle flow](../lessons/07-okta-workflows.md). Show which user reached the group action and which did not. Use a lab group without app or admin grants.
+    4. If you have **Workflows**, run a separate test activation for one user who meets the flow's Department condition and a **control user** whose Department does not match using [the lifecycle flow](../lessons/07-okta-workflows.md). Show which user reached the group action and which did not. Use a lab group without app or admin grants.
 
 ## Explain your result
 

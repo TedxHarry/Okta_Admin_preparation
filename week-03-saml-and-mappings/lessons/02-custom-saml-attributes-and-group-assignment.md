@@ -47,7 +47,7 @@
 
 === "Hands-on Lab"
 
-    Use the two active Okta-managed test users from earlier lessons. For the full lab, prepare a test SAML SP you administer that lets you inspect received user attributes or map them into an app profile. Use a fresh custom SAML app instance so the control user can be tested without another assignment path. With Okta alone, you can create the group, test assignment, and preview the mapping. Real assertion delivery and SP-side verification require the receiving app.
+    Use the two active Okta-managed test users from earlier lessons. You will create `LAB-SAML-Finance`, the Okta group that grants access, and `LAB-SAML-Cost-Center`, the Okta SAML integration that sends the sign-in message. One user will match the Department condition in the group rule. The second is the control user, who should stay outside the group. For the full lab, prepare a test SAML SP you administer that lets you inspect received user attributes or map them into an app profile. Use a fresh custom SAML app instance so the control user can be tested without another assignment path. With Okta alone, you can create the group, test assignment, and preview the mapping. Real assertion delivery and SP-side verification require the receiving app.
 
     === "1. Prepare the group and the custom app"
 

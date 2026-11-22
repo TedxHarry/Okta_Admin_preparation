@@ -2,9 +2,9 @@
 
 === "Theory"
 
-    An Okta **org** is one environment. It holds the users, groups, app integrations, and policies you work with. Your Integrator org has its own records and settings. A Workforce trial has its own records and settings too. If you open the trial and search for a user you created in your Integrator org, that user record will still be in the Integrator org. The org you open determines which data and settings you see.
+    An Okta **org** is one environment. It holds the users, groups, app integrations, and policies you work with. The **Integrator Free Plan** gives you an Okta org you can use for practice. A **Workforce trial** is another practice environment if you sign up for one. Each has its own records and settings. If you open the trial and search for a user you created in your Integrator org, that user record will still be in the Integrator org. The org you open determines which data and settings you see.
 
-    That makes the org name and hostname the first things to check before you investigate an issue or change a setting. Okta's standard Admin Console hostname includes `-admin`. The org hostname and its corresponding admin hostname can lead to different views of the same environment. The **Admin Console** is where you manage the org. The **End-User Dashboard** shows app tiles for the signed-in user.
+    Before you investigate a problem or change a setting, check the org name and the **hostname** in your browser. The hostname is the part of the web address after `https://` and before the next slash. Okta's standard Admin Console hostname includes `-admin`. The org hostname and its corresponding admin hostname can lead to different views of the same environment. The **Admin Console** is where you manage the org. The **End-User Dashboard** shows app tiles for the signed-in user.
 
     ## What Okta knows about a user
 

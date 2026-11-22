@@ -46,7 +46,7 @@
 
 === "Hands-on Lab"
 
-    Use a fresh Okta-managed test user and a test app instance you control. For the lab below, you need a reachable HTTPS SCIM 2.0 endpoint with header authentication, permission to enable provisioning in Okta, and a way to read the target's user records or provisioning audit log. The catalog integration is the Okta connector. Your endpoint is where the user records live. If you use an existing provisioning-enabled test app, follow its documented connection settings and use the same create, update, and deactivate steps.
+    Use a fresh Okta-managed test user and a test app instance you control. For the lab below, you need a reachable HTTPS SCIM 2.0 endpoint with header authentication, permission to enable provisioning in Okta, and a way to read the target's user records or provisioning audit log. You will name the Okta catalog integration `LAB-SCIM-Lifecycle`. It is the connector that sends requests. The SCIM endpoint is the address of the receiving service, where the user records live. If you use an existing provisioning-enabled test app, follow its documented connection settings and use the same create, update, and deactivate steps.
 
     === "1. Connect the test application"
 

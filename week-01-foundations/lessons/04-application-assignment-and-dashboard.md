@@ -46,7 +46,7 @@
 
         ### 1. Check the two test users
 
-        Use the Integrator org, the two active test users from Lesson 2, and the `LAB-Finance` group and active rule from Lesson 3. Use an account with permission to create and assign a Bookmark App. Okta documents **Super Admin** or **App Admin** for that part of the lab. You also need permission to edit your two test profiles for the mover test.
+        Use the Integrator org, the two active test users from Lesson 2, and the `LAB-Finance` group and `LAB-Finance-by-Department` rule from Lesson 3. The rule puts matching users into `LAB-Finance`. In this lab you will create `LAB-Assignment-Bookmark`, a Bookmark App integration that opens `https://example.com/`, and assign it to that group. Use an account with permission to create and assign a Bookmark App. Okta documents **Super Admin** or **App Admin** for that part of the lab. You also need permission to edit your two test profiles for the mover test.
 
         Open **Directory → Groups**, select `LAB-Finance`, and check **People**. The first user should be a member, with Department set to `Lab-Finance`. The second should be outside the group, with Department set to `Lab-Operations`. Keep the Admin Console and test-user sign-ins in separate browser profiles. An incognito window is another option if you close all incognito windows between test users.
 

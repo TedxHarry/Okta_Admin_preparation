@@ -1,11 +1,11 @@
 # Week 1 capstone · Finance joiner and mover
 
-Use your Integrator org to onboard a new Finance test user, verify a group-based app assignment, and handle a move to Operations. Then explain the result using the current configuration and System Log evidence. Work from the requirements before opening the hints.
+Use your Integrator org to give a new Finance test user their first app access, then handle their move to Operations. A **joiner** is someone who needs their initial access. A **mover** is someone who needs their access adjusted because their role or department changed. Then explain the result using the current configuration and System Log evidence. Work from the requirements before opening the hints.
 
 ## Starting state
 
 - Complete [users and activation](../lessons/02-users-profiles-and-activation.md), [groups and rules](../lessons/03-groups-and-membership-rules.md), [app assignment](../lessons/04-application-assignment-and-dashboard.md), and the [System Log lab](../lessons/05-system-log-and-access-investigations.md).
-- Confirm `LAB-Finance-by-Department` is active and assigns users with Department `Lab-Finance` to `LAB-Finance`. The `LAB-Assignment-Bookmark` integration should be assigned to that group.
+- Confirm `LAB-Finance-by-Department` is active and assigns users with Department `Lab-Finance` to `LAB-Finance`. `LAB-Finance` is the Okta group the rule adds users to. `LAB-Assignment-Bookmark` is the practice bookmark app from Lesson 4. It should be assigned to that group.
 - Use a new test account in your lab org and an email address you control. Keep the Admin Console and the test user's dashboard in separate browser sessions. Use an administrator account that can manage test users and read the System Log.
 - Leave the working rule and app assignment in place. Use the new test user for all changes in this exercise.
 

@@ -50,7 +50,7 @@
 
         ### 1. Prepare the test sessions
 
-        Use the two active users, the `LAB-Finance` group and active rule, and the `LAB-Assignment-Bookmark` integration from Lessons 2–4. Confirm that the first user's Department is `Lab-Finance`, the second user's is `Lab-Operations`, and the bookmark is assigned to `LAB-Finance` without an individual assignment for either user. Use an admin account with access to the System Log.
+        Use the two active users from Lesson 2 and the Finance setup from Lessons 3 and 4. `LAB-Finance` is the group, `LAB-Finance-by-Department` is the rule that adds matching users to it, and `LAB-Assignment-Bookmark` is the bookmark app assigned to it. Confirm that the first user's Department is `Lab-Finance`, the second user's is `Lab-Operations`, and the bookmark is assigned to `LAB-Finance` without an individual assignment for either user. Use an admin account with access to the System Log.
 
         Keep your Admin Console open. Use a different browser profile or a fresh private window for the test-user session.
 

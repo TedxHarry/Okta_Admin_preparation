@@ -38,7 +38,9 @@
 
 === "Hands-on Lab"
 
-    Use the test user and SCIM integration from [Lesson 5](05-application-provisioning.md) if the target supports SCIM group creation and membership updates. You need a **Push Groups** tab in Okta and read access to the target's groups and user records. Start after the Lesson 5 direct assignment has been removed. If you use another test connector, verify its Group Push support and use its documented provisioning settings.
+    Use the test user and SCIM integration from [Lesson 5](05-application-provisioning.md) if the target supports SCIM group creation and membership updates. You need a **Push Groups** tab in Okta and read access to the target's groups and user records. Start after you remove the user's direct assignment from `LAB-SCIM-Lifecycle`, the Okta connector created in Lesson 5. If you use another test connector, verify its Group Push support and use its documented provisioning settings.
+
+    You will create two Okta groups. `LAB-SCIM-App-Users` assigns the integration so the user can have an account in the receiving app. `LAB-SCIM-Push-Members` controls who belongs to a separate group inside the receiving app. You will add the same test user to both so you can see which change affects the account and which affects group membership.
 
     === "1. Assign the app and push a group"
 

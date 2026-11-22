@@ -6,7 +6,7 @@
 
     ## Who sends the message, and who reads it?
 
-    **SAML** stands for Security Assertion Markup Language. It defines messages in XML that an identity system and an application can exchange for single sign-on. Okta is the **identity provider (IdP)** in this lesson. The receiving app is the **service provider (SP)**.
+    **SAML** stands for Security Assertion Markup Language. It defines messages an identity system and an application can exchange for **single sign-on (SSO)**. In this setup the user signs in through Okta, and the app uses Okta's message to decide whether to open its session. SAML messages use **XML**, a text format that labels each part with tags. Okta is the **identity provider (IdP)** in this lesson. The receiving app is the **service provider (SP)**.
 
     The **SAML Response** is the message that travels back to the SP. An **assertion** inside the response carries claims about the user. It can tell the app who the user is, how and when the user authenticated, and which additional values the app should receive. The app uses its configuration to interpret those values.
 
@@ -30,7 +30,7 @@
     ## Follow one response from the browser to the app
 
     1. **Okta builds the response.** The assertion identifies the user and names the app it is intended for. Okta signs the response or assertion according to the SAML settings.
-    2. **The browser delivers it.** In the HTTP POST flow used in this lab, the browser submits a form field named `SAMLResponse` to the ACS. A SAML tracer can decode that field so you can read the XML. The ACS is the address the browser posts to. The Audience is a value *inside* the assertion that identifies the intended SP.
+    2. **The browser delivers it.** In this lab the browser sends a web form to the app's ACS address. This kind of request is called an **HTTP POST**. The SAML response travels in the form field named `SAMLResponse`. A SAML tracer can decode that field so you can read the XML. The ACS is the address the browser posts to. The Audience is a value *inside* the assertion that identifies the intended SP.
     3. **The SP validates the message.** The SP uses the configured public certificate to verify the signature and check for changes to the signed content. It checks that the issuer is its configured IdP and that the response is intended for this app. It also checks whether the assertion is valid at the time it arrives. An SP-initiated flow can check that the response corresponds to the request the app started.
     4. **The SP matches the user.** The SP reads the subject identifier and uses its matching configuration to find the app-side user. For example, if the SP expects a full login like `alex@example.test` and receives only `alex` in NameID, the message can pass signature validation and still fail account matching. Check the application username sent by Okta and the value the SP has for that user.
 

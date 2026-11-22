@@ -27,7 +27,7 @@
     | **Activate now**, with the user setting up their own credentials | Okta starts activation when you save. When the user still has to complete email verification or password setup, the console shows **Pending user action**. | The user follows the activation message and completes the required setup. |
     | **Activate now**, with the administrator setting the password | Okta can show **Active** immediately under the documented conditions. | Depending on the settings and policy, the user can still be asked to change the password or enroll an authenticator. |
 
-    **Staged** means that the account exists and is awaiting activation or an administrator action. **Pending user action** means the next required setup step belongs to the user. You may see this same pending state called `PROVISIONED` in the Okta API. Here it is an account status.
+    **Staged** means that the account exists and is awaiting activation or an administrator action. **Pending user action** means the next required setup step belongs to the user. Programs can read Okta records through the **Okta API**, an interface for sending requests to Okta. In those records, `PROVISIONED` is the status code for **Pending user action**. It tells you the Okta account is waiting for the user to finish setup.
 
     **Active** is an account state. When the user actually signs in, Okta still checks the applicable authentication requirements. An **authenticator** is a method the user can use to prove their identity, such as a password or Okta Verify. The user also needs an assignment to receive a particular app integration.
 

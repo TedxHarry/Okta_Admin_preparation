@@ -1,11 +1,11 @@
 # Week 3 capstone · Deliver a custom SAML integration
 
-A test application needs SSO for users whose Department is `Lab-SAML-Capstone`. The app also needs a cost-center value under the name `cost_center`. Build the integration from these requirements. Use the users and concepts from earlier lessons, and show your evidence from Okta through to the receiving app.
+A test application needs single sign-on (SSO) for users whose Department is `Lab-SAML-Capstone`. The app also needs a cost-center value under the name `cost_center`. Build the integration from these requirements. Use the users and concepts from earlier lessons, and show your evidence from Okta through to the receiving app.
 
 ## Starting state
 
 - Use an isolated Okta lab org, two active disposable users, and a SAML service provider you administer. It must let you inspect received attributes or expose the value in the app profile. Obtain its ACS URL, Entity ID, user matching requirements, and supported initiation flow.
-- Use a fresh Okta integration and a dedicated group called `LAB-SAML-Capstone-Users`. Give the first user Department `Lab-SAML-Capstone` and the second `Lab-SAML-Control`. Record their previous Department values.
+- Create `LAB-SAML-Capstone` as the Okta SAML integration for the test app. Create `LAB-SAML-Capstone-Users` as the Okta group that grants the integration. Give the first user Department `Lab-SAML-Capstone` so they match the rule. Give the second user Department `Lab-SAML-Control` so you can test a user outside the rule. Record their previous Department values.
 - The first user should have cost-center value `CAP-3100`, and the control user should have `CAP-3200`. Add a new optional string attribute named `capstoneCostCenter` on the Okta user profile so this run tests creating a field independently.
 - With Okta alone, complete the configuration and mapping preview using [Lesson 1's preview setup](../lessons/01-saml-sign-in.md). Use a real test SP for sign-in and app verification.
 

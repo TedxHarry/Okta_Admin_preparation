@@ -6,11 +6,11 @@
 
     ## Read the flow from left to right
 
-    A flow consists of **cards**. An **event card** starts the flow and provides information about what happened. An **action card** reads or changes something in a connected system. A **function card** works with the data inside the flow. You connect cards by mapping outputs from earlier cards into inputs on later cards.
+    A flow consists of **cards**. An **event card** starts the flow and provides information about what happened. An **action card** reads or changes something in a connected system. A **function card** works with the data inside the flow. An **output** is a value a card produces. An **input** is a value a card needs. When you connect an earlier card's output to a later card's input, the later card can use the result.
 
     | Card | What it receives | What it does |
     | --- | --- | --- |
-    | **Okta → User Activated** | Activation event from Okta | Supplies the ID of the user involved in the event. |
+    | **Okta → User Activated** | Activation event from Okta | Supplies the user ID, the unique value Okta uses to identify the account involved in the event. |
     | **Okta → Read User** | The activated user's ID | Reads the Okta profile, including Department. |
     | **Branching → Continue If** | Department and the lab's expected value | Continues if the values match. Ends this run if the condition is false. |
     | **Okta → Add User to Group** | The user ID and a specific group ID | Adds that user to the lab group. |
@@ -48,11 +48,11 @@
 
 === "Hands-on Lab"
 
-    Use the Integrator org with access to the **Workflows Console**, a free flow slot, and permission to create an Okta connector connection and manage the test group. This lab uses **two disposable Okta users and one empty group**. Leave the group unassigned to apps and admin roles.
+    Use the Integrator org with access to the **Workflows Console**, a free flow slot, and permission to create an Okta connector connection and manage the test group. You will create one flow named `LAB-Activation-Group` and one Okta group named `LAB-Workflow-Activation`. The flow decides whether to add someone to the group when their account is activated. One test user will match the Department condition. The other is the **control user**, a test user who goes through the same activation with a Department that does not match. Leave the group unassigned to apps and admin roles.
 
     === "1. Build the flow"
 
-        **1. Prepare the test records.** In **Directory → Groups**, create `LAB-Workflow-Activation`. Open the group and copy its ID from the browser address bar. Following [Week 1, Lesson 2](../../week-01-foundations/lessons/02-users-profiles-and-activation.md), create two users with **Activate later**. In their profiles, set one Department to `Lab-Workflow-Onboarding` and the other to `Lab-Workflow-Control`. Verify both are staged. [Find the group ID in the Admin Console](https://support.okta.com/help/s/article/how-to-find-group-ids-through-the-okta-user-interface)
+        **1. Prepare the test records.** In **Directory → Groups**, create `LAB-Workflow-Activation`. Open the group and copy its ID from the browser address bar. The **ID** is the unique value Okta uses to identify that group. You will give it to the flow so the membership action knows which group to update. Following [Week 1, Lesson 2](../../week-01-foundations/lessons/02-users-profiles-and-activation.md), create two users with **Activate later**. In their profiles, set one Department to `Lab-Workflow-Onboarding` and the other to `Lab-Workflow-Control`. Verify both are staged. [Find the group ID in the Admin Console](https://support.okta.com/help/s/article/how-to-find-group-ids-through-the-okta-user-interface)
 
         **2. Add the event and profile read.** In the Admin Console, open **Workflow → Workflows console**. Under **Flows**, open a folder and create a flow named `LAB-Activation-Group`. Add the Okta **User Activated** event and select or authorize an Okta connection for the lab org. Add the Okta **Read User** action. Map **Okta User → ID** to **ID or Login**. Expose **Department** in the action card's profile outputs if it is hidden.
 

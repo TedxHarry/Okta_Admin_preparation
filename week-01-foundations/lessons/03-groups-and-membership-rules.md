@@ -101,7 +101,7 @@
 
     === "1. Profiles and manual membership"
 
-        Use the Integrator org and the two **Active** test users from Lesson 2. All changes in this lab apply to those test users and the groups you create here. Complete the subtabs in order.
+        Use the Integrator org and the two **Active** test users from Lesson 2. All changes in this lab apply to those test users and the groups you create here. Keep track of which account you use first and which you use second. You will give them different Department values so you can see why the Finance rule includes one user and leaves the other outside. Complete the subtabs in order.
 
         ### 1. Set different Department values
 

@@ -8,13 +8,15 @@
 
     A **profile** contains values for one user. An **attribute** is a named field on that profile. A **schema** defines what fields a profile supports and what kind of values those fields accept. If you add a field to the default user schema, you make that field available on profiles of that user type. You still need to populate a value for each user who needs one, or configure another mechanism to populate it.
 
+    A **cost center** is a way an organization groups expenses for tracking. In this lesson you will store a short cost-center code on each test user's profile.
+
     | Question | Where to look |
     | --- | --- |
     | Does this user type have a field for the cost center? | **Directory → Profile Editor**, then open the Okta user profile definition. |
     | What value does this user have in that field? | **Directory → People → user → Profile**. |
     | How will this value reach the app? | Find the applicable profile mapping. An app can have its own profile and field definitions. |
 
-    A **base attribute** comes with the profile, such as First name. A **custom attribute** is a field you add because the profile needs to hold another piece of information. The lab uses a custom field called **Lab Cost Center** so you can practice on a clearly identifiable field.
+    A **base attribute** comes with the profile, such as First name. A **custom attribute** is a field you add because the profile needs to hold another piece of information. The lab uses a custom field called **Lab Cost Center**.
 
     ## Decide what the field should store
 

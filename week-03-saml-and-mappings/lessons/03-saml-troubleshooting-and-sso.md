@@ -2,11 +2,11 @@
 
 === "Theory"
 
-    A user says, “SSO is broken.” Start by finding the last thing that worked. Did Okta let the user launch the integration? Did the browser deliver a SAML response? Did the service provider accept it? Did the app match the expected account and read the required attributes? Each answer tells you which configuration to inspect next.
+    A user says, “SSO is broken.” **Single sign-on (SSO)** lets an app rely on a user's sign-in through an identity provider such as Okta. Start by finding the last thing that worked. Did Okta let the user launch the integration? Did the browser deliver a SAML response? Did the service provider accept it? Did the app match the expected account and read the required attributes? Each answer tells you which configuration to inspect next.
 
     ## Use three sources of evidence
 
-    Reproduce one sign-in with a test user in a clean browser session. Note the app instance and approximate time. Find the matching Okta System Log event, inspect the decoded SAML message if a response was sent, and check the service provider's result. Keep the trace within your lab because it can contain sign-in data and user information.
+    Reproduce one sign-in with a test user in a fresh private browser window, with any previous private windows closed. This starts the test without reusing a sign-in from another account. Note the app instance and approximate time. Find the matching Okta System Log event, inspect the decoded SAML message if a response was sent, and check the service provider's result. Keep the trace within your lab because it can contain sign-in data and user information.
 
     | Evidence | What it helps you establish | Next check |
     | --- | --- | --- |

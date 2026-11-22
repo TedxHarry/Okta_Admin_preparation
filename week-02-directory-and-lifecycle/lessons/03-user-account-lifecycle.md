@@ -26,7 +26,7 @@
 
     ## Where does Okta's evidence end?
 
-    The **Assignments** tab shows what Okta granted. A separate account inside a connected application has its own status. Removing access there depends on whether the integration supports and enables downstream deprovisioning. A bookmark simply opens a URL. It has no downstream account to disable. Likewise, an Okta session and a session maintained by another application are distinct. To investigate either, check the system that issued it.
+    The **Assignments** tab shows what Okta granted. A separate account inside a connected application has its own status. Disabling that separate account depends on whether the integration can send a deactivate request to the app and whether you enabled it. That kind of account change in the receiving app is called **downstream deprovisioning**. A bookmark simply opens a URL. It has no downstream account to disable. Likewise, an Okta session and a session maintained by another application are distinct. To investigate either, check the system that issued it.
 
     Two other actions answer different needs. **Unlock** addresses a sign-in lockout, such as exceeding a password-attempt limit. **Delete** permanently removes a previously deactivated user. If you need to reopen the same directory record later, leave it deactivated.
 
@@ -39,7 +39,7 @@
 
 === "Hands-on Lab"
 
-    Use a **new Okta-managed test user** with a mailbox you control. Keep the admin session in your normal browser and use a private window for the test user. You need permission to manage users and assign the Week 1 bookmark app. Work through both tabs with the same account.
+    Use a **new Okta-managed test user** with a mailbox you control. Keep the admin session in your normal browser and use a private window for the test user. You need permission to manage users and assign `LAB-Assignment-Bookmark`, the Week 1 Okta bookmark app that opens `https://example.com/`. Work through both tabs with the same account.
 
     === "1. Suspend and resume"
 

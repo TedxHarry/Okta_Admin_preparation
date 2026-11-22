@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    Open a user under **Directory → People → Profile**. The Department field shows one value. If it shows **Finance**, where did that value come from? The answer could be an edit in Okta, an import from Active Directory, or data from an HR system. The field label looks the same in each case. The **profile source** tells you which system Okta relies on for the user's profile.
+    Open a user under **Directory → People → Profile**. The Department field shows one value. If it shows **Finance**, where did that value come from? The answer could be an edit in Okta, an import from Active Directory (AD), or data from a human resources (HR) system that stores employee records. The field label looks the same in each case. The **profile source** tells you which system Okta relies on for the user's profile.
 
     ## How an external system becomes a source
 
@@ -52,7 +52,7 @@
 
 === "Hands-on Lab"
 
-    Start with the two Okta-managed users and **Lab Cost Center** from [Lesson 1](01-universal-directory-and-profile-attributes.md). The second tab requires two connected sources in an isolated org. In either tab, make changes only to course test records and fields.
+    Start with the two Okta-managed users and **Lab Cost Center** from [Lesson 1](01-universal-directory-and-profile-attributes.md). The second tab requires two connected source integrations in an isolated org. Each source has its own record for the same test person. Both records link to one Okta user. You will give those source records different cost-center values so you can see which source supplies the value Okta stores. In either tab, make changes only to course test records and fields.
 
     === "1. Trace an Okta-owned value"
 
