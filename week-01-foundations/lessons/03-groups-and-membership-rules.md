@@ -37,6 +37,17 @@
 
     Check **Directory → Groups → Rules** for the configuration. Check the group's **People** tab for the result. A saved condition and a current membership answer different questions.
 
+    ## Edit an active rule
+
+    In **Directory → Groups → Rules**, open **Actions** for the rule. An active rule offers **View** so you can inspect its condition. Okta only enables **Edit** while the rule is inactive. The status you see here belongs to the rule itself.
+
+    1. Select **Actions → Deactivate** and verify the rule shows **Inactive**.
+    2. Select **Actions → Edit**. Change the condition, exceptions, or target groups as needed, then **Save**.
+    3. Select **Actions → Activate** to run the saved rule again.
+    4. After Okta processes the change, open the target group's **People** tab. Check a user who should now qualify and one who should stay outside the group.
+
+    After you save and reactivate, Okta automatically updates group membership based on the edited settings. If a target group grants app access, also check its app assignments for the affected users. Use a dedicated lab group to practice the change. [Okta · Edit group rules](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-edit-group-rules.htm)
+
     ## Manual membership and rule-managed membership
 
     An administrator can select a user and add them to an Okta group. The group can show that membership as **Manually** managed. When a rule manages the membership, the group can show the rule responsible for it.
@@ -66,7 +77,6 @@
     - [Manage groups and group types](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-groups-main.htm)
     - [Create and activate group rules](https://help.okta.com/oie/en-us/content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
     - [Manual group user management](https://help.okta.com/oie/en-us/content/Topics/users-groups-profiles/usgp-group-users-manually.htm)
-    - [Edit Okta group rules](https://support.okta.com/help/s/article/How-To-Edit-Group-Rules?language=en_US)
     - [Okta Expression Language](https://developer.okta.com/docs/reference/okta-expression-language/)
 
 === "Hands-on Lab"
@@ -166,3 +176,12 @@
 
         1. Activate the disposable account and complete any required activation steps until **People** shows **Active**. Check the target group after the rule processes the change. If you still see only one member, check the staged user's current status and exact Department value. To trigger a profile update once the account is active, change Department to a temporary value, save, then restore `Lab-Rule-Status` and save again.
         2. Restore the second user's original Department. Clear the lab Department value on the disposable user, then verify that both users leave **LAB-Rule-Active-Only**. Each membership depends on the rule condition.
+
+    === "4. Edit and reactivate a rule"
+
+        ### 13. Change a rule condition and verify the result
+
+        1. Use the active `LAB-Finance-Expression` rule from Task 8. In **Rules**, open **Actions** and find **View** and **Deactivate**. Check that the rule targets the dedicated `LAB-Finance-Expression` group. The original Finance rule remains available for the next lesson.
+        2. Deactivate the expression rule and confirm **Inactive**. Choose **Actions → Edit** and change the condition to `user.department == "Lab-Operations"`. Keep the target group and the exception from Task 8. Save and activate.
+        3. After processing, check `LAB-Finance-Expression → People`. Expect the second test user, whose Department is `Lab-Operations`, to appear. The first test user should stay outside. Check the saved Department, rule status, target, and exceptions if the result differs.
+        4. Repeat the edit sequence to restore `user.department == "Lab-Finance"`. Save and activate. Verify the second user leaves the expression group and the first user's exception still applies. Check that the first user still belongs to the original `LAB-Finance` group.
