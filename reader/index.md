@@ -23,6 +23,10 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 6. [Group Push](week-02-directory-and-lifecycle/lessons/06-group-push.md)
 7. [Okta Workflows for lifecycle management](week-02-directory-and-lifecycle/lessons/07-okta-workflows.md)
 
+## Week 3 · SAML and attribute mappings
+
+1. [SAML sign-in with Okta](week-03-saml-and-mappings/lessons/01-saml-sign-in.md)
+
 ## Course outline
 
 | Week | Topic |

@@ -66,3 +66,6 @@ nav:
       - Lesson 5 · Application provisioning: week-02-directory-and-lifecycle/lessons/05-application-provisioning.md
       - Lesson 6 · Group Push: week-02-directory-and-lifecycle/lessons/06-group-push.md
       - Lesson 7 · Okta Workflows for lifecycle management: week-02-directory-and-lifecycle/lessons/07-okta-workflows.md
+
+  - Week 3 · SAML and attribute mappings:
+      - Lesson 1 · SAML sign-in with Okta: week-03-saml-and-mappings/lessons/01-saml-sign-in.md

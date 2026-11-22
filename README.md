@@ -34,6 +34,10 @@ Each week has a lessons folder for instruction and a labs folder for independent
 6. [Group Push](week-02-directory-and-lifecycle/lessons/06-group-push.md)
 7. [Okta Workflows for lifecycle management](week-02-directory-and-lifecycle/lessons/07-okta-workflows.md)
 
+## Week 3 · SAML and attribute mappings
+
+1. [SAML sign-in with Okta](week-03-saml-and-mappings/lessons/01-saml-sign-in.md)
+
 [Exam coverage and planned labs](reader/exam/coverage.md)
 
 [Official Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)
