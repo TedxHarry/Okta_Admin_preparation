@@ -18,6 +18,7 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 1. [Universal Directory and profile attributes](week-02-directory-and-lifecycle/lessons/01-universal-directory-and-profile-attributes.md)
 2. [Profile mappings](week-02-directory-and-lifecycle/lessons/02-profile-mappings.md)
 3. [Suspend, deactivate, and restore a user](week-02-directory-and-lifecycle/lessons/03-user-account-lifecycle.md)
+4. [Profile sourcing and source priority](week-02-directory-and-lifecycle/lessons/04-profile-sourcing-and-source-priority.md)
 
 ## Course outline
 
@@ -31,5 +32,7 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 | 6 | Device Assurance and FastPass |
 | 7 | Monitoring and troubleshooting |
 | 8 | Exam rehearsals |
+
+[Exam coverage and planned labs](exam/coverage.md)
 
 [Official Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)

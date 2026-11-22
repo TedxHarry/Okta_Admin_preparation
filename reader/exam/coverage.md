@@ -1,0 +1,40 @@
+# Administrator Performance Exam coverage
+
+Use this page to find the lesson and lab for each objective in the [official Performance Exam study guide](https://certification.okta.com/page/administrator-performance-exam-study-guide). The weights below are shown within each part of the guide. **Published** means the linked lesson or exercise is available. **Planned** marks practice that still needs to be built.
+
+## Part I · Active Directory Integration (47%)
+
+| Objective | Course coverage and practice |
+| --- | --- |
+| Delegated authentication with AD and LDAP | **Planned · Week 4.** Configure each integration and test delegated sign-in. Compare AD Just-in-Time (JIT) creation on first sign-in with onboarding through import. Inspect the user link, selected OUs, and sign-in evidence. |
+| AD and LDAP agent architecture and practices | **Planned · Week 4.** Install and register both types of agent in a test environment. Cover agent placement, domain boundaries, proxy and DMZ connectivity, versions, and agent health. On two Windows agent hosts, test AD availability when one agent goes offline. |
+| Service accounts and password-reset permissions | **Planned · Week 4.** Distinguish the installer, Okta registration account, and runtime service identity. Compare the directory permissions for reads, password reset, and provisioning writes. Test a reset with scoped permissions. |
+| Okta and AD password policies | **Planned · Week 4.** Follow authentication and password changes to the system that enforces the policy. Compare the result for an Okta-managed user and a delegated AD user. |
+| AD-sourced user activation | **Planned · Week 4.** Choose import scope, match a new and an existing user, and compare confirmation, activation, and email settings. Run manual imports and compare full, incremental, and scheduled behavior. Inspect import safeguards and use a fresh account to test JIT eligibility. |
+| AD groups and Okta groups | **Published foundation · [Groups and membership rules](../week-01-foundations/lessons/03-groups-and-membership-rules.md). Planned · Week 4.** Import an AD group and trace how a directory-side membership change affects app access in Okta. Compare with an Okta-managed group. |
+
+For the real AD lab, use a test domain, a Windows agent host, and an Okta org that supports the integration. The AD failover lab adds a second host. The LDAP lab needs a reachable test LDAP server. A course org by itself lets you study the configuration and investigate the evidence described in the lessons. [Okta's AD learning path](https://learning.okta.com/path/integrate-with-active-directory) · [AD integration prerequisites](https://help.okta.com/oie/en-us/Content/Topics/Directory/ad-agent-prerequisites.htm)
+
+## Part I · Profiles, Sourcing and Write-Back Concepts (53%)
+
+| Objective | Course coverage and practice |
+| --- | --- |
+| HR source, groups, and group rules | **Published foundation · [Groups and membership rules](../week-01-foundations/lessons/03-groups-and-membership-rules.md) and [Profile sourcing](../week-02-directory-and-lifecycle/lessons/04-profile-sourcing-and-source-priority.md).** Trace how a Department change becomes group membership and app access. A live external-source mover exercise is planned with the inbound integration labs. |
+| When profile sourcing applies | **Published · [Profile sourcing](../week-02-directory-and-lifecycle/lessons/04-profile-sourcing-and-source-priority.md).** Connect source ownership to matching, mapping, and lifecycle settings. |
+| Multiple profile sources | **Published · [Profile sourcing, lab tab 2](../week-02-directory-and-lifecycle/lessons/04-profile-sourcing-and-source-priority.md).** Compare two linked sources, change their order, and override a test field. Requires two working source integrations in an isolated org. |
+| Write-back to directories and apps | **Published foundation · [Profile mappings](../week-02-directory-and-lifecycle/lessons/02-profile-mappings.md). Planned · Weeks 2 and 4.** Configure outbound attribute updates and check the receiving app or directory. Use separate groups for app assignment and Group Push in a supported app. |
+| Lifecycle Management and writes to apps | **Published foundation · [Account lifecycle](../week-02-directory-and-lifecycle/lessons/03-user-account-lifecycle.md). Planned · Week 2.** Configure and verify downstream account creation, updates, and deprovisioning using an app that supports provisioning. Trace AD JIT in Week 4. |
+| Okta Workflows for lifecycle management | **Planned · Week 2.** Build a test lifecycle flow with a trigger, a condition, an action, and a run-history check. Compare its role with provisioning and group rules. |
+
+[Okta's Universal Directory learning path](https://learning.okta.com/path/manage-user-profiles-in-ud) · [Provision applications](https://help.okta.com/oie/en-us/Content/Topics/Apps/Provisioning_Deprovisioning_Overview.htm) · [Okta Workflows](https://help.okta.com/wf/en-us/Content/Topics/Workflows/workflows-main.htm)
+
+## Part II · Configuration use cases
+
+| Use case | What the guided lab must cover | Course status |
+| --- | --- | --- |
+| **Custom Application Integration (30%)** | Create a group and rule, use Okta Expression Language, build a custom SAML 2.0 integration, map Okta attributes to app attributes, create and map a custom attribute, assign the group, and verify a group member's data at the app. | **Published foundations · [Group rules](../week-01-foundations/lessons/03-groups-and-membership-rules.md), [app assignment](../week-01-foundations/lessons/04-application-assignment-and-dashboard.md), [custom attributes](../week-02-directory-and-lifecycle/lessons/01-universal-directory-and-profile-attributes.md), and [mappings](../week-02-directory-and-lifecycle/lessons/02-profile-mappings.md). Planned · Week 3** end-to-end SAML configuration and receiving-app verification. |
+| **Behavior Detection (30%)** | Enroll a test user in mobile Okta Verify. Configure a behavior detection rule for users in a group, edit the authentication policy's Catch-All Rule, and test the policy and behavior. Inspect the System Log to explain the result. | **Planned · Week 5.** |
+| **Device Assurance (20%)** | Create a mobile Device Assurance policy. Add a group-scoped rule to the Okta Dashboard authentication policy, require Okta FastPass with the assurance policy, and test the result. | **Planned · Week 6.** The [managed device and attestation path](https://learning.okta.com/path/optimize-device-security-and-management) provides additional practice when MDM is available. |
+| **Monitoring and Troubleshooting (20%)** | Filter for successful authentication attempts using specific factors. Reproduce a login issue, identify the cause, correct it, and test again. | **Published foundation · [System Log and access investigations](../week-01-foundations/lessons/05-system-log-and-access-investigations.md). Planned · Week 7** factor-specific searches and login recovery. |
+
+Week 8 will bring the four use cases together in a rehearsal. Use the [official study guide and practice exam links](https://certification.okta.com/page/administrator-performance-exam-study-guide) to review the exam format and check for changes.
