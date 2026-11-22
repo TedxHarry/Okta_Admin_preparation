@@ -156,21 +156,21 @@
   let active = null;
 
   function close() {
-    if (active) active.button.removeAttribute("aria-describedby");
+    if (active) active.term.removeAttribute("aria-describedby");
     active = null;
     tooltip.hidden = true;
   }
 
-  function show(button, input) {
+  function show(term, input) {
     close();
     if (!tooltip.isConnected) document.body.append(tooltip);
-    active = { button, ...input };
-    title.textContent = button.dataset.termName;
-    meaning.textContent = button.dataset.termMeaning;
-    button.setAttribute("aria-describedby", tooltip.id);
+    active = { term, ...input };
+    title.textContent = term.dataset.termName;
+    meaning.textContent = term.dataset.termMeaning;
+    term.setAttribute("aria-describedby", tooltip.id);
     tooltip.hidden = false;
 
-    const anchor = button.getBoundingClientRect();
+    const anchor = term.getBoundingClientRect();
     const box = tooltip.getBoundingClientRect();
     const left = Math.max(12, Math.min(anchor.left, document.documentElement.clientWidth - box.width - 12));
     const preferredTop = anchor.top >= box.height + 20 ? anchor.top - box.height - 8 : anchor.bottom + 8;
@@ -190,7 +190,7 @@
       const node = walker.currentNode;
       const parent = node.parentElement;
       const block = parent?.closest("p, li, td, dd");
-      if (!block || parent.closest("a, button, code, pre, script, style, nav, summary, label, kbd, svg")) continue;
+      if (!block || parent.closest("a, button, code, pre, script, style, nav, summary, label, kbd, svg, .course-term-help")) continue;
       nodes.push([node, block]);
     }
 
@@ -212,14 +212,15 @@
         if (!marked && !specific) continue;
 
         fragment.append(document.createTextNode(node.textContent.slice(end, match.index)));
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "course-term-help";
-        button.textContent = label;
-        button.setAttribute("aria-label", label + ". Hold to read its meaning.");
-        button.dataset.termName = entry.name;
-        button.dataset.termMeaning = entry.meaning;
-        fragment.append(button);
+        const term = document.createElement("span");
+        term.setAttribute("role", "button");
+        term.tabIndex = 0;
+        term.className = "course-term-help";
+        term.textContent = label;
+        term.setAttribute("aria-label", label + ". Hold to read its meaning.");
+        term.dataset.termName = entry.name;
+        term.dataset.termMeaning = entry.meaning;
+        fragment.append(term);
         end = match.index + label.length;
         blockTerms.add(entry.name);
         count++;
@@ -244,14 +245,9 @@
   const termAt = event => event.target.closest?.(".course-term-help");
 
   document.addEventListener("pointerdown", event => {
-    const button = termAt(event);
-    if (!button || event.button !== 0 || event.isPrimary === false) return;
-    show(button, { pointerId: event.pointerId });
-    try {
-      button.setPointerCapture(event.pointerId);
-    } catch {
-      // Window-level release still closes the definition.
-    }
+    const term = termAt(event);
+    if (!term || event.button !== 0 || event.isPrimary === false) return;
+    show(term, { pointerId: event.pointerId });
   });
 
   function releasePointer(event) {
@@ -261,8 +257,9 @@
   window.addEventListener("pointerup", releasePointer);
   window.addEventListener("pointercancel", releasePointer);
   document.addEventListener("lostpointercapture", releasePointer, true);
-  document.addEventListener("contextmenu", event => {
-    if (termAt(event)) event.preventDefault();
+  document.addEventListener("contextmenu", close);
+  document.addEventListener("selectionchange", () => {
+    if (active?.pointerId !== undefined && document.getSelection()?.isCollapsed === false) close();
   });
 
   document.addEventListener("keydown", event => {
@@ -270,10 +267,10 @@
       close();
       return;
     }
-    const button = termAt(event);
-    if (!button || ![" ", "Enter"].includes(event.key)) return;
+    const term = termAt(event);
+    if (!term || ![" ", "Enter"].includes(event.key)) return;
     event.preventDefault();
-    if (!event.repeat) show(button, { key: event.key });
+    if (!event.repeat) show(term, { key: event.key });
   });
 
   window.addEventListener("keyup", event => {
@@ -283,7 +280,7 @@
     }
   });
   document.addEventListener("focusout", event => {
-    if (event.target === active?.button) close();
+    if (event.target === active?.term) close();
   });
   window.addEventListener("blur", close);
   window.addEventListener("resize", close);
