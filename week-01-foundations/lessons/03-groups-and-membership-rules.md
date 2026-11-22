@@ -49,8 +49,20 @@
 
     In `user.department == "Lab-Finance"`, `user.department` reads the Department value on the Okta user profile. The two equals signs compare that value with the text on the right. If the values match, the expression returns true. Read the condition aloud before saving it so you can predict who qualifies.
 
+    ## Use a source group to drive other memberships
+
+    A rule can use membership in one group as its input. That group is the **source group**. Under **Then Assign to**, you can select more than one **target group**. A qualifying user can enter both targets through the same rule. When you remove the user from the source, check both targets after processing. To repair a source-driven assignment, start with the source membership and the rule that reads it.
+
+    ## Check the user's status before debugging the expression
+
+    Okta's rule documentation says that a rule with no explicit status condition includes active users. If you want the condition itself to check for that status, use `user.getInternalProperty("status") == "ACTIVE"`. Add it with `AND` when both the status and another condition must be true. A newly staged account can already have the correct Department and still be ineligible for an active-user rule.
+
+    A rule condition must return true or false. Use `==` to compare values, `AND` when both checks must pass, and `OR` when either check is enough. You can reference attributes on the Okta user profile and supported group functions. If the data comes from a connected app or directory, map it into an Okta user attribute before using it in a group rule. Use the variable name from **Profile Editor** when writing the expression.
+
     ## Official reading
 
+    - [Groups](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-about-groups.htm)
+    - [Group rules overview](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-about-group-rules.htm)
     - [Manage groups and group types](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-groups-main.htm)
     - [Create and activate group rules](https://help.okta.com/oie/en-us/content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
     - [Manual group user management](https://help.okta.com/oie/en-us/content/Topics/users-groups-profiles/usgp-group-users-manually.htm)
@@ -123,3 +135,34 @@
         2. Name the rule `LAB-Finance-Expression`. Under **IF**, choose **Use Okta Expression Language (advanced)** and enter `user.department == "Lab-Finance"`.
         3. Set **Then Assign to** to the new `LAB-Finance-Expression` group. Save and activate the rule. Confirm the first user appears in both Finance groups and the second appears in neither.
         4. To see an exception in action, open the **People** tab of `LAB-Finance-Expression` and remove the first test user from that group only. Go to **Directory → Groups → Rules**. On the expression rule only, select **Actions → Deactivate**, then **Actions → Edit**. Inspect **Except The following users**. Okta records the removed user there. Close the editor and reactivate the expression rule to leave it in use with the exception in place. The first user should still be in `LAB-Finance`, which is managed by its own rule.
+
+    === "3. Source groups, multiple targets, and status"
+
+        Keep these groups separate from the Finance groups used later in the course. Use the test users from the earlier tabs and one disposable staged user for the status comparison.
+
+        ### 9. Send one source membership to two targets
+
+        1. In **Directory → Groups**, create `LAB-Rule-Source`, `LAB-Rule-Target-A`, and `LAB-Rule-Target-B`. Add the first active test user manually to the source group. Leave both targets empty.
+        2. In **Groups → Rules → Add Rule**, name the rule `LAB-Source-to-Two-Targets`. Under the basic **IF** condition, select the group membership condition and choose `LAB-Rule-Source`. If your editor offers the advanced expression instead, use `isMemberOfGroupName("LAB-Rule-Source")` with the unique lab group name.
+        3. Add both target groups under **Then Assign to**, save, and activate. Open **People** in each target. The first active test user should appear in both. The second test user should stay outside both.
+
+        ### 10. Trace an update back to the source
+
+        1. Remove the first test user from **LAB-Rule-Source → People**. Refresh both target groups after the rule has processed the change. In this setup, the user should leave both targets because the rule was their only path in.
+        2. Add the user back to the source and verify that both target memberships return. If only one appears, open the rule and check that both targets are selected. If neither appears, check the source group's **People** tab, rule status, and exceptions.
+
+        ### 11. Compare an active user with a staged user
+
+        1. In **Directory → People**, add a disposable Okta-managed user with **Activate later**, following [Lesson 2](02-users-profiles-and-activation.md). Check that the status is **Staged**. Set **Department** to `Lab-Rule-Status` on that user and on the second active test user. Record the second user's original value before changing it.
+        2. Create an empty group called `LAB-Rule-Active-Only`. In **Groups → Rules → Add Rule**, choose **Use Okta Expression Language (advanced)** and enter:
+
+            ```text
+            user.department == "Lab-Rule-Status" AND user.getInternalProperty("status") == "ACTIVE"
+            ```
+
+        3. Select **LAB-Rule-Active-Only** as the target. Save and activate the rule. Open the group's **People** tab and compare it with the two user profiles. Both have the expected Department. Only the active test user should appear in the group.
+
+        ### 12. Verify the rule after activation
+
+        1. Activate the disposable account and complete any required activation steps until **People** shows **Active**. Check the target group after the rule processes the change. If you still see only one member, check the staged user's current status and exact Department value. To trigger a profile update once the account is active, change Department to a temporary value, save, then restore `Lab-Rule-Status` and save again.
+        2. Restore the second user's original Department. Clear the lab Department value on the disposable user, then verify that both users leave **LAB-Rule-Active-Only**. Each membership depends on the rule condition.
