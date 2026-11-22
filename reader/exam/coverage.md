@@ -2,6 +2,21 @@
 
 Use this page to find the lesson and lab for each objective in the [official Performance Exam study guide](https://certification.okta.com/page/administrator-performance-exam-study-guide). The weights below are shown within each part of the guide. **Published** means the linked lesson or exercise is available. **Planned** marks practice that still needs to be built.
 
+## Week-by-week status
+
+The course currently publishes 13 lessons and one capstone. A published lab is a set of instructions you can follow. Live testing depends on the org and any receiving system listed in the lab.
+
+| Week | Where the course stands | What remains |
+| --- | --- | --- |
+| **1 · Foundations** | Published. Covers the org, users, activation, groups, rules, app assignment, System Log, and a joiner/mover capstone. | Week 7 extends the log practice into factor-specific successful authentication and login recovery. |
+| **2 · Universal Directory and lifecycle** | Published. Covers custom attributes, mappings, user lifecycle, sourcing, provisioning, Group Push, and Workflows. | The two-source exercise needs two linked sources. Provisioning and Group Push need supported test targets, and the Workflows lab needs console access. The inbound mover and directory write-back exercises are tracked with the directory labs. |
+| **3 · SAML and attribute mappings** | Started. The sign-in lesson covers trust, the message exchange, assertion preview, and testing with a receiving app. | Build the custom attribute and expression-to-assertion lesson, then one end-to-end exam-style lab covering the group, rule, assignment, and app-side verification. The live exercise needs a SAML test SP you administer. |
+| **4 · Active Directory and LDAP** | Planned. | Cover directory agent architecture, account and reset permissions, installation, import scope and matching, activation and JIT, delegated sign-in, password policies, group ownership, LDAP, failover, and directory write-back. Compare the [LDAP Agent and LDAP Interface](https://help.okta.com/oie/en-us/Content/Topics/directory/ldap-interface-main.htm). |
+| **5 · Behavior Detection** | Planned. | Teach the policy layers first, including authenticator enrollment, global sessions, app sign-in rules, rule order, and the Catch-All Rule. Add mobile Okta Verify, behavior history and signals, controlled sign-in tests, and evidence from the System Log. [Configure Behavior Detection](https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/configure-behavior-detection.htm) |
+| **6 · Device Assurance and FastPass** | Planned. | Cover device registration, mobile assurance requirements, group scope, and FastPass. Compare an allowed and a denied attempt in the Dashboard policy lab. [Add device assurance to an app sign-in policy](https://help.okta.com/oie/en-us/Content/topics/identity-engine/devices/device-assurance-policy-rule.htm) |
+| **7 · Monitoring and troubleshooting** | Planned. | Add successful authentication searches by factor and a lab that traces a login issue to an enrollment or sign-in setting, fixes it, and verifies the next attempt. [Authenticator enrollment policies](https://help.okta.com/oie/en-us/Content/Topics/identity-engine/policies/about-mfa-enrollment-policies.htm) |
+| **8 · Exam rehearsals** | Planned. | Build independent versions of all four Part II use cases with a starting state and evidence to collect. Add review for both Part I domains. |
+
 ## Part I · Active Directory Integration (47%)
 
 | Objective | Course coverage and practice |
