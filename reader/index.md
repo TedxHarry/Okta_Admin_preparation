@@ -22,12 +22,14 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 5. [Application provisioning](week-02-directory-and-lifecycle/lessons/05-application-provisioning.md)
 6. [Group Push](week-02-directory-and-lifecycle/lessons/06-group-push.md)
 7. [Okta Workflows for lifecycle management](week-02-directory-and-lifecycle/lessons/07-okta-workflows.md)
+8. [Week 2 capstone · Manage a user from profile to offboarding](week-02-directory-and-lifecycle/labs/08-directory-and-lifecycle-capstone.md)
 
 ## Week 3 · SAML and attribute mappings
 
 1. [SAML sign-in with Okta](week-03-saml-and-mappings/lessons/01-saml-sign-in.md)
 2. [Custom SAML attributes and group assignment](week-03-saml-and-mappings/lessons/02-custom-saml-attributes-and-group-assignment.md)
 3. [Troubleshoot SAML and choose an SSO method](week-03-saml-and-mappings/lessons/03-saml-troubleshooting-and-sso.md)
+4. [Week 3 capstone · Deliver a custom SAML integration](week-03-saml-and-mappings/labs/04-custom-saml-integration-capstone.md)
 
 ## Week 4 · Active Directory and LDAP
 
