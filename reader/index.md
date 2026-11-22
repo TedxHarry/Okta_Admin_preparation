@@ -29,6 +29,10 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 2. [Custom SAML attributes and group assignment](week-03-saml-and-mappings/lessons/02-custom-saml-attributes-and-group-assignment.md)
 3. [Troubleshoot SAML and choose an SSO method](week-03-saml-and-mappings/lessons/03-saml-troubleshooting-and-sso.md)
 
+## Week 4 · Active Directory and LDAP
+
+1. [Connect Active Directory to Okta](week-04-ad-and-ldap/lessons/01-connect-active-directory.md)
+
 ## Course outline
 
 | Week | Topic |
