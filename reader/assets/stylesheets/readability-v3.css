@@ -351,9 +351,10 @@ body.diagram-modal-open {
   }
 }
 
-/* Keep every option visible in larger lesson and capstone tab sets. */
+/* Lesson lab tabs are nested inside the Hands-on Lab pane. Capstones use top-level tabs. */
 @media screen {
-  .md-typeset .tabbed-set:has(> input:nth-of-type(3)) {
+  .md-typeset .tabbed-content .tabbed-set,
+  .md-typeset:has(> h1[id*="capstone"]) > .tabbed-set {
     > .tabbed-labels {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, max(9rem, calc((100% - 0.8rem) / 3))), 1fr));
