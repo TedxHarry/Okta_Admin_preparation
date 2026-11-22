@@ -8,7 +8,13 @@
 
     **Assignment** records which user should receive the app in Okta. **Sign-in** establishes who the user is when they access it. **Provisioning** manages the separate account record that the app uses. Open the app's **Assignments** tab to see the first. Check the receiving app's user directory to see the last.
 
-    **SCIM**, the System for Cross-domain Identity Management, defines a standard API for managing identity records. Think of the integration as a connection from Okta to the app's SCIM endpoint. Okta sends an API request with its connector credentials and the fields the application needs. The app validates the request and reports what happened. Some Okta integrations use a vendor-specific API. This lab uses SCIM because you can see the same lifecycle actions in a consistent representation.
+    An **API** is a documented way for one program to ask another program to do something. Here, Okta can ask the receiving application to look up an account or change a field. **SCIM**, the System for Cross-domain Identity Management, defines standard requests for working with users and groups. Okta's **connector** prepares these requests. The receiving service checks them, makes a supported change if the request is valid, and reports the result.
+
+    ## Get the connection details from the receiving service
+
+    Start on the receiving test service. Its SCIM setup page or documentation should give you the **SCIM base URL**, the starting address for its SCIM API. For example, if the base URL were `https://scim.example.test/v2`, the users **endpoint**, or request address, would be under that base at `/Users`. Use your service's actual base URL in Okta.
+
+    The service also tells you how to prove that Okta may use that endpoint. With **header authentication**, a credential travels in a part of the request called the **Authorization header**. Use the credential and format the receiving service specifies for the test connector. **Test API Credentials** tells you whether Okta's connection check passed. Verify a real write separately by looking up the account in the receiving service.
 
     ## What the outbound settings control
 

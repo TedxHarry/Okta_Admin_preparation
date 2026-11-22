@@ -18,7 +18,7 @@
 
     ## Follow the two connections
 
-    The Windows service initiates an **outbound HTTPS connection** to Okta on TCP 443. The agent host also needs working AD DNS and network connectivity to the domain controller. If the agent is on a member server or in a segmented network, check those two paths independently. Okta documents additional AD-side ports for a DMZ deployment.
+    The Windows service starts an **outbound HTTPS connection** to Okta. Outbound means the agent starts the connection from your network. HTTPS protects the data on that connection. Okta uses TCP port 443 for this web traffic. A **port** identifies which network service should receive a connection. The agent host also needs **DNS**, which lets it find the domain controller by name, and a network path to reach that server. If the agent is on a member server or in a segmented network, check those two paths independently. Okta documents additional AD-side ports for a DMZ deployment.
 
     During a directory import, the agent reads AD data so Okta can process it. With delegated authentication enabled, the agent can also help AD validate a user's password when they sign in to Okta. An agent showing healthy establishes that the integration is communicating. The Import tab and a delegated sign-in test provide evidence for those individual operations.
 
@@ -53,7 +53,18 @@
 
         **1. Prepare a test OU.** On your VMware lab server, open **Active Directory Users and Computers**. Under the lab domain, create the OU `Okta-Lab`. Inside it, create a standard test user named `okta-lab-import` and a security group named `Okta-Lab-Users`. Add the user to the group. Open the user's **Account** tab and note the full user principal name (UPN). Use your lab domain's actual suffix.
 
-        **2. Confirm both network paths.** From the agent host, open your Okta org in the browser and verify that the host can resolve and reach the lab domain controller. If the agent will run on a separate VMware member server, confirm it is joined to the lab domain. In the Okta Admin Console, select **Directory → Directory Integrations → Add Directory → Add Active Directory**, then **Set Up Active Directory → Download Agent**.
+        **2. Confirm both network paths.** From the agent host, open your Okta org in the browser. Then check the path from the agent host to the domain controller. **DNS resolution** looks up the controller's name to find its address. A **port check** asks whether the host can open a connection to a specific service at that address.
+
+        In PowerShell on the agent host, substitute your lab controller's full DNS name in the commands below. This example checks the standard LDAP TCP port. Use the port your lab is configured to use if it differs.
+
+        ```powershell
+        Resolve-DnsName -Name "dc01.lab.example"
+        Test-NetConnection -ComputerName "dc01.lab.example" -Port 389
+        ```
+
+        Look for the expected lab controller address in the first result and `TcpTestSucceeded : True` in the second. If the name lookup fails, check which DNS server the agent host uses and the controller name you entered. If the name resolves but the port check fails, check whether the LDAP service is reachable from that host. The port check establishes TCP connectivity for the selected port. The working agent and import validate the integration itself.
+
+        If the agent runs on a separate VMware member server, confirm it is joined to the lab domain. In Okta, select **Directory → Directory Integrations → Add Directory → Add Active Directory → Set Up Active Directory → Download Agent**. [Resolve-DnsName](https://learn.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname) · [Test-NetConnection](https://learn.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection)
 
         **3. Install using the lab domain.** Run the downloaded installer on the Windows Server with the appropriate installer permissions. Verify that it detected your lab domain. Select **Create or use the Okta Service account**, or use a lab service account with the documented rights. Record the account name for the Windows service check.
 

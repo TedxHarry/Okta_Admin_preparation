@@ -22,6 +22,8 @@
 
     You can enable more than one profile source in the org. Okta uses the highest-priority applicable source for a user's profile. Start by asking which source accounts are linked to that user. A user linked only to AD can be sourced by AD even when an HR integration sits above it in the priority list. If both apply, the order matters.
 
+    Suppose two linked source accounts supply a Department value. HR has **Finance** and AD has **Operations**. With HR above AD and Department set to inherit the profile source, read the Department from HR's mapped field. If you give AD priority for Department alone, the AD value can supply that field after synchronization while HR remains the profile source. To explain the result, check both source values, then the priority setting and the value on the Okta profile.
+
     There is a separate choice for individual fields. **Attribute-level sourcing** lets one system own a field even when another owns the profile overall. An HR system can supply Department while AD supplies a directory-managed identifier. A value that employees or admins maintain in Okta can be sourced from Okta.
 
     | Source priority on an Okta attribute | What it tells Okta |

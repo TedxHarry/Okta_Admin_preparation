@@ -1,0 +1,54 @@
+.md-typeset .course-term-help {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  text-decoration: underline dotted var(--luxury-gold, currentColor);
+  text-underline-offset: .18em;
+  cursor: help;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.md-typeset .course-term-help:focus-visible {
+  outline: 2px solid var(--luxury-gold, currentColor);
+  outline-offset: 3px;
+}
+
+.md-typeset .course-term-hint {
+  margin: .4rem 0 1rem;
+  color: var(--md-default-fg-color--light);
+  font-size: .72rem;
+}
+
+.course-term-tooltip {
+  position: fixed;
+  z-index: 10001;
+  width: max-content;
+  max-width: min(23rem, calc(100vw - 24px));
+  padding: .65rem .8rem;
+  border: 1px solid #d8bd82;
+  border-radius: .45rem;
+  background: #172033;
+  color: #fff8ea;
+  box-shadow: 0 .4rem 1rem rgb(0 0 0 / 28%);
+  font-size: .82rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+
+.course-term-tooltip[hidden] {
+  display: none;
+}
+
+.course-term-tooltip strong {
+  display: block;
+  margin-bottom: .18rem;
+  color: #f4d99b;
+}

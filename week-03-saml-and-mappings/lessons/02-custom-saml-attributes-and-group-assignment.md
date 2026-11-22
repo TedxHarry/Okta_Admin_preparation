@@ -4,7 +4,11 @@
 
     [Lesson 1](01-saml-sign-in.md) showed how the service provider checks a SAML response and matches the user. This lesson adds a question the app may ask after it identifies the user. Which cost-center code did Okta send? To answer, follow the data from Universal Directory to the named attribute in the assertion. Follow app eligibility through the group and the app assignment.
 
-    ## Follow the data through three places
+    ## Follow one cost-center value
+
+    A **cost center** identifies where an organization tracks expenses. Here we store the test code `FIN-0042` in the Okta user's `labCostCenter` field. The same user can have a separate set of values for one app integration. That is their **app user profile**. An outbound **mapping** can read the code from the Okta user and store it in the integration's `costCenterCode` field.
+
+    At sign-in, the app expects a named value called `cost_center`. A **SAML attribute statement** gives the value that name in the assertion. In the legacy editor, the statement can read the mapped app-user field. In the newer editor, the expression used in this lab reads the Okta user field directly. In both paths, check the saved input, the app-user mapping, and what the receiving app actually gets.
 
     | Place | Lab name or value | What to verify |
     | --- | --- | --- |
@@ -12,7 +16,7 @@
     | **App user profile in Okta** | `costCenterCode` is populated by the outbound mapping `user.labCostCenter`. | Preview the specific mapping row, then inspect the assigned user's app profile if the integration exposes it. |
     | **SAML assertion** | The SP expects an attribute named `cost_center` with value `FIN-0042`. | Inspect **AttributeStatement** in a fresh response and check the receiving app's attribute view. |
 
-    A **mapping** tells Okta how to populate the app user's field. An **attribute statement**, also called a SAML claim, tells Okta which values to put in a sign-in response and what names the receiving app should see. Match the statement name to the receiver's configuration. Changing an Okta field's display label has no reason to change the name the app sees in the assertion.
+    Match the statement name to the receiver's configuration. The statement controls the name the app sees, so you can change an Okta field's display label while keeping the SAML name the same.
 
     **NameID** lets the service provider identify the user according to its matching settings. A named attribute such as `cost_center` is additional data. The app decides what to do with the value. For example, it might display it, use it in its own access logic, or discard it if the attribute name does not match its configuration.
 

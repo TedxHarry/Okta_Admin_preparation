@@ -34,7 +34,9 @@
 
     An app assignment answers one question: is this integration available to the user in Okta? When the user opens an app that Okta protects, a second question matters: has the user met the sign-in requirements for this app?
 
-    **Authentication** is how the user proves their identity. In Okta Identity Engine, a **global session policy** governs the requirements for establishing the Okta session. An **app sign-in policy** governs the authentication requirements for access to the requested app. Okta can use proof that the user already provided when it satisfies the app's requirements. The user may see another prompt if the app requires more proof.
+    **Authentication** is how the user proves their identity. After Okta accepts a sign-in, it can establish a **session** so the browser can continue as that user. The **global session policy** sets the requirements for establishing that Okta session.
+
+    When the user opens an app, Okta also checks the **app sign-in policy** for that app. This policy specifies the proof needed to open the app. For example, the existing Okta session might already carry the proof the app requires. If the app requires additional proof, the user can see another prompt even though the dashboard is already open.
 
     This gives you a starting point when something looks wrong. Check the assignment when you need to explain how the user received the integration. Check the sign-in policy and the sign-in event when you need to explain an authentication prompt or denial. If Okta sign-in succeeds and the application still denies a particular action, the application's own permissions may need checking.
 

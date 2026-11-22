@@ -49,8 +49,10 @@ extra_css:
   - assets/stylesheets/luxury.css
   - assets/stylesheets/readability-v3.css
   - assets/stylesheets/course-sidebar.css
+  - assets/stylesheets/course-term-help.css
 extra_javascript:
   - assets/javascripts/course-sidebar.js
+  - assets/javascripts/course-term-help.js
 nav:
   - Course outline: index.md
   - Exam coverage: exam/coverage.md
