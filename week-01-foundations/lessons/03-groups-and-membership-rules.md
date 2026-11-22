@@ -64,52 +64,78 @@
 
     ## How one group can add a user to two other groups
 
-    In this lab, you create three separate Okta groups under **Directory → Groups**.
+    Start with one test user and three groups you create under **Directory → Groups**.
 
-    - `LAB-Rule-Source` is the group you add the test user to yourself.
-    - `LAB-Rule-Target-A` and `LAB-Rule-Target-B` are two groups you leave empty at first. Okta adds the test user to them when the rule matches.
-
-    The rule asks one question about the test user.
-
-    - **If** this user belongs to `LAB-Rule-Source`
-    - **Then** add that user to `LAB-Rule-Target-A` and `LAB-Rule-Target-B`
-
-    `LAB-Rule-Source` is called the **source group** because it's the group Okta checks. When the active rule sees the user there, it adds the user to both **target groups**. Those are the two groups you selected under **Then Assign to**. Open the **People** tab in each group. You should see the same user listed in all three groups.
-
-    Now remove that user from `LAB-Rule-Source`. Okta checks the rule again and sees that the user no longer meets the **If** condition. In this lab, the rule was the only reason the user belonged to either target group. After Okta processes the change, the user should disappear from both target groups' **People** tabs.
-
-    If a user you expected to see is missing from a target group, first open `LAB-Rule-Source` and check whether they're listed there. That's the membership the rule needs before it can add the user anywhere else.
-
-    ### How many groups can one rule check or assign?
-
-    Read the two sides of the rule separately. **IF** is where you decide who qualifies. You can check one source group or several. **Then Assign to** is where you decide what qualifying users get. You can select one target or several, up to **100 target groups per rule**. The two targets above are practice groups. When **IF** is true and the user is eligible, the rule assigns every selected target. If each source needs a different target, write a separate rule for each distinct outcome. [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
-
-    ### Does a user need one source group or both?
-
-    That depends on what you write in **IF**. In the next lab tab, create a second source group called `LAB-Rule-Source-B`. For the table below, **A** means the original `LAB-Rule-Source` and **B** means `LAB-Rule-Source-B`. Both are Okta groups whose memberships you change manually in this lab.
-
-    | Where the user belongs | **A OR B** (at least one) | **A AND B** (both required) |
-    | --- | --- | --- |
-    | Neither source | Does not match | Does not match |
-    | Only A | Matches | Does not match |
-    | Only B | Matches | Does not match |
-    | Both A and B | Matches | Matches |
-
-    Start with a user in both groups. If you remove them from A, the **OR** rule still matches because they are in B. The **AND** rule stops matching because they now meet only one requirement. Use **Use Okta Expression Language (advanced)** to write that choice explicitly. Okta documents that a basic condition can select multiple groups. Its setup page leaves the basic picker's combining behavior unspecified. The lab uses explicit operators so you can see exactly what the rule tests. [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
-
-    A **group ID** is the unique identifier Okta gives a group. Open a source group under **Directory → Groups** and copy the ID at the end of its browser URL. In the examples below, replace `SOURCE_A_ID` and `SOURCE_B_ID` with those actual values and keep the quotation marks. IDs identify the intended groups even when two directories have a group with the same name. [Okta · Group functions](https://developer.okta.com/docs/reference/okta-expression-language/#group-functions) · [Okta · Find the group ID](https://support.okta.com/help/s/article/how-to-find-group-ids-through-the-okta-user-interface)
-
-    | What should qualify? | Expression for **IF** |
+    | Okta group | What you do with it |
     | --- | --- |
-    | Either source, including a user in both | `isMemberOfGroup("SOURCE_A_ID") OR isMemberOfGroup("SOURCE_B_ID")` |
-    | Either source, written as one check over a list | `isMemberOfAnyGroup("SOURCE_A_ID", "SOURCE_B_ID")` |
-    | Both sources | `isMemberOfGroup("SOURCE_A_ID") AND isMemberOfGroup("SOURCE_B_ID")` |
-    | Either source, plus Department must be Lab-Finance | `(isMemberOfGroup("SOURCE_A_ID") OR isMemberOfGroup("SOURCE_B_ID")) AND user.department == "Lab-Finance"` |
-    | A is required and B disqualifies the user | `isMemberOfGroup("SOURCE_A_ID") AND !isMemberOfGroup("SOURCE_B_ID")` |
+    | `LAB-Rule-Source` | Add the test user here yourself. This is the **source group**, the group Okta checks. |
+    | `LAB-Rule-Target-A` | Leave this empty at first. This is the first **target group**, where the rule can add the user. |
+    | `LAB-Rule-Target-B` | Leave this empty too. This is the second target group. |
 
-    The parentheses keep the two group checks together so the Department requirement applies to either source. The exclamation mark `!` means **not**. In the last row, belonging to B disqualifies the user even if they belong to A. Use a condition like this to skip everyone in a group. Use **Except The following users** to skip specific people by name. Removing a rule-managed member directly from a target leaves their source membership in place and adds that person to the rule's exception list. Check the exception list if a user still meets **IF** and you expect Okta to add them. [Okta · Exclude groups from a rule](https://support.okta.com/help/s/article/How-to-exclude-specific-groups-in-group-rule?language=en_US) · [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
+    When you open **Directory → Groups → Rules → Add Rule**, read the form in two parts.
 
-    **Avoid chaining rules when the same condition can grant both groups.** If one rule adds someone to group A and a second rule checks group A to add them to group B, the second rule depends on the first. Okta calls this a **cascading rule** and advises against it for performance. When both groups should go to the same people, use the original condition and select both targets in one rule. Okta also restricts group rules from assigning people to groups that grant Okta admin privileges. [Okta · Group rules best practices](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-group-rules-best.htm) · [Okta · Group rules](https://help.okta.com/okta_help.htm?id=ext_Group_Rules&type=oie)
+    1. Under **IF**, ask Okta, “Is this user in `LAB-Rule-Source`?”
+    2. Under **Then Assign to**, select `LAB-Rule-Target-A` and `LAB-Rule-Target-B`. You are telling Okta, “If the answer is yes, add this user to both of these groups.”
+
+    Once the rule is active and Okta processes the membership, open the **People** tab in each group. The same user should appear in all three. You added them to the source. The rule added them to the two targets.
+
+    Now remove the user from the **source** group's **People** tab. When Okta checks again, the answer to **IF** is now no. In this lab, the rule was the user's only way into either target, so the user should disappear from both targets after Okta processes the change. If a target is missing a user you expected to see, start by checking the source membership. Then check that the rule is active, the intended target is selected, and the user is outside the exception list. [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
+
+    ### What changes when you add more groups?
+
+    Adding a group under **IF** gives Okta another membership to check. Adding a group under **Then Assign to** gives a qualifying user another membership. You can check several sources and assign up to **100 targets per rule**. Everyone who qualifies for that rule gets every target you selected. If members of one source should get Target A and members of another source should get Target B, give each source its own rule and select its corresponding target. A user who matches both rules can get both targets. [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm) · [Okta · Rule limits](https://support.okta.com/help/s/article/okta-group-rule-limitations-and-restrictions?language=en_US)
+
+    ### With two source groups, who should get in?
+
+    Keep `LAB-Rule-Source` and create another Okta group called `LAB-Rule-Source-B`. For the next few examples, **Source A** means `LAB-Rule-Source` and **Source B** means `LAB-Rule-Source-B`. The two target groups from above are still separate from these sources.
+
+    Say the test user belongs only to Source A. Should they get both targets?
+
+    - Choose **OR** if the answer is yes. One source membership is enough. A user who belongs to both also qualifies.
+    - Choose **AND** if the answer is no. The user must belong to both sources before Okta adds them to the targets.
+
+    | Where the user belongs | **Source A OR Source B** | **Source A AND Source B** |
+    | --- | --- | --- |
+    | Neither source | Does not qualify | Does not qualify |
+    | Source A only | Qualifies | Does not qualify |
+    | Source B only | Qualifies | Does not qualify |
+    | Both sources | Qualifies | Qualifies |
+
+    Picture the user starting in both sources. You remove them from Source A and leave them in Source B. With **OR**, they keep the target memberships because B still qualifies them. With **AND**, they lose the memberships this rule gave them because they need A as well.
+
+    ### Where do you choose AND or OR in the console?
+
+    **IF** is the section of the form. Inside it, Okta offers **Use basic condition** and **Use Okta Expression Language (advanced)**. In the advanced editor, put `AND` or `OR` between the two membership checks. Okta's guide confirms you can select multiple groups in the basic editor. The guide leaves the picker’s combining behavior unspecified, so this lab uses the advanced editor to make the choice explicit. [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
+
+    First, get the **group ID** for each source. A group ID is the unique value Okta uses to identify exactly one group, even when group names repeat. Open each source under **Directory → Groups** and copy the ID at the end of the browser address. In the expressions below, replace `SOURCE_A_ID` and `SOURCE_B_ID` with what you copied. Keep the quotation marks. Each `isMemberOfGroup(...)` check asks, “Does the user belong to this group?” [Okta · Find the group ID](https://support.okta.com/help/s/article/how-to-find-group-ids-through-the-okta-user-interface) · [Okta · Group functions](https://developer.okta.com/docs/reference/okta-expression-language/#group-functions)
+
+    | Who should qualify? | What to enter under **IF** |
+    | --- | --- |
+    | A member of either source | `isMemberOfGroup("SOURCE_A_ID") OR isMemberOfGroup("SOURCE_B_ID")` |
+    | A member of both sources | `isMemberOfGroup("SOURCE_A_ID") AND isMemberOfGroup("SOURCE_B_ID")` |
+    | A member of any source in a list | `isMemberOfAnyGroup("SOURCE_A_ID", "SOURCE_B_ID")` |
+
+    The last row is another way to write **OR**. It is handy when you have a longer list of source groups.
+
+    ### What if group membership is only part of the decision?
+
+    **Check a profile field too.** Suppose either source is enough, but the user's Department also has to be `Lab-Finance`. Put the two group checks in parentheses. The parentheses make the Department requirement apply to users from either source.
+
+    ```text
+    (isMemberOfGroup("SOURCE_A_ID") OR isMemberOfGroup("SOURCE_B_ID")) AND user.department == "Lab-Finance"
+    ```
+
+    **Use a group to exclude people.** Suppose Source A qualifies a user, but anyone in Source B should be skipped. The `!` means **not**, so the condition asks for membership in A and no membership in B.
+
+    ```text
+    isMemberOfGroup("SOURCE_A_ID") AND !isMemberOfGroup("SOURCE_B_ID")
+    ```
+
+    **Skip a specific person.** Use **Except The following users** when you need to exclude someone by name. If you manually remove a user whose target membership came from this rule, Okta adds that user to the rule's exception list. Their source membership stays in place. If they still qualify and you expect them to rejoin, check the exception list. [Okta · Exclude groups from a rule](https://support.okta.com/help/s/article/How-to-exclude-specific-groups-in-group-rule?language=en_US) · [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
+
+    ### When can you keep it to one rule?
+
+    Imagine one rule adds a user to Target A, and a second rule looks for membership in Target A before it adds them to Target B. The second rule has to wait for the first. Okta calls this a **cascading rule** and advises avoiding it because it can slow rule processing. If the same people should get both groups, use the original **IF** condition and select both groups under **Then Assign to**. Okta blocks group rules from assigning users to groups that grant Okta admin privileges. [Okta · Group rules best practices](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-group-rules-best.htm) · [Okta · Group rules](https://help.okta.com/okta_help.htm?id=ext_Group_Rules&type=oie)
 
     ## Check the user's status before debugging the expression
 
