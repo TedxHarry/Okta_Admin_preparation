@@ -48,6 +48,8 @@ markdown_extensions:
 extra_css:
   - assets/stylesheets/luxury.css
   - assets/stylesheets/readability-v3.css
+extra_javascript:
+  - assets/javascripts/course-sidebar.js
 nav:
   - Course outline: index.md
   - Exam coverage: exam/coverage.md

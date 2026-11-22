@@ -141,37 +141,35 @@ body {
   display: none !important;
 }
 
-.course-nav-toggle-v3 {
-  position: fixed;
-  left: 18px;
-  bottom: 18px;
-  z-index: 999;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 1px solid #c7a766;
-  border-radius: 50%;
-  background: #fffdf8;
-  color: #111827;
-  box-shadow: 0 8px 22px rgba(17, 24, 39, .16);
-  cursor: pointer;
+.course-sidebar-toggle {
+  display: none;
 }
 
-.course-nav-toggle-v3 span {
-  color: inherit;
-  font-size: 20px;
-  font-weight: 800;
-  line-height: 1;
-}
+@media screen and (min-width: 76.25em) {
+  .course-sidebar-toggle {
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+    min-height: 1.65rem;
+    margin-inline: .35rem .1rem;
+    padding-inline: .5rem;
+    border: 1px solid currentColor;
+    border-radius: .25rem;
+    color: inherit;
+    font-size: .65rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+  }
 
-.course-nav-toggle-v3:hover {
-  background: #f6e8c8;
-}
+  .course-sidebar-toggle:hover {
+    background: color-mix(in srgb, currentColor 10%, transparent);
+  }
 
-[data-md-color-scheme="luxury-dark"] .course-nav-toggle-v3 {
-  background: #172033;
-  border-color: #d8bd82;
-  color: #fff8ea;
+  .course-sidebar-toggle:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
 }
 
 /* Diagram shell */
