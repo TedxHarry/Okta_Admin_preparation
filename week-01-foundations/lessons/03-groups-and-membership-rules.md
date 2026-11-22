@@ -80,6 +80,37 @@
 
     If a user you expected to see is missing from a target group, first open `LAB-Rule-Source` and check whether they're listed there. That's the membership the rule needs before it can add the user anywhere else.
 
+    ### How many groups can one rule check or assign?
+
+    Read the two sides of the rule separately. **IF** is where you decide who qualifies. You can check one source group or several. **Then Assign to** is where you decide what qualifying users get. You can select one target or several, up to **100 target groups per rule**. The two targets above are practice groups. When **IF** is true and the user is eligible, the rule assigns every selected target. If each source needs a different target, write a separate rule for each distinct outcome. [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
+
+    ### Does a user need one source group or both?
+
+    That depends on what you write in **IF**. In the next lab tab, create a second source group called `LAB-Rule-Source-B`. For the table below, **A** means the original `LAB-Rule-Source` and **B** means `LAB-Rule-Source-B`. Both are Okta groups whose memberships you change manually in this lab.
+
+    | Where the user belongs | **A OR B** (at least one) | **A AND B** (both required) |
+    | --- | --- | --- |
+    | Neither source | Does not match | Does not match |
+    | Only A | Matches | Does not match |
+    | Only B | Matches | Does not match |
+    | Both A and B | Matches | Matches |
+
+    Start with a user in both groups. If you remove them from A, the **OR** rule still matches because they are in B. The **AND** rule stops matching because they now meet only one requirement. Use **Use Okta Expression Language (advanced)** to write that choice explicitly. Okta documents that a basic condition can select multiple groups. Its setup page leaves the basic picker's combining behavior unspecified. The lab uses explicit operators so you can see exactly what the rule tests. [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
+
+    A **group ID** is the unique identifier Okta gives a group. Open a source group under **Directory → Groups** and copy the ID at the end of its browser URL. In the examples below, replace `SOURCE_A_ID` and `SOURCE_B_ID` with those actual values and keep the quotation marks. IDs identify the intended groups even when two directories have a group with the same name. [Okta · Group functions](https://developer.okta.com/docs/reference/okta-expression-language/#group-functions) · [Okta · Find the group ID](https://support.okta.com/help/s/article/how-to-find-group-ids-through-the-okta-user-interface)
+
+    | What should qualify? | Expression for **IF** |
+    | --- | --- |
+    | Either source, including a user in both | `isMemberOfGroup("SOURCE_A_ID") OR isMemberOfGroup("SOURCE_B_ID")` |
+    | Either source, written as one check over a list | `isMemberOfAnyGroup("SOURCE_A_ID", "SOURCE_B_ID")` |
+    | Both sources | `isMemberOfGroup("SOURCE_A_ID") AND isMemberOfGroup("SOURCE_B_ID")` |
+    | Either source, plus Department must be Lab-Finance | `(isMemberOfGroup("SOURCE_A_ID") OR isMemberOfGroup("SOURCE_B_ID")) AND user.department == "Lab-Finance"` |
+    | A is required and B disqualifies the user | `isMemberOfGroup("SOURCE_A_ID") AND !isMemberOfGroup("SOURCE_B_ID")` |
+
+    The parentheses keep the two group checks together so the Department requirement applies to either source. The exclamation mark `!` means **not**. In the last row, belonging to B disqualifies the user even if they belong to A. Use a condition like this to skip everyone in a group. Use **Except The following users** to skip specific people by name. Removing a rule-managed member directly from a target leaves their source membership in place and adds that person to the rule's exception list. Check the exception list if a user still meets **IF** and you expect Okta to add them. [Okta · Exclude groups from a rule](https://support.okta.com/help/s/article/How-to-exclude-specific-groups-in-group-rule?language=en_US) · [Okta · Create group rules](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-create-group-rules.htm)
+
+    **Avoid chaining rules when the same condition can grant both groups.** If one rule adds someone to group A and a second rule checks group A to add them to group B, the second rule depends on the first. Okta calls this a **cascading rule** and advises against it for performance. When both groups should go to the same people, use the original condition and select both targets in one rule. Okta also restricts group rules from assigning people to groups that grant Okta admin privileges. [Okta · Group rules best practices](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-group-rules-best.htm) · [Okta · Group rules](https://help.okta.com/okta_help.htm?id=ext_Group_Rules&type=oie)
+
     ## Check the user's status before debugging the expression
 
     Okta's rule documentation says that a rule with no explicit status condition includes active users. If you want the condition itself to check for that status, use `user.getInternalProperty("status") == "ACTIVE"`. Add it with `AND` when both the status and another condition must be true. A newly staged account can already have the correct Department and still be ineligible for an active-user rule.
@@ -162,9 +193,9 @@
         3. Set **Then Assign to** to the new `LAB-Finance-Expression` group. Save and activate the rule. Confirm the first user appears in both Finance groups and the second appears in neither.
         4. To see an exception in action, open the **People** tab of `LAB-Finance-Expression` and remove the first test user from that group only. Go to **Directory → Groups → Rules**. On the expression rule only, select **Actions → Deactivate**, then **Actions → Edit**. Inspect **Except The following users**. Okta records the removed user there. Close the editor and reactivate the expression rule to leave it in use with the exception in place. The first user should still be in `LAB-Finance`, which is managed by its own rule.
 
-    === "3. Source groups, multiple targets, and status"
+    === "3. One source and two targets"
 
-        Keep these groups separate from the Finance groups used later in the course. Use the test users from the earlier tabs and one disposable staged user for the status comparison.
+        Keep these groups separate from the Finance groups used later in the course. Use the two active test users from the earlier tabs.
 
         ### 9. Send one source membership to two targets
 
@@ -177,7 +208,60 @@
         1. Remove the first test user from **LAB-Rule-Source → People**. Refresh both target groups after the rule has processed the change. In this setup, the user should leave both targets because the rule was their only path in.
         2. Add the user back to the source and verify that both target memberships return. If only one appears, open the rule and check that both targets are selected. If neither appears, check the source group's **People** tab, rule status, and exceptions.
 
-        ### 11. Compare an active user with a staged user
+    === "4. Multiple sources with OR and AND"
+
+        Keep using the rule from Task 9. Using one rule lets you see the effect of changing just its **IF** condition. Make every membership change in the source groups so you can observe the targets without creating user exceptions.
+
+        ### 11. Add a second source and a third target
+
+        1. In **Directory → Groups → Add group**, create two Okta groups. `LAB-Rule-Source-B` is the second group the rule will check. `LAB-Rule-Target-C` is a third group the rule will assign. Leave the new target empty.
+        2. Keep the first test user in the original source group, `LAB-Rule-Source`. Open **LAB-Rule-Source-B → People → Assign people** and add only the second test user. Each user should be in exactly one source.
+        3. Open each source group and copy its group ID from the end of the address in your browser. Keep track of which ID belongs to which group. [Okta · Find the group ID](https://support.okta.com/help/s/article/how-to-find-group-ids-through-the-okta-user-interface)
+
+        ### 12. Test a rule where either source is enough
+
+        1. In **Directory → Groups → Rules**, find `LAB-Source-to-Two-Targets`. Select **Actions → Deactivate**, then **Actions → Edit**. Switch **IF** to **Use Okta Expression Language (advanced)** and paste the expression below with your actual source group IDs.
+
+            ```text
+            isMemberOfGroup("SOURCE_A_ID") OR isMemberOfGroup("SOURCE_B_ID")
+            ```
+
+        2. Under **Then Assign to**, keep the first two targets and add `LAB-Rule-Target-C`. Preview both users if the editor shows **Preview**. Save and activate. After Okta processes the change, open **People** in all three targets. Both users should appear because each belongs to a source group.
+        3. Add the first user to the second source as well. Remove them from the original source and check that they stay in all three targets. Now remove them from the second source. They should leave all three after processing. The second test user should remain in all three.
+
+        ### 13. Test a rule where both sources are required
+
+        1. Add the first user to both sources. Leave the second user in only `LAB-Rule-Source-B`. Deactivate and edit the same rule. Change `OR` to `AND` in **IF**, keep all three targets, save, and activate.
+        2. Check **People** in all three targets once processing finishes. The first user should appear. The second should now be outside all three.
+        3. Move the second user from B to A and confirm that the result is still outside all three. Remove the first user from either source and confirm that the first user also leaves the targets. For an **AND** rule, one missing membership is enough to make **IF** false.
+
+        ### 14. Mix a group condition with a profile condition
+
+        1. Verify that both test users belong to at least one source. In **Directory → People → Profile**, check that the first user's **Department** is `Lab-Finance` and the second user's is `Lab-Operations`.
+        2. Deactivate and edit the same rule. Replace its condition below, using your IDs. Keep the targets, save, and activate.
+
+            ```text
+            (isMemberOfGroup("SOURCE_A_ID") OR isMemberOfGroup("SOURCE_B_ID")) AND user.department == "Lab-Finance"
+            ```
+
+        3. Check that only the first user joins the targets. Change the first user's Department temporarily to `Lab-Operations` and verify that they leave the targets even though their source membership is unchanged. Restore `Lab-Finance` and verify that the target memberships return. The Department change can also affect the separate Finance rule from earlier in this lesson.
+
+        ### 15. Exclude everyone in one source group
+
+        1. Put both test users in the original source. Also add the second test user to `LAB-Rule-Source-B`. Keep the first user out of B.
+        2. Deactivate and edit the same rule. Use this condition with your group IDs, then save and activate.
+
+            ```text
+            isMemberOfGroup("SOURCE_A_ID") AND !isMemberOfGroup("SOURCE_B_ID")
+            ```
+
+        3. Check all three targets. The first user should qualify. The second should stay outside because they belong to B. Remove the second user from B while leaving them in A. Check that they now appear in all three targets. This group-based exclusion follows membership in B as it changes.
+
+    === "5. Account status and membership"
+
+        Use the second active test user and one disposable staged user for this comparison.
+
+        ### 16. Compare an active user with a staged user
 
         1. In **Directory → People**, add a disposable Okta-managed user with **Activate later**, following [Lesson 2](02-users-profiles-and-activation.md). Check that the status is **Staged**. Set **Department** to `Lab-Rule-Status` on that user and on the second active test user. Record the second user's original value before changing it.
         2. Create an empty group called `LAB-Rule-Active-Only`. In **Groups → Rules → Add Rule**, choose **Use Okta Expression Language (advanced)** and enter:
@@ -188,14 +272,14 @@
 
         3. Select **LAB-Rule-Active-Only** as the target. Save and activate the rule. Open the group's **People** tab and compare it with the two user profiles. Both have the expected Department. Only the active test user should appear in the group.
 
-        ### 12. Verify the rule after activation
+        ### 17. Verify the rule after activation
 
         1. Activate the disposable account and complete any required activation steps until **People** shows **Active**. Check the target group after the rule processes the change. If you still see only one member, check the staged user's current status and exact Department value. To trigger a profile update once the account is active, change Department to a temporary value, save, then restore `Lab-Rule-Status` and save again.
         2. Restore the second user's original Department. Clear the lab Department value on the disposable user, then verify that both users leave **LAB-Rule-Active-Only**. Each membership depends on the rule condition.
 
-    === "4. Edit and reactivate a rule"
+    === "6. Edit and reactivate a rule"
 
-        ### 13. Change a rule condition and verify the result
+        ### 18. Change a rule condition and verify the result
 
         1. Use the active `LAB-Finance-Expression` rule from Task 8. In **Rules**, open **Actions** and find **View** and **Deactivate**. Check that the rule targets the dedicated `LAB-Finance-Expression` group. The original Finance rule remains available for the next lesson.
         2. Deactivate the expression rule and confirm **Inactive**. Choose **Actions → Edit** and change the condition to `user.department == "Lab-Operations"`. Keep the target group and the exception from Task 8. Save and activate.
