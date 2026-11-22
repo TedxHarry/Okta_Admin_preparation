@@ -62,9 +62,18 @@
 
     In `user.department == "Lab-Finance"`, `user.department` reads the Department value on the Okta user profile. The two equals signs compare that value with the text on the right. If the values match, the expression returns true. Read the condition aloud before saving it so you can predict who qualifies.
 
-    ## Use a source group to drive other memberships
+    ## How one group can add a user to two other groups
 
-    A rule can use membership in one group as its input. That group is the **source group**. Under **Then Assign to**, you can select more than one **target group**. A qualifying user can enter both targets through the same rule. When you remove the user from the source, check both targets after processing. To repair a source-driven assignment, start with the source membership and the rule that reads it.
+    Look at the rule from the lab. It asks one question about the test user.
+
+    - **If** this user belongs to `LAB-Rule-Source`
+    - **Then** add that user to `LAB-Rule-Target-A` and `LAB-Rule-Target-B`
+
+    Start by adding your test user to `LAB-Rule-Source`. That's the **source group** because it's the group Okta checks. When the active rule sees the user there, it adds the user to both **target groups**. Those are the two groups you selected under **Then Assign to**. Open the **People** tab in each group. You should see the same user listed in all three groups.
+
+    Now remove that user from `LAB-Rule-Source`. Okta checks the rule again and sees that the user no longer meets the **If** condition. In this lab, the rule was the only reason the user belonged to either target group. After Okta processes the change, the user should disappear from both target groups' **People** tabs.
+
+    If a user you expected to see is missing from a target group, first open `LAB-Rule-Source` and check whether they're listed there. That's the membership the rule needs before it can add the user anywhere else.
 
     ## Check the user's status before debugging the expression
 
