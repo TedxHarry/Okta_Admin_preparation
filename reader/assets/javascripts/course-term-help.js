@@ -19,6 +19,8 @@
     ["Suspension","A temporary hold that stops Okta sign-in while keeping the user record and its existing assignments.",["suspend","suspended"]],
     ["Deactivation","A lifecycle action that disables the Okta account and removes its app assignments. The Okta user record remains.",["deactivate","deactivated","deprovisioned"]],
     ["Sign-in session","The state a system maintains after accepting a sign-in so the browser can continue as that user.",["Okta session","browser session","app session","session","sessions"]],
+    ["Session revocation","Ending a session so the user must authenticate again to establish a new one.",["clear user sessions","clear sessions"]],
+    ["Universal Logout","Okta's mechanism for requesting sign-out from compatible apps configured to receive it."],
     ["Authentication","How a system verifies who is signing in.",["authenticate","authenticated"]],
     ["Authenticator","A method a person uses to prove who they are, such as a password or Okta Verify.",["authenticators"]],
     ["Enrollment","Setting up an authenticator so the user can use it when Okta asks for proof.",["authenticator enrollment"]],

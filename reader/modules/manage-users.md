@@ -10,6 +10,7 @@ Start here to learn what Okta stores about a user, how that person gets an activ
 4. [Understand who controls the user’s data](manage-users/04-understand-who-controls-user-data.md)
 5. [Restore sign-in access](manage-users/05-restore-sign-in-access.md)
 6. [Give, find, and remove app access](manage-users/06-give-find-and-remove-app-access.md)
+7. [Pause access, end sessions, and offboard a user](manage-users/07-pause-access-end-sessions-and-offboard-a-user.md)
 
 ## Related lessons and labs
 
