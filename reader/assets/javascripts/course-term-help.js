@@ -37,6 +37,7 @@
     ["App assignment","The relationship that makes an app integration available to an Okta user, directly or through a group.",["app assignments","assignment","assignments"]],
     ["Direct assignment","An app assignment made to one specific user.",["individual assignment","direct grant"]],
     ["Group assignment","An app assignment made to a group so qualifying members receive the integration.",["group-based assignment","group-derived assignment"]],
+    ["App assignment source","Where an app assignment comes from, such as an individual grant or membership in an assigned group.",["assignment source","assignment owner"]],
     ["Bookmark App","An Okta integration that adds a tile opening a URL."],
     ["OIN","The Okta Integration Network, a catalog of app integrations.",["Okta Integration Network"]],
     ["SSO","Single sign-on. A user signs in through an identity service to reach a connected application.",["single sign-on"]],

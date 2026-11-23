@@ -64,6 +64,7 @@ nav:
       - Lesson 3 · Bring users into Okta through imports or first sign-in: modules/manage-users/03-import-users-and-first-sign-in.md
       - Lesson 4 · Understand who controls the user’s data: modules/manage-users/04-understand-who-controls-user-data.md
       - Lesson 5 · Restore sign-in access: modules/manage-users/05-restore-sign-in-access.md
+      - Lesson 6 · Give, find, and remove app access: modules/manage-users/06-give-find-and-remove-app-access.md
   - Module 2 · Foundations:
       - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
       - Lesson 2 · Users, profiles, and activation: week-01-foundations/lessons/02-users-profiles-and-activation.md

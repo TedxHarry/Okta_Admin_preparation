@@ -1,0 +1,68 @@
+# Lesson 6 · Give, find, and remove app access
+
+=== "Theory"
+
+    A user can sign in to Okta, but the app they need is missing. Or they moved teams and can still open an app they no longer need. Start with the exact user and app integration. An **app integration** is Okta's configuration for a particular app. An **app assignment** makes that integration available to a user. To fix either ticket, first find the path that grants the assignment.
+
+    ## Give access at the right scope
+
+    Open **Applications and Resources → Applications**, select the integration, and open **Assignments**. Choose **Assign → Assign to People** to make a **direct assignment** for a specific user. Choose **Assign → Assign to Groups** to make a **group assignment** that applies to the group's members. Complete any app-specific fields Okta prompts for and verify the result in **Assignments**. Group assignment suits access that several people need for the same job. Direct assignment can suit an approved exception for one person. [Okta · Assign app integrations](https://help.okta.com/oie/en-us/Content/Topics/Apps/apps-assign-applications.htm)
+
+    ## Find where the access comes from
+
+    Start with the view that matches the question. Use both sides when you need to explain an unexpected result.
+
+    | Question | Where to look | What to record |
+    | --- | --- | --- |
+    | What apps does this person receive? | **Directory → People → user → Applications** | Find the exact app and check whether the assignment shows **Individual** or a group name. |
+    | Who receives this app? | **Applications → app → Assignments** | Use the **People/Users** filter to find the user and **Groups** to see which groups are assigned. |
+    | Which assigned groups does the user belong to? | Compare the app's assigned groups with the user's **Groups** tab or the **People** tab on the group. | Record each matching group. One displayed group can be the group that supplies the app settings even when more than one assigned group applies. |
+
+    Suppose Maya belongs to Finance and Approvers, and both groups are assigned to the expense app. Removing Maya from Finance removes one path. Approvers still grants the app. If the groups supply different app profile or role values, their priority can also affect which values Maya receives. [Okta · Identify the assignment owner](https://help.okta.com/oie/en-us/content/topics/apps/apps-convert-to-group-managed.htm) · [Okta · Manage app integration assignments](https://help.okta.com/oie/en-us/Content/Topics/apps/apps-manage-assignments.htm) · [Okta · Prioritize application groups](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-prioritize-app-group.htm)
+
+    ## Remove the assignment that matches the request
+
+    | Intended change | Action | What to verify |
+    | --- | --- | --- |
+    | Remove one person's direct assignment | In the app's **Assignments** view, find the individual assignment and select **X** to remove it. | Check the user again and inspect any assigned groups that still cover them. |
+    | Remove one person's group-derived access | Identify the group that grants access and who controls its membership. For a manually managed Okta group, change the user's membership if that is the intended scope. For directory- or rule-managed membership, review the controlling source or rule. | Check other grant paths. Before changing a shared group membership, check which other apps or policies depend on it. |
+    | Stop an entire group from receiving the app | In the app's **Assignments → Groups** view, remove that group's app assignment. | Check a member who had only that path and a member who still qualifies through another path. |
+
+    If the group must keep its other uses and one person needs to lose just this app, review how access is grouped before removing membership. Removing a group's app assignment affects the group as a whole. [Okta · Manage app integration assignments](https://help.okta.com/oie/en-us/Content/Topics/apps/apps-manage-assignments.htm) · [Okta · Trace app access through multiple groups](https://help.okta.com/en-us/content/topics/identity-governance/access-certification/remediation.htm)
+
+    ## Verify the assignment, the tile, and the receiving app
+
+    Check the current assignment in the Admin Console. Then use a fresh session as the test user to check their **End-User Dashboard**, the page that shows their app tiles. An assigned app can have its icon hidden from users. If a visible tile is expected but missing, check the exact integration, the user's assignment, and the app's visibility settings.
+
+    For a connected app, check sign-in and the receiving account separately. The app's sign-in policy controls what users must prove before Okta allows sign-in. **Provisioning** creates or updates the receiving account when the integration supports it and the relevant features are enabled. With **Deactivate Users** configured, unassignment can send a deactivation to the receiving app. Verify the actual target account and follow the app's session handling if the request concerns an existing session. [Okta · App visibility and assignments](https://help.okta.com/en-us/Content/Topics/apps/apps-configure-settings.htm) · [Okta · Configure provisioning for an app integration](https://help.okta.com/en-us/Content/Topics/provisioning/lcm/lcm-provision-application.htm)
+
+=== "Hands-on Lab"
+
+    ## Set up a test app and two test users
+
+    Use an Okta Identity Engine lab org, two active test users whose sign-ins you control, and an admin account that can create and assign a Bookmark App, manage lab groups, and read the System Log. Keep the admin and test-user browser sessions separate.
+
+    Create a **Bookmark App** named `LAB-Manage-Users-Bookmark` pointing to `https://example.com/`. This integration puts a link on the dashboard, so it lets you observe assignment and tile visibility without a receiving account. Start with no assignments and keep its tile visible. Create two manually managed Okta groups called `LAB-Bookmark-Readers` and `LAB-Bookmark-Reviewers`. Add test user B to both groups and keep test user A out of both. [Okta · Create a Bookmark App integration](https://help.okta.com/oie/en-us/content/topics/apps/apps-create-bookmark.htm)
+
+    ## Assign, trace, and remove access
+
+    1. Open the app's **Assignments** tab. Assign the bookmark directly to user A. Assign it to both lab groups. Leave user B's direct assignments empty for this app.
+    2. Open each user's **Applications** tab and inspect how the bookmark is assigned. Compare the app's **People/Users** and **Groups** filters with user B's group memberships. Sign in as each test user and confirm the bookmark appears and opens the URL.
+    3. Remove user B from **Readers**. Before refreshing the dashboard, predict whether the tile should stay. It should remain because **Reviewers** still grants the bookmark. Verify that user B is still assigned and can see the tile.
+    4. Remove user B from **Reviewers**. Verify that user B loses the assignment and the tile in a fresh session. Verify that user A still has the individual assignment.
+    5. Remove user A's individual assignment from the app. Verify that neither user appears as assigned and neither sees the bookmark. The two groups can still appear as assigned because removing a member does not unassign the group itself.
+
+    | Lab state | User A | User B |
+    | --- | --- | --- |
+    | After granting access | Assigned directly | Assigned through two groups |
+    | After removing B from Readers | Assigned | Still assigned through Reviewers |
+    | After removing B from Reviewers | Assigned | No assignment |
+    | After removing A's direct assignment | No assignment | No assignment |
+
+    ## Explain the evidence and reset the lab
+
+    Open **Reports → System Log** and narrow the time window to the lab. Inspect the relevant group membership or app assignment events, including the actor, target, and outcome. Use the current **Assignments** view to prove who still receives the app. A membership removal event tells you which path changed. The remaining assignment explains why user B could still see the tile after the first removal. [Okta · System Log filters and search](https://help.okta.com/oie/en-us/Content/topics/reports/syslog-filters.htm)
+
+    For independent practice, restore both of user B's group memberships. Remove the **Readers** group assignment from the app itself and explain why B keeps access. Remove the **Reviewers** assignment and verify that B still belongs to both groups while losing the app. This time you changed what the groups grant. In the earlier exercise you changed who belonged to the groups. Finish by removing the two test users from the dedicated lab groups if you want to return the exercise to an empty starting state.
+
+    For the broader configuration sequence, see [Application assignment and the End-User Dashboard](../../week-01-foundations/lessons/04-application-assignment-and-dashboard.md). For target account creation and deactivation, see [Application provisioning](../../week-02-directory-and-lifecycle/lessons/05-application-provisioning.md).

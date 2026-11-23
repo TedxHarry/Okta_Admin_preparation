@@ -9,6 +9,7 @@ Start here to learn what Okta stores about a user, how that person gets an activ
 3. [Bring users into Okta through imports or first sign-in](manage-users/03-import-users-and-first-sign-in.md)
 4. [Understand who controls the user’s data](manage-users/04-understand-who-controls-user-data.md)
 5. [Restore sign-in access](manage-users/05-restore-sign-in-access.md)
+6. [Give, find, and remove app access](manage-users/06-give-find-and-remove-app-access.md)
 
 ## Related lessons and labs
 
