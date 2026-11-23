@@ -66,6 +66,7 @@ nav:
       - Lesson 5 · Restore sign-in access: modules/manage-users/05-restore-sign-in-access.md
       - Lesson 6 · Give, find, and remove app access: modules/manage-users/06-give-find-and-remove-app-access.md
       - Lesson 7 · Pause access, end sessions, and offboard a user: modules/manage-users/07-pause-access-end-sessions-and-offboard-a-user.md
+      - Hands-on labs: modules/manage-users/hands-on-labs.md
   - Module 2 · Foundations:
       - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
       - Lesson 2 · Users, profiles, and activation: week-01-foundations/lessons/02-users-profiles-and-activation.md
