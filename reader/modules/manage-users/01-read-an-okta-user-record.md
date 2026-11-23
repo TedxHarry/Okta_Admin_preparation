@@ -1,60 +1,77 @@
 # Lesson 1 · Read an Okta user record
 
-Open **Directory → People** in the Okta Admin Console. When you select a person, you’ll see their name, a status, and places to look for more information. Before changing anything, learn to answer four questions. Which account is this? What state is it in? Where did its information come from? What access does it have? Each answer comes from a different part of the record. [Okta · Manage users](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-people.htm)
+=== "Theory"
 
-## The person, the account, and the profile
+    Open **Directory → People** in the Okta Admin Console. When you select a person, you’ll see their name, a status, and places to look for more information. Before changing anything, learn to answer four questions. Which account is this? What state is it in? Where did its information come from? What access does it have? Each answer comes from a different part of the record. [Okta · Manage users](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-people.htm)
 
-A **person** is the individual. An **Okta user account** is the record Okta uses to represent that individual in your **org**, which is your Okta environment. **Universal Directory** is where Okta keeps the user’s information. The **profile** is the part of the account that holds details such as first name, last name, email, and department. Each field is called an **attribute**. [Okta · Universal Directory](https://developer.okta.com/docs/concepts/universal-directory/)
+    ## The person, the account, and the profile
 
-| Value | What it tells you |
-| --- | --- |
-| **Username** | The account’s Okta login name. It may look like an email address. In the Okta API, the field is called `login`. |
-| **Primary email** | The email address stored on the profile. Its value can be identical to the username, and each has its own field. |
-| **User ID** | The unique key Okta uses to identify the account. Use it when comparing records across an export or an API response. |
+    A **person** is the individual. An **Okta user account** is the record Okta uses to represent that individual in your **org**, which is your Okta environment. **Universal Directory** is where Okta keeps the user’s information. The **profile** is the part of the account that holds details such as first name, last name, email, and department. Each field is called an **attribute**. [Okta · Universal Directory](https://developer.okta.com/docs/concepts/universal-directory/)
 
-An **API** is a way for software to request data or perform an action in Okta. If two results have the same name, compare their full usernames and primary emails before selecting a result. Use the user ID when you need to establish that two records refer to the exact same Okta account. [Okta · Users API](https://developer.okta.com/docs/api/openapi/okta-management/management/tags/user)
+    | Value | What it tells you |
+    | --- | --- |
+    | **Username** | The account’s Okta login name. It may look like an email address. In the Okta API, the field is called `login`. |
+    | **Primary email** | The email address stored on the profile. Its value can be identical to the username, and each has its own field. |
+    | **User ID** | The unique key Okta uses to identify the account. Use it when comparing records across an export or an API response. |
 
-## Find the record before diagnosing it
+    An **API** is a way for software to request data or perform an action in Okta. If two results have the same name, compare their full usernames and primary emails before selecting a result. Use the user ID when you need to establish that two records refer to the exact same Okta account. [Okta · Users API](https://developer.okta.com/docs/api/openapi/okta-management/management/tags/user)
 
-Start in **Directory → People**. You can filter the list by status. You can also search from the Admin Console search bar using the username or email address. If the user doesn’t appear, confirm the org you’re in, clear any status filter, and check what your admin role allows you to see. An **admin role** gives an administrator permission to perform certain actions or view certain records. For example, an administrator who manages only specific groups can see users in those groups. [Okta · Manage users](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-people.htm)
+    ## Find the record before diagnosing it
 
-## Read the account status
+    Start in **Directory → People**. You can filter the list by status. You can also search from the Admin Console search bar using the username or email address. If the user doesn’t appear, confirm the org you’re in, clear any status filter, and check what your admin role allows you to see. An **admin role** gives an administrator permission to perform certain actions or view certain records. For example, an administrator who manages only specific groups can see users in those groups. [Okta · Manage users](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-people.htm)
 
-The **status** tells you what state the Okta account is in right now. Find it in the **Status** column on the People page or on the individual user record. Three people can all say “I can’t sign in.” One might be waiting to finish activation, one might be locked out, and one might be suspended. Read the label before choosing an action.
+    ## Read the account status
 
-| Admin Console status | How to read it |
-| --- | --- |
-| **Staged** | The account exists. Activation has yet to start, or an admin action is pending. |
-| **Pending user action** | The user still has an activation step to complete, such as verifying their email or setting a password. The API calls this state `PROVISIONED`. |
-| **Active** | The account is active in Okta. If the user can’t open a particular app, check the app assignment and the sign-in requirements for that app. |
-| **Password reset** | The account is in recovery after an admin requested a password reset. The API calls this state `RECOVERY`. |
-| **Password expired** | The user needs to change the password before accessing apps. |
-| **Locked out** | The user exceeded the allowed sign-in attempts under the applicable policy. |
-| **Suspended** | Suspension blocks access while keeping the user’s app assignments in place. |
-| **Deactivated** | Okta deactivated the account and removes its app assignments. The API calls this state `DEPROVISIONED`. |
+    The **status** tells you what state the Okta account is in right now. Find it in the **Status** column on the People page or on the individual user record. Three people can all say “I can’t sign in.” One might be waiting to finish activation, one might be locked out, and one might be suspended. Read the label before choosing an action.
 
-When someone says “the user is provisioned,” ask which system they mean. The **Okta account** can have the API status `PROVISIONED`, meaning it is waiting for the user to finish setup. In an app integration, **provisioning** refers to work such as creating or updating an account **in the app**. [Okta · User account status](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-end-user-states.htm) · [Okta · Universal Directory](https://developer.okta.com/docs/concepts/universal-directory/)
+    | Admin Console status | How to read it |
+    | --- | --- |
+    | **Staged** | The account exists. Activation has yet to start, or an admin action is pending. |
+    | **Pending user action** | The user still has an activation step to complete, such as verifying their email or setting a password. The API calls this state `PROVISIONED`. |
+    | **Active** | The account is active in Okta. If the user can’t open a particular app, check the app assignment and the sign-in requirements for that app. |
+    | **Password reset** | The account is in recovery after an admin requested a password reset. The API calls this state `RECOVERY`. |
+    | **Password expired** | The user needs to change the password before accessing apps. |
+    | **Locked out** | The user exceeded the allowed sign-in attempts under the applicable policy. |
+    | **Suspended** | Suspension blocks access while keeping the user’s app assignments in place. |
+    | **Deactivated** | Okta deactivated the account and removes its app assignments. The API calls this state `DEPROVISIONED`. |
 
-## Understand what controls the profile
+    When someone says “the user is provisioned,” ask which system they mean. The **Okta account** can have the API status `PROVISIONED`, meaning it is waiting for the user to finish setup. In an app integration, **provisioning** refers to work such as creating or updating an account **in the app**. [Okta · User account status](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-end-user-states.htm) · [Okta · Universal Directory](https://developer.okta.com/docs/concepts/universal-directory/)
 
-A **schema** defines which fields a profile can have and what each field accepts. The profile contains the values for one person. For example, the schema defines the **Department** field, and one user’s profile holds **Finance** as its value. Use **Directory → People → select the user → Profile** to read individual values. Use **Directory → Profile Editor** to inspect field definitions. [Okta · Universal Directory](https://developer.okta.com/docs/concepts/universal-directory/)
+    ## Understand what controls the profile
 
-| Setting | Question it answers |
-| --- | --- |
-| **User type** | **Which fields can this user have?** An account uses one profile type. Okta supports the default type plus up to nine custom types. A custom type can require fields that the default type does not have. |
-| **Profile or attribute source** | **Which system supplies the value?** Okta can manage the data itself, or a connected system can supply it. One system can supply most of the profile while another supplies a particular field. |
-| **Realm** | **Which segment of this org does the account belong to?** If the org uses realms, it can organize users into separate populations within the same org and delegate administration. |
+    A **schema** defines which fields a profile can have and what each field accepts. The profile contains the values for one person. For example, the schema defines the **Department** field, and one user’s profile holds **Finance** as its value. Use **Directory → People → select the user → Profile** to read individual values. Use **Directory → Profile Editor** to inspect field definitions. [Okta · Universal Directory](https://developer.okta.com/docs/concepts/universal-directory/)
 
-If the field is missing, start with the user type and its field definitions. If you can see the field but its value is wrong, check the source and how that system’s field connects to the Okta field. That connection is a **mapping**. In the API, the account’s `type` identifies the profile type. A profile attribute named `userType` is a separate field. [Okta · Universal Directory](https://developer.okta.com/docs/concepts/universal-directory/) · [Okta · Custom user types](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-usertypes-about.htm)
+    | Setting | Question it answers |
+    | --- | --- |
+    | **User type** | **Which fields can this user have?** An account uses one profile type. Okta supports the default type plus up to nine custom types. A custom type can require fields that the default type does not have. |
+    | **Profile or attribute source** | **Which system supplies the value?** Okta can manage the data itself, or a connected system can supply it. One system can supply most of the profile while another supplies a particular field. |
+    | **Realm** | **Which segment of this org does the account belong to?** If the org uses realms, it can organize users into separate populations within the same org and delegate administration. |
 
-## Read app access in three places
+    If the field is missing, start with the user type and its field definitions. If you can see the field but its value is wrong, check the source and how that system’s field connects to the Okta field. That connection is a **mapping**. In the API, the account’s `type` identifies the profile type. A profile attribute named `userType` is a separate field. [Okta · Universal Directory](https://developer.okta.com/docs/concepts/universal-directory/) · [Okta · Custom user types](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-usertypes-about.htm)
 
-An **app assignment** is how Okta grants a user access to an application integration. An assignment can go directly to a user or come through a **group**, which is a collection of users. Open the app under **Applications and Resources → Applications → Assignments** to see who receives it. To explain why someone gets the app, check the individual assignment and any group that can grant it. [Okta · Assign applications to users](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-assign-apps.htm)
+    ## Read app access in three places
 
-| Place | What you can learn there |
-| --- | --- |
-| **Okta user profile** | The person’s central details in Okta, such as their Okta username and department. |
-| **App user profile in Okta** | The values Okta holds for this person’s assignment to one integration. The username sent to the app can differ from the person’s Okta username. |
-| **Account inside the app** | The record the receiving app actually has. Check there when you need to prove it received an update or that its account is active. |
+    An **app assignment** is how Okta grants a user access to an application integration. An assignment can go directly to a user or come through a **group**, which is a collection of users. Open the app under **Applications and Resources → Applications → Assignments** to see who receives it. To explain why someone gets the app, check the individual assignment and any group that can grant it. [Okta · Assign applications to users](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-assign-apps.htm)
 
-An **Active** status answers the account-state question. An assignment answers the access-assignment question. A successful sign-in establishes that the user can get in. The receiving app’s account record shows what data actually arrived. Knowing which question you’re answering tells you where to look. [Okta · Universal Directory](https://developer.okta.com/docs/concepts/universal-directory/) · [Okta · User account status](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-end-user-states.htm)
+    | Place | What you can learn there |
+    | --- | --- |
+    | **Okta user profile** | The person’s central details in Okta, such as their Okta username and department. |
+    | **App user profile in Okta** | The values Okta holds for this person’s assignment to one integration. The username sent to the app can differ from the person’s Okta username. |
+    | **Account inside the app** | The record the receiving app actually has. Check there when you need to prove it received an update or that its account is active. |
+
+    An **Active** status answers the account-state question. An assignment answers the access-assignment question. A successful sign-in establishes that the user can get in. The receiving app’s account record shows what data actually arrived. Knowing which question you’re answering tells you where to look. [Okta · Universal Directory](https://developer.okta.com/docs/concepts/universal-directory/) · [Okta · User account status](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-end-user-states.htm)
+
+=== "Hands-on Lab"
+
+    ## Read a user record
+
+    Use an Okta Identity Engine lab org and an admin account that can view a training user and its assignments. This lab is read-only. See the [module lab setup](hands-on-labs.md#before-you-start) for shared prerequisites and test data.
+
+    1. Open **Directory → People** and find a disposable or existing training account using its exact username. The username may look like an email address. Open **Profile** and compare **Username** and **Primary email**.
+    2. Record the status on the user record and the **User type** if displayed. Clear any **Status** filter before deciding that a username is missing. Practice by selecting a filter that excludes the user, then clearing it.
+    3. Open **Groups** and **Applications**. Write down one group and one app assignment, or record that the app list is empty. If an app is listed, open its **Assignments** tab from **Applications and Resources → Applications** and use the People/Users and Groups views to trace how the user receives it.
+    4. Write a two-sentence ticket update. State whether the Okta user exists, what status you observed, and which view you would check next for a missing app. Include only the username alias and field labels in your evidence.
+
+    **Pass check.** You can find the same record with the status filter cleared and distinguish a user's account state from their app assignment. This exercise makes no configuration changes.
+
+    [Okta · Manage users](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-people.htm)
