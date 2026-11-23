@@ -64,7 +64,7 @@
 
         **3. Change the input and follow the mapping.** Go to **Directory → People**, open the first test user, and change **Lab Cost Center** from `FIN-0042` to `FIN-0043`. If you completed [Lesson 2](02-profile-mappings.md), open **Profile Editor → LAB-Profile-Mappings → Mappings → Okta User to App** and preview the row for **Cost Center Code** with both users. Expect `FIN-0043` and `OPS-0105`. You changed a value on one Okta profile, so the same mapping yields a new result for that user. Restore `FIN-0042`.
 
-        **4. Follow a value into app access.** Use the [Week 1 Finance rule and bookmark](../../week-01-foundations/labs/06-finance-joiner-and-mover.md) with a test user who receives the app through the Finance group. Move their Department from `Lab-Finance` to `Lab-Operations` in **People → Profile**. After the rule processes, check the person's **Groups** and the bookmark's **Assignments**. Restore the original Department. In the next tab, the same kind of change arrives through a source integration.
+        **4. Follow a value into app access.** Use the [Module 2 Finance rule and bookmark](../../week-01-foundations/labs/06-finance-joiner-and-mover.md) with a test user who receives the app through the Finance group. Move their Department from `Lab-Finance` to `Lab-Operations` in **People → Profile**. After the rule processes, check the person's **Groups** and the bookmark's **Assignments**. Restore the original Department. In the next tab, the same kind of change arrives through a source integration.
 
     === "2. Compare two external sources"
 

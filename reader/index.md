@@ -2,18 +2,22 @@
 
 Learn what Okta does, how its pieces work together, and where to verify the result. Use your Integrator org for the first lesson.
 
-[Read Lesson 1 · Your Okta org](week-01-foundations/lessons/01-your-okta-org.md){ .md-button .md-button--primary }
+[Start Module 1 · Manage Users](modules/manage-users.md){ .md-button .md-button--primary }
 
-## Week 1 · Foundations
+## Module 1 · Manage Users
+
+Start with [Manage Users](modules/manage-users.md) to find the lessons and labs for creating, activating, updating, and restoring user accounts.
+
+## Module 2 · Foundations
 
 1. [Your Okta org](week-01-foundations/lessons/01-your-okta-org.md)
 2. [Users, profiles, and activation](week-01-foundations/lessons/02-users-profiles-and-activation.md)
 3. [Groups and membership rules](week-01-foundations/lessons/03-groups-and-membership-rules.md)
 4. [Application assignment and the End-User Dashboard](week-01-foundations/lessons/04-application-assignment-and-dashboard.md)
 5. [System Log and access investigations](week-01-foundations/lessons/05-system-log-and-access-investigations.md)
-6. [Week 1 capstone · Finance joiner and mover](week-01-foundations/labs/06-finance-joiner-and-mover.md)
+6. [Module 2 capstone · Finance joiner and mover](week-01-foundations/labs/06-finance-joiner-and-mover.md)
 
-## Week 2 · Universal Directory and lifecycle
+## Module 3 · Universal Directory and lifecycle
 
 1. [Universal Directory and profile attributes](week-02-directory-and-lifecycle/lessons/01-universal-directory-and-profile-attributes.md)
 2. [Profile mappings](week-02-directory-and-lifecycle/lessons/02-profile-mappings.md)
@@ -22,31 +26,32 @@ Learn what Okta does, how its pieces work together, and where to verify the resu
 5. [Application provisioning](week-02-directory-and-lifecycle/lessons/05-application-provisioning.md)
 6. [Group Push](week-02-directory-and-lifecycle/lessons/06-group-push.md)
 7. [Okta Workflows for lifecycle management](week-02-directory-and-lifecycle/lessons/07-okta-workflows.md)
-8. [Week 2 capstone · Manage a user from profile to offboarding](week-02-directory-and-lifecycle/labs/08-directory-and-lifecycle-capstone.md)
+8. [Module 3 capstone · Manage a user from profile to offboarding](week-02-directory-and-lifecycle/labs/08-directory-and-lifecycle-capstone.md)
 
-## Week 3 · SAML and attribute mappings
+## Module 4 · SAML and attribute mappings
 
 1. [SAML sign-in with Okta](week-03-saml-and-mappings/lessons/01-saml-sign-in.md)
 2. [Custom SAML attributes and group assignment](week-03-saml-and-mappings/lessons/02-custom-saml-attributes-and-group-assignment.md)
 3. [Troubleshoot SAML and choose an SSO method](week-03-saml-and-mappings/lessons/03-saml-troubleshooting-and-sso.md)
-4. [Week 3 capstone · Deliver a custom SAML integration](week-03-saml-and-mappings/labs/04-custom-saml-integration-capstone.md)
+4. [Module 4 capstone · Deliver a custom SAML integration](week-03-saml-and-mappings/labs/04-custom-saml-integration-capstone.md)
 
-## Week 4 · Active Directory and LDAP
+## Module 5 · Active Directory and LDAP
 
 1. [Connect Active Directory to Okta](week-04-ad-and-ldap/lessons/01-connect-active-directory.md)
 
 ## Course outline
 
-| Week | Topic |
+| Module | Topic |
 | --- | --- |
-| 1 | Foundations |
-| 2 | Universal Directory and lifecycle |
-| 3 | SAML and attribute mappings |
-| 4 | Active Directory and LDAP |
-| 5 | Behavior Detection |
-| 6 | Device Assurance and FastPass |
-| 7 | Monitoring and troubleshooting |
-| 8 | Exam rehearsals |
+| 1 | Manage Users |
+| 2 | Foundations |
+| 3 | Universal Directory and lifecycle |
+| 4 | SAML and attribute mappings |
+| 5 | Active Directory and LDAP |
+| 6 | Behavior Detection |
+| 7 | Device Assurance and FastPass |
+| 8 | Monitoring and troubleshooting |
+| 9 | Exam rehearsals |
 
 [Exam coverage and planned labs](exam/coverage.md)
 

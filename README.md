@@ -1,30 +1,31 @@
 # Okta Administrator preparation
 
-Start with [Lesson 1 · Your Okta org](week-01-foundations/lessons/01-your-okta-org.md). Each lesson combines theory, practice, and questions that ask you to explain the outcome.
+Start with [Module 1 · Manage Users](reader/modules/manage-users.md). Each lesson combines theory, practice, and questions that ask you to explain the outcome.
 
 ## Course outline
 
-1. [foundations](week-01-foundations/)
-2. [directory and lifecycle](week-02-directory-and-lifecycle/)
-3. [saml and mappings](week-03-saml-and-mappings/)
-4. [ad and ldap](week-04-ad-and-ldap/)
-5. [behavior detection](week-05-behavior-detection/)
-6. [device assurance](week-06-device-assurance/)
-7. [troubleshooting](week-07-troubleshooting/)
-8. [exam rehearsals](week-08-exam-rehearsals/)
+1. [Manage Users](reader/modules/manage-users.md)
+2. [Foundations](week-01-foundations/)
+3. [directory and lifecycle](week-02-directory-and-lifecycle/)
+4. [saml and mappings](week-03-saml-and-mappings/)
+5. [ad and ldap](week-04-ad-and-ldap/)
+6. [behavior detection](week-05-behavior-detection/)
+7. [device assurance](week-06-device-assurance/)
+8. [troubleshooting](week-07-troubleshooting/)
+9. [exam rehearsals](week-08-exam-rehearsals/)
 
-Each week has a lessons folder for instruction and a labs folder for independent scenarios.
+The module outline links to lessons and hands-on labs.
 
-## Week 1 sequence
+## Module 2 sequence
 
 1. Your Okta org and the two consoles
 2. [Users, profiles, and activation](week-01-foundations/lessons/02-users-profiles-and-activation.md)
 3. [Groups and membership rules](week-01-foundations/lessons/03-groups-and-membership-rules.md)
 4. [Application assignment and the End-User Dashboard](week-01-foundations/lessons/04-application-assignment-and-dashboard.md)
 5. [System Log and access investigations](week-01-foundations/lessons/05-system-log-and-access-investigations.md)
-6. [Week 1 capstone · Finance joiner and mover](week-01-foundations/labs/06-finance-joiner-and-mover.md)
+6. [Module 2 capstone · Finance joiner and mover](week-01-foundations/labs/06-finance-joiner-and-mover.md)
 
-## Week 2 · Universal Directory and lifecycle
+## Module 3 · Universal Directory and lifecycle
 
 1. [Universal Directory and profile attributes](week-02-directory-and-lifecycle/lessons/01-universal-directory-and-profile-attributes.md)
 2. [Profile mappings](week-02-directory-and-lifecycle/lessons/02-profile-mappings.md)
@@ -33,16 +34,16 @@ Each week has a lessons folder for instruction and a labs folder for independent
 5. [Application provisioning](week-02-directory-and-lifecycle/lessons/05-application-provisioning.md)
 6. [Group Push](week-02-directory-and-lifecycle/lessons/06-group-push.md)
 7. [Okta Workflows for lifecycle management](week-02-directory-and-lifecycle/lessons/07-okta-workflows.md)
-8. [Week 2 capstone · Manage a user from profile to offboarding](week-02-directory-and-lifecycle/labs/08-directory-and-lifecycle-capstone.md)
+8. [Module 3 capstone · Manage a user from profile to offboarding](week-02-directory-and-lifecycle/labs/08-directory-and-lifecycle-capstone.md)
 
-## Week 3 · SAML and attribute mappings
+## Module 4 · SAML and attribute mappings
 
 1. [SAML sign-in with Okta](week-03-saml-and-mappings/lessons/01-saml-sign-in.md)
 2. [Custom SAML attributes and group assignment](week-03-saml-and-mappings/lessons/02-custom-saml-attributes-and-group-assignment.md)
 3. [Troubleshoot SAML and choose an SSO method](week-03-saml-and-mappings/lessons/03-saml-troubleshooting-and-sso.md)
-4. [Week 3 capstone · Deliver a custom SAML integration](week-03-saml-and-mappings/labs/04-custom-saml-integration-capstone.md)
+4. [Module 4 capstone · Deliver a custom SAML integration](week-03-saml-and-mappings/labs/04-custom-saml-integration-capstone.md)
 
-## Week 4 · Active Directory and LDAP
+## Module 5 · Active Directory and LDAP
 
 1. [Connect Active Directory to Okta](week-04-ad-and-ldap/lessons/01-connect-active-directory.md)
 

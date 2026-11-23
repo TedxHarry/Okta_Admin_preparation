@@ -1,4 +1,4 @@
-# Week 1 capstone · Finance joiner and mover
+# Module 2 capstone · Finance joiner and mover
 
 Use your Integrator org to give a new Finance test user their first app access, then handle their move to Operations. A **joiner** is someone who needs their initial access. A **mover** is someone who needs their access adjusted because their role or department changed. Then explain the result using the current configuration and System Log evidence. Work from the requirements before opening the hints.
 

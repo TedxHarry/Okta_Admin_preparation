@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    In Week 1, assigning the bookmark gave a user a tile in Okta. This lesson follows an assignment further. When a connected application keeps its own user directory, Okta can ask it to create, update, or deactivate an account. That work is **provisioning**.
+    In Module 2, assigning the bookmark gave a user a tile in Okta. This lesson follows an assignment further. When a connected application keeps its own user directory, Okta can ask it to create, update, or deactivate an account. That work is **provisioning**.
 
     ## Follow the assignment into the application
 
@@ -68,4 +68,4 @@
 
         **4. Review the evidence.** Compare the Okta assignment, provisioning task or event, and target record at each stage. If the target remains active after removal, review **Deactivate Users** and the connector's response before repeating the operation. Restore the disposable user's original first name in Okta. Keep the test integration available for later group provisioning practice.
 
-    If you have only the Integrator org today, use the [Week 2 mapping lab](02-profile-mappings.md) to inspect a proposed outbound value and identify the app-side evidence you would check next. Actual account creation, updates, and deactivation in this lesson require a receiving service.
+    If you have only the Integrator org today, use the [Module 3 mapping lab](02-profile-mappings.md) to inspect a proposed outbound value and identify the app-side evidence you would check next. Actual account creation, updates, and deactivation in this lesson require a receiving service.
