@@ -57,7 +57,9 @@ extra_javascript:
 nav:
   - Course outline: index.md
   - Exam coverage: exam/coverage.md
-  - Module 1 · Manage Users: modules/manage-users.md
+  - Module 1 · Manage Users:
+      - Overview: modules/manage-users.md
+      - Lesson 1 · Read an Okta user record: modules/manage-users/01-read-an-okta-user-record.md
   - Module 2 · Foundations:
       - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
       - Lesson 2 · Users, profiles, and activation: week-01-foundations/lessons/02-users-profiles-and-activation.md

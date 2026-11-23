@@ -2,6 +2,12 @@
 
 Start here to learn what Okta stores about a user, how that person gets an active account, and what happens to their access when you suspend or deactivate them.
 
+## Theory
+
+1. [Read an Okta user record](manage-users/01-read-an-okta-user-record.md)
+
+## Related lessons and labs
+
 | Start with | What you will practice |
 | --- | --- |
 | [Your Okta org](../week-01-foundations/lessons/01-your-okta-org.md) | Open the Admin Console and find an existing user under **Directory → People**. |
