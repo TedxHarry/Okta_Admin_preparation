@@ -61,6 +61,7 @@ nav:
       - Overview: modules/manage-users.md
       - Lesson 1 · Read an Okta user record: modules/manage-users/01-read-an-okta-user-record.md
       - Lesson 2 · Create and activate a user: modules/manage-users/02-create-and-activate-a-user.md
+      - Lesson 3 · Bring users into Okta through imports or first sign-in: modules/manage-users/03-import-users-and-first-sign-in.md
   - Module 2 · Foundations:
       - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
       - Lesson 2 · Users, profiles, and activation: week-01-foundations/lessons/02-users-profiles-and-activation.md
