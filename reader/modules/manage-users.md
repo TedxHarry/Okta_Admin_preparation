@@ -5,6 +5,7 @@ Start here to learn what Okta stores about a user, how that person gets an activ
 ## Theory
 
 1. [Read an Okta user record](manage-users/01-read-an-okta-user-record.md)
+2. [Create and activate a user](manage-users/02-create-and-activate-a-user.md)
 
 ## Related lessons and labs
 
