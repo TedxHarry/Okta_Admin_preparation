@@ -28,6 +28,10 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 
     Preview conditional values and verify an app username after an alias change.
 
+- [7. Configure profile sources and attribute priority](#lab-7)
+
+    Compare two sources, override one field, and trace an HR edit to a group rule.
+
 --8<-- "manage-profiles-lab-1.md"
 
 --8<-- "manage-profiles-lab-2.md"
@@ -39,3 +43,5 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 --8<-- "manage-profiles-lab-5.md"
 
 --8<-- "manage-profiles-lab-6.md"
+
+--8<-- "manage-profiles-lab-7.md"

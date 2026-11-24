@@ -94,6 +94,7 @@ nav:
       - Lesson 4 · Manage group and integration schemas: modules/manage-profiles/04-manage-group-and-integration-schemas.md
       - Lesson 5 · Build and verify inbound and outbound mappings: modules/manage-profiles/05-build-and-verify-inbound-and-outbound-mappings.md
       - Lesson 6 · Transform values and manage usernames: modules/manage-profiles/06-transform-values-and-manage-usernames.md
+      - Lesson 7 · Configure profile sources and attribute priority: modules/manage-profiles/07-configure-profile-sources-and-attribute-priority.md
       - Hands-on labs: modules/manage-profiles/hands-on-labs.md
       - Source and lab plan: modules/manage-profiles/source-and-lab-plan.md
   - Foundations:
