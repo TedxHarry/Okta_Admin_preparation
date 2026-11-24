@@ -68,4 +68,4 @@
 
         **4. Remove the assignment last.** Once the target membership is gone, remove the test user from **LAB-SCIM-App-Users**. Verify the assignment is gone and the receiving account is inactive if **Deactivate Users** is enabled. Compare the two outcomes. One action removed group membership inside the app. The other removed the app assignment and initiated deprovisioning.
 
-    If you do not have a group-capable target yet, use the [Module 2 group assignment lab](../../week-01-foundations/lessons/04-application-assignment-and-dashboard.md) to practice tracing the user's app assignment. The target group and membership checks in this lesson require a working Group Push connection.
+    If you do not have a group-capable target yet, use the [Foundations group assignment lab](../../week-01-foundations/lessons/04-application-assignment-and-dashboard.md) to practice tracing the user's app assignment. The target group and membership checks in this lesson require a working Group Push connection.

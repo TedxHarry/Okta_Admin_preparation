@@ -1,0 +1,21 @@
+# Module 2 · Manage Groups
+
+Identify who controls a group, trace membership and app access, and practice managing groups in an Okta Identity Engine lab org.
+
+## Lessons
+
+1. Identify the group and its owner
+2. Create a group and manage membership
+3. Build and test a basic group rule
+4. Write an advanced group rule
+5. Change, verify, and troubleshoot rules
+6. Assign apps and resolve group priority
+7. Import groups and trace source ownership
+8. Push groups and link an existing target group
+9. Verify groups across apps, policies, and governance
+
+## Capstone
+
+Follow a joiner and mover through group membership, app assignment, and verification. Use a control user to show who should stay outside the group.
+
+Start with [Module 1 · Manage Users](manage-users.md) if you need practice finding users, reading their profiles, or tracing an app assignment. See [Okta · Manage groups](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-groups-main.htm) and the [course exam map](../exam/coverage.md).

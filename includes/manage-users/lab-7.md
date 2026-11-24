@@ -18,4 +18,4 @@ Use an Okta Identity Engine lab org, an administrator who can manage test-user l
 
 **Independent check.** A teammate needs a temporary hold for a leave of absence and should return with the same app grants. Choose the action, predict what happens to the existing Okta session and app assignments, and name the evidence you would collect before and after restoring access.
 
-[Okta · System Log filters and search](https://help.okta.com/oie/en-us/Content/topics/reports/syslog-filters.htm) · [Module 3 · Suspend, deactivate, and restore a user](../../week-02-directory-and-lifecycle/lessons/03-user-account-lifecycle.md)
+[Okta · System Log filters and search](https://help.okta.com/oie/en-us/Content/topics/reports/syslog-filters.htm) · [Suspend, deactivate, and restore a user](../../week-02-directory-and-lifecycle/lessons/03-user-account-lifecycle.md)

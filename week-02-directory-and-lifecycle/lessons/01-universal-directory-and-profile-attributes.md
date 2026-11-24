@@ -1,10 +1,10 @@
-# Module 3 · Lesson 1 · Universal Directory and profile attributes
+# Lesson 1 · Universal Directory and profile attributes
 
 === "Theory"
 
     ## The directory, the profile, and the schema
 
-    **Universal Directory (UD)** is where Okta keeps the user information it uses for tasks such as evaluating group rules and mapping data to apps. You worked with an individual record in **Directory → People** in Module 2. In this module, you will also use **Directory → Profile Editor** to manage the fields available on profiles.
+    **Universal Directory (UD)** is where Okta keeps the user information it uses for tasks such as evaluating group rules and mapping data to apps. You worked with an individual record in **Directory → People** in Foundations. In this module, you will also use **Directory → Profile Editor** to manage the fields available on profiles.
 
     A **profile** contains values for one user. An **attribute** is a named field on that profile. A **schema** defines what fields a profile supports and what kind of values those fields accept. If you add a field to the default user schema, you make that field available on profiles of that user type. You still need to populate a value for each user who needs one, or configure another mechanism to populate it.
 
@@ -37,7 +37,7 @@
 
     A user's **Okta profile** stores the value inside Okta. An **app user profile** represents the user's attributes for a particular integration. The app might call a field something different or expect a different format. A **profile mapping** tells Okta which source value supplies which destination field and whether the value needs to be transformed. Adding a field to the Okta user profile makes it available for use in mappings.
 
-    This lesson ends when the values are correct on both Okta profiles. You will practice moving data between profiles in Module 3 and mapping a custom value into a SAML integration in Module 4.
+    This lesson ends when the values are correct on both Okta profiles. You will practice moving data between profiles in Universal Directory and lifecycle and mapping a custom value into a SAML integration in SAML and attribute mappings.
 
     ## Official reading
 
@@ -48,7 +48,7 @@
 
     ## Store two cost-center codes in Universal Directory
 
-    Use your Integrator org and the two Okta-managed test users from Module 2. This walkthrough assumes both accounts use the default **User** type. Use an admin account with permission to edit the user schema and update both test profiles.
+    Use your Integrator org and the two Okta-managed test users from Foundations. This walkthrough assumes both accounts use the default **User** type. Use an admin account with permission to edit the user schema and update both test profiles.
 
     ### 1. Open the definition for the default Okta user type
 

@@ -1,4 +1,4 @@
-# Module 4 capstone · Deliver a custom SAML integration
+# Capstone · Deliver a custom SAML integration
 
 A test application needs single sign-on (SSO) for users whose Department is `Lab-SAML-Capstone`. The app also needs a cost-center value under the name `cost_center`. Build the integration from these requirements. Use the users and concepts from earlier lessons, and show your evidence from Okta through to the receiving app.
 

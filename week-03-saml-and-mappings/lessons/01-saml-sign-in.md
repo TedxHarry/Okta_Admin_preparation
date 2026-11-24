@@ -44,7 +44,7 @@
     | `Issuer` | The identity provider identifier. Compare it with the IdP issuer configured on the SP. |
     | `Subject → NameID` | The identifier for this user. Compare its value and format with what the SP uses to match the account. |
     | `Conditions → AudienceRestriction → Audience` | The intended SP identifier. Compare it with the SP Entity ID. |
-    | `AttributeStatement` | Additional named values the app can consume. Later in Module 4 we will follow a custom value from the Okta profile, through a mapping, into this part of the assertion. |
+    | `AttributeStatement` | Additional named values the app can consume. Later in SAML and attribute mappings we will follow a custom value from the Okta profile, through a mapping, into this part of the assertion. |
 
     **Check both NameID settings.** **Application username** determines the value Okta uses, such as the user's email. **Name ID format** labels the kind of identifier sent. Compare both the value and the format in a fresh assertion with what the receiving app expects. If the service provider sends a `NameIDPolicy` in its authentication request, it is asking for a particular format. The Name ID format in Okta must match that request. [Okta · SAML field reference](https://help.okta.com/en-us/Content/Topics/Apps/aiw-saml-reference.htm)
 

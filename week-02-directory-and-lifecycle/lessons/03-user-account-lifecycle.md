@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    In Module 2 you activated a user for the first time. Now start with someone who already has access. Open their record under **Directory → People** and ask two questions. Can this person sign in to Okta? Which applications has Okta assigned to them? Those questions have different answers when you suspend a user.
+    In Foundations you activated a user for the first time. Now start with someone who already has access. Open their record under **Directory → People** and ask two questions. Can this person sign in to Okta? Which applications has Okta assigned to them? Those questions have different answers when you suspend a user.
 
     ## What changes when you suspend someone?
 
@@ -14,7 +14,7 @@
 
     **Deactivate** starts a broader removal of access. Okta stops its sessions, removes app assignments, and deletes the user's Okta password. The directory record and group memberships remain. In **People**, the status reads **Deactivated**. The corresponding lifecycle state is also called **Deprovisioned**.
 
-    Think back to the two assignment paths from Module 2. A **direct assignment** connects one person to one app. A **group assignment** grants the app through a group. After you reactivate a user, a retained group membership can give them the app again. A previous direct grant may need to be made again. Seeing **Active** tells you about the Okta account. To find out whether app access returned, open the app and inspect the assignment.
+    Think back to the two assignment paths from Foundations. A **direct assignment** connects one person to one app. A **group assignment** grants the app through a group. After you reactivate a user, a retained group membership can give them the app again. A previous direct grant may need to be made again. Seeing **Active** tells you about the Okta account. To find out whether app access returned, open the app and inspect the assignment.
 
     | What you inspect | After suspension | After deactivation completes |
     | --- | --- | --- |
@@ -39,13 +39,13 @@
 
 === "Hands-on Lab"
 
-    Use a **new Okta-managed test user** with a mailbox you control. Keep the admin session in your normal browser and use a private window for the test user. You need permission to manage users and assign `LAB-Assignment-Bookmark`, the Module 2 Okta bookmark app that opens `https://example.com/`. Work through both tabs with the same account.
+    Use a **new Okta-managed test user** with a mailbox you control. Keep the admin session in your normal browser and use a private window for the test user. You need permission to manage users and assign `LAB-Assignment-Bookmark`, the Foundations Okta bookmark app that opens `https://example.com/`. Work through both tabs with the same account.
 
     === "1. Suspend and resume"
 
-        **1. Establish a working sign-in.** In **Directory → People → Add person**, create the test user with **Activate now**. Leave Department blank so the Finance rule from Module 2 does not assign the bookmark. Complete activation and any required enrollment in the private window. Open the End-User Dashboard. Keep this window open so you can test the session.
+        **1. Establish a working sign-in.** In **Directory → People → Add person**, create the test user with **Activate now**. Leave Department blank so the Finance rule from Foundations does not assign the bookmark. Complete activation and any required enrollment in the private window. Open the End-User Dashboard. Keep this window open so you can test the session.
 
-        **2. Give the user one direct assignment.** In the admin window open **Applications and Resources → Applications → LAB-Assignment-Bookmark → Assignments → Assign → Assign to People**. Find the new username, select **Assign**, then **Save and Go Back → Done**. Find their row again and verify the assignment is individual. If the bookmark is missing, create it using [Module 2, Lesson 4](../../week-01-foundations/lessons/04-application-assignment-and-dashboard.md). Refresh the test dashboard and locate the bookmark tile.
+        **2. Give the user one direct assignment.** In the admin window open **Applications and Resources → Applications → LAB-Assignment-Bookmark → Assignments → Assign → Assign to People**. Find the new username, select **Assign**, then **Save and Go Back → Done**. Find their row again and verify the assignment is individual. If the bookmark is missing, create it using [Foundations, Lesson 4](../../week-01-foundations/lessons/04-application-assignment-and-dashboard.md). Refresh the test dashboard and locate the bookmark tile.
 
         **3. Suspend and inspect both sides.** Go to **Directory → People**, open the test user, and select **More Actions → Suspend**. Confirm the username before submitting. Look for **Suspended**. Reopen the bookmark's **Assignments** tab and find the same user. Now refresh the test dashboard and attempt a fresh sign-in with the test credentials. The assignment remains visible to the admin while Okta blocks the user's access.
 

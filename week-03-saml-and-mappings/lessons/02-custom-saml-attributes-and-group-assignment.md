@@ -51,7 +51,7 @@
 
     === "1. Prepare the group and the custom app"
 
-        **1. Prepare the Okta user attribute.** In **Directory → Profile Editor → Okta User (default)**, create the optional string `labCostCenter` if you have not already done so in [Module 3, Lesson 1](../../week-02-directory-and-lifecycle/lessons/01-universal-directory-and-profile-attributes.md). In **Directory → People**, give the first test user `FIN-0042` and the second `OPS-0105`. Record the users' original Department values. Set the first user's Department to `Lab-SAML-Finance` and the second's to `Lab-SAML-Control`.
+        **1. Prepare the Okta user attribute.** In **Directory → Profile Editor → Okta User (default)**, create the optional string `labCostCenter` if you have not already done so in [Universal Directory and lifecycle, Lesson 1](../../week-02-directory-and-lifecycle/lessons/01-universal-directory-and-profile-attributes.md). In **Directory → People**, give the first test user `FIN-0042` and the second `OPS-0105`. Record the users' original Department values. Set the first user's Department to `Lab-SAML-Finance` and the second's to `Lab-SAML-Control`.
 
         **2. Create an expression-based group rule.** In **Directory → Groups**, create `LAB-SAML-Finance`. On **Rules → Add Rule**, set the advanced condition to `user.department == "Lab-SAML-Finance"`. Under **Then Assign to**, choose the new group. Save and activate the rule. In the group's **People** tab, verify that the first user matches and the control user stays outside.
 

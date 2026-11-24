@@ -51,7 +51,7 @@
 
 === "Hands-on Lab"
 
-    Use a working [Module 4 custom SAML integration](02-custom-saml-attributes-and-group-assignment.md), one disposable user, and a test SP you administer. Establish a successful sign-in and verify the user's `cost_center` at the app before starting. Keep two browser sessions available, one for administration and one for testing.
+    Use a working [SAML and attribute mappings custom SAML integration](02-custom-saml-attributes-and-group-assignment.md), one disposable user, and a test SP you administer. Establish a successful sign-in and verify the user's `cost_center` at the app before starting. Keep two browser sessions available, one for administration and one for testing.
 
     === "1. Diagnose two different failures"
 

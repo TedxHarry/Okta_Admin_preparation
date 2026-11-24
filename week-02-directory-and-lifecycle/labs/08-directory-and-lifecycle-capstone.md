@@ -1,12 +1,12 @@
-# Module 3 capstone · Manage a user from profile to offboarding
+# Capstone · Manage a user from profile to offboarding
 
 An Okta-managed test user needs access while their Department is `Lab-W2-Finance`. Their cost-center code starts at `FIN-0820` and later changes to `FIN-0821`. Configure the profile and access path, then use the same account to demonstrate a temporary hold and a final offboarding. Work from the outcomes below and look up the steps in the lessons as needed.
 
 ## Starting state
 
 - Use a dedicated test user you are allowed to suspend and deactivate. You need an email address you control if the test user goes through email activation.
-- Use a new Okta group named `LAB-W2-Finance-Access` and an unprivileged test integration. For the Okta-only path, use a dedicated bookmark for assignment checks and the app profile from [Module 3, Lesson 2](../lessons/02-profile-mappings.md) for mapping checks. A bookmark gives you a dashboard result to inspect.
-- Use **Lab Cost Center**, the optional text field on the Okta user profile whose variable name is `labCostCenter`, from [Module 3, Lesson 1](../lessons/01-universal-directory-and-profile-attributes.md). Restrict the rule to the lab Department and keep other access paths out of this exercise.
+- Use a new Okta group named `LAB-W2-Finance-Access` and an unprivileged test integration. For the Okta-only path, use a dedicated bookmark for assignment checks and the app profile from [Universal Directory and lifecycle, Lesson 2](../lessons/02-profile-mappings.md) for mapping checks. A bookmark gives you a dashboard result to inspect.
+- Use **Lab Cost Center**, the optional text field on the Okta user profile whose variable name is `labCostCenter`, from [Universal Directory and lifecycle, Lesson 1](../lessons/01-universal-directory-and-profile-attributes.md). Restrict the rule to the lab Department and keep other access paths out of this exercise.
 - The extensions require the supported test targets or Workflows permissions listed in their lessons.
 
 === "1. Establish access and trace the profile"
