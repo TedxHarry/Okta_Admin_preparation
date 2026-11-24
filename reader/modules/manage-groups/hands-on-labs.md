@@ -36,6 +36,10 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 
     Verify provisioning and pushed membership, then link an existing group and compare unlink choices.
 
+- [9. Verify groups across apps, policies, and governance](#lab-9)
+
+    Compare an allowed and denied sign-in and verify which group-scoped rule applied.
+
 --8<-- "manage-groups-lab-1.md"
 
 --8<-- "manage-groups-lab-2.md"
@@ -51,3 +55,5 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 --8<-- "manage-groups-lab-7.md"
 
 --8<-- "manage-groups-lab-8.md"
+
+--8<-- "manage-groups-lab-9.md"
