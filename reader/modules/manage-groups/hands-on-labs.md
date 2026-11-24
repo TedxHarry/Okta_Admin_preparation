@@ -8,4 +8,10 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 
     Find the group by source and ID, verify a group assignment, and compare a native group with an imported group.
 
+- [2. Create a group and manage membership](#lab-2)
+
+    Create two native groups, change one membership, and verify the result in the System Log.
+
 --8<-- "manage-groups-lab-1.md"
+
+--8<-- "manage-groups-lab-2.md"

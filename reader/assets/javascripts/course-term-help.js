@@ -30,6 +30,7 @@
     ["App sign-in policy","The rules that determine what proof the user needs to open a particular app through Okta.",["app authentication policy","authentication policy","sign-in policy"]],
     ["Group","A named collection of users. An app assignment or policy can use the collection to apply to its members.",["groups"]],
     ["Group membership","The relationship that says which users belong to a group.",["membership","memberships"]],
+    ["Group profile","The attributes on a group record, including the group's name and description.",["group profiles"]],
     ["Group source","The system or integration that the group originates from.",["group source type"]],
     ["Group ID","The unique identifier Okta uses to distinguish a group from other records, including groups with similar names."],
     ["Membership authority","The system or automation responsible for changes to a particular group's membership."],

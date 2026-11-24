@@ -6,10 +6,10 @@ Identify who controls a group, trace membership and app access, and practice man
 
 ## Lessons
 
-Lesson 1 is available. The remaining titles show the planned sequence.
+Lessons 1 and 2 are available. The remaining titles show the planned sequence.
 
 1. [Identify the group and its owner](manage-groups/01-identify-the-group-and-its-owner.md)
-2. Create a group and manage membership
+2. [Create a group and manage membership](manage-groups/02-create-a-group-and-manage-membership.md)
 3. Build and test a basic group rule
 4. Write an advanced group rule
 5. Change, verify, and troubleshoot rules
