@@ -2,9 +2,13 @@
 
 Identify who controls a group, trace membership and app access, and practice managing groups in an Okta Identity Engine lab org.
 
+[Start the standalone hands-on labs](manage-groups/hands-on-labs.md).
+
 ## Lessons
 
-1. Identify the group and its owner
+Lesson 1 is available. The remaining titles show the planned sequence.
+
+1. [Identify the group and its owner](manage-groups/01-identify-the-group-and-its-owner.md)
 2. Create a group and manage membership
 3. Build and test a basic group rule
 4. Write an advanced group rule

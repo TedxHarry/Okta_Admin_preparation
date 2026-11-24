@@ -1,4 +1,4 @@
-.md-typeset #manage-users-lab-grid + ul {
+.md-typeset :is(#manage-users-lab-grid, #manage-groups-lab-grid) + ul {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
@@ -10,7 +10,7 @@
   list-style: none;
 }
 
-.md-typeset #manage-users-lab-grid + ul > li {
+.md-typeset :is(#manage-users-lab-grid, #manage-groups-lab-grid) + ul > li {
   position: relative;
   min-width: 0;
   margin: 0;
@@ -20,25 +20,25 @@
   border-radius: 0.45rem;
 }
 
-.md-typeset #manage-users-lab-grid + ul > li:hover,
-.md-typeset #manage-users-lab-grid + ul > li:focus-within {
+.md-typeset :is(#manage-users-lab-grid, #manage-groups-lab-grid) + ul > li:hover,
+.md-typeset :is(#manage-users-lab-grid, #manage-groups-lab-grid) + ul > li:focus-within {
   border-color: var(--md-accent-fg-color);
 }
 
-.md-typeset #manage-users-lab-grid + ul > li > p {
+.md-typeset :is(#manage-users-lab-grid, #manage-groups-lab-grid) + ul > li > p {
   margin: 0;
 }
 
-.md-typeset #manage-users-lab-grid + ul > li > p + p {
+.md-typeset :is(#manage-users-lab-grid, #manage-groups-lab-grid) + ul > li > p + p {
   margin-top: 0.3rem;
   color: var(--md-default-fg-color--light);
 }
 
-.md-typeset #manage-users-lab-grid + ul > li a {
+.md-typeset :is(#manage-users-lab-grid, #manage-groups-lab-grid) + ul > li a {
   font-weight: 700;
 }
 
-.md-typeset #manage-users-lab-grid + ul > li a::after {
+.md-typeset :is(#manage-users-lab-grid, #manage-groups-lab-grid) + ul > li a::after {
   position: absolute;
   inset: 0;
   content: "";

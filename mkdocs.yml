@@ -42,6 +42,7 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path:
         - includes/manage-users
+        - includes/manage-groups
       check_paths: true
   - pymdownx.tabbed:
       alternate_style: true
@@ -74,6 +75,8 @@ nav:
       - Hands-on labs: modules/manage-users/hands-on-labs.md
   - Module 2 · Manage Groups:
       - Overview: modules/manage-groups.md
+      - Lesson 1 · Identify the group and its owner: modules/manage-groups/01-identify-the-group-and-its-owner.md
+      - Hands-on labs: modules/manage-groups/hands-on-labs.md
   - Foundations:
       - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
       - Lesson 2 · Users, profiles, and activation: week-01-foundations/lessons/02-users-profiles-and-activation.md
