@@ -49,6 +49,7 @@ extra_css:
   - assets/stylesheets/luxury.css
   - assets/stylesheets/readability-v3.css
   - assets/stylesheets/lab-tiles.css
+  - assets/stylesheets/manage-users-lab-grid.css
   - assets/stylesheets/course-sidebar.css
   - assets/stylesheets/course-term-help.css
 extra_javascript:

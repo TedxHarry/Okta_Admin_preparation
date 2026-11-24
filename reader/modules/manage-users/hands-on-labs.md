@@ -1,6 +1,6 @@
 # Module 1 · Manage Users hands-on labs
 
-Use the tabs below to open the hands-on exercise inside each lesson. The capstone is on this page. You will create and activate users, bring in account data, trace who controls a profile value, and decide how to restore or remove access. Each lab ends with evidence you can use to explain the result.
+Choose a lab below to open its exercise. The capstone is on this page. You will create and activate users, bring in account data, trace who controls a profile value, and decide how to restore or remove access. Each lab ends with evidence you can use to explain the result.
 
 ## Before you start
 
@@ -28,60 +28,54 @@ Use the [official Administrator Performance Exam Study Guide](https://certificat
 | Part II · Monitoring and troubleshooting | Reproduce a sign-in problem, choose a recovery action, and find a successful retry and inspect the factor recorded in the System Log. | [System Log and access investigations](../../week-01-foundations/lessons/05-system-log-and-access-investigations.md) and the factor-specific practice tracked in the [exam coverage map](../../exam/coverage.md). |
 | Part II · Behavior Detection and Device Assurance | The sign-in labs introduce the account, authenticator, and session evidence used in later practice. | The dedicated configurations and policy testing are tracked in the [exam coverage map](../../exam/coverage.md). |
 
-=== "1. Read a user record"
+## Choose a lab { #manage-users-lab-grid }
+
+- [1. Read a user record](01-read-an-okta-user-record.md#__tabbed_1_2){ #__tabbed_1_1 }
 
     Find a user and distinguish the profile, status, and assignments.
 
-    [Open Lesson 1 → Hands-on Lab](01-read-an-okta-user-record.md#__tabbed_1_2)
+- [2. Create and activate users](02-create-and-activate-a-user.md#__tabbed_1_2){ #__tabbed_1_2 }
 
-=== "2. Create and activate users"
+    Compare Activate later with Activate now, then verify both test sign-ins.
 
-    Compare **Activate later** with **Activate now**, then verify both test sign-ins.
-
-    [Open Lesson 2 → Hands-on Lab](02-create-and-activate-a-user.md#__tabbed_1_2)
-
-=== "3. Import and match users"
+- [3. Import and match users](03-import-users-and-first-sign-in.md#__tabbed_1_2){ #__tabbed_1_3 }
 
     Import a user from a CSV and compare how a connected import can propose a match.
 
-    [Open Lesson 3 → Hands-on Lab](03-import-users-and-first-sign-in.md#__tabbed_1_2)
-
-=== "4. Trace ownership and mappings"
+- [4. Trace ownership and mappings](04-understand-who-controls-user-data.md#__tabbed_1_2){ #__tabbed_1_4 }
 
     Create a test field and trace an unexpected value to its source or mapping.
 
-    [Open Lesson 4 → Hands-on Lab](04-understand-who-controls-user-data.md#__tabbed_1_2)
-
-=== "5. Recover sign-in"
+- [5. Recover sign-in](05-restore-sign-in-access.md#__tabbed_1_2){ #__tabbed_1_5 }
 
     Choose and verify the right sign-in recovery action.
 
-    [Open Lesson 5 → Hands-on Lab](05-restore-sign-in-access.md#__tabbed_1_2)
+- [6. Trace app access](06-give-find-and-remove-app-access.md#__tabbed_1_2){ #__tabbed_1_6 }
 
-=== "6. Trace app access"
+    Compare direct and group-based app access. Remove group memberships one at a time and verify when the bookmark disappears.
 
-    Open [Lesson 6 → Hands-on Lab](06-give-find-and-remove-app-access.md#__tabbed_1_2). Use A and B from Lab 2. Assign the bookmark directly to A and grant it to B through two test groups. Remove B from one group at a time, then compare the current assignment with each test user's dashboard.
+- [7. Pause and offboard](07-pause-access-end-sessions-and-offboard-a-user.md#__tabbed_1_2){ #__tabbed_1_7 }
 
-    **Pass check.** B keeps the app after the first membership removal and loses it after the last access path is removed. A's individual grant remains until you remove it. Keep the bookmark integration for Lab 7.
+    Compare clearing a session, suspending a user, and deactivating a user. Check sign-in, assignments, and the System Log.
 
-=== "7. Pause and offboard"
+- [Capstone](#capstone)
 
-    Open [Lesson 7 → Hands-on Lab](07-pause-access-end-sessions-and-offboard-a-user.md#__tabbed_1_2). Follow its setup for a separate disposable account and a direct bookmark grant. Compare clearing the Okta session, suspending the user, and deactivating the user. Check the old session, a fresh sign-in, the assignment list, and the System Log.
+    Practice one contractor’s onboarding, sign-in recovery, leave of absence, and offboarding.
 
-    **Pass check.** You can show that clearing sessions allows a new sign-in, suspension retains the assignment, and completed deactivation removes it. Verify the test user's return and check whether you need to restore the bookmark assignment.
+<span id="__tabbed_1_8"></span>
 
-=== "Capstone"
+## Capstone
 
-    **Ticket.** A new contractor needs the test bookmark. A week later the contractor reports a lost enrolled phone. After the account returns to normal, the contractor goes on leave and will come back with the same access. At the end of the contract, access must be removed.
+**Ticket.** A new contractor needs the test bookmark. A week later the contractor reports a lost enrolled phone. After the account returns to normal, the contractor goes on leave and will come back with the same access. At the end of the contract, access must be removed.
 
-    Use a fresh disposable account and the bookmark from Lab 6. Before granting the bookmark, sign in as the contractor, confirm the tile is missing, and explain which admin view proves the assignment is absent. Grant it and retest. Carry out the remaining lifecycle actions using the ticket as your brief. If a spare authenticator is unavailable, write the exact action and verification you would use for recovery.
+Use a fresh disposable account and the bookmark from Lab 6. Before granting the bookmark, sign in as the contractor, confirm the tile is missing, and explain which admin view proves the assignment is absent. Grant it and retest. Carry out the remaining lifecycle actions using the ticket as your brief. If a spare authenticator is unavailable, write the exact action and verification you would use for recovery.
 
-    | Evidence to produce | What it should show |
-    | --- | --- |
-    | User record and first sign-in | The account was created, activated, and could sign in. |
-    | Assignment and dashboard | The tile was missing before the grant. After the change, you can trace it to the direct grant or test group you chose and show the tile in the user's dashboard. |
-    | Recovery action and result | The selected method is re-enrolled and a fresh sign-in succeeds, or your written procedure identifies the missing lab prerequisite. |
-    | Leave and return | Sign-in was blocked while the bookmark assignment remained, and worked after the hold was lifted. |
-    | Offboarding | The record is **Deactivated**, the bookmark assignment is gone, and the System Log identifies the action on the test user. |
+| Evidence to produce | What it should show |
+| --- | --- |
+| User record and first sign-in | The account was created, activated, and could sign in. |
+| Assignment and dashboard | The tile was missing before the grant. After the change, you can trace it to the direct grant or test group you chose and show the tile in the user's dashboard. |
+| Recovery action and result | The selected method is re-enrolled and a fresh sign-in succeeds, or your written procedure identifies the missing lab prerequisite. |
+| Leave and return | Sign-in was blocked while the bookmark assignment remained, and worked after the hold was lifted. |
+| Offboarding | The record is **Deactivated**, the bookmark assignment is gone, and the System Log identifies the action on the test user. |
 
-    **Reset.** Remove any remaining lab-only app grants and group memberships. Remove the dedicated bookmark or groups only when your later labs do not need them. Clear the custom field values, restore any external test mappings you changed, and keep or retire the disposable users according to your lab cleanup plan.
+**Reset.** Remove any remaining lab-only app grants and group memberships. Remove the dedicated bookmark or groups only when your later labs do not need them. Clear the custom field values, restore any external test mappings you changed, and keep or retire the disposable users according to your lab cleanup plan.
