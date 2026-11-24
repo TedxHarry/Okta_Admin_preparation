@@ -121,6 +121,7 @@
     ["Service account","The account a background service runs as. Its permissions control what the service can do.",["service accounts","AD agent service account","runtime identity"]],
     ["Delegated authentication","Okta asks the connected directory to check the user's credentials for an Okta sign-in.",["delegated sign-in"]],
     ["Import scope","The set of directory objects the integration is configured to bring into Okta."],
+    ["Nested group","A group that belongs to another group. Okta can import the resulting user memberships from supported AD nesting.",["nested groups","group nesting"]],
     ["UPN","User Principal Name. The full sign-in name of an AD user, commonly in the form name@domain.",["User Principal Name"]],
     ["DNS","Domain Name System. It helps the host find the network address associated with a name.",["AD DNS","name resolution"]],
     ["HTTPS","The encrypted web connection the agent uses to communicate with Okta."],

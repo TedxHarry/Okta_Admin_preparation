@@ -28,6 +28,10 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 
     Trace overlapping bookmark assignments and compare which app values users inherit.
 
+- [7. Import groups and trace source ownership](#lab-7)
+
+    Verify a source-side membership change and investigate duplicate groups and import scope.
+
 --8<-- "manage-groups-lab-1.md"
 
 --8<-- "manage-groups-lab-2.md"
@@ -39,3 +43,5 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 --8<-- "manage-groups-lab-5.md"
 
 --8<-- "manage-groups-lab-6.md"
+
+--8<-- "manage-groups-lab-7.md"
