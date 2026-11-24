@@ -67,6 +67,7 @@
     ["Matching","Finding which existing user record belongs to an incoming account, based on the configured criteria.",["account matching"]],
     ["Profile source","The system Okta relies on to supply a user's profile or a particular field.",["profile sources","profile sourcing"]],
     ["Source priority","The order Okta uses to choose among sources that apply to a user or field.",["source precedence"]],
+    ["Application group priority","An app’s assigned-group order for selecting inherited assignment values.",["app group priority","group priority"]],
     ["Attribute-level sourcing","Choosing which system supplies a particular Okta profile field, such as Department."],
     ["Write-back","Sending an Okta value back to another system that supports receiving the change.",["writeback"]],
     ["Provisioning","Creating, updating, or disabling a user account in a receiving application through a connection."],

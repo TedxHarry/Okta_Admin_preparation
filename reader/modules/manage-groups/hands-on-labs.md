@@ -24,6 +24,10 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 
     Edit a rule, diagnose an automatic exception, and verify the membership changes in the System Log.
 
+- [6. Assign apps and resolve group priority](#lab-6)
+
+    Trace overlapping bookmark assignments and compare which app values users inherit.
+
 --8<-- "manage-groups-lab-1.md"
 
 --8<-- "manage-groups-lab-2.md"
@@ -33,3 +37,5 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 --8<-- "manage-groups-lab-4.md"
 
 --8<-- "manage-groups-lab-5.md"
+
+--8<-- "manage-groups-lab-6.md"
