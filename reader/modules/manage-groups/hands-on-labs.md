@@ -32,6 +32,10 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 
     Verify a source-side membership change and investigate duplicate groups and import scope.
 
+- [8. Push groups and link an existing target group](#lab-8)
+
+    Verify provisioning and pushed membership, then link an existing group and compare unlink choices.
+
 --8<-- "manage-groups-lab-1.md"
 
 --8<-- "manage-groups-lab-2.md"
@@ -45,3 +49,5 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 --8<-- "manage-groups-lab-6.md"
 
 --8<-- "manage-groups-lab-7.md"
+
+--8<-- "manage-groups-lab-8.md"

@@ -82,6 +82,7 @@ nav:
       - Lesson 5 · Change, verify, and troubleshoot rules: modules/manage-groups/05-change-verify-and-troubleshoot-rules.md
       - Lesson 6 · Assign apps and resolve group priority: modules/manage-groups/06-assign-apps-and-resolve-group-priority.md
       - Lesson 7 · Import groups and trace source ownership: modules/manage-groups/07-import-groups-and-trace-source-ownership.md
+      - Lesson 8 · Push groups and link an existing target group: modules/manage-groups/08-push-groups-and-link-an-existing-target-group.md
       - Hands-on labs: modules/manage-groups/hands-on-labs.md
   - Foundations:
       - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
