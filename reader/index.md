@@ -12,6 +12,10 @@ Start with [Manage Users](modules/manage-users.md) to find the lessons and labs 
 
 [Manage Groups](modules/manage-groups.md). Identify who controls a group, trace membership and app access, and practice managing groups in an Okta Identity Engine lab org.
 
+## Module 3 · Manage Profiles
+
+[Manage Profiles](modules/manage-profiles.md). Compare profile types, define attributes, and trace how profile values reach apps.
+
 ## Foundations
 
 1. [Your Okta org](week-01-foundations/lessons/01-your-okta-org.md)
@@ -47,6 +51,7 @@ Start with [Manage Users](modules/manage-users.md) to find the lessons and labs 
 
 - [Module 1 · Manage Users](modules/manage-users.md)
 - [Module 2 · Manage Groups](modules/manage-groups.md)
+- [Module 3 · Manage Profiles](modules/manage-profiles.md)
 - Foundations
 - Universal Directory and lifecycle
 - SAML and attribute mappings

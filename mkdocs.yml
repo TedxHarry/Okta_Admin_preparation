@@ -43,6 +43,7 @@ markdown_extensions:
       base_path:
         - includes/manage-users
         - includes/manage-groups
+        - includes/manage-profiles
       check_paths: true
   - pymdownx.tabbed:
       alternate_style: true
@@ -85,6 +86,11 @@ nav:
       - Lesson 8 · Push groups and link an existing target group: modules/manage-groups/08-push-groups-and-link-an-existing-target-group.md
       - Lesson 9 · Verify groups across apps, policies, and governance: modules/manage-groups/09-verify-groups-across-apps-policies-and-governance.md
       - Hands-on labs: modules/manage-groups/hands-on-labs.md
+  - Module 3 · Manage Profiles:
+      - Overview: modules/manage-profiles.md
+      - Lesson 1 · Read the three profile types: modules/manage-profiles/01-read-the-three-profile-types.md
+      - Hands-on labs: modules/manage-profiles/hands-on-labs.md
+      - Source and lab plan: modules/manage-profiles/source-and-lab-plan.md
   - Foundations:
       - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
       - Lesson 2 · Users, profiles, and activation: week-01-foundations/lessons/02-users-profiles-and-activation.md
