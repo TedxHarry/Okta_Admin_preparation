@@ -40,17 +40,18 @@
 
     ## Set up a test app and two test users
 
-    Use an Okta Identity Engine lab org, two active test users whose sign-ins you control, and an admin account that can create and assign a Bookmark App, manage lab groups, and read the System Log. Keep the admin and test-user browser sessions separate.
+    Use an Okta Identity Engine lab org, two active test users whose sign-ins you control, and an admin account with Super Admin or App Admin permissions for the bookmark. You also need permission to manage the lab groups and read the System Log. Keep the admin and test-user browser sessions separate.
 
-    Create a **Bookmark App** named `LAB-Manage-Users-Bookmark` pointing to `https://example.com/`. This integration puts a link on the dashboard, so it lets you observe assignment and tile visibility without a receiving account. Start with no assignments and keep its tile visible. Create two manually managed Okta groups called `LAB-Bookmark-Readers` and `LAB-Bookmark-Reviewers`. Add test user B to both groups and keep test user A out of both. [Okta · Create a Bookmark App integration](https://help.okta.com/oie/en-us/content/topics/apps/apps-create-bookmark.htm)
+    1. In **Applications and Resources → Applications**, choose **Browse App Catalog**, search for **Bookmark App**, and choose **Add Integration**. Set the label to `LAB-Manage-Users-Bookmark`, enter `https://example.com/`, and finish the form. Leave its dashboard icon visible and confirm the new integration has no assignments. The bookmark opens a public URL and gives you a tile to inspect. [Okta · Create a Bookmark App integration](https://help.okta.com/oie/en-us/content/topics/apps/apps-create-bookmark.htm)
+    2. In **Directory → Groups**, use **Add Group** to create `LAB-Bookmark-Readers` and `LAB-Bookmark-Reviewers`. Open each group, use **Assign people**, and add B only. Verify B on the **People** tab of both groups. You can reuse A and B from [Lab 2](02-create-and-activate-a-user.md#__tabbed_1_2). [Okta · Manually assign people to a group](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-assign-group-people.htm)
 
     ## Assign, trace, and remove access
 
-    1. Open the app's **Assignments** tab. Assign the bookmark directly to user A. Assign it to both lab groups. Leave user B's direct assignments empty for this app.
+    1. Open the bookmark's **Assignments → Assign → Assign to People**. Find A and choose **Assign**, then finish the dialog. Repeat with **Assign to Groups** for Readers and Reviewers. Leave B without an individual assignment. Verify both groups in the **Groups** filter.
     2. Open each user's **Applications** tab and inspect how the bookmark is assigned. Compare the app's **People/Users** and **Groups** filters with user B's group memberships. Sign in as each test user and confirm the bookmark appears and opens the URL.
-    3. Remove user B from **Readers**. Before refreshing the dashboard, predict whether the tile should stay. It should remain because **Reviewers** still grants the bookmark. Verify that user B is still assigned and can see the tile.
+    3. Open **Directory → Groups → LAB-Bookmark-Readers**. Use the remove control on B's row under **People** and confirm. Before refreshing the dashboard, predict whether the tile should stay. It should remain because **Reviewers** still grants the bookmark. Verify that user B is still assigned and can see the tile.
     4. Remove user B from **Reviewers**. Verify that user B loses the assignment and the tile in a fresh session. Verify that user A still has the individual assignment.
-    5. Remove user A's individual assignment from the app. Verify that neither user appears as assigned and neither sees the bookmark. The two groups can still appear as assigned because removing a member does not unassign the group itself.
+    5. Back in the app's **Assignments** tab, find A under **People** or **Users** and select **X** on A's assignment. Confirm the removal. Verify that neither user appears as assigned and neither sees the bookmark. The two groups can still appear as assigned because removing a member does not unassign the group itself.
 
     | Lab state | User A | User B |
     | --- | --- | --- |

@@ -6,6 +6,8 @@
 
     ## Choose what starts the process
 
+    If this is your first import, start with [the People CSV exercise](#__tabbed_1_2). Read the connected-import and safeguard sections when you have a test integration or need to interpret an import result.
+
     | Path | What starts it | When to look for the Okta record |
     | --- | --- | --- |
     | **People CSV import** | An administrator uploads a file of user information. The file is a snapshot of the rows you supplied. | After validation and import, check the summary and **Directory → People**. |
@@ -74,12 +76,16 @@
 
     Use an isolated Okta Identity Engine lab org with the People CSV import action and an admin who can import users. The connected extension also requires a supported test integration and access to its source. See the [module lab setup](hands-on-labs.md#before-you-start) for shared prerequisites and test data.
 
-    1. Open **Directory → People → More Actions → Import users from CSV** and download your org's template. Preserve its headings. Add one new test user with a unique username and fill in required fields using an inbox you control.
-    2. Upload the file, read the validation results, and correct any errors in the file before submitting. For a controlled validation check, try leaving a required field empty in a separate copy, then restore it before you commit the valid import.
-    3. Leave **Automatically activate new users** off for the valid import. Find the exact test username in **People**, compare the imported profile fields to the input row, and record the status. Use Lab 2's activation procedure if you want the user to sign in later.
+    1. Open **Directory → People → More Actions → Import users from CSV**. Download the org template from that workflow if offered. Keep its header row, add exactly one test row, and save it as a CSV. Use first name `Lab`, last name `CSV User`, a fresh email-format username, and a test inbox you control. Complete any additional fields marked required in your org.
+    2. First upload a separate copy with the username missing. Record the validation result and stop before importing that copy. Then choose **Upload CSV** for the corrected file. Read the validation result and select **Next** after it succeeds.
+    3. Leave **Automatically activate new users** off and submit the valid import. Review the result, find the exact username in **People**, and compare its profile and status with your input. Expect the account to require activation before the user can sign in. Use Lab 2's activation procedure if you want the user to sign in later.
     4. Compare two simulated source records against user A from [Lab 2](02-create-and-activate-a-user.md#__tabbed_1_2). In the first, a unique employee identifier matches A and the last name changed. In the second, only the display name matches. Explain which record you would link under an exact, mapped employee-ID match rule, and what evidence you would check before confirming the second record.
 
     **Connected extension.** With a supported lab integration, open its **Provisioning → To Okta** settings and review matching and confirmation. Disable automatic confirmation for the exercise if available and safe in the isolated org. Stage an existing match and a new user in the source, run **Import → Import Now**, and compare the proposed results before confirming only the intended records. Record source and Okta identifiers and the outcome. For **Just-in-Time (JIT)**, use a separate eligible user in a configured test directory or identity provider. Check that the account is absent from Okta, perform first sign-in through that source, then verify the new record and its source. Those paths require external systems. The People CSV exercise demonstrates importing from a file.
+
+    **Import troubleshooting practice.** In a supported connector, open **Reports → Import Monitoring**, find your run, and follow its **Logs** link if available. For a simulated case, assume an import safeguard paused after a source administrator narrowed the import scope unexpectedly. Record what you would compare before resuming: the old and new source scope, the proposed removal count, and which users or assignments would be affected. Leave safeguards in place for the People CSV exercise.
+
+    **App CSV comparison.** On an isolated app that exposes **Import from CSV**, open **Import**, inspect its template, and identify which incoming mapped fields it expects. Compare the template with the People CSV workflow from step 1. If the app only offers **Import Now**, use the documented connected import path for that configuration.
 
     **Pass check.** The CSV user is visible with the expected field values, and you can explain how a connected import could link an existing user instead of proposing a new record. Keep the CSV user only if you need it for further practice.
 

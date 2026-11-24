@@ -15,6 +15,19 @@ Use an isolated **Okta Identity Engine** lab org, two email addresses or aliases
 
 The CSV exercise needs the People CSV import action. The connector exercises need an isolated supported integration, source-side access, and the corresponding Okta features. Run the core checks first and use the supplied decision exercises when an external system is unavailable.
 
+## What this module prepares you for
+
+Use the [official Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide) for the full exam scope. The exercises below build core user administration skills and introduce specific exam tasks. Keep these boundaries in mind when you plan your practice.
+
+| Area | Practice here | Continue in the course |
+| --- | --- | --- |
+| User administration | Find and edit a user, create and activate users, import a People CSV, restore sign-in, and offboard a user. | Use the capstone to bring these tasks together without following a recipe. |
+| Part I · AD and LDAP integration | Compare import and first sign-in, identify password ownership, and try the connected extension if you have a test directory. | [Active Directory and LDAP](../../week-04-ad-and-ldap/lessons/01-connect-active-directory.md) covers the agent setup. The [exam coverage map](../../exam/coverage.md) tracks the remaining directory exercises. |
+| Part I · Profiles, sourcing, and write-back | Trace a profile source, create a custom field, and diagnose an inbound mapping. Use the two-source extension if you have the necessary connections. | [Profile sourcing and priority](../../week-02-directory-and-lifecycle/lessons/04-profile-sourcing-and-source-priority.md), [provisioning](../../week-02-directory-and-lifecycle/lessons/05-application-provisioning.md), [Group Push](../../week-02-directory-and-lifecycle/lessons/06-group-push.md), and [Workflows](../../week-02-directory-and-lifecycle/lessons/07-okta-workflows.md). |
+| Part II · Custom app integration | Create a custom user field and assign a test app to a group. Use the bookmark to verify assignment and launch. | [Custom SAML attributes and group assignment](../../week-03-saml-and-mappings/lessons/02-custom-saml-attributes-and-group-assignment.md) covers the group rule, expression, SAML integration, mapping, and receiving-app verification. |
+| Part II · Monitoring and troubleshooting | Reproduce a sign-in problem, choose a recovery action, and find a successful retry and inspect the factor recorded in the System Log. | [System Log and access investigations](../../week-01-foundations/lessons/05-system-log-and-access-investigations.md) and the factor-specific practice tracked in the [exam coverage map](../../exam/coverage.md). |
+| Part II · Behavior Detection and Device Assurance | The sign-in labs introduce the account, authenticator, and session evidence used in later practice. | The dedicated configurations and policy testing are tracked in the [exam coverage map](../../exam/coverage.md). |
+
 === "1. Read a user record"
 
     Find a user and distinguish the profile, status, and assignments.
@@ -61,12 +74,12 @@ The CSV exercise needs the People CSV import action. The connector exercises nee
 
     **Ticket.** A new contractor needs the test bookmark. A week later the contractor reports a lost enrolled phone. After the account returns to normal, the contractor goes on leave and will come back with the same access. At the end of the contract, access must be removed.
 
-    Use a disposable account. Carry out the lifecycle actions you can safely exercise in your lab. If a spare authenticator is unavailable, write the exact action and verification you would use for recovery.
+    Use a fresh disposable account and the bookmark from Lab 6. Before granting the bookmark, sign in as the contractor, confirm the tile is missing, and explain which admin view proves the assignment is absent. Grant it and retest. Carry out the remaining lifecycle actions using the ticket as your brief. If a spare authenticator is unavailable, write the exact action and verification you would use for recovery.
 
     | Evidence to produce | What it should show |
     | --- | --- |
     | User record and first sign-in | The account was created, activated, and could sign in. |
-    | Assignment and dashboard | You can trace the bookmark to the direct grant or test group you chose. |
+    | Assignment and dashboard | The tile was missing before the grant. After the change, you can trace it to the direct grant or test group you chose and show the tile in the user's dashboard. |
     | Recovery action and result | The selected method is re-enrolled and a fresh sign-in succeeds, or your written procedure identifies the missing lab prerequisite. |
     | Leave and return | Sign-in was blocked while the bookmark assignment remained, and worked after the hold was lifted. |
     | Offboarding | The record is **Deactivated**, the bookmark assignment is gone, and the System Log identifies the action on the test user. |

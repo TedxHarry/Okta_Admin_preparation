@@ -4,11 +4,11 @@ Use this page to find the lesson and lab for each objective in the [official Per
 
 ## Module status
 
-The course currently publishes 16 lessons and three capstones. A published lab is a set of instructions you can follow. Live testing depends on the org and any receiving system listed in the lab.
+A published lab is a set of instructions you can follow. Live testing depends on the org and any receiving system listed in the lab.
 
 | Module | Where the course stands | What remains |
 | --- | --- | --- |
-| **1 · Manage Users** | [Published overview](../modules/manage-users.md) with a reading and lab sequence for user profiles, activation, and account lifecycle. | [Seven guided labs and an independent capstone](../modules/manage-users/hands-on-labs.md). Live connector import, JIT, and external profile sourcing require a connected test system. |
+| **1 · Manage Users** | [Published overview](../modules/manage-users.md) with a reading and lab sequence for user profiles, activation, and account lifecycle. | [Seven guided labs and an independent capstone](../modules/manage-users/hands-on-labs.md). The module lab page maps its exercises to the official exam guide. Live connector import, JIT, and external profile sourcing require a connected test system. |
 | **2 · Foundations** | Published. Covers the org, users, activation, groups, rules, app assignment, System Log, and a joiner/mover capstone. | Module 8 extends the log practice into factor-specific successful authentication and login recovery. |
 | **3 · Universal Directory and lifecycle** | Published. Covers custom attributes, mappings, user lifecycle, sourcing, provisioning, Group Push, and Workflows. The [Module 3 capstone](../week-02-directory-and-lifecycle/labs/08-directory-and-lifecycle-capstone.md) combines profile changes, assignment, and offboarding. | The two-source exercise needs two linked sources. Provisioning and Group Push need supported test targets, and the Workflows lab needs console access. The inbound mover and directory write-back exercises are tracked with the directory labs. |
 | **4 · SAML and attribute mappings** | Published. The sign-in lesson covers SAML trust and message exchange. The end-to-end lab brings together a group rule, custom app, attribute mapping, group assignment, and verification at the receiving app. The [Module 4 capstone](../week-03-saml-and-mappings/labs/04-custom-saml-integration-capstone.md) exercises those objectives independently. | The [troubleshooting lab](../week-03-saml-and-mappings/lessons/03-saml-troubleshooting-and-sso.md) adds controlled failure and recovery exercises. Run the receiving-app exercises against a SAML test SP you administer. A separate OIDC sign-in lab is planned as deeper practice. |

@@ -31,6 +31,8 @@
 
     ## Verify offboarding in each system that held access
 
+    For an Okta-managed user, deactivation also removes the Okta password. Okta documents that it revokes admin roles and unassigns the Okta Admin app. If the user held admin access, verify that separately during offboarding. Use disposable non-admin users for this module's exercises. [Okta · User account status](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-end-user-states.htm) · [Okta · Deactivate and delete user accounts](https://help.okta.com/oie/en-us/Content/topics/users-groups-profiles/usgp-deactivate-user-account.htm)
+
     The documented bulk path is **Directory → People → More Actions → Deactivate**. Select the intended users, choose **Deactivate Selected**, and confirm. Wait for the background operation to finish. Check the user's **Deactivated** status, the app's assignments, and the relevant events in **Reports → System Log**. If the account is managed through Okta Privileged Access, Okta requires ending Privileged Access for that user first.
 
     **Downstream deprovisioning** means removing access at the receiving application, such as disabling its separate account. Check whether the integration supports and has enabled deactivation. Okta also documents exceptions for inactive, private, system, and deprecated apps. For a connected app, verify the account and any existing session at the target. [Okta · Deactivate and delete user accounts](https://help.okta.com/oie/en-us/Content/topics/users-groups-profiles/usgp-deactivate-user-account.htm) · [Okta · Configure app provisioning](https://help.okta.com/en-us/Content/topics/provisioning/lcm/lcm-provision-application.htm)
@@ -43,8 +45,8 @@
 
     === "1. End a session and compare suspension"
 
-        1. **Establish a baseline.** Activate the test user and assign the bookmark directly from the app's **Assignments → Assign → Assign to People**. In the test-user browser, sign in and find the tile. In the admin browser, record the account status, the **Everyone** membership, and the individual assignment.
-        2. **End the session.** On the test user's admin record, select **More Actions → Clear User Sessions** and confirm the Okta session action. Revisit the protected dashboard in the test browser. Expect to be prompted to sign in again. Complete a fresh sign-in and verify the bookmark still appears. If the action is unavailable, check whether the user's status or recent activation explains it and record the limitation.
+        1. **Establish a baseline.** Create and activate a new disposable user using [Lab 2](02-create-and-activate-a-user.md#__tabbed_1_2). Open **Applications and Resources → Applications → LAB-Manage-Users-Bookmark → Assignments → Assign → Assign to People**, select the user, and finish the assignment. In the test-user browser, sign in and find the tile. In the admin browser, record the account status, the **Everyone** membership, and the individual assignment.
+        2. **End the session.** In **Directory → People**, open the test user's record and select **More Actions → Clear User Sessions** and confirm the Okta session action. Revisit the protected dashboard in the test browser. Expect to be prompted to sign in again. Complete a fresh sign-in and verify the bookmark still appears. If the action is unavailable, check whether the user's status or recent activation explains it and record the limitation.
         3. **Suspend and test again.** On the test user, select **More Actions → Suspend**. Confirm the status and revisit the dashboard. Try a fresh sign-in. It should be blocked. In the admin browser, verify that the group membership and individual assignment remain.
         4. **Lift the suspension.** Open the same user from the **Suspended** filter and select **Activate**. Check a fresh sign-in and verify the existing bookmark assignment still works.
 
