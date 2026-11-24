@@ -95,6 +95,7 @@ nav:
       - Lesson 5 · Build and verify inbound and outbound mappings: modules/manage-profiles/05-build-and-verify-inbound-and-outbound-mappings.md
       - Lesson 6 · Transform values and manage usernames: modules/manage-profiles/06-transform-values-and-manage-usernames.md
       - Lesson 7 · Configure profile sources and attribute priority: modules/manage-profiles/07-configure-profile-sources-and-attribute-priority.md
+      - Lesson 8 · Send and verify SAML attributes and WS-Federation claims: modules/manage-profiles/08-send-and-verify-saml-attributes-and-ws-federation-claims.md
       - Hands-on labs: modules/manage-profiles/hands-on-labs.md
       - Source and lab plan: modules/manage-profiles/source-and-lab-plan.md
   - Foundations:

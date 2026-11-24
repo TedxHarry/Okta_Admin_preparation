@@ -32,6 +32,10 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 
     Compare two sources, override one field, and trace an HR edit to a group rule.
 
+- [8. Send and verify SAML attributes and WS-Federation claims](#lab-8)
+
+    Assign a test SAML app by group and verify its claims at the receiver.
+
 --8<-- "manage-profiles-lab-1.md"
 
 --8<-- "manage-profiles-lab-2.md"
@@ -45,3 +49,5 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 --8<-- "manage-profiles-lab-6.md"
 
 --8<-- "manage-profiles-lab-7.md"
+
+--8<-- "manage-profiles-lab-8.md"

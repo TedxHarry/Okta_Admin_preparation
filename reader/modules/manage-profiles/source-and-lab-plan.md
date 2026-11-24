@@ -24,7 +24,7 @@ Use this plan to track the theory, hands-on task, and reference for each lesson.
 
 ## Certification coverage
 
-Use the Performance Exam as the primary certification map. The Hands-On Configuration guide adds explicit practice for custom user types. Each row specifies the result to verify. Lessons 1 through 7 are available, including source priority, field-level sourcing, and HR-driven group practice. The remaining exercises listed here are planned.
+Use the Performance Exam as the primary certification map. The Hands-On Configuration guide adds explicit practice for custom user types. Each row specifies the result to verify. Lessons 1 through 8 are available, including the custom SAML app and receiver verification lab. The remaining exercises listed here are planned.
 
 | Guide objective | Where to practice | Evidence to capture |
 | --- | --- | --- |
@@ -86,7 +86,7 @@ The [Manage profiles](https://help.okta.com/oie/en-us/content/topics/users-group
 
 ### 8. Send and verify SAML attributes and WS-Federation claims
 
-[Rich SAML assertions and WS-Federation claims](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-rich-saml.htm) · [Federated claims](https://developer.okta.com/docs/guides/federated-claims/main/)
+[Rich SAML assertions and WS-Federation claims](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-rich-saml.htm) · [Federated claims](https://help.okta.com/oie/en-us/content/topics/apps/federated-claims-overview.htm) · [Configure Template WS-Federation](https://help.okta.com/en-us/Content/topics/apps/apps_configure_okta_template_ws_federation.htm)
 
 ### 9. Troubleshoot profile changes end to end
 
