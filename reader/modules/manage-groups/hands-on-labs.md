@@ -16,8 +16,14 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 
     Preview a Department rule, verify a mover, and use one source group to populate two targets.
 
+- [4. Write an advanced group rule](#lab-4)
+
+    Test AND, OR, negation, and a Department condition on four users, then verify a live membership change.
+
 --8<-- "manage-groups-lab-1.md"
 
 --8<-- "manage-groups-lab-2.md"
 
 --8<-- "manage-groups-lab-3.md"
+
+--8<-- "manage-groups-lab-4.md"

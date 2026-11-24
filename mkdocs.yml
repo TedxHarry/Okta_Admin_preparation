@@ -78,6 +78,7 @@ nav:
       - Lesson 1 · Identify the group and its owner: modules/manage-groups/01-identify-the-group-and-its-owner.md
       - Lesson 2 · Create a group and manage membership: modules/manage-groups/02-create-a-group-and-manage-membership.md
       - Lesson 3 · Build and test a basic group rule: modules/manage-groups/03-build-and-test-a-basic-group-rule.md
+      - Lesson 4 · Write an advanced group rule: modules/manage-groups/04-write-an-advanced-group-rule.md
       - Hands-on labs: modules/manage-groups/hands-on-labs.md
   - Foundations:
       - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
