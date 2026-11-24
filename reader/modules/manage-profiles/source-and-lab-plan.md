@@ -10,9 +10,9 @@ Use this plan to track the theory, hands-on task, and reference for each lesson.
 | 4. Manage group and integration schemas | Add, edit, and remove group attributes. Discover supported attributes for apps, directories, and identity providers. Trace dependencies before removal. | Create and verify a native group field. With a supported connector, discover a test directory field and check its mappings before removal. |
 | 5. Build and verify inbound and outbound mappings | Find, create, edit, override, and remove mappings. Compare Profile Editor with provisioning settings and distinguish preview, saved value, and target write. | Map a test value and verify all available records. Compare create-only and update behavior on a supported target. |
 | 6. Transform values and manage usernames | Use Okta Expression Language for strings, conditionals, missing data, and type conversion. Compare username formats and overrides for Okta, apps, and relevant directory or identity provider flows. | Predict a mapping for positive and blank inputs, preview each case, and verify username behavior after a controlled profile change. |
-| 7. Configure profile sources and attribute priority | Whole-profile and field-level sourcing, source order, mappings when sourcing is enabled, editing rights, and user self-service permissions. | Trace a field across two linked sources when available. Test one field override or use a recorded comparison when no connector is available. |
-| 8. Send and verify SAML attributes and WS-Federation claims | Distinguish stored profile data, provisioning writes, and claims sent at sign-in. Cover rich SAML assertions, WS-Federation boundaries, and receiver verification. | Configure a custom SAML attribute and inspect the preview and receiver. Use a labeled WS-Federation claim sample unless a supported target is available. |
-| 9. Troubleshoot profile changes end to end | Trace a stale or wrong value through the source record, Okta user profile, mapping, application user record, connector, and downstream account or claim. | Diagnose a controlled failure, fix the first incorrect layer, and capture before-and-after evidence. |
+| 7. Configure profile sources and attribute priority | Whole-profile and field-level sourcing, HR as a source, source order, mappings when sourcing is enabled, editing rights, and user self-service permissions. | Trace a field across two linked sources when available. Test one field override or use a recorded comparison when no connector is available. |
+| 8. Send and verify SAML attributes and WS-Federation claims | Distinguish stored profile data, provisioning writes, and claims sent at sign-in. Cover rich SAML assertions, WS-Federation boundaries, and receiver verification. | Create a custom SAML app, assign it by group rule, map built-in and custom fields, and inspect the assertion and receiver. Use a labeled WS-Federation claim sample unless a supported target is available. |
+| 9. Troubleshoot profile changes end to end | Trace a stale or wrong value through the source record, Okta user profile, mapping, application user record, connector, and downstream account or claim. | Diagnose a controlled failure, then compare direct write-back and a Workflows run using the changed record and operation evidence. |
 | Capstone | Trace fields for an employee and a contractor from schema through app assignment and mapping. | Create a custom user type and field, map the field, verify the app-facing value, and recover a deliberately broken mapping. Include an unaffected control user. |
 
 ## Environment and evidence
@@ -24,13 +24,33 @@ Use this plan to track the theory, hands-on task, and reference for each lesson.
 
 ## Certification coverage
 
-| Objective | Lessons and practice |
-| --- | --- |
-| Part I · Profile sourcing and write-back | Lessons 5, 7, and 9 cover mapping direction, source priority, field-level sourcing, and evidence of a target write. |
-| Part II · Custom Application Integration | Lessons 2, 5, 6, and 8 cover creating and mapping custom attributes, using expressions, and inspecting app-facing values and SAML assertions. The capstone joins these tasks to group-based app assignment. |
-| Custom user types | Lesson 3 covers creating a type, assigning users, and mapping the type to an application. These also appear in the Administrator Hands-On Configuration guide. |
+Use the Performance Exam as the primary certification map. The Hands-On Configuration guide adds explicit practice for custom user types. Each row specifies the result to verify. Lesson 1 is available. The remaining exercises listed here are planned.
 
-[Administrator Performance Exam study guide](https://certification.okta.com/page/administrator-performance-exam-study-guide) · [Administrator Hands-On Configuration Exam study guide](https://certification.okta.com/page/okta-administrator-hands-on-configuration-exam-study-guide)
+| Guide objective | Where to practice | Evidence to capture |
+| --- | --- | --- |
+| Performance Part I and Hands-On Part I · HR as a source and external attributes driving group rules | Lessons 7 and 9. Trace Department from a supported HR source into Okta and into a rule-managed group. Use a labeled HR import case when no HR connector is available. | Source change, resulting Okta Department, recorded rule membership, and an unaffected control. |
+| Both Part I guides · Know when to use profile sourcing | Lessons 1 and 7. Compare an Okta-managed profile with an externally sourced profile. | Identify which system supplies the field and where the correction belongs. |
+| Both Part I guides · Multiple sources and attribute priority | Lesson 7. Use two linked sources with conflicting values. Compare source priority and a field-level override. | Record the winning source and resulting field value before and after each change. |
+| Both Part I guides · Write-back to directories and apps | Lessons 5 and 9. Track one mapped app update and a separate supported directory write-back case. Explain the direction and distinguish a preview from a write. | Confirm the receiving account and returned value. Where a connector is unavailable, inspect labeled source, mapping, event, and target records. |
+| Both Part I guides · Lifecycle Management requirements for app writes | Lessons 5 and 9. Compare app assignment, connector capability and credentials, enabled update settings, and create-only or update mapping behavior. | Record the operation outcome and the resulting target value. Explain why a field can stay stale despite a correct Okta profile. |
+| Both Part I guides · Advanced lifecycle with Okta Workflows | Lesson 9's lifecycle extension. Trace a test event through a workflow that reads a mapped value and updates a disposable record. Use Execution History or a labeled sample. | Match the trigger, evaluated value, action output, and changed record. |
+| Hands-On Part II · Create a custom user type, assign users, and add a field to that type | Lessons 2 and 3 and the capstone. Create a contractor type, add a field to that type, assign a test user, and verify the field against a default-user control. | The custom schema contains the field, the intended user has the type and value, and the default-user schema lacks it. |
+| Performance Part II · Create a group and group rule, then assign the group to an app | Lesson 8 and the capstone. Apply the group-rule skills from [Manage Groups](../manage-groups.md) to a disposable application. | Rule-managed membership, group assignment, and an unassigned control. |
+| Performance Part II and Hands-On Part II · Use Expression Language, add a SAML integration, and create and map attributes | Lessons 2, 5, 6, and 8. Build a custom SAML 2.0 app, map one built-in field and one custom field, and configure the SAML attribute statements needed by the receiver. | Save and verify the mapping, check the expression on populated and blank inputs, and inspect the assertion's attribute names and values. |
+| Performance Part II · Verify data from a group-assigned user in the application | Lesson 8 and the capstone. Sign in as the group-assigned test user and verify both values at the SAML receiver. | Receiver-side evidence for the correct user and attributes. An assertion preview is a separate checkpoint. |
+
+Other exam domains, including AD agent configuration, Behavior Detection, Device Assurance, and authentication troubleshooting, are tracked in the [course exam coverage map](../../exam/coverage.md).
+
+## Okta learning and lesson checks
+
+Use Okta's learning path alongside the module. Pair **Map and Transform Profile Attributes** with Lessons 5 and 6, and **Prioritize Profile Sources to Finesse User Lifecycle** with Lesson 7. The course labs provide the setup, verification, and cleanup for each exercise. Use the Revision tab to practice predicting the result before opening each answer.
+
+- Every lesson identifies the record, field, and source before asking the learner to edit anything.
+- Every configuration lab gives expected results and a way to verify them after saving. Test a blank, invalid, or unaffected case when it reveals a distinct behavior.
+- When a live exercise needs an external connector, receiving app, or workflow permission, identify that dependency and include a labeled evidence exercise. Record live completion separately from the evidence exercise.
+- Mark a task available when the matching lesson and standalone lab are published. Record tenant execution when the required environment can be tested.
+
+[Administrator Performance Exam study guide](https://certification.okta.com/page/administrator-performance-exam-study-guide) · [Administrator Hands-On Configuration Exam study guide](https://certification.okta.com/page/okta-administrator-hands-on-configuration-exam-study-guide) · [Okta learning · Manage User Profiles in Universal Directory](https://learning.okta.com/path/manage-user-profiles-in-ud)
 
 ## Okta documentation by lesson
 
@@ -70,5 +90,5 @@ The [Manage profiles](https://help.okta.com/oie/en-us/content/topics/users-group
 
 ### 9. Troubleshoot profile changes end to end
 
-[Work with profiles and attributes](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-user-profile-attributes-main.htm) · [Manage profile and attribute sourcing](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-sourcing-main.htm) · [System Log event types](https://developer.okta.com/docs/reference/api/event-types/)
+[Work with profiles and attributes](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-user-profile-attributes-main.htm) · [Manage profile and attribute sourcing](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-sourcing-main.htm) · [Configure AD provisioning](https://help.okta.com/en-us/Content/topics/directory/ad-agent-configure-provisioning.htm) · [Configure app provisioning](https://help.okta.com/oie/en-us/Content/Topics/provisioning/lcm/lcm-provision-application.htm) · [System Log event types](https://developer.okta.com/docs/reference/api/event-types/)
 
