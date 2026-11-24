@@ -6,7 +6,7 @@ Identify who controls a group, trace membership and app access, and practice man
 
 ## Lessons
 
-All nine lessons are available. The capstone is planned.
+All nine lessons and the capstone are available.
 
 1. [Identify the group and its owner](manage-groups/01-identify-the-group-and-its-owner.md)
 2. [Create a group and manage membership](manage-groups/02-create-a-group-and-manage-membership.md)
@@ -20,6 +20,6 @@ All nine lessons are available. The capstone is planned.
 
 ## Capstone
 
-Follow a joiner and mover through group membership, app assignment, and verification. Use a control user to show who should stay outside the group.
+[Joiner, mover, and access review](manage-groups/hands-on-labs.md#capstone) combines group rules, overlapping app assignments, a transfer, and a missing-access ticket.
 
 Start with [Module 1 · Manage Users](manage-users.md) if you need practice finding users, reading their profiles, or tracing an app assignment. See [Okta · Manage groups](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-groups-main.htm) and the [course exam map](../exam/coverage.md).
