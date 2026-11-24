@@ -13,7 +13,7 @@ Use this plan to track the theory, hands-on task, and reference for each lesson.
 | 7. Configure profile sources and attribute priority | Whole-profile and field-level sourcing, HR as a source, source order, mappings when sourcing is enabled, editing rights, and user self-service permissions. | Trace a field across two linked sources when available. Test one field override or use a recorded comparison when no connector is available. |
 | 8. Send and verify SAML attributes and WS-Federation claims | Distinguish stored profile data, provisioning writes, and claims sent at sign-in. Cover rich SAML assertions, WS-Federation boundaries, and receiver verification. | Create a custom SAML app, assign it by group rule, map built-in and custom fields, and inspect the assertion and receiver. Use a labeled WS-Federation claim sample unless a supported target is available. |
 | 9. Troubleshoot profile changes end to end | Trace a stale or wrong value through the source record, Okta user profile, mapping, application user record, connector, and downstream account or claim. | Diagnose a controlled failure, then compare direct write-back and a Workflows run using the changed record and operation evidence. |
-| Capstone | Trace fields for an employee and a contractor from schema through app assignment and mapping. | Create a custom user type and field, map the field, verify the app-facing value, and recover a deliberately broken mapping. Include an unaffected control user. |
+| Capstone | Trace fields for an employee and a contractor from schema through app assignment and mapping. | Create a contractor type and field, then verify its app property mapping with a direct test assignment where supported. Use a default-type employee for the separate group-rule and SAML flow. Recover a deliberately broken mapping and verify an unaffected control. |
 
 ## Environment and evidence
 
@@ -24,7 +24,7 @@ Use this plan to track the theory, hands-on task, and reference for each lesson.
 
 ## Certification coverage
 
-Use the Performance Exam as the primary certification map. The Hands-On Configuration guide adds explicit practice for custom user types. Each row specifies the result to verify. Lessons 1 and 2 are available, including the user-schema validation lab. The remaining exercises listed here are planned.
+Use the Performance Exam as the primary certification map. The Hands-On Configuration guide adds explicit practice for custom user types. Each row specifies the result to verify. Lessons 1 through 3 are available, including the user-schema validation and user-type labs. The remaining exercises listed here are planned.
 
 | Guide objective | Where to practice | Evidence to capture |
 | --- | --- | --- |
@@ -35,7 +35,7 @@ Use the Performance Exam as the primary certification map. The Hands-On Configur
 | Both Part I guides · Lifecycle Management requirements for app writes | Lessons 5 and 9. Compare app assignment, connector capability and credentials, enabled update settings, and create-only or update mapping behavior. | Record the operation outcome and the resulting target value. Explain why a field can stay stale despite a correct Okta profile. |
 | Both Part I guides · Advanced lifecycle with Okta Workflows | Lesson 9's lifecycle extension. Trace a test event through a workflow that reads a mapped value and updates a disposable record. Use Execution History or a labeled sample. | Match the trigger, evaluated value, action output, and changed record. |
 | Hands-On Part II · Create a custom user type, assign users, and add a field to that type | Lessons 2 and 3 and the capstone. Create a contractor type, add a field to that type, assign a test user, and verify the field against a default-user control. | The custom schema contains the field, the intended user has the type and value, and the default-user schema lacks it. |
-| Performance Part II · Create a group and group rule, then assign the group to an app | Lesson 8 and the capstone. Apply the group-rule skills from [Manage Groups](../manage-groups.md) to a disposable application. | Rule-managed membership, group assignment, and an unassigned control. |
+| Performance Part II · Create a group and group rule, then assign the group to an app | Lesson 8 and the capstone. Apply the group-rule skills from [Manage Groups](../manage-groups.md) to a disposable application using default-type test users. Custom-type users have a separate property-mapping exercise. | Rule-managed membership, group assignment, and an unassigned control. |
 | Performance Part II and Hands-On Part II · Use Expression Language, add a SAML integration, and create and map attributes | Lessons 2, 5, 6, and 8. Build a custom SAML 2.0 app, map one built-in field and one custom field, and configure the SAML attribute statements needed by the receiver. | Save and verify the mapping, check the expression on populated and blank inputs, and inspect the assertion's attribute names and values. |
 | Performance Part II · Verify data from a group-assigned user in the application | Lesson 8 and the capstone. Sign in as the group-assigned test user and verify both values at the SAML receiver. | Receiver-side evidence for the correct user and attributes. An assertion preview is a separate checkpoint. |
 

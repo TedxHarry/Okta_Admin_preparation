@@ -90,6 +90,7 @@ nav:
       - Overview: modules/manage-profiles.md
       - Lesson 1 · Read the three profile types: modules/manage-profiles/01-read-the-three-profile-types.md
       - Lesson 2 · Design and validate user attributes: modules/manage-profiles/02-design-and-validate-user-attributes.md
+      - Lesson 3 · Manage Universal Directory user types: modules/manage-profiles/03-manage-universal-directory-user-types.md
       - Hands-on labs: modules/manage-profiles/hands-on-labs.md
       - Source and lab plan: modules/manage-profiles/source-and-lab-plan.md
   - Foundations:

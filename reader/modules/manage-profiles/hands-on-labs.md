@@ -12,6 +12,12 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 
     Test a region list, a staff reference, and uniqueness on existing data.
 
+- [3. Manage Universal Directory user types](#lab-3)
+
+    Create a contractor schema and verify what transfers when a user changes type.
+
 --8<-- "manage-profiles-lab-1.md"
 
 --8<-- "manage-profiles-lab-2.md"
+
+--8<-- "manage-profiles-lab-3.md"

@@ -1,0 +1,81 @@
+# Lesson 3 · Manage Universal Directory user types
+
+=== "Theory"
+
+    A contractor needs a Sponsor Reference. An employee does not need that field. Create a custom user type when a population needs a distinct profile schema or app property mapping. Start by deciding which attributes the two populations share and which belong to just one of them.
+
+    ### Separate the assigned type from the profile label
+
+    An **assigned user type** determines which Universal Directory schema applies to an account. Every account has one assigned type. An org can have up to ten types, including the default and up to nine custom types. In **Directory → Profile Editor → Create Okta User Type**, a Super Admin or Org Admin can define a new type. Its schema starts with the 31 default base attributes, and you add the custom fields it needs. The display name can be changed later. Choose the variable name carefully because it cannot be changed after creation.
+
+    The base profile property `userType` is a string value, such as `Contractor`. Setting that field leaves the assigned type and schema as they were. To verify which schema applies, read the type shown at the top of the person’s profile and inspect that type in Profile Editor.
+
+    [About custom user types](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-usertypes-about.htm) · [Create a custom user type](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-create-user-type.htm)
+
+    ### Create, move, and retire users
+
+    | Action | What to verify |
+    | --- | --- |
+    | Create an Okta-sourced user | Select the type in **Directory → People → Add Person**. After saving, verify the type and any type-specific fields on the new profile. |
+    | Import a new user | Okta documents the default type for new users imported from AD, LDAP, Workday, or CSV. Inbound federation Just-in-Time (JIT) creation also uses the default type. |
+    | Change an existing user’s assigned type | In the person’s profile, click **Change** and choose the destination. Values can carry over when the attribute name and data type match. Review required fields and preserve any source-only values before confirming. |
+    | Retire a custom type | Change the type of remaining users or follow your approved process for retiring disposable accounts. Verify that nobody is assigned the type before deleting it. Deletion is permanent and the default type cannot be deleted. |
+
+    For example, move a contractor with `department = Support` and `labM3SponsorRef = SP-482` to the default type. Department can transfer if the field and data type match. The Sponsor Reference needs to be recorded separately if there is no corresponding field in the destination. Plan how to repopulate it if you later move the person back. Where the same custom attribute name appears in multiple schemas, Okta requires the data types to match.
+
+    [Create and assign a user type](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-create-assign-user-type.htm) · [Change a user type](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-change-user-type.htm) · [Delete a user type](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-delete-user-type.htm)
+
+    ### Verify which parts of Okta use the type
+
+    A **property mapping** copies or transforms a field between Okta and an integration. In **Profile Editor → Apps → app → Mappings**, select the assigned user type and inspect the mapping direction. Two types can have different mappings to the same app. Record the type, input field, target field, and resulting value. If a connector writes to an external system, verify that record too.
+
+    | Feature | Documented boundary |
+    | --- | --- |
+    | Group rules | Validation uses the default schema. A custom-type-only field cannot be used to save or preview the rule, and group rules do not execute for non-default user types. |
+    | Group app assignments | Validation uses the default user type. Check any assignment attributes that vary by type. |
+    | SAML assertion mappings | Okta uses the default type for SAML assertion mappings. Review the default schema when validating username expressions or sensitive fields. Verify real assertions for the populations you support. |
+    | App username settings and directories | Changes on app sign-in and AD or LDAP provisioning settings pages can update only the default type’s mapping. Inspect the custom type’s mapping in Profile Editor. For AD partial matches to an existing custom-type user, Okta documents UPN as the supported Okta username format. |
+    | Inbound federation | Routing and policy property checks use the default schema. User Match lists and validates default-type properties, then attempts matching against the user’s actual type. Create mappings for custom types explicitly where needed. |
+
+    Okta also documents edge cases for Self-Service Registration forcing login to email, LDAP relative distinguished name validation using the default type, and Office 365 or SharePoint template updates applying only to default-type instances. Check the relevant limitation for the integration you are changing.
+
+    [Map a user type to an app](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-map-user-type.htm) · [Known issues for custom user types](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-user-types-known-issues.htm)
+
+=== "Hands-on Lab"
+
+    --8<-- "manage-profiles-lab-3.md"
+
+=== "Revision"
+
+    ### Certification cheat sheet
+
+    | Task | First check |
+    | --- | --- |
+    | Prove the assigned user type | Read the type at the top of the user profile. |
+    | Add a field to one population | Open that type’s schema in Profile Editor. |
+    | Predict values after a type change | Match the attribute name and data type in both schemas. |
+    | Map users of different types to one app | Select the intended type and direction in Profile Editor. |
+    | Delete a custom type | Verify it has zero assigned users before deletion. |
+
+    ### Check your recall
+
+    **1. An employee’s `userType` text is Contractor. The profile header still shows the default type. Which schema applies?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 1">Show answer</summary>
+    <p>The default schema applies. The profile header shows the assigned type, while the text field is descriptive.</p>
+    </details>
+
+    **2. A contractor moves to a type that has Department but no Sponsor Reference. Which value can carry over?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 2">Show answer</summary>
+    <p>Department can carry over when the field name and type match. Preserve Sponsor Reference separately if it is needed after the move.</p>
+    </details>
+
+    **3. A group rule uses a field that exists only on a custom type. What happens when you preview or save it?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 3">Show answer</summary>
+    <p>Validation uses the default schema and rejects the field. Okta also documents that group rules do not execute for non-default types.</p>
+    </details>
