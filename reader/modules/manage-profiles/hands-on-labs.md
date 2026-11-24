@@ -24,6 +24,10 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 
     Follow a mapped value from its source to the receiving app and compare create-only and update timing.
 
+- [6. Transform values and manage usernames](#lab-6)
+
+    Preview conditional values and verify an app username after an alias change.
+
 --8<-- "manage-profiles-lab-1.md"
 
 --8<-- "manage-profiles-lab-2.md"
@@ -33,3 +37,5 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 --8<-- "manage-profiles-lab-4.md"
 
 --8<-- "manage-profiles-lab-5.md"
+
+--8<-- "manage-profiles-lab-6.md"
