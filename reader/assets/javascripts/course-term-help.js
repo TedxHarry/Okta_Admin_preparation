@@ -35,6 +35,7 @@
     ["Group ID","The unique identifier Okta uses to distinguish a group from other records, including groups with similar names."],
     ["Membership authority","The system or automation responsible for changes to a particular group's membership."],
     ["Group rule","A condition Okta evaluates to decide whether a user belongs in one or more groups.",["group rules"]],
+    ["Attribute-based access control","Access based on attributes, such as an Okta user profile value that qualifies a person for a group.",["ABAC"]],
     ["Source group","The group whose membership a rule can read when deciding whether a user qualifies.",["source groups"]],
     ["Target group","The group a rule adds a qualifying user to.",["target groups"]],
     ["Rule exception","A user the rule skips, even if their profile matches the condition.",["exception","exceptions","exception list"]],

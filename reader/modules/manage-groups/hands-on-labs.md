@@ -12,6 +12,12 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 
     Create two native groups, change one membership, and verify the result in the System Log.
 
+- [3. Build and test a basic group rule](#lab-3)
+
+    Preview a Department rule, verify a mover, and use one source group to populate two targets.
+
 --8<-- "manage-groups-lab-1.md"
 
 --8<-- "manage-groups-lab-2.md"
+
+--8<-- "manage-groups-lab-3.md"
