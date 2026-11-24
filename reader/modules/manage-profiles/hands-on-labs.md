@@ -36,6 +36,10 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 
     Assign a test SAML app by group and verify its claims at the receiver.
 
+- [9. Troubleshoot profile changes end to end](#lab-9)
+
+    Repair a stale mapping and verify a connector write and a Workflows update.
+
 --8<-- "manage-profiles-lab-1.md"
 
 --8<-- "manage-profiles-lab-2.md"
@@ -51,3 +55,5 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 --8<-- "manage-profiles-lab-7.md"
 
 --8<-- "manage-profiles-lab-8.md"
+
+--8<-- "manage-profiles-lab-9.md"
