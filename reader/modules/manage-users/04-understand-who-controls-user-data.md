@@ -78,3 +78,32 @@
     **Connected extension.** Use a lab user linked to a supported sourcing app. Confirm the app can source the user and populate a harmless test attribute in the source. Preview the inbound mapping for that user. Record the source field, destination, and preview value, then apply the mapped change within the isolated lab and compare the user profile. If a second eligible source is available, try an attribute-level override for the test field and verify what changed. Restore any mapping and source priority you changed. Clear A's lab field when finished or keep it for the capstone.
 
     [Okta · User Profiles](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-about-profile-sourcing.htm) · [Okta · Map profile attributes](https://help.okta.com/oie/en-us/content/Topics/users-groups-profiles/usgp-map-profile-attribute.htm)
+
+=== "Revision"
+
+    ## Trace who controls the value
+
+    | Question | Where to look |
+    | --- | --- |
+    | Which source account belongs to this person? | Review the linked account and import result. Matching establishes the relationship. |
+    | Which source supplies the overall profile? | **Directory → Profile Sources**. Read the order of sources that apply to this user. |
+    | Can one field use a different source? | **Directory → Profile Editor → field information → Source priority**. Use **Inherit from profile source**, **Inherit from Okta**, or **Override profile source**, where available. |
+    | How does a value travel? | Open the integration's **Mappings**. **App to Okta User** is inbound. **Okta User to App** is outbound. Preview the intended user and check the destination after applying the change. |
+    | What happens when the source account is disabled? | Check the integration's **Profile & Lifecycle Sourcing** setting. Owning profile values and driving Okta account state are separate decisions. |
+
+    **When a field is blank.** Check schema → source priority → inbound mapping → source value → last update. An unmapped field from the primary source can be null even if another source has data. A text field explicitly saved empty can contain an empty string instead.
+
+    **Exam focus.** Be able to predict what happens with two linked sources, change a test field's source or mapping, and verify the result. For write-back, trace the outbound mapping and confirm the receiving system changed.
+
+    ### Check your recall
+
+    1. HR is the primary source, its Department mapping is missing, and AD has a value. What does Okta use?
+    2. Preview shows the expected value but People still shows the old one. What is next?
+
+    <details>
+    <summary>Show answers</summary>
+    <ol>
+    <li>The inherited field can be null. Check the primary mapping or set an intentional field override with its own inbound mapping.</li>
+    <li>Verify the exact user and direction, then check whether the mapping was saved, updates applied, and any required import completed.</li>
+    </ol>
+    </details>

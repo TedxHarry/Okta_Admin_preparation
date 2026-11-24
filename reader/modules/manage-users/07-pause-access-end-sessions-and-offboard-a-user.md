@@ -60,3 +60,32 @@
     **Independent check.** A teammate needs a temporary hold for a leave of absence and should return with the same app grants. Choose the action, predict what happens to the existing Okta session and app assignments, and name the evidence you would collect before and after restoring access.
 
     [Okta · System Log filters and search](https://help.okta.com/oie/en-us/Content/topics/reports/syslog-filters.htm) · [Module 3 · Suspend, deactivate, and restore a user](../../week-02-directory-and-lifecycle/lessons/03-user-account-lifecycle.md)
+
+=== "Revision"
+
+    ## End access at the right level
+
+    | Action | Okta sign-in | What remains or changes |
+    | --- | --- | --- |
+    | **Clear User Sessions** | The old Okta session ends. A fresh sign-in is possible if policy allows it. | The account and app assignments remain. Check the dialog for token or Universal Logout scope. |
+    | **Suspend** | Existing Okta sessions end and new ones are blocked. | The user record, groups, and app assignments remain. Use **Activate** on the suspended record to lift the hold. |
+    | **Deactivate** | Existing Okta sessions end and new ones are blocked. | App assignments and the Okta-managed password are removed. The user record and group memberships remain. Verify admin access removal if relevant. |
+    | **Reactivate after deactivation** | The user can sign in after any required setup and policy checks. | Check which apps return through group membership or rules. Verify or restore individual grants as needed. |
+    | **Delete** | The deactivated user can no longer sign in. | The Okta user record is permanently removed. Follow retention requirements before deleting. |
+
+    **Console paths.** Open **Directory → People → user → More Actions** to clear sessions or suspend. For the documented deactivation flow, use **People → More Actions → Deactivate**, select the intended account, and wait for processing.
+
+    **Exam focus.** Prove the result in four places when relevant: account status, a fresh sign-in, app assignments, and the System Log. For a connected app, also verify its account and session there. Downstream deprovisioning and Universal Logout depend on integration support and configuration.
+
+    ### Check your recall
+
+    1. Someone goes on leave and should keep their assignments. Which action fits?
+    2. The user is Deactivated in Okta. Does this prove the target application account and session ended?
+
+    <details>
+    <summary>Show answers</summary>
+    <ol>
+    <li>Suspend. Verify that fresh sign-in is blocked and the assignments remain, then verify restoration when the hold is lifted.</li>
+    <li>Verify the connector’s deprovisioning support and settings, then check the target account and session separately.</li>
+    </ol>
+    </details>

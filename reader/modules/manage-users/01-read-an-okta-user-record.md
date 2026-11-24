@@ -79,3 +79,41 @@
     **Try one more ticket.** You can view the user but cannot see **Suspend**. Identify where you would check your admin role and scope. Compare a Help Desk Admin's recovery permissions with the permission needed to suspend a user.
 
     [Okta · Manage users](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-people.htm)
+
+=== "Revision"
+
+    ## Read the user record
+
+    | If you need to know… | Check… |
+    | --- | --- |
+    | Which user this is | **Directory → People**. Compare the exact username (`login`) and primary email. Use the user ID when you need to prove two records refer to the same account. |
+    | What data the user can have | **User type** selects the schema. The schema defines the fields. The profile stores this user's values. |
+    | Who supplies a value | Check the profile source, the field's **Source priority**, and the inbound mapping. A realm, where enabled, scopes populations and administration. |
+    | Why an action is missing | Check the org, status filter, administrator role, and its scope. A scoped Help Desk Admin can perform supported recovery actions on users in scope. |
+    | Why a user sees an app | Check **People → user → Applications** and the app's **Assignments** tab. Compare all assigned groups with the user's memberships. |
+
+    ### Status at a glance
+
+    | Console | What to do next |
+    | --- | --- |
+    | **Staged** | Check whether an admin needs to start activation. |
+    | **Pending user action** (`PROVISIONED`) | Check whether the user still needs to complete activation or set credentials. |
+    | **Active** | Use a fresh attempt to verify sign-in. For one failing app, check its assignment and sign-in policy. |
+    | **Password reset** (`RECOVERY`) or **Password expired** | Check whether the user must complete recovery or set a new password. |
+    | **Locked out** | Check the password policy and where the account is locked. |
+    | **Suspended** or **Deactivated** (`DEPROVISIONED`) | Review the lifecycle action. Suspension retains assignments. Completed deactivation removes them. |
+
+    **Exam focus.** A status, Okta sign-in, app assignment, and target-app access are four different checks. A successful result in one view answers only that view's question.
+
+    ### Check your recall
+
+    1. Two users have the same display name. What do you compare first?
+    2. The user is Active and the app is missing. Where do you look?
+
+    <details>
+    <summary>Show answers</summary>
+    <ol>
+    <li>Compare their exact usernames and primary emails. Use the Okta user ID when you must establish that two records are the same account.</li>
+    <li>Check the app assignment, its assigned groups, and the user’s group memberships. If assigned, check dashboard visibility and app sign-in requirements.</li>
+    </ol>
+    </details>

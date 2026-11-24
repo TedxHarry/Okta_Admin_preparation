@@ -67,3 +67,32 @@
     For independent practice, restore both of user B's group memberships. Remove the **Readers** group assignment from the app itself and explain why B keeps access. Remove the **Reviewers** assignment and verify that B still belongs to both groups while losing the app. This time you changed what the groups grant. In the earlier exercise you changed who belonged to the groups. Finish by removing the two test users from the dedicated lab groups if you want to return the exercise to an empty starting state.
 
     For the broader configuration sequence, see [Application assignment and the End-User Dashboard](../../week-01-foundations/lessons/04-application-assignment-and-dashboard.md). For target account creation and deactivation, see [Application provisioning](../../week-02-directory-and-lifecycle/lessons/05-application-provisioning.md).
+
+=== "Revision"
+
+    ## Trace every app assignment
+
+    | Task | Where to go |
+    | --- | --- |
+    | Give access to one person | **Applications and Resources → Applications → app → Assignments → Assign to People**. |
+    | Give access through a group | Use **Assign to Groups** in the same app. Verify the group assignment and the person's membership. |
+    | Find what the person receives | **Directory → People → user → Applications**. Compare that view with the app's **Assignments → People/Users** and **Groups** views. |
+    | Remove access | Remove the applicable direct assignment or group grant at the right scope. Check every other grant. A group membership change can also affect unrelated apps or policies. |
+    | Find why a tile is missing | Verify the assignment, dashboard icon visibility, and which user is signed in. If the tile is present and launch fails, check the app policy and the target account. |
+
+    **Worked example.** B receives the bookmark from Readers and Reviewers. Removing B from Readers leaves the Reviewers path. Removing that last path removes the grant if there is no direct assignment. An assigned group can remain on the app even when B is no longer a member.
+
+    **Exam focus.** Practice assigning a group and verifying the result. The bookmark proves assignment and tile launch. The [custom SAML lab](../../week-03-saml-and-mappings/lessons/02-custom-saml-attributes-and-group-assignment.md) verifies mapped data at the receiving application.
+
+    ### Check your recall
+
+    1. A group still appears on the app after its last test user leaves. Is that expected?
+    2. The user is assigned and the app tile is missing. What do you check next?
+
+    <details>
+    <summary>Show answers</summary>
+    <ol>
+    <li>Yes. The group assignment and its user memberships are separate relationships.</li>
+    <li>Check dashboard visibility, the exact integration, and the user session. Check the sign-in policy and target account separately if launch fails.</li>
+    </ol>
+    </details>

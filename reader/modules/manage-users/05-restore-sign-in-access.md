@@ -79,3 +79,36 @@
     **Pass check.** Given a known password with a locked account, a forgotten password, or a lost enrolled phone, choose **Unlock**, **Reset password**, or **Reset Authenticators** and state how you would verify the fix. End with a working test sign-in and restore the expected enrollment.
 
     [Okta · Reset a password](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-reset-individual.htm) · [Okta · Unlock a user](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-unlock-individual.htm) · [Okta · Reset authenticators](https://help.okta.com/oie/en-us/content/topics/security/mfa/mfa-reset-users.htm)
+
+=== "Revision"
+
+    ## Choose the smallest recovery action
+
+    | Symptom | Action |
+    | --- | --- |
+    | User knows the password and the account says **Locked out** | **Directory → People → user → More Actions → Unlock Account**. Verify a fresh sign-in. For delegated users, check whether the directory is also locked. |
+    | User forgot the password | Use **Reset or Remove password** where offered. An emailed link and an admin-generated temporary password have different handoffs. Verify the inbox or the first password-change prompt. |
+    | User must change a password | Check the existing **Password expired** state. For an admin-initiated change for one user, review the temporary-password option. Org-wide expiration has a separate scope and control. |
+    | User lost an enrolled phone | Open **More Actions → Reset Authenticators** and select the affected enrollment where appropriate. Verify the recovery or re-enrollment path before clearing it. |
+    | User can sign in to Okta and one app fails | Check app assignment, app policy, and the target account before changing user credentials. |
+
+    ### System Log filters to practice
+
+    - **New Okta session:** `eventType eq "user.session.start" and outcome.result eq "SUCCESS"`
+    - **Successful authenticator verification:** `eventType eq "user.authentication.auth_via_mfa" and outcome.result eq "SUCCESS"`
+    - In the second result, expand the event for the test user and inspect **debugContext → debugData → factor** or **factorType** where present. Narrow the time range and compare the failed attempt, the admin action, and the retest.
+
+    **Exam focus.** Demonstrate the fix with a fresh sign-in and factor evidence when the policy prompts for one. A password reset can succeed while a separate sign-in factor or policy still blocks access. [Okta · Locate factor information](https://support.okta.com/help/s/article/how-to-locate-factor-information-in-okta-system-log)
+
+    ### Check your recall
+
+    1. The password is correct but the old Okta Verify phone is unavailable. Which action targets the problem?
+    2. A session-start event succeeded. How do you identify the factor?
+
+    <details>
+    <summary>Show answers</summary>
+    <ol>
+    <li>Verify the user and recovery route, then reset the affected authenticator enrollment if needed.</li>
+    <li>Find the relevant authenticator verification event and inspect factor or factorType in the event details.</li>
+    </ol>
+    </details>

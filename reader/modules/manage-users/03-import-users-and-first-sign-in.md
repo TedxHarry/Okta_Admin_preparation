@@ -90,3 +90,33 @@
     **Pass check.** The CSV user is visible with the expected field values, and you can explain how a connected import could link an existing user instead of proposing a new record. Keep the CSV user only if you need it for further practice.
 
     [Okta · Import from CSV](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-import-users-csv.htm) · [Okta · Match imported attributes](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-matching-imported-users.htm) · [Okta · Add users with JIT](https://help.okta.com/oie/en-us/Content/topics/users-groups-profiles/usgp-add-users-jit.htm)
+
+=== "Revision"
+
+    ## Choose the right import path
+
+    | Path | Trigger and proof |
+    | --- | --- |
+    | **People CSV** | **Directory → People → More Actions → Import users from CSV**. Use the org's template, validate, choose activation options, and verify the exact user and imported values. A blank input cell does not clear an existing value. |
+    | **App CSV** | **Applications → app → Import → Import from CSV**, where supported. Use the app's template and check inbound mappings and the app assignment. |
+    | **Connected import** | Review **Provisioning → To Okta → User Creation & Matching**. Run **Import → Import Now** where supported, inspect proposed rows, then verify the linked or newly created record. |
+    | **Just-in-Time (JIT)** | Eligible first sign-in through a configured source can create the Okta user. For AD and LDAP, check delegated authentication, the directory JIT setting, and prior import confirmation. Inbound SAML has its own controls. |
+
+    **Matching → confirmation → activation.** Matching proposes an existing user or a new record. Confirmation accepts the result. Activation controls account availability. Use a mapped unique identifier to validate a proposed match. Treat similar names as a reason to inspect the record.
+
+    **When an import stalls.** Use **Reports → Import Monitoring** and the connector's import results. If a safeguard stops the run, compare source scope and proposed removals before resuming or cancelling. A full import reads the configured population. An incremental import reads changes when the connector supports it.
+
+    **Exam focus.** Explain how import and JIT differ for AD. Verify the required settings and compare the final record in **People**. A People CSV exercise provides practice with file import. Live JIT requires a configured identity source.
+
+    ### Check your recall
+
+    1. An incoming employee has a new surname and the same unique mapped employee ID. What do you inspect?
+    2. A user was already confirmed in directory import results. Should you expect AD or LDAP JIT to activate the staged account?
+
+    <details>
+    <summary>Show answers</summary>
+    <ol>
+    <li>Review the proposed existing-account match and confirm the exact linked person before accepting it.</li>
+    <li>No. Check the user's import and activation state and use the appropriate activation workflow.</li>
+    </ol>
+    </details>

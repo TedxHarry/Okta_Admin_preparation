@@ -72,3 +72,34 @@
     **Optional comparison.** Create a separate disposable user with **Activate now → I will set password**. Keep **User must change password on first login** selected if offered. Check the recorded status, then sign in as that user and record the password-change prompt. Use the approved secure handoff for any temporary credential. For bulk activation practice, open **People → More Actions → Activate**, inspect how **Activate Selected** limits scope, then exit without changing other accounts.
 
     [Okta · Add users manually](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-add-users.htm) · [Okta · Activate user accounts](https://help.okta.com/oie/en-us/Content/topics/users-groups-profiles/usgp-activate-user-account.htm)
+
+=== "Revision"
+
+    ## Create, activate, verify
+
+    | Scenario | Action and expected evidence |
+    | --- | --- |
+    | Prepare the record for later | **Directory → People → Add Person → Activate later → Save**. Expect **Staged**. |
+    | Start activation immediately | Choose **Activate now**. If setup is still required, look for **Pending user action**, then verify the user's first sign-in. |
+    | Admin supplies an initial password | Choose **I will set password** where offered. Check **User must change password on first login**. The account can already show **Active** while the prompt is still due. |
+    | Activate a staged user | In the **People** list, choose **Activate** in the **Status** column, then confirm **Activate User**. For multiple users, use **More Actions → Activate** and check the selected scope. |
+    | Restore a suspended or deactivated user | Open the user's record and choose **Activate**. The prior state determines what must be verified after that action. |
+
+    **Before saving.** Choose the user type, enter an email-format username and a reachable primary email, and check optional group or realm selections. A group can affect access and which policy applies.
+
+    **Troubleshooting.** For a missing setup email, confirm the account status, address, and mailbox before using the resend action. If an **Active** user is prompted to set up a method, check authenticator enrollment policy.
+
+    **Exam focus.** Compare creation, activation, and first sign-in as separate events. AD-sourced activation has directory-specific settings and belongs in the [exam coverage map](../../exam/coverage.md).
+
+    ### Check your recall
+
+    1. A user was saved with Activate later. Should you start with a password reset?
+    2. Can an Active user still see a first-sign-in password change?
+
+    <details>
+    <summary>Show answers</summary>
+    <ol>
+    <li>Check for Staged and use Activate from the People list when the account is ready.</li>
+    <li>Yes. Check whether the administrator required a change when setting the initial password.</li>
+    </ol>
+    </details>
