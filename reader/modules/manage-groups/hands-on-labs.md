@@ -20,6 +20,10 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 
     Test AND, OR, negation, and a Department condition on four users, then verify a live membership change.
 
+- [5. Change, verify, and troubleshoot rules](#lab-5)
+
+    Edit a rule, diagnose an automatic exception, and verify the membership changes in the System Log.
+
 --8<-- "manage-groups-lab-1.md"
 
 --8<-- "manage-groups-lab-2.md"
@@ -27,3 +31,5 @@ Choose a lab to jump to its full instructions on this page. Work in a disposable
 --8<-- "manage-groups-lab-3.md"
 
 --8<-- "manage-groups-lab-4.md"
+
+--8<-- "manage-groups-lab-5.md"
