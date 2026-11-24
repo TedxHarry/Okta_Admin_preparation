@@ -13,7 +13,7 @@ Use this plan to track the theory, hands-on task, and reference for each lesson.
 | 7. Configure profile sources and attribute priority | Whole-profile and field-level sourcing, HR as a source, source order, mappings when sourcing is enabled, editing rights, and user self-service permissions. | Trace a field across two linked sources when available. Test one field override or use a recorded comparison when no connector is available. |
 | 8. Send and verify SAML attributes and WS-Federation claims | Distinguish stored profile data, provisioning writes, and claims sent at sign-in. Cover rich SAML assertions, WS-Federation boundaries, and receiver verification. | Create a custom SAML app, assign it by group rule, map built-in and custom fields, and inspect the assertion and receiver. Use a labeled WS-Federation claim sample unless a supported target is available. |
 | 9. Troubleshoot profile changes end to end | Trace a stale or wrong value through the source record, Okta user profile, mapping, application user record, connector, and downstream account or claim. | Diagnose a controlled failure, then compare direct write-back and a Workflows run using the changed record and operation evidence. |
-| Capstone | Trace fields for an employee and a contractor from schema through app assignment and mapping. | Create a contractor type and field, then verify its app property mapping with a direct test assignment where supported. Use a default-type employee for the separate group-rule and SAML flow. Recover a deliberately broken mapping and verify an unaffected control. |
+| [Capstone](hands-on-labs.md#capstone) | Trace fields for an employee and a contractor from schema through app assignment and mapping. | Create a contractor type and field, then verify its app property mapping with a direct test assignment where supported. Use a default-type employee for the separate group-rule and SAML flow. Recover a deliberately broken mapping and verify an unaffected control. |
 
 ## Environment and evidence
 
@@ -24,7 +24,7 @@ Use this plan to track the theory, hands-on task, and reference for each lesson.
 
 ## Certification coverage
 
-Use the Performance Exam as the primary certification map. The Hands-On Configuration guide adds explicit practice for custom user types. Each row specifies the result to verify. All nine lessons are available, including end-to-end troubleshooting, directory write-back, and Workflows practice. The capstone is planned.
+Use the Performance Exam as the primary certification map. The Hands-On Configuration guide adds explicit practice for custom user types. Each row specifies the result to verify. All nine lessons are available, including end-to-end troubleshooting, directory write-back, and Workflows practice. The [capstone](hands-on-labs.md#capstone) is available.
 
 | Guide objective | Where to practice | Evidence to capture |
 | --- | --- | --- |

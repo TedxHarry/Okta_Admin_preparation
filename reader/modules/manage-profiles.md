@@ -6,7 +6,7 @@ Read the profiles Okta stores, define the attributes each user type needs, and t
 
 ## Lessons
 
-All nine lessons are available. The capstone is planned.
+All nine lessons and the capstone are available.
 
 1. [Read the three profile types](manage-profiles/01-read-the-three-profile-types.md)
 2. [Design and validate user attributes](manage-profiles/02-design-and-validate-user-attributes.md)
@@ -20,6 +20,6 @@ All nine lessons are available. The capstone is planned.
 
 ## Capstone
 
-The planned capstone follows an employee and contractor through schema setup, an app mapping, verification, and recovery from a failed mapping.
+[Verify profile changes from schema to app](manage-profiles/hands-on-labs.md#capstone) combines a contractor property mapping, an employee’s group-based SAML assignment, and a claim troubleshooting ticket.
 
 [Okta · Manage profiles](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-user-profiles-main.htm) · [Exam coverage](../exam/coverage.md)
