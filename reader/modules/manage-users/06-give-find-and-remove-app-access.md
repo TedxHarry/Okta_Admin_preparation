@@ -86,13 +86,16 @@
 
     ### Check your recall
 
-    1. A group still appears on the app after its last test user leaves. Is that expected?
-    2. The user is assigned and the app tile is missing. What do you check next?
+    **1. A group still appears on the app after its last test user leaves. Is that expected?**
 
-    <details>
-    <summary>Show answers</summary>
-    <ol>
-    <li>Yes. The group assignment and its user memberships are separate relationships.</li>
-    <li>Check dashboard visibility, the exact integration, and the user session. Check the sign-in policy and target account separately if launch fails.</li>
-    </ol>
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 1">Show answer</summary>
+    <p>Yes. The group assignment and its user memberships are separate relationships.</p>
+    </details>
+
+    **2. The user is assigned and the app tile is missing. What do you check next?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 2">Show answer</summary>
+    <p>Check dashboard visibility, the exact integration, and the user session. Check the sign-in policy and target account separately if launch fails.</p>
     </details>

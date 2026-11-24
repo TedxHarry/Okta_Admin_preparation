@@ -1,7 +1,8 @@
-/* Lesson lab tabs are nested inside the Hands-on Lab pane. Capstones use top-level tabs. */
+/* Lesson lab tabs are nested inside the Hands-on Lab pane. Capstones and the Manage Users lab index use top-level tabs. */
 @media screen {
   .md-typeset .tabbed-content .tabbed-set,
-  .md-typeset:has(> h1[id*="capstone"]) > .tabbed-set {
+  .md-typeset:has(> h1[id*="capstone"]) > .tabbed-set,
+  .md-typeset:has(> h1#module-1-manage-users-hands-on-labs) > .tabbed-set {
     > .tabbed-labels {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, max(9rem, calc((100% - 0.8rem) / 3))), 1fr));

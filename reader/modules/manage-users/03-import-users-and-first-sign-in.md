@@ -110,13 +110,16 @@
 
     ### Check your recall
 
-    1. An incoming employee has a new surname and the same unique mapped employee ID. What do you inspect?
-    2. A user was already confirmed in directory import results. Should you expect AD or LDAP JIT to activate the staged account?
+    **1. An incoming employee has a new surname and the same unique mapped employee ID. What do you inspect?**
 
-    <details>
-    <summary>Show answers</summary>
-    <ol>
-    <li>Review the proposed existing-account match and confirm the exact linked person before accepting it.</li>
-    <li>No. Check the user's import and activation state and use the appropriate activation workflow.</li>
-    </ol>
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 1">Show answer</summary>
+    <p>Review the proposed existing-account match and confirm the exact linked person before accepting it.</p>
+    </details>
+
+    **2. A user was already confirmed in directory import results. Should you expect AD or LDAP JIT to activate the staged account?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 2">Show answer</summary>
+    <p>No. Check the user's import and activation state and use the appropriate activation workflow.</p>
     </details>

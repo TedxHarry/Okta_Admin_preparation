@@ -93,13 +93,16 @@
 
     ### Check your recall
 
-    1. A user was saved with Activate later. Should you start with a password reset?
-    2. Can an Active user still see a first-sign-in password change?
+    **1. A user was saved with Activate later. Should you start with a password reset?**
 
-    <details>
-    <summary>Show answers</summary>
-    <ol>
-    <li>Check for Staged and use Activate from the People list when the account is ready.</li>
-    <li>Yes. Check whether the administrator required a change when setting the initial password.</li>
-    </ol>
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 1">Show answer</summary>
+    <p>Check for Staged and use Activate from the People list when the account is ready.</p>
+    </details>
+
+    **2. Can an Active user still see a first-sign-in password change?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 2">Show answer</summary>
+    <p>Yes. Check whether the administrator required a change when setting the initial password.</p>
     </details>

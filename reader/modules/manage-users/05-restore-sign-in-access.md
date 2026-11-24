@@ -102,13 +102,16 @@
 
     ### Check your recall
 
-    1. The password is correct but the old Okta Verify phone is unavailable. Which action targets the problem?
-    2. A session-start event succeeded. How do you identify the factor?
+    **1. The password is correct but the old Okta Verify phone is unavailable. Which action targets the problem?**
 
-    <details>
-    <summary>Show answers</summary>
-    <ol>
-    <li>Verify the user and recovery route, then reset the affected authenticator enrollment if needed.</li>
-    <li>Find the relevant authenticator verification event and inspect factor or factorType in the event details.</li>
-    </ol>
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 1">Show answer</summary>
+    <p>Verify the user and recovery route, then reset the affected authenticator enrollment if needed.</p>
+    </details>
+
+    **2. A session-start event succeeded. How do you identify the factor?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 2">Show answer</summary>
+    <p>Find the relevant authenticator verification event and inspect factor or factorType in the event details.</p>
     </details>

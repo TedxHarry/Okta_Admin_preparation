@@ -97,13 +97,16 @@
 
     ### Check your recall
 
-    1. HR is the primary source, its Department mapping is missing, and AD has a value. What does Okta use?
-    2. Preview shows the expected value but People still shows the old one. What is next?
+    **1. HR is the primary source, its Department mapping is missing, and AD has a value. What does Okta use?**
 
-    <details>
-    <summary>Show answers</summary>
-    <ol>
-    <li>The inherited field can be null. Check the primary mapping or set an intentional field override with its own inbound mapping.</li>
-    <li>Verify the exact user and direction, then check whether the mapping was saved, updates applied, and any required import completed.</li>
-    </ol>
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 1">Show answer</summary>
+    <p>The inherited field can be null. Check the primary mapping or set an intentional field override with its own inbound mapping.</p>
+    </details>
+
+    **2. Preview shows the expected value but People still shows the old one. What is next?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 2">Show answer</summary>
+    <p>Verify the exact user and direction, then check whether the mapping was saved, updates applied, and any required import completed.</p>
     </details>

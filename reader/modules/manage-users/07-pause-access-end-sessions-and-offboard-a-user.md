@@ -79,13 +79,16 @@
 
     ### Check your recall
 
-    1. Someone goes on leave and should keep their assignments. Which action fits?
-    2. The user is Deactivated in Okta. Does this prove the target application account and session ended?
+    **1. Someone goes on leave and should keep their assignments. Which action fits?**
 
-    <details>
-    <summary>Show answers</summary>
-    <ol>
-    <li>Suspend. Verify that fresh sign-in is blocked and the assignments remain, then verify restoration when the hold is lifted.</li>
-    <li>Verify the connector’s deprovisioning support and settings, then check the target account and session separately.</li>
-    </ol>
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 1">Show answer</summary>
+    <p>Suspend. Verify that fresh sign-in is blocked and the assignments remain, then verify restoration when the hold is lifted.</p>
+    </details>
+
+    **2. The user is Deactivated in Okta. Does this prove the target application account and session ended?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 2">Show answer</summary>
+    <p>Verify the connector’s deprovisioning support and settings, then check the target account and session separately.</p>
     </details>

@@ -107,13 +107,16 @@
 
     ### Check your recall
 
-    1. Two users have the same display name. What do you compare first?
-    2. The user is Active and the app is missing. Where do you look?
+    **1. Two users have the same display name. What do you compare first?**
 
-    <details>
-    <summary>Show answers</summary>
-    <ol>
-    <li>Compare their exact usernames and primary emails. Use the Okta user ID when you must establish that two records are the same account.</li>
-    <li>Check the app assignment, its assigned groups, and the user’s group memberships. If assigned, check dashboard visibility and app sign-in requirements.</li>
-    </ol>
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 1">Show answer</summary>
+    <p>Compare their exact usernames and primary emails. Use the Okta user ID when you must establish that two records are the same account.</p>
+    </details>
+
+    **2. The user is Active and the app is missing. Where do you look?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 2">Show answer</summary>
+    <p>Check the app assignment, its assigned groups, and the user’s group memberships. If assigned, check dashboard visibility and app sign-in requirements.</p>
     </details>
