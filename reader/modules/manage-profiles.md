@@ -6,12 +6,12 @@ Read the profiles Okta stores, define the attributes each user type needs, and t
 
 ## Lessons
 
-Lessons 1 through 3 are available. The remaining titles show the planned sequence.
+Lessons 1 through 4 are available. The remaining titles show the planned sequence.
 
 1. [Read the three profile types](manage-profiles/01-read-the-three-profile-types.md)
 2. [Design and validate user attributes](manage-profiles/02-design-and-validate-user-attributes.md)
 3. [Manage Universal Directory user types](manage-profiles/03-manage-universal-directory-user-types.md)
-4. Manage group and integration schemas
+4. [Manage group and integration schemas](manage-profiles/04-manage-group-and-integration-schemas.md)
 5. Build and verify inbound and outbound mappings
 6. Transform values and manage usernames
 7. Configure profile sources and attribute priority

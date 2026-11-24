@@ -16,8 +16,14 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 
     Create a contractor schema and verify what transfers when a user changes type.
 
+- [4. Manage group and integration schemas](#lab-4)
+
+    Add and retire a group field and trace a discovered directory attribute.
+
 --8<-- "manage-profiles-lab-1.md"
 
 --8<-- "manage-profiles-lab-2.md"
 
 --8<-- "manage-profiles-lab-3.md"
+
+--8<-- "manage-profiles-lab-4.md"
