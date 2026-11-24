@@ -64,20 +64,8 @@
 
 === "Hands-on Lab"
 
-    ## Trace ownership and mappings
+    --8<-- "lab-4.md"
 
-    Use an isolated Okta Identity Engine lab org, an admin who can edit profiles and the profile schema, and test users A and B from [Lab 2](02-create-and-activate-a-user.md#__tabbed_1_2). The connected extension requires access to a supported test integration. See the [module lab setup](hands-on-labs.md#before-you-start) for shared prerequisites and test data.
-
-    1. Open **Directory → Profile Editor → Okta**. For the default user type from Lab 2, open **Okta User (default) → Profile**, or click **User (default)** if there is no Profile button. Select **Add Attribute**. Enter **Data type** `string`, **Display name** `Lab Cost Center`, and **Variable name** `m1LabCostCenter`. Leave **Attribute required** clear and save. If the field already exists from a previous run, verify its definition and reuse it.
-    2. In **Directory → People → user A → Profile → Edit**, set **Lab Cost Center** to `FIN-0042` and **Save**. Leave B's field unset. Reopen both profiles and record the field definition, the two values, and the profile source shown for each test account. The zeros in the numeric portion belong to the text value.
-    3. Work this sourcing case before reading the next step. A linked HR app ranks above a linked directory. The HR app supplies the user's profile but has no inbound mapping for the optional cost-center field. The directory has that field populated. Predict what Okta shows while the field inherits the primary profile source.
-    4. Check your prediction. With the primary source unmapped for the inherited field, Okta documents a null value. Inspect **Directory → Profile Editor → Mappings → App to Okta User** and the field's source priority before changing the user record.
-
-    **Pass check.** A and B use the same user type. A displays `FIN-0042` and B has no displayed cost center. Explain why a schema change made the field available to both users, why an A-only profile edit changed just A's value, and why an unmapped primary source does not automatically pull from the second source in the example.
-
-    **Connected extension.** Use a lab user linked to a supported sourcing app. Confirm the app can source the user and populate a harmless test attribute in the source. Preview the inbound mapping for that user. Record the source field, destination, and preview value, then apply the mapped change within the isolated lab and compare the user profile. If a second eligible source is available, try an attribute-level override for the test field and verify what changed. Restore any mapping and source priority you changed. Clear A's lab field when finished or keep it for the capstone.
-
-    [Okta · User Profiles](https://help.okta.com/oie/en-us/Content/Topics/users-groups-profiles/usgp-about-profile-sourcing.htm) · [Okta · Map profile attributes](https://help.okta.com/oie/en-us/content/Topics/users-groups-profiles/usgp-map-profile-attribute.htm)
 
 === "Revision"
 

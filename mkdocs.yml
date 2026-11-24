@@ -39,6 +39,10 @@ plugins:
 
 markdown_extensions:
   - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path:
+        - includes/manage-users
+      check_paths: true
   - pymdownx.tabbed:
       alternate_style: true
   - tables

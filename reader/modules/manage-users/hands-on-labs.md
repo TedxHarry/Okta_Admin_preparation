@@ -1,6 +1,6 @@
 # Module 1 · Manage Users hands-on labs
 
-Choose a lab below to open its exercise. The capstone is on this page. You will create and activate users, bring in account data, trace who controls a profile value, and decide how to restore or remove access. Each lab ends with evidence you can use to explain the result.
+Choose a tile to jump to the full exercise on this page. The capstone is on this page. You will create and activate users, bring in account data, trace who controls a profile value, and decide how to restore or remove access. Each lab ends with evidence you can use to explain the result.
 
 ## Before you start
 
@@ -30,37 +30,51 @@ Use the [official Administrator Performance Exam Study Guide](https://certificat
 
 ## Choose a lab { #manage-users-lab-grid }
 
-- [1. Read a user record](01-read-an-okta-user-record.md#__tabbed_1_2){ #__tabbed_1_1 }
+- [1. Read a user record](#lab-1){ #__tabbed_1_1 }
 
     Find a user and distinguish the profile, status, and assignments.
 
-- [2. Create and activate users](02-create-and-activate-a-user.md#__tabbed_1_2){ #__tabbed_1_2 }
+- [2. Create and activate users](#lab-2){ #__tabbed_1_2 }
 
     Compare Activate later with Activate now, then verify both test sign-ins.
 
-- [3. Import and match users](03-import-users-and-first-sign-in.md#__tabbed_1_2){ #__tabbed_1_3 }
+- [3. Import and match users](#lab-3){ #__tabbed_1_3 }
 
     Import a user from a CSV and compare how a connected import can propose a match.
 
-- [4. Trace ownership and mappings](04-understand-who-controls-user-data.md#__tabbed_1_2){ #__tabbed_1_4 }
+- [4. Trace ownership and mappings](#lab-4){ #__tabbed_1_4 }
 
     Create a test field and trace an unexpected value to its source or mapping.
 
-- [5. Recover sign-in](05-restore-sign-in-access.md#__tabbed_1_2){ #__tabbed_1_5 }
+- [5. Recover sign-in](#lab-5){ #__tabbed_1_5 }
 
     Choose and verify the right sign-in recovery action.
 
-- [6. Trace app access](06-give-find-and-remove-app-access.md#__tabbed_1_2){ #__tabbed_1_6 }
+- [6. Trace app access](#lab-6){ #__tabbed_1_6 }
 
     Compare direct and group-based app access. Remove group memberships one at a time and verify when the bookmark disappears.
 
-- [7. Pause and offboard](07-pause-access-end-sessions-and-offboard-a-user.md#__tabbed_1_2){ #__tabbed_1_7 }
+- [7. Pause and offboard](#lab-7){ #__tabbed_1_7 }
 
     Compare clearing a session, suspending a user, and deactivating a user. Check sign-in, assignments, and the System Log.
 
 - [Capstone](#capstone)
 
     Practice one contractor’s onboarding, sign-in recovery, leave of absence, and offboarding.
+
+--8<-- "lab-1.md"
+
+--8<-- "lab-2.md"
+
+--8<-- "lab-3.md"
+
+--8<-- "lab-4.md"
+
+--8<-- "lab-5.md"
+
+--8<-- "lab-6.md"
+
+--8<-- "lab-7.md"
 
 <span id="__tabbed_1_8"></span>
 
