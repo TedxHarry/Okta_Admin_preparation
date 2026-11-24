@@ -92,6 +92,7 @@ nav:
       - Lesson 2 · Design and validate user attributes: modules/manage-profiles/02-design-and-validate-user-attributes.md
       - Lesson 3 · Manage Universal Directory user types: modules/manage-profiles/03-manage-universal-directory-user-types.md
       - Lesson 4 · Manage group and integration schemas: modules/manage-profiles/04-manage-group-and-integration-schemas.md
+      - Lesson 5 · Build and verify inbound and outbound mappings: modules/manage-profiles/05-build-and-verify-inbound-and-outbound-mappings.md
       - Hands-on labs: modules/manage-profiles/hands-on-labs.md
       - Source and lab plan: modules/manage-profiles/source-and-lab-plan.md
   - Foundations:

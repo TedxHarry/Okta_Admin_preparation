@@ -20,6 +20,10 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 
     Add and retire a group field and trace a discovered directory attribute.
 
+- [5. Build and verify inbound and outbound mappings](#lab-5)
+
+    Follow a mapped value from its source to the receiving app and compare create-only and update timing.
+
 --8<-- "manage-profiles-lab-1.md"
 
 --8<-- "manage-profiles-lab-2.md"
@@ -27,3 +31,5 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 --8<-- "manage-profiles-lab-3.md"
 
 --8<-- "manage-profiles-lab-4.md"
+
+--8<-- "manage-profiles-lab-5.md"
