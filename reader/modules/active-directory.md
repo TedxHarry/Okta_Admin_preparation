@@ -2,7 +2,9 @@
 
 Connect a Windows AD domain to Okta. Follow a user from directory import or first sign-in through activation and access, then verify how the integration handles password recovery, group membership, outbound writes, and offboarding. Use the LDAP lesson to compare architecture, import, and delegated authentication.
 
-[Open the standalone hands-on labs](active-directory/hands-on-labs.md) · [Exam objectives and official reading](active-directory/source-and-lab-plan.md) · [Open the capstone](active-directory/hands-on-labs.md#capstone)
+[Start Lesson 1 · Connect Active Directory to Okta](../week-04-ad-and-ldap/lessons/01-connect-active-directory.md){ .md-button .md-button--primary }
+
+Start with the **Theory** tab in each lesson. Use **Revision** to check your understanding before opening the hands-on instructions. [Exam objectives and official reading](active-directory/source-and-lab-plan.md)
 
 ## Lessons
 
@@ -20,7 +22,7 @@ Connect a Windows AD domain to Okta. Follow a user from directory import or firs
 
 Read any **Theory** or **Revision** tab while your laptop is offline. Use the simulated capstone records to practice diagnosing an import, activation, recovery or write failure.
 
-When your laptop is online, start with the [VMware and agent preflight](active-directory/hands-on-labs.md#ad-lab-preflight).
+When you are ready for hands-on practice and your laptop is online, start with the [VMware and agent preflight](active-directory/hands-on-labs.md#ad-lab-preflight). [All hands-on labs](active-directory/hands-on-labs.md) · [Capstone](active-directory/hands-on-labs.md#capstone)
 
 For live AD work, use an isolated VMware domain, one supported Windows Server agent host, and an Okta Identity Engine org that exposes **Add Active Directory**. Keep a native Okta admin independent of the lab directory. The AD failover lab needs a second host. The LDAP lab needs a supported reachable LDAP server and agent host. The outbound and Group Push exercises need scoped rights on the test target OU.
 
