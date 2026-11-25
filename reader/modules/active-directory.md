@@ -20,6 +20,8 @@ Connect a Windows AD domain to Okta. Follow a user from directory import or firs
 
 Read any **Theory** or **Revision** tab while your laptop is offline. Use the simulated capstone records to practice diagnosing an import, activation, recovery or write failure.
 
+When your laptop is online, start with the [VMware and agent preflight](active-directory/hands-on-labs.md#ad-lab-preflight).
+
 For live AD work, use an isolated VMware domain, one supported Windows Server agent host, and an Okta Identity Engine org that exposes **Add Active Directory**. Keep a native Okta admin independent of the lab directory. The AD failover lab needs a second host. The LDAP lab needs a supported reachable LDAP server and agent host. The outbound and Group Push exercises need scoped rights on the test target OU.
 
 [AD integration prerequisites](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-prerequisites.htm) · [LDAP integration prerequisites](https://help.okta.com/oie/en-us/content/topics/directory/ldap-agent-prerequisites.htm)
