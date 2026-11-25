@@ -1,13 +1,13 @@
 ## Lab 2 · Configure a group-scoped behavior rule { #lab-2 }
 
-Complete Lab 1. Use a dedicated app sign-in policy in your lab org. A working test app from the SAML lessons is suitable. If you use the **Okta Dashboard** policy, use an isolated org and verify the policy's app scope before any edits. Use the same app for Labs 2–4. Keep the existing policy and application association available for cleanup.
+Complete Lab 1 and use the target, entry point, and baseline policy recorded there. Keep the original app association and rules available for cleanup.
 
 === "Define the signal and attach the policy"
 
     1. Open **Security → Behavior Detection → Add Behavior → Device**. Create a named behavior `BD Lab New Device` with **Evaluate against past** set to `20`. Save and confirm it is active. The rule will reference this exact name.
-    2. Open **Security → Authentication Policies → App sign-in → Create policy**. Name the policy `BD Lab App Policy`. A new policy normally starts with a Catch-All Rule that allows any two factor types. Open **Rules** and record the actual requirements before making changes.
-    3. Record the test app's original policy. On the lab policy's **Applications** tab, choose **Add app** and attach the test app. If the app requires switching policies, locate it on the original policy's **Applications** tab and use **Switch policy**, or consult the app's **Sign On** view for the applicable policy controls. Confirm the lab policy now lists the intended app. For the Dashboard route, use its dedicated policy listed under **Authentication Policies → App sign-in** and record its existing rules. Avoid editing a policy shared with unrelated apps.
-    4. Verify both test users can reach the same app entry point. For a regular test app, grant app assignment to both users, for example through `BD Lab Learners`. Use the test app's actual sign-in entry point or tile when testing. For the Dashboard route, use the end-user sign-in URL. Keep the control outside `BD Lab Step-Up`.
+    2. For a separate test app, open **Security → Authentication Policies → App sign-in → Create policy**. Name the policy `BD Lab App Policy`. A new policy normally starts with a Catch-All Rule that allows any two factor types. Open **Rules** and record the actual requirements before making changes.
+    3. For a separate test app, confirm its original policy. On the lab policy's **Applications** tab, choose **Add app** and attach the test app. If the app requires switching policies, locate it on the original policy's **Applications** tab and use **Switch policy**, or consult the app's **Sign On** view for the applicable policy controls. Confirm the lab policy now lists the intended app. For the Dashboard route, use its dedicated policy listed under **Authentication Policies → App sign-in** and record its existing rules. Avoid editing a policy shared with unrelated apps.
+    4. Verify both test users can reach the same app entry point. For a regular test app, grant app assignment to both users, for example through `BD Lab Learners`. In the regular profiles, verify both users can enter the target directly. For the Dashboard route, open its end-user sign-in URL. For a separate app, begin at its own sign-in entry point and follow the redirect to Okta. Reserve fresh profiles for Lab 4. Keep the control outside `BD Lab Step-Up`.
 
 === "Set the group, expression, and action"
 

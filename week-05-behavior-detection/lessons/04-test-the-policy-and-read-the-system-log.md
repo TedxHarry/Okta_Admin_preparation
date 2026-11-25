@@ -4,7 +4,7 @@
 
     ## What does the System Log prove?
 
-    In **Reports → System Log**, narrow the time range and find the test user's `policy.evaluate.sign_on` and `user.session.start` events. In the relevant event, expand **DebugContext → DebugData** and read the named entries under **Behaviors**, when present. Read the policy evaluation separately to determine which requirement applied. A behavior result alone does not prove which rule matched or which authenticator the user completed.
+    In **Reports → System Log**, narrow the time range and find the test user's `policy.evaluate_sign_on` and `user.session.start` events. In the relevant event, expand **DebugContext → DebugData** and read the named entries under **Behaviors**, when present. In the policy event, inspect **Target** for the app policy and rule, and **Outcome** for the recorded decision. A single Identity Engine event can include both global session and app evaluations. Then check the separate verification event for the method and its result. [Okta Event Types catalog](https://developer.okta.com/docs/reference/api/event-types/)
 
     | Recorded value | What it tells you |
     | --- | --- |

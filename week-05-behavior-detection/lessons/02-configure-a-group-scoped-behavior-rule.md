@@ -31,7 +31,7 @@
     security.behaviors.contains('New Device')
     ```
 
-    The expression asks whether the sign-in's evaluated behaviors include `New Device`. In the same expression, `||` means either condition may satisfy the expression and `&&` means both must satisfy it. Group membership is still required if the rule specifies a group. The expression and the group condition each have to match.
+    The expression checks whether `New Device` appears in `security.behaviors`, the list of matching behavior names for the app sign-in request. The System Log can separately record a behavior evaluation status such as `UNKNOWN` or `BAD_REQUEST`. Use the recorded policy evaluation to identify the rule that applied. [Okta Expression Language in Identity Engine](https://developer.okta.com/docs/reference/okta-expression-language-in-identity-engine/#security-context) In the same expression, `||` means either condition may satisfy the expression and `&&` means both must satisfy it. Group membership is still required if the rule specifies a group. The expression and the group condition each have to match.
 
     | Group membership | Behavior expression | Rule selection if no earlier rule matched |
     | --- | --- | --- |
@@ -43,6 +43,18 @@
 
     See [add a behavior condition to an app sign-in rule](https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/add-behavior-app-signon-rule.htm), [app sign-in rule priority and conditions](https://help.okta.com/oie/en-us/content/topics/identity-engine/policies/add-app-sign-on-policy-rule.htm), [global session rule settings](https://help.okta.com/oie/en-us/content/Topics/identity-engine/policies/add-okta-sign-on-policy-rule.htm), and [Behavior Detection and evaluation](https://help.okta.com/oie/en-us/Content/Topics/Security/proc-security-behavior-detection.htm).
 
+    ## Configuration fields by behavior type
+
+    Open **Security → Behavior Detection → Add Behavior** and select the type. Give each definition a name you can recognize in the rule and log.
+
+    | Type | Fields that control evaluation |
+    | --- | --- |
+    | [Location](https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/location-behavior-detection.htm) | Set **Location granularity** to City, State or Region, Country, or Latitude - Longitude. The last option exposes **Radius from location**, with a minimum of 5 km. Set **Evaluate against past** to at least one. |
+    | [IP](https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/ip-behavior-detection.htm) | Set **Evaluate against past** to the history window for public IP addresses. |
+    | [Device](https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/device-behavior-detection.htm) | Set **Evaluate against past** to the history window for sign-in clients. |
+    | [Velocity](https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/velocity-behavior-detection.htm) | Set **Velocity** in km/h to the apparent travel-speed threshold used between sign-ins. |
+    | [ASN](https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/asn-behavior-detection.htm) | Set **Evaluate against past** to the history window for the network identifier. |
+
     ## Manage the named definition
 
     A policy uses the behavior by name. If you rename, deactivate, or remove a custom behavior, review the policies that reference it and retest the affected rules. Multiple conditions can be composed with supported operators, and Okta limits a behavior heuristic to ten conditions. A **heuristic** here means an expression combining behavior conditions. When testing AND and OR, check the result of each named signal. For OR, either true input satisfies the expression. For AND, both must be true. Treat unknown or missing log data as an observation to investigate before drawing conclusions about the expression.
@@ -52,6 +64,8 @@
 === "Hands-on Lab"
 
     --8<-- "configure-group-rule.md"
+
+    After Lab 4, use the [extended signals and history lab](../../modules/behavior-detection/hands-on-labs.md#lab-5) to compare New IP and New Device conditions.
 
 === "Revision"
 

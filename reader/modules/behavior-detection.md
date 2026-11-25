@@ -15,8 +15,8 @@ Open each lesson's **Theory** tab first. Use **Revision** to check your understa
 
 ## Hands-on and practice
 
-- [All hands-on labs](behavior-detection/hands-on-labs.md) has four guided exercises, from enrolling a mobile user to comparing familiar, unfamiliar, and out-of-group sign-ins.
-- [Practice use cases and capstone](behavior-detection/practice-use-cases.md) has an independent configuration exercise, a troubleshooting exercise, and an offline evidence drill with answers.
+- [All hands-on labs](behavior-detection/hands-on-labs.md) has four guided exam exercises and an optional lab for combining behavior signals and resetting user history.
+- [Practice use cases and capstone](behavior-detection/practice-use-cases.md) has an independent configuration exercise, two troubleshooting exercises, and an offline evidence drill with answers.
 - [Exam objectives and official reading](behavior-detection/source-and-lab-plan.md) maps each study-guide task to the lesson, lab, and evidence.
 
 Use an Okta Identity Engine test org, two test users, a phone with Okta Verify, and access to the Admin Console and System Log. Confirm Adaptive MFA is available for app sign-in behavior conditions before starting configuration. [Okta prerequisites for behavior conditions](https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/add-behavior-app-signon-rule.htm)

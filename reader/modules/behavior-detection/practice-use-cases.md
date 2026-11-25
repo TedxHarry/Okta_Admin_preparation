@@ -6,14 +6,14 @@ Complete the [guided labs](hands-on-labs.md) before trying these tasks independe
 
     **Target time: 35 minutes.** Use an isolated app policy and two active test users who can both reach the same app. If you reuse the guided lab user, verify their mobile enrollment, or use a new user to practice a fresh enrollment. Start from a clean policy with the original fallback recorded so you can show the change you made.
 
-    1. Set up mobile Okta Verify for the member and prove one successful Push.
+    1. Set up mobile Okta Verify for the member. Confirm enrollment now and capture a successful Push during the step-up test.
     2. Create a named behavior for new browsers within a 20-sign-in history window. Create a target group with the member in it and the control outside it.
     3. Configure the target app so the member needs a password plus another factor when the named behavior matches. Modify its Catch-All Rule to require a password for requests that fall through.
-    4. Test one familiar member sign-in, one unfamiliar member sign-in, and one unfamiliar control sign-in. Prove which rule was selected for each attempt. Record the behavior result and which factor was verified. If one run does not give usable evidence, diagnose it and repeat.
+    4. Test one familiar member sign-in, one unfamiliar member sign-in, and one unfamiliar control sign-in. Start the unfamiliar attempts from the target’s recorded entry point before signing in anywhere else in the org from that browser. Prove which rule was selected each time and capture one successful Push verification. If one run does not give usable evidence, diagnose it and repeat.
 
     | Evaluate your own result | Evidence to collect |
     | --- | --- |
-    | Enrollment and Push | Correct test account on the phone and a successful verification linked to the same attempt. |
+    | Enrollment and Push | Correct test account on the phone and a successful verification event with `factor` or `factorType` set to `push`, linked to the matching sign-in. |
     | Behavior and group | Named active behavior, saved expression, selected group, and deliberate rule priority. |
     | Fallback | Correct app and policy, saved password requirement and original setting captured for restoration. |
     | Sign-in tests | Three labeled attempts with app rule, behavior result, and authentication outcome. |
@@ -24,7 +24,7 @@ Complete the [guided labs](hands-on-labs.md) before trying these tasks independe
 
 === "2. Diagnose and repair"
 
-    **Target time: 20 minutes.** Use the case 1 configuration. Make the controlled practice change yourself or have another learner make it. Move the test app back to its original policy, then launch the same app and try the member in a fresh browser context. Keep the behavior definition, group, and step-up rule as they were.
+    **Target time: 20 minutes.** Use the case 1 configuration with a separate app that you can reassign. If you are using the dedicated Dashboard policy in place, proceed to case 3. Make the controlled practice change yourself or have another learner make it. Move the test app back to its original policy, then launch the same app and try the member in a fresh browser context. Keep the behavior definition, group, and step-up rule as they were.
 
     1. Find the attempt and identify the policy and rule actually used. Compare that policy with the one that contains your behavior rule.
     2. Locate the app association in the Admin Console. Restore the intended association and verify both users can still launch the app.
@@ -34,11 +34,23 @@ Complete the [guided labs](hands-on-labs.md) before trying these tasks independe
 
         The rule can be correct and still receive no requests from the app if that app now uses a different policy. Check the evaluated app policy and its Applications list before changing the behavior expression, membership, or fallback. After restoring the association, use an unused browser context for a fresh new-device test. A browser that signed in successfully during diagnosis may already be familiar.
 
-=== "3. Read a sign-in investigation offline"
+=== "3. Diagnose rule priority"
 
-    Read the following fictional records as a shortened investigation. Each row represents observations correlated for one test attempt.
+    **Target time: 20 minutes.** Use the case 1 setup on either the dedicated Dashboard policy or the separate test app. In this isolated policy, add an enabled rule called `BD Practice Baseline` and move it above the group-scoped behavior rule. Scope it to the lab enrollment group and configure it to allow access after password authentication. Leave the behavior, step-up rule, and Catch-All Rule intact.
 
-    | Attempt | In target group | Named behavior result | App rule | Observed proof |
+    1. Start directly at the target in a fresh member browser profile. Confirm the named device behavior is positive and capture the app policy and rule from `policy.evaluate_sign_on`. If the behavior status is inconclusive, collect a usable test before diagnosing the problem.
+    2. Identify which rule intercepted the request. Restore the intended priority so the step-up rule runs before the practice baseline, then remove the temporary baseline rule.
+    3. Repeat with a different fresh member profile. Show that the correct rule is evaluated and the member completes Push. Compare a fresh familiar member or outside-group attempt and confirm the Catch-All Rule still works.
+
+    ??? question "Show the rule priority diagnosis"
+
+        The broad baseline rule matches the member first even though the device behavior is positive. The policy evaluation identifies the baseline rule. After the correction, the same positive context pattern reaches the step-up rule and the correlated verification event records Push. Using the same successful browser again could change the device signal and undermine the comparison.
+
+=== "4. Read a sign-in investigation offline"
+
+    Read the following fictional records as a shortened investigation. Each row combines observations for one test attempt. The app rule column comes from the recorded policy evaluation when that evidence is available.
+
+    | Attempt | In target group | Named behavior result | App rule recorded in policy evaluation | Observed proof |
     | --- | --- | --- | --- | --- |
     | A | Yes | NEGATIVE | Catch-All Rule | Password |
     | B | Yes | POSITIVE | Step-Up on New Device | Password and successful Push |
@@ -47,11 +59,11 @@ Complete the [guided labs](hands-on-labs.md) before trying these tasks independe
     | E | Yes | BAD_REQUEST | Evidence incomplete | Prompt outcome unavailable |
 
     1. Which rows demonstrate that browser familiarity and group scope affect the app rule independently?
-    2. Why did a member see a prompt in D without a recorded positive behavior?
+    2. What do the recorded rule, behavior status, and prompt each establish in D?
     3. Can you conclude E matched the fallback? What do you inspect next?
 
     ??? question "Show the explanation"
 
-        Compare A and B for behavior with group membership held constant. Compare B and C for group scope with a positive behavior result in both. D lacks enough behavior history, and Okta documents that UNKNOWN can prompt for MFA when the applicable behavior rule is configured for MFA. The recorded rule is the evidence for that specific attempt. For E, check whether the sign-in supplied a usable device identifier and correlate the policy evaluation and verification events before assigning a branch. [System Log behavior outcomes](https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/logs-behavior-detection.htm)
+        Compare A and B for behavior with group membership held constant. Compare B and C for group scope with a positive behavior result in both. In D, UNKNOWN establishes that Okta had too little history for that behavior. The recorded policy rule independently identifies the rule Okta applied in this fictional attempt. The prompt shows additional proof was requested. Use the policy event to establish rule selection for any other attempt with UNKNOWN. For E, check whether the sign-in supplied a usable device identifier and correlate the policy evaluation and verification events before assigning a branch. [System Log behavior outcomes](https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/logs-behavior-detection.htm)
 
 [Restore the lab settings](hands-on-labs.md#lab-4) when you finish.

@@ -20,6 +20,10 @@ Start after reading the [module theory](../behavior-detection.md). Each lab buil
 
     Compare familiar, unfamiliar, and outside-group sign-ins using policy evidence.
 
+- [5. Compare behavior signals and reset history](#lab-5)
+
+    Compare OR and AND, then observe how a disposable user's baseline rebuilds.
+
 - [Practice use cases and capstone](practice-use-cases.md)
 
     Build the policy independently and repair a broken test.
@@ -37,5 +41,9 @@ Start after reading the [module theory](../behavior-detection.md). Each lab buil
 [Back to lab list](#behavior-detection-lab-grid)
 
 --8<-- "test-and-review.md"
+
+[Back to lab list](#behavior-detection-lab-grid)
+
+--8<-- "compare-signals-and-reset-history.md"
 
 [Back to lab list](#behavior-detection-lab-grid)
