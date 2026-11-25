@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    HR sends a department code of `OPS`. Okta stores that code on the user’s Universal Directory profile. A ticketing app expects the same value in its Team field. Build one mapping into Okta and a separate mapping out to the app. Verify each destination before testing the next hop.
+    Inbound and outbound mappings control different writes. The inbound mapping populates a field on the Okta user profile. The outbound mapping can populate a field on an app user profile for a separate downstream provisioning operation.
 
     ### Choose the mapping direction
 
@@ -11,7 +11,7 @@
     | **App to Okta User** | The source integration’s app user profile, such as an HR or directory profile. | The Okta user profile. The applicable sourcing configuration determines which source supplies the field. |
     | **Okta User to App** | The Okta user profile. | The receiving integration’s app user profile. A supported provisioning operation can then write the value to the downstream account. |
 
-    For example, map HR’s `departmentCode` to an Okta string such as `labM3MappedCode`. Map that Okta field to the ticketing integration’s Team field. Use the Okta user profile as the source of the outbound mapping. When the inbound record changes, confirm the new value reaches the Okta user profile before expecting an outbound update. A group membership change by itself does not reapply an existing attribute mapping. An assignment that creates a new account is a separate provisioning event.
+    Use the stored Okta user field as the input to the outbound mapping. Okta documents that reading an attribute directly from a different source's app profile in this mapping is unsupported. When the inbound record changes, confirm the new value reaches the Okta user profile before expecting an outbound update. A group membership change by itself does not reapply an existing attribute mapping. An assignment that creates a new account is a separate provisioning event.
 
     [Attribute mapping directions](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-attribute-mappings.htm) · [Map inbound profile attributes](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-map-profile-attribute.htm)
 

@@ -45,7 +45,15 @@ Start with [Manage Users](modules/manage-users.md) to find the lessons and labs 
 
 ## Active Directory and LDAP
 
+Start with the Theory and Revision tabs. Run the AD and LDAP labs when the required directory and agent hosts are available.
+
 1. [Connect Active Directory to Okta](week-04-ad-and-ldap/lessons/01-connect-active-directory.md)
+2. [Import and match Active Directory users](week-04-ad-and-ldap/lessons/02-import-and-match-ad-users.md)
+3. [Activate AD users and configure Just-In-Time provisioning](week-04-ad-and-ldap/lessons/03-activate-ad-users-and-configure-jit.md)
+4. [Delegate AD authentication and manage agent health](week-04-ad-and-ldap/lessons/04-delegate-authentication-and-manage-agent-health.md)
+5. [Manage password policy and directory recovery](week-04-ad-and-ldap/lessons/05-manage-password-policy-and-directory-recovery.md)
+6. [Import AD groups and write data back to AD](week-04-ad-and-ldap/lessons/06-import-ad-groups-and-write-back-to-ad.md)
+7. [Connect LDAP and delegate LDAP authentication](week-04-ad-and-ldap/lessons/07-connect-ldap-and-delegate-ldap-authentication.md)
 
 ## Course outline
 

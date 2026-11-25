@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    A contractor needs a Sponsor Reference. An employee does not need that field. Create a custom user type when a population needs a distinct profile schema or app property mapping. Start by deciding which attributes the two populations share and which belong to just one of them.
+    A custom user type lets an administrator give a population its own profile schema and app property mappings. Decide which attributes belong to that type and which should be shared with the default type.
 
     ### Separate the assigned type from the profile label
 
@@ -21,7 +21,7 @@
     | Change an existing user’s assigned type | In the person’s profile, click **Change** and choose the destination. Values can carry over when the attribute name and data type match. Review required fields and preserve any source-only values before confirming. |
     | Retire a custom type | Change the type of remaining users or follow your approved process for retiring disposable accounts. Verify that nobody is assigned the type before deleting it. Deletion is permanent and the default type cannot be deleted. |
 
-    For example, move a contractor with `department = Support` and `labM3SponsorRef = SP-482` to the default type. Department can transfer if the field and data type match. The Sponsor Reference needs to be recorded separately if there is no corresponding field in the destination. Plan how to repopulate it if you later move the person back. Where the same custom attribute name appears in multiple schemas, Okta requires the data types to match.
+    Before changing a user's type, record values for fields that exist only in the original schema. A matching field such as Department can transfer when its name and data type match. Restoring a former type may also require repopulating its type-specific values. Where the same custom attribute name appears in multiple schemas, Okta requires the data types to match.
 
     [Create and assign a user type](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-create-assign-user-type.htm) · [Change a user type](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-change-user-type.htm) · [Delete a user type](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-delete-user-type.htm)
 

@@ -36,6 +36,8 @@
 
     Use a supported Windows Server **member server** in the same AD forest. A member server joins the domain and runs the Okta agent. Your domain controller continues running AD DS. In VMware, you can keep your existing domain controller and use a second Windows Server virtual machine (VM) as the member server. One agent on that member server is enough to practice the first import. For **high availability**, install agents on at least two separate computers so another host can take over if one goes down. Okta calls for at least three agents when there are more than 30,000 users. Keep agents in the same domain on the same version. A mixed-version deployment can limit that domain's agents to the oldest installed version. [Okta · AD agent prerequisites](https://help.okta.com/oie/en-us/Content/Topics/Directory/ad-agent-prerequisites.htm)
 
+    Continue with [Import and match Active Directory users](02-import-and-match-ad-users.md) to learn what happens to directory records after the agent connects.
+
     ## Official reading
 
     - [Integrate with Active Directory learning path](https://learning.okta.com/path/integrate-with-active-directory)
@@ -79,3 +81,12 @@
         **3. Check the agent on both sides.** In Windows **Services**, find the Okta AD Agent service and confirm it is running. Check its **Log On As** account against the runtime account you selected. In Okta, open **Directory → Directory Integrations → your AD domain → Agents**. Verify that your lab host appears with a live connection and note the installed version. [View AD agent status](https://help.okta.com/oie/en-us/Content/Topics/Directory/agent-auto-update-view-ad.htm)
 
         **4. Locate a failure before changing settings.** If Windows shows the service stopped, check its service identity and the Windows event for the startup failure. If Windows shows it running but Okta has no live agent, check the registered org, outbound HTTPS, and any proxy configuration. If the agent is live but the test OU is missing from the setup view, check AD connectivity, the selected domain, and the runtime identity's directory read access. Once you have a live agent, record which screen established each part of the result.
+
+=== "Revision"
+
+    **The agent is available in Okta. How do you verify it can also read directory objects?**
+
+    <details class="revision-answer">
+    <summary>Show answer</summary>
+    <p>Run a scoped import and check the expected user and group records. Agent availability establishes that the service is communicating with Okta.</p>
+    </details>

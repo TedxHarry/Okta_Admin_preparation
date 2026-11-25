@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    A user signs in successfully, but the application does not see the cost center it expects. Trace the field from the Okta profile to the assertion and then to the application’s claim handling. Each checkpoint tells you something different.
+    Security Assertion Markup Language (SAML) carries identity data to a receiving service during sign-in. An assertion is the identity statement that the receiver evaluates. The receiving application validates the configured SAML signature. Trace an attribute from its stored value into the assertion and then into the receiver's claim handling.
 
     ### Separate stored values, provisioning, and sign-in claims
 
@@ -29,7 +29,7 @@
     | Current custom claims, **Add expression** | `user.profile.department` | `user.profile.labM3ClaimCostCenter` |
     | Legacy attribute statements, where exposed | `user.department` | `user.labM3ClaimCostCenter` |
 
-    Use the exact attribute names the receiver expects, such as `department` and `costCenter`. Use one editor for each name because legacy and current statements are additive. The legacy editor can also reference supported app-user properties with `appuser.<variableName>`. Check which profile owns the intended value before selecting the expression. Okta documents that empty expressions can cause a SAML attribute to be omitted. Test populated and blank inputs.
+    Use the exact attribute names the receiver expects, such as `department` and `costCenter`. Use one editor for each name because legacy and current statements are additive. The legacy editor can also reference supported app-user properties with `appuser.<variableName>`. Check which profile owns the intended value before selecting the expression. Okta omits a SAML claim when its expression returns empty. If every expression returns empty, Okta can emit an empty `AttributeStatement` element, which some receivers reject. Test populated and blank inputs.
 
     [Create a SAML app](https://help.okta.com/en-us/Content/topics/apps/apps_app_integration_wizard_saml.htm) · [Configure custom claims](https://help.okta.com/oie/en-us/content/topics/apps/federated-claims-overview.htm) · [Legacy attribute statements](https://help.okta.com/oie/en-us/content/topics/apps/define-attribute-statements.htm)
 

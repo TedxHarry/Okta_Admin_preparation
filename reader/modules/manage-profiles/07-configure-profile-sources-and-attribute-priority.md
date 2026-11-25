@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    HR says a person works in Operations. Active Directory (AD) says Finance. Both accounts are linked to the same Okta user. To predict what appears on the Okta profile, identify the user’s profile source, check the field’s source priority, and read the inbound mapping from that source.
+    When several integrations link to the same user, Okta uses source priority and attribute-level settings to determine which system supplies each field. Verify the source assignment and the inbound mapping before interpreting the stored value.
 
     ### Identify the primary profile source
 
@@ -24,13 +24,13 @@
     | **Inherit from Okta** | Okta supplies the field. If users should edit it themselves, also set **User permission → Read-Write** where supported. **Read Only** and **Hide** control end-user access to the field. |
     | **Override profile source** | The selected source supplies the field through an **App to Okta User** mapping, while the user’s primary profile source can remain unchanged. |
 
-    Saving the source choice alone does not populate a field. Okta documents that an unmapped attribute from the primary source is null and does not fall through to lower-priority sources. After choosing an override, configure the selected source’s inbound mapping and verify that a supported import supplies the value. For example, HR can remain first overall while a work email field is supplied by AD. Use **Directory → People → test user → Profile** to check the persisted value. For an externally controlled field, make the correction at its source and verify the import. For user self-service, test the field under the intended user’s permissions.
+    Saving the source choice alone does not populate a field. Okta documents that an unmapped attribute from the primary source is null and does not fall through to lower-priority sources. After choosing an override, configure the selected source’s inbound mapping and verify that a supported import supplies the value. A field-level override can select AD for a particular field while HR remains the user's primary source. Use **Directory → People → test user → Profile** to check the persisted value. For an externally controlled field, make the correction at its source and verify the import. For user self-service, test the field under the intended user’s permissions.
 
     [Set an attribute source](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-define-attribute-profile-source.htm) · [Map profile attributes](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-map-profile-attribute.htm) · [Allow users to edit attributes](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-user-edit-attributes.htm)
 
     ### Trace an HR change to access
 
-    If HR supplies Department and changes a test user from Operations to Support, first verify the HR import updates Department on the correct Okta user. An active group rule on a default-type test user can then evaluate the new Okta value. Verify the resulting membership separately. If membership is unexpected, check the actual Department, the rule’s status, and its exceptions.
+    When an HR-driven value changes, confirm the import updated the correct Okta record. An active rule can evaluate the stored value and update group membership for a default-type user. Verify the resulting membership separately. If membership is unexpected, check the actual Department, the rule’s status, and its exceptions.
 
     If the same integration also receives profile updates from Okta, review the inbound and outbound mappings together before enabling writes. Okta documents overwrite and timing risks when sourcing and **Update User Attributes** are enabled on the same integration. Record the resulting value in both systems during testing.
 

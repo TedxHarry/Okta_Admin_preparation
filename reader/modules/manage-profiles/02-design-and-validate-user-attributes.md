@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    The help desk wants a Support Region for routing requests and a Staff Reference for identifying people. Several people can belong to the same region. Each issued staff reference belongs to one person. Give the two fields different rules so Okta accepts the values each process expects.
+    Attribute settings define which values a profile accepts. Choose the data type, allowed values, and uniqueness requirements based on how the field will be used. Review existing data before restricting an attribute already in use.
 
     ### Choose the field and its type
 

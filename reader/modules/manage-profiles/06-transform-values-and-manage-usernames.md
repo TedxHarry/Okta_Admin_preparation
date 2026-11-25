@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    An app expects department values such as `OPS` even when Okta stores `ops`. Another app needs a username derived from a dedicated alias. Use Okta Expression Language (EL) to compute those values, then verify what Okta saved and what the app actually uses.
+    Okta Expression Language (EL) calculates values for mappings and supported username settings. Check the source field, the expected output type, and the saved result before relying on an expression.
 
     ### Choose the input for the mapping direction
 

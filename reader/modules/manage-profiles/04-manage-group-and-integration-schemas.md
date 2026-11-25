@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    An Okta group needs a Support Queue label. An Active Directory (AD) integration needs to read a field from a directory user. Those changes belong to different profiles. Start by locating the record that should hold the value and identifying which system owns its definition.
+    The Okta group schema defines fields stored on an Okta group. An integration schema describes fields available through an app, directory, or identity provider. Identify the destination record and the system that owns its schema before adding a field.
 
     ### Choose the schema to change
 

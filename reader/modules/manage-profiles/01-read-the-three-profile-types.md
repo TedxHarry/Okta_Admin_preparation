@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    A user says their Department is correct in Okta but wrong in an app. Before editing either record, identify where the value is stored, which field receives it, and what controls updates. A single user can have an Okta user profile, an app user profile for each assigned integration, and an account record inside each receiving app.
+    Okta Universal Directory stores user profiles, group profiles, and app user profiles. A receiving application can also store its own account record. Identify the record that holds the value and the operation that updates it before changing a profile or mapping.
 
     ### Separate the schema from the record
 
@@ -26,7 +26,7 @@
 
     A **profile mapping** tells Okta which value to read and which field receives it. **App to Okta** mappings can bring source data into the Okta user profile. **Okta to app** mappings can populate app user attributes. A **profile source** supplies the authoritative profile or field value. Provisioning controls whether supported updates reach the downstream account.
 
-    Imagine that Jules’s Okta Department says `Support`, the app assignment shows `Operations`, and the app’s own directory also shows `Operations`. First verify that all three records refer to the same person and integration. Then inspect the **Okta to app** mapping for the app’s department field. If the value in Okta’s app assignment becomes `Support` but the target still shows `Operations`, inspect the connector and the downstream update. If the Okta user value itself is wrong, start with inbound mapping and source ownership.
+    Verify that each record refers to the same user and integration. If the Okta user value is wrong, inspect inbound mapping and source ownership. If the app assignment value differs from the intended mapping result, inspect the outbound mapping and assignment. If the app assignment is correct and the receiving account still differs, inspect the connector and the write outcome.
 
     [Attribute mapping directions](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-attribute-mappings.htm) · [Manage profile and attribute sourcing](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-sourcing-main.htm)
 

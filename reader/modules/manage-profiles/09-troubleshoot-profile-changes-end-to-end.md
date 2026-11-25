@@ -2,7 +2,7 @@
 
 === "Theory"
 
-    A worker’s Department changed to `Support`. Okta displays it correctly, but an assigned app still shows the old value. Start with the latest source record and follow the change until you find the first value that differs from what you expected. Fix that stage and verify the same user and field through the rest of the flow.
+    Troubleshoot a profile change by reading the source record, the Okta user profile, the app user profile, and the receiving account in order. Find the first stage where the value differs from the expected result, then verify that same field through the remaining stages after making the correction.
 
     ### Follow one change across the records
 
@@ -26,7 +26,7 @@
 
     If the same flow reacts to profile updates and writes the profile, the write can trigger another run. Restrict the flow to a disposable user and compare the intended value with the existing value before writing. The follow-up event should reach a stop condition once both values match. If an outbound connector later consumes the field, verify its operation and target record separately.
 
-    [Configure AD provisioning](https://help.okta.com/en-us/Content/topics/directory/ad-agent-configure-provisioning.htm) · [User Okta Profile Updated](https://help.okta.com/wf/en-us/Content/Topics/Workflows/connector-reference/okta/events/oktauserprofileupdated.htm) · [Read User](https://help.okta.com/wf/en-us/Content/Topics/Workflows/connector-reference/okta/actions/readuser.htm) · [Update User](https://help.okta.com/wf/en-us/Content/Topics/Workflows/connector-reference/okta/actions/updateuser.htm)
+    [AD account updates and group write-back](../../week-04-ad-and-ldap/lessons/06-import-ad-groups-and-write-back-to-ad.md) · [Configure AD provisioning](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-configure-provisioning.htm) · [User Okta Profile Updated](https://help.okta.com/wf/en-us/Content/Topics/Workflows/connector-reference/okta/events/oktauserprofileupdated.htm) · [Read User](https://help.okta.com/wf/en-us/Content/Topics/Workflows/connector-reference/okta/actions/readuser.htm) · [Update User](https://help.okta.com/wf/en-us/Content/Topics/Workflows/connector-reference/okta/actions/updateuser.htm)
 
 === "Hands-on Lab"
 
