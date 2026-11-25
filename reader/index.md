@@ -20,6 +20,10 @@ Start with [Manage Users](modules/manage-users.md) to find the lessons and labs 
 
 [Active Directory Integration](modules/active-directory.md). Connect AD and LDAP, compare import and first sign-in, manage delegated password operations, and verify group and lifecycle changes.
 
+## Module 5 · Behavior Detection
+
+[Behavior Detection](modules/behavior-detection.md). Enroll Okta Verify on mobile, configure a group-scoped sign-in rule, change its fallback, and prove the result in the System Log.
+
 ## Foundations
 
 1. [Your Okta org](week-01-foundations/lessons/01-your-okta-org.md)
@@ -53,10 +57,10 @@ Start with [Manage Users](modules/manage-users.md) to find the lessons and labs 
 - [Module 2 · Manage Groups](modules/manage-groups.md)
 - [Module 3 · Manage Profiles](modules/manage-profiles.md)
 - [Module 4 · Active Directory Integration](modules/active-directory.md)
+- [Module 5 · Behavior Detection](modules/behavior-detection.md)
 - Foundations
 - Universal Directory and lifecycle
 - SAML and attribute mappings
-- Behavior Detection
 - Device Assurance and FastPass
 - Monitoring and troubleshooting
 - Exam rehearsals

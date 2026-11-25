@@ -38,6 +38,8 @@ plugins:
 
 
 markdown_extensions:
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
   - pymdownx.snippets:
       base_path:
@@ -45,6 +47,7 @@ markdown_extensions:
         - includes/manage-groups
         - includes/manage-profiles
         - includes/active-directory
+        - includes/behavior-detection
       check_paths: true
   - pymdownx.tabbed:
       alternate_style: true
@@ -114,6 +117,15 @@ nav:
       - Lesson 9 · Operate and troubleshoot directory integrations: week-04-ad-and-ldap/lessons/09-operate-and-troubleshoot-directory-integrations.md
       - Hands-on labs and capstone: modules/active-directory/hands-on-labs.md
       - Exam objectives and official reading: modules/active-directory/source-and-lab-plan.md
+  - Module 5 · Behavior Detection:
+      - Overview: modules/behavior-detection.md
+      - Lesson 1 · Understand Behavior Detection and enroll Okta Verify: week-05-behavior-detection/lessons/01-understand-behavior-detection.md
+      - Lesson 2 · Configure a group-scoped behavior rule: week-05-behavior-detection/lessons/02-configure-a-group-scoped-behavior-rule.md
+      - Lesson 3 · Modify the Catch-All Rule: week-05-behavior-detection/lessons/03-modify-the-catch-all-rule.md
+      - Lesson 4 · Test the policy and read the System Log: week-05-behavior-detection/lessons/04-test-the-policy-and-read-the-system-log.md
+      - Hands-on labs: modules/behavior-detection/hands-on-labs.md
+      - Practice use cases and capstone: modules/behavior-detection/practice-use-cases.md
+      - Exam objectives and official reading: modules/behavior-detection/source-and-lab-plan.md
   - Foundations:
       - Lesson 1 · Your Okta org: week-01-foundations/lessons/01-your-okta-org.md
       - Lesson 2 · Users, profiles, and activation: week-01-foundations/lessons/02-users-profiles-and-activation.md
