@@ -24,19 +24,51 @@
 
     Open **Security → Delegated Authentication → LDAP** and enable LDAP delegated authentication. Use **Test Delegated Authentication** with a non-admin directory user to verify credentials. Then sign in as that linked user in a separate browser session and inspect System Log. To enable LDAP JIT, select **Create and update users on login** under the directory integration's **Provisioning → To Okta** settings. Enable delegated authentication for this flow. If the Okta username is produced by a custom expression, LDAP JIT looks up the account using the applicable UID or email format. Okta lists instance-level JIT and delegated authentication as AD capabilities that the LDAP integration lacks. LDAP import scope uses search bases and filters. Password-change and recovery support depends on the LDAP distribution and agent configuration.
 
-    [Enable LDAP delegated authentication](https://help.okta.com/okta_help.htm?id=ext_Security_Authentication) · [LDAP integration features](https://help.okta.com/oie/en-us/content/topics/directory/ldap-feature-support.htm)
+    [Enable LDAP delegated authentication](https://help.okta.com/oie/en-us/content/topics/security/security_authentication.htm) · [LDAP integration features](https://help.okta.com/oie/en-us/content/topics/directory/ldap-feature-support.htm)
+
+    ## Verify each LDAP connection and operation
+
+    The LDAP agent needs a supported Windows or Linux host, an Okta registration identity, and a distinct LDAP bind user. Its connection to the existing LDAP server uses the server's endpoint, search parameters, and configured trust. Its connection to Okta uses the org registration and network path from the agent host.
+
+    An **object class** describes the type and attributes of an LDAP entry. An integration filter uses object classes or attribute conditions to select directory records. An import reads those records with the bind user's rights. Delegated sign-in validates the end user's password against LDAP via the agent. Recovery is a further operation with its own supported LDAP distribution, agent version, server behavior, and permissions. A successful import establishes none of those recovery outcomes.
+
+    An **incremental LDAP import** uses `modifyTimestamp` to find changed entries. Review **Maximum clock skew** and the LDAP server index for that attribute when incremental imports produce unexpected results. Check the separate user and group search configuration before treating missing memberships as an authentication problem.
+
+    [LDAP prerequisites](https://help.okta.com/oie/en-us/content/topics/directory/ldap-agent-prerequisites.htm) · [LDAP import settings](https://help.okta.com/oie/en-us/content/topics/directory/ldap-agent-configure-ldap-import-settings.htm) · [LDAP sign-in and recovery](https://help.okta.com/oie/en-us/content/topics/security/security_authentication.htm)
 
 === "Hands-on Lab"
 
-    Use a supported test LDAP server with a reachable, trusted TLS endpoint, a bind account with scoped read permissions, and a disposable non-admin test user. Install the agent and configure the user search base, filter, and unique identifier. Import and confirm the test user, then activate them if needed.
-
-    Enable delegated authentication and test the user's credentials through the integration. Sign in from a separate browser session and inspect the user, directory, and outcome in System Log. For JIT, enable it in the LDAP integration settings and repeat with a fresh LDAP user who has never been confirmed through import. Verify how the new Okta user is linked.
+    --8<-- "ad-lab-7.md"
 
 === "Revision"
+
+    ### Cheat sheet
+
+    | Topic | Remember |
+    | --- | --- |
+    | LDAP Agent | Connects Okta to an existing LDAP directory. |
+    | LDAP Interface | Lets LDAP clients connect to the Okta cloud endpoint. |
+    | LDAP checks | Verify TLS, bind, search, import and end-user sign-in independently. |
+
+    ### Check your recall
 
     **An application needs to issue LDAP requests against Okta. Which component serves those requests?**
 
     <details class="revision-answer">
     <summary>Show answer</summary>
     <p>The LDAP Interface serves the application. Use the LDAP agent when Okta needs to connect to an existing external directory.</p>
+    </details>
+
+    **LDAP imports records, but sign-in fails. What should you test?**
+
+    <details class="revision-answer">
+    <summary>Show answer</summary>
+    <p>Verify the linked user and username format, then use the LDAP delegated credential test and the actual sign-in log.</p>
+    </details>
+
+    **Okta unlocked an LDAP-sourced user. Where do you check for a continued lockout?**
+
+    <details class="revision-answer">
+    <summary>Show answer</summary>
+    <p>Check the LDAP directory directly. The Okta self-service unlock can leave the directory account locked.</p>
     </details>

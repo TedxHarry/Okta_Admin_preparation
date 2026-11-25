@@ -6,10 +6,11 @@ Start with [Module 1 · Manage Users](reader/modules/manage-users.md). Each less
 
 - [Module 1 · Manage Users](reader/modules/manage-users.md)
 - [Module 2 · Manage Groups](reader/modules/manage-groups.md)
+- [Module 3 · Manage Profiles](reader/modules/manage-profiles.md)
+- [Module 4 · Active Directory Integration](reader/modules/active-directory.md)
 - [Foundations](week-01-foundations/)
 - [Universal Directory and lifecycle](week-02-directory-and-lifecycle/)
 - [SAML and attribute mappings](week-03-saml-and-mappings/)
-- [Active Directory and LDAP](week-04-ad-and-ldap/)
 - [Behavior Detection](week-05-behavior-detection/)
 - [Device Assurance and FastPass](week-06-device-assurance/)
 - [Monitoring and troubleshooting](week-07-troubleshooting/)
@@ -44,9 +45,9 @@ The module outline links to lessons and hands-on labs.
 3. [Troubleshoot SAML and choose an SSO method](week-03-saml-and-mappings/lessons/03-saml-troubleshooting-and-sso.md)
 4. [Capstone · Deliver a custom SAML integration](week-03-saml-and-mappings/labs/04-custom-saml-integration-capstone.md)
 
-## Active Directory and LDAP
+## Active Directory Integration
 
-1. [Connect Active Directory to Okta](week-04-ad-and-ldap/lessons/01-connect-active-directory.md)
+[Module 4 overview and lesson sequence](reader/modules/active-directory.md) · [Labs and capstone](reader/modules/active-directory/hands-on-labs.md)
 
 [Exam coverage and planned labs](reader/exam/coverage.md)
 

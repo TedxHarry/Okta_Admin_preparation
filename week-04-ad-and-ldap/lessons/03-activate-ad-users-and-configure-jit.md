@@ -28,15 +28,27 @@
 
     [AD import settings and JIT scope](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-configure-import.htm) · [AD integration FAQ](https://help.okta.com/oie/en-us/content/topics/directory/directory_faq_okta_and_ad_groups.htm)
 
+    ## Keep activation, sign-in, and app access distinct
+
+    A confirmed user may remain staged until activated. Suppressing the activation email changes delivery. It leaves the activation decision to the process or admin you configured. An activated user can still have an enrollment step or fail an Okta sign-in policy. Verify **People**, the sign-in attempt, and any app assignment separately.
+
+    **Desktop Single Sign-On** uses the Windows identity under its own prerequisites and policy. A Desktop SSO sign-in can also trigger JIT. It has a separate setup path from testing a typed AD password through the agent. [Desktop SSO and JIT](https://help.okta.com/oie/en-us/content/topics/directory/ad-desktop-sso-main.htm)
+
 === "Hands-on Lab"
 
-    Use a lab AD instance with delegated authentication enabled and two disposable AD users in a selected OU. Leave the first user absent from Okta and confirm the second through an import without activating it. If you create the first user after the import, the test setup is easier to verify.
-
-    1. Enable **Create and update users on login**. Sign in as the first user in a fresh browser session and complete any required Okta enrollment. Verify creation, status, linked AD instance, and group membership.
-    2. Try the same first-sign-in path for the confirmed, staged user. Verify that the attempt does not activate it through JIT. Activate it through the admin process and retest.
-    3. If testing profile refresh, choose a mapped AD-sourced field. Change it in AD, sign in again, then inspect the value. Account for the admin profile view also being able to trigger a refresh.
+    --8<-- "ad-lab-3.md"
 
 === "Revision"
+
+    ### Cheat sheet
+
+    | Topic | Remember |
+    | --- | --- |
+    | Import and confirm | Review the resulting user and activate separately if staged. |
+    | JIT | Eligible user plus directory authentication, scope, and a first sign-in. |
+    | JIT refresh | Existing sourced profile can refresh at sign-in or when viewed by an admin. |
+
+    ### Check your recall
 
     **Can first sign-in activate a staged user after an admin confirmed their AD import?**
 
@@ -50,4 +62,11 @@
     <details class="revision-answer">
     <summary>Show answer</summary>
     <p>Check the selected user OUs, delegated authentication, and Create and update users on login. The import matching rules are bypassed for JIT.</p>
+    </details>
+
+    **What else can refresh an existing AD-sourced JIT profile?**
+
+    <details class="revision-answer">
+    <summary>Show answer</summary>
+    <p>Okta documents a refresh when an administrator loads or refreshes that profile in the Admin Console.</p>
     </details>

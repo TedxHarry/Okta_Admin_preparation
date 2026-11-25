@@ -16,6 +16,10 @@ Start with [Manage Users](modules/manage-users.md) to find the lessons and labs 
 
 [Manage Profiles](modules/manage-profiles.md). Compare profile types, define attributes, and trace how profile values reach apps.
 
+## Module 4 · Active Directory Integration
+
+[Active Directory Integration](modules/active-directory.md). Connect AD and LDAP, compare import and first sign-in, manage delegated password operations, and verify group and lifecycle changes.
+
 ## Foundations
 
 1. [Your Okta org](week-01-foundations/lessons/01-your-okta-org.md)
@@ -43,27 +47,15 @@ Start with [Manage Users](modules/manage-users.md) to find the lessons and labs 
 3. [Troubleshoot SAML and choose an SSO method](week-03-saml-and-mappings/lessons/03-saml-troubleshooting-and-sso.md)
 4. [Capstone · Deliver a custom SAML integration](week-03-saml-and-mappings/labs/04-custom-saml-integration-capstone.md)
 
-## Active Directory and LDAP
-
-Start with the Theory and Revision tabs. Run the AD and LDAP labs when the required directory and agent hosts are available.
-
-1. [Connect Active Directory to Okta](week-04-ad-and-ldap/lessons/01-connect-active-directory.md)
-2. [Import and match Active Directory users](week-04-ad-and-ldap/lessons/02-import-and-match-ad-users.md)
-3. [Activate AD users and configure Just-In-Time provisioning](week-04-ad-and-ldap/lessons/03-activate-ad-users-and-configure-jit.md)
-4. [Delegate AD authentication and manage agent health](week-04-ad-and-ldap/lessons/04-delegate-authentication-and-manage-agent-health.md)
-5. [Manage password policy and directory recovery](week-04-ad-and-ldap/lessons/05-manage-password-policy-and-directory-recovery.md)
-6. [Import AD groups and write data back to AD](week-04-ad-and-ldap/lessons/06-import-ad-groups-and-write-back-to-ad.md)
-7. [Connect LDAP and delegate LDAP authentication](week-04-ad-and-ldap/lessons/07-connect-ldap-and-delegate-ldap-authentication.md)
-
 ## Course outline
 
 - [Module 1 · Manage Users](modules/manage-users.md)
 - [Module 2 · Manage Groups](modules/manage-groups.md)
 - [Module 3 · Manage Profiles](modules/manage-profiles.md)
+- [Module 4 · Active Directory Integration](modules/active-directory.md)
 - Foundations
 - Universal Directory and lifecycle
 - SAML and attribute mappings
-- Active Directory and LDAP
 - Behavior Detection
 - Device Assurance and FastPass
 - Monitoring and troubleshooting

@@ -40,16 +40,27 @@
 
     [On-demand imports](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-import-users-on-demand.htm) · [Scheduled imports](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-schedule-imports.htm) · [Import safeguards](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-import-safeguard.htm)
 
+    ### Distinguish scope from data changes
+
+    User and group OU filters define the objects a job can see. Where the tenant offers AD LDAP-style user or group filters, test the result set before changing the production filter. Changes can make previously imported records appear to have left scope. Treat a paused safeguard as evidence to inspect. Compare the unexpected unassignment count with the actual intended directory change. [AD import scope and filters](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-configure-import.htm)
+
+    A **backlink** is a relationship AD derives from another object's data. AD computes `memberOf`. A membership edit may therefore fail to trigger an incremental user-attribute refresh for a mapping based on that computed field. Use imported group membership for a group rule where appropriate. Check the actual group object and its membership as well as the user's profile. [Computed attributes in AD imports](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-configure-import.htm)
+
 === "Hands-on Lab"
 
-    After [connecting a lab AD domain](01-connect-active-directory.md), create two disposable AD users inside the selected user OU. Create an Okta user whose username matches one of them. Leave the other absent in Okta. Configure username exact matching and leave auto-confirm off for the comparison.
-
-    1. Run a full import under the instance's **Import → Import Now**.
-    2. Check which record proposes an existing Okta user and which proposes a new one. Confirm both without auto-activation. Verify the linked accounts and the new user's status under **Directory → People**.
-    3. With AD sourcing and a mapped field, change Department in AD and run an incremental import. Read the resulting Okta Department on the correct record.
-    4. Move the disposable new AD user out of the selected OU. Compare incremental and full import results and check the configured lifecycle action. Restore the OU and review the reactivation settings before reimporting.
+    --8<-- "ad-lab-2.md"
 
 === "Revision"
+
+    ### Cheat sheet
+
+    | Topic | Remember |
+    | --- | --- |
+    | Exact match | All selected matching criteria must be met. |
+    | Confirmation | Links an existing Okta user or creates a new one. |
+    | Full import | Reconciles removed or out-of-scope records. |
+
+    ### Check your recall
 
     **A user moved out of the selected OU. Which import detects that removal?**
 
@@ -63,4 +74,11 @@
     <details class="revision-answer">
     <summary>Show answer</summary>
     <p>When partial matching is enabled and the first and last names match. Confirm the person's identity before linking the records.</p>
+    </details>
+
+    **What is the difference between confirmation and activation?**
+
+    <details class="revision-answer">
+    <summary>Show answer</summary>
+    <p>Confirmation creates or links the intended Okta user. Activation is a separate lifecycle step.</p>
     </details>
