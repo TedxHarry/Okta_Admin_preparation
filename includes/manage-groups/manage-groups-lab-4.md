@@ -48,3 +48,24 @@ isMemberOfGroup("SOURCE_A_ID") OR isMemberOfGroup("SOURCE_B_ID")
 **Cleanup:** verify the target is empty, deactivate your test rule, then restore the original Department values. Remove only the memberships you added to your dedicated source groups if you are finished with these objects.
 
 [Okta · Create group rules](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-create-group-rules.htm) · [Okta · OEL group functions](https://developer.okta.com/docs/reference/okta-expression-language/#group-functions) · [Okta · Verify membership changes](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-verify-group-membership.htm)
+
+### 4. Check an exact element in a profile array
+
+1. In **Directory → Profile Editor → Okta User (default)**, add an optional **string array** named **Lab Training Codes** with variable name `labTrainingCodes`. Create an unassigned group named **Lab Array Match**. Use three active, Okta-managed default-type users from this lab.
+2. Under **Directory → People → user → Profile → Edit**, set the test values below and reopen each profile to confirm the stored list. If your profile editor cannot set the list, work through the table as simulated evidence.
+
+| Test profile | Separate elements in Lab Training Codes | Expected Preview |
+| --- | --- | --- |
+| A | `SEC-101`, `OPS-200` | True |
+| B | `SEC-101-ADV` | False |
+| C | Empty list | False |
+
+3. Add an advanced rule targeting **Lab Array Match** with the expression below. Preview all three users. Save and activate the rule in the test org, then check the group's **People** tab. Only A should be added. Change A's stored list so it contains only `OPS-200`. Verify membership is removed while A remains active.
+
+    ```text
+    Arrays.contains(user.labTrainingCodes, "SEC-101")
+    ```
+
+4. Deactivate the test rule before deleting it, then remove the disposable group and any lab-only attribute values or fields. Check that the original group-rule exercises still have their own settings.
+
+[Add a custom user attribute](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-add-custom-user-attributes.htm) · [Array functions](https://developer.okta.com/docs/reference/okta-expression-language/#array-functions)

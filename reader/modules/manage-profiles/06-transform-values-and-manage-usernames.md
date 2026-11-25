@@ -38,6 +38,20 @@
 
     [Okta Expression Language reference](https://developer.okta.com/docs/reference/okta-expression-language/) · [Modify attributes with expressions](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-attribute-mappings-expressions.htm)
 
+    ### Calculate a value once for a group rule
+
+    | Editor | What the expression produces |
+    | --- | --- |
+    | **Profile Editor → Mappings** | A value that fits the destination field, such as text, an integer, an array, or a Boolean. |
+    | **Directory → Groups → Rules** | A Boolean that decides membership. It can read stored Okta attributes, test array membership, and use supported group membership checks. |
+    | **An app's claim editor** | A value that can be sent to the receiving application. Use the syntax and return type for that claim editor. |
+
+    A group rule cannot run `Convert.toInt()` or `Time` functions directly. In **App to Okta User**, convert trusted numeric text into an Okta integer or map a date comparison to an Okta Boolean. The rule can then use a numeric comparison or test the stored Boolean. Check the source field and its format before mapping. A valid preview shows the calculated result. Check the saved Okta user profile after the integration processes the mapping so you know what value the group rule reads.
+
+    To compare dates, `Time.fromIso8601ToWindows()` converts a timestamp in ISO 8601 format to a comparable numeric value. An ISO 8601 timestamp such as `2026-01-01T00:00:00.000Z` includes a date, a time, and the `Z` designator for UTC. Convert both the input and the cutoff in the mapping. Use an explicit missing-value result and make sure populated inputs are valid timestamps. The stored result changes when the mapping runs, so a calculation in a mapping does not schedule a future membership change by itself.
+
+    [Group-rule expression limits](https://developer.okta.com/docs/reference/okta-expression-language/#expressions-in-group-rules) · [Date comparison in a profile mapping](https://developer.okta.com/docs/reference/okta-expression-language/#time-functions) · [SAML claim expression editors](08-send-and-verify-saml-attributes-and-ws-federation-claims.md)
+
     ### Identify which username you are changing
 
     | Username or setting | Where to inspect |
@@ -80,4 +94,11 @@
     <details class="revision-answer">
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Check the receiving account and provisioning result for a connector write, or inspect the identifier sent and accepted during a test sign-in.</p>
+    </details>
+
+    **4. Which editor converts the HR text `"12"` to a number for a group condition?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 4">Show answer</summary>
+    <p>Use Convert.toInt in the inbound profile mapping to populate an integer field. Verify 12 on the saved Okta profile, then compare the integer field to the rule's threshold.</p>
     </details>

@@ -49,6 +49,31 @@ In **Directory → Profile Editor → Okta User (default)**, add optional string
 <p>Use <code>String.toUpperCase(source.departmentCode)</code> or the corresponding in-context <code>appUser</code> reference for the inbound mapping. A null or empty team code returns <code>UNASSIGNED</code>. The numeric string converts to 7 and loses its leading zeros. Validate or reject nonnumeric input before integer conversion. For the stale assignment, confirm the effective app username format, create-and-update timing, and whether the mapping was saved and applied to that user.</p>
 </details>
 
+### 4. Use a calculated field in a group rule
+
+In **Directory → Profile Editor → Okta User (default)**, add an optional **Boolean** named **Lab Meets Date Cutoff** with variable name `labMeetsDateCutoff`. Use three active, default-type test users and a native group named **Lab Date Cutoff**. Keep the group unassigned to apps.
+
+1. With a disposable inbound integration that provides a test ISO 8601 timestamp string, map its field to **Lab Meets Date Cutoff** under **App to Okta User**. Replace `labHireTimestamp` with the source field's actual variable name. Preview the expression, save the mapping, and process the source import. For a malformed nonempty timestamp, correct the source before importing. This expression checks for missing input and assumes that populated timestamps are valid.
+
+    ```text
+    (source.labHireTimestamp == null || source.labHireTimestamp == "") ? false :
+      (Time.fromIso8601ToWindows(source.labHireTimestamp) >=
+        Time.fromIso8601ToWindows("2026-01-01T00:00:00.000Z"))
+    ```
+
+2. If you have no inbound connector, use the table to evaluate the mapping, then enter the expected Boolean directly on each Okta-managed test profile. This verifies the rule using a stored value. With a connector, inspect the computed field on the saved Okta profile.
+
+| Inbound test value | Expected saved Boolean |
+| --- | --- |
+| `2026-01-01T00:00:00.000Z` | True. Equality meets the cutoff. |
+| `2025-12-31T23:59:59.000Z` | False. The timestamp is before the cutoff. |
+| Missing | False. The missing-value branch runs. |
+
+3. Create an advanced group rule targeting **Lab Date Cutoff** using `user.labMeetsDateCutoff == true`. Preview each user before activating the rule. Verify the one matching user's membership. Change that user's test input to the earlier timestamp and import it again, or change the manually seeded Boolean to false. Check that the stored value and membership change.
+4. Deactivate the test rule before removing it. Restore or remove the inbound mapping, then remove the test group and lab-only attribute after checking its references.
+
+[Okta time functions](https://developer.okta.com/docs/reference/okta-expression-language/#time-functions) · [Okta group-rule expressions](https://developer.okta.com/docs/reference/okta-expression-language/#expressions-in-group-rules)
+
 ### Reset the lab
 
 Restore the original test mapping, username format, and update settings. Remove lab-only assignments and verify no mapping references the lab fields before removing them. Follow the receiving app’s test-account cleanup process if you provisioned accounts.

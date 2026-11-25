@@ -65,6 +65,20 @@
 
     [Okta · Map inputs and create rules](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-create-group-rules.htm) · [Okta · OEL group rule samples and blank checks](https://developer.okta.com/docs/reference/okta-expression-language/#group-rules-samples)
 
+    ## Check one value inside a multi-value field
+
+    A **string array** holds a list of separate text values. `Arrays.contains()` returns a Boolean when it checks for a particular element. Use the variable name from the default Okta user schema. For a string array with the variable name `labTrainingCodes`, this rule checks for the exact element `SEC-101`.
+
+    ```text
+    Arrays.contains(user.labTrainingCodes, "SEC-101")
+    ```
+
+    A stored value of `SEC-101-ADV` is a different array element. To handle a missing list explicitly, check the list with `Arrays.isEmpty()` before evaluating membership. `Arrays.isEmpty()` returns true for an empty or null array.
+
+    When a condition requires a date calculation or numeric conversion, compute and save the desired value through an inbound profile mapping. Use the resulting Okta attribute in the rule. For a date cutoff, the saved result can be a Boolean field and the rule can check whether it equals `true`.
+
+    [Array functions and group-rule examples](https://developer.okta.com/docs/reference/okta-expression-language/#expressions-in-group-rules) · [Map a calculated field before using it in a rule](../manage-profiles/06-transform-values-and-manage-usernames.md#calculate-a-value-once-for-a-group-rule)
+
 === "Hands-on Lab"
 
     --8<-- "manage-groups-lab-4.md"
@@ -81,6 +95,8 @@
     | A and outside B | Join the A check and the negated B check with `AND`. |
     | Either source and the right department | Parenthesize the OR checks, then apply `AND` and the Department comparison. |
     | Any populated text value | Check for both `null` and `""`. |
+    | An exact value in a string array | Use `Arrays.contains(user.attributeName, "VALUE")`. |
+    | Eligibility calculated from a date | Save the comparison in a Boolean profile field, then check that field. |
     | Skip one person | Use the rule’s named exception and verify the resulting target membership. |
 
     **Exam focus.** Translate the requirement into a Boolean condition, test a user who should miss, and verify the intended target after activation. This supports the custom app integration use case, which asks you to use OEL and assign a group to an app. [Okta Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)
@@ -106,4 +122,11 @@
     <details class="revision-answer">
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Use the intended group's exact ID with isMemberOfGroup. Confirm the group's source before copying the ID.</p>
+    </details>
+
+    **4. The list contains `SEC-101-ADV`. Will the rule using `Arrays.contains(user.labTrainingCodes, "SEC-101")` match?**
+
+    <details class="revision-answer">
+    <summary aria-label="Show answer to question 4">Show answer</summary>
+    <p>It only matches when the array contains the exact element SEC-101. The longer code is a different value.</p>
     </details>
