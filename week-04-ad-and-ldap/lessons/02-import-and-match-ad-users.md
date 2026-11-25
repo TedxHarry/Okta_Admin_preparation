@@ -36,6 +36,8 @@
     | Incremental | Reads users created or updated since the last import and evaluates those users. AD users and groups are tracked separately, so newly imported users can initially have incomplete group memberships. |
     | Scheduled | Normally performs incremental imports. Check the integration's settings for exceptions such as **Skip users during import**, which makes imports full. |
 
+    For the difference between deleting an AD record, disabling it in place, and moving it beyond the selected OUs, see the [directory lifecycle comparison](08-manage-ad-profile-sourcing-and-lifecycle.md#compare-disabling-deleting-and-moving-a-user-in-ad).
+
     **Import safeguards** can pause import processing when unassignments exceed configured app-level or org-wide limits. Check the warning, OU scope, and upstream changes before resuming a paused import. The org-level safeguard also has a minimum assignment count, so a tiny test org may behave differently. **DirSync** is an optional AD change-tracking capability. Okta documents that toggling it forces the next import to be full.
 
     [On-demand imports](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-import-users-on-demand.htm) · [Scheduled imports](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-schedule-imports.htm) · [Import safeguards](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-import-safeguard.htm)

@@ -46,20 +46,40 @@ Choose an exercise for its full instructions. Use the offline capstone records i
 
 --8<-- "ad-lab-1.md"
 
+[Back to lab list](#active-directory-lab-grid)
+
 --8<-- "ad-lab-2.md"
+
+[Back to lab list](#active-directory-lab-grid)
 
 --8<-- "ad-lab-3.md"
 
+[Back to lab list](#active-directory-lab-grid)
+
 --8<-- "ad-lab-4.md"
+
+[Back to lab list](#active-directory-lab-grid)
 
 --8<-- "ad-lab-5.md"
 
+[Back to lab list](#active-directory-lab-grid)
+
 --8<-- "ad-lab-6.md"
+
+[Back to lab list](#active-directory-lab-grid)
 
 --8<-- "ad-lab-7.md"
 
+[Back to lab list](#active-directory-lab-grid)
+
 --8<-- "ad-lab-8.md"
+
+[Back to lab list](#active-directory-lab-grid)
 
 --8<-- "ad-lab-9.md"
 
+[Back to lab list](#active-directory-lab-grid)
+
 --8<-- "ad-capstone.md"
+
+[Back to lab list](#active-directory-lab-grid)

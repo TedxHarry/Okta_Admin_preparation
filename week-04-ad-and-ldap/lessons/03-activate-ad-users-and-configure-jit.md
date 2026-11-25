@@ -28,6 +28,8 @@
 
     [AD import settings and JIT scope](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-configure-import.htm) · [AD integration FAQ](https://help.okta.com/oie/en-us/content/topics/directory/directory_faq_okta_and_ad_groups.htm)
 
+    An enabled AD account outside the selected user OU can still show **Active** in Okta before an import reconciles the change. JIT sign-in is denied. Compare the account status, sign-in result, and import type in the [directory lifecycle comparison](08-manage-ad-profile-sourcing-and-lifecycle.md#compare-disabling-deleting-and-moving-a-user-in-ad).
+
     ## Keep activation, sign-in, and app access distinct
 
     A confirmed user may remain staged until activated. Suppressing the activation email changes delivery. It leaves the activation decision to the process or admin you configured. An activated user can still have an enrollment step or fail an Okta sign-in policy. Verify **People**, the sign-in attempt, and any app assignment separately.

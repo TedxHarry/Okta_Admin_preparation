@@ -22,7 +22,17 @@
 
     **Do Nothing** leaves the Okta lifecycle state under its existing control when the source disables the account. **Suspend** blocks sign-in and retains app assignments. **Deactivate** revokes app assignments and can deactivate accounts in supported apps where deprovisioning is enabled. Only the highest-priority source for that user can drive Okta suspension or deactivation through this mechanism. Reactivation is defined separately for suspended and deactivated Okta users.
 
-    A disabled AD account cannot pass AD password validation through delegated authentication. Okta status may be a separate question depending on the source settings and when the change is processed. Check the AD account, the latest import or refresh, the Okta status, and a fresh sign-in attempt. For a removed directory record or a user moved out of scope, use the documented full-import reconciliation path. Review any safeguard warning before proceeding.
+    ### Compare disabling, deleting, and moving a user in AD
+
+    Start by identifying the AD change. A password check, an import, and the stored Okta status can report different results.
+
+    | AD change | Fresh AD-delegated sign-in | What to look for in Okta |
+    | --- | --- | --- |
+    | **Disable in a selected OU** | AD denies validation for the disabled account. | The record still exists in scope. After Okta processes the AD status change, the eligible source action determines whether Okta keeps the existing status, suspends, or deactivates the user. |
+    | **Delete the AD account** | The original account is gone, so its credentials cannot be validated. | A full import reconciles the missing account. An incremental import does not process the deletion. |
+    | **Move an enabled AD account outside the selected OU** | With AD JIT enabled, Okta denies the sign-in even while the account remains enabled in AD. | A subsequent incremental import does not deactivate the user for this move. Okta's FAQ documents a full import detecting the missing in-scope user and deactivating it. Before reconciliation, the Okta user can still show Active. |
+
+    Check the actual AD record, the import type and outcome, and the stored **People** status. If an import safeguard pauses the operation, inspect the scope change and the warning before proceeding. [AD integration FAQ](https://help.okta.com/oie/en-us/content/topics/directory/directory_faq_okta_and_ad_groups.htm) · [On-demand import types](https://help.okta.com/oie/en-us/content/topics/directory/ad-agent-import-users-on-demand.htm) · [Import safeguards](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-import-safeguard.htm)
 
     **Disconnect** removes the AD relationship for a user and changes who manages the account. It is an account management operation with password and access consequences. Read the documented prerequisites and effects for the disconnected account, including how that user will authenticate, before running it.
 

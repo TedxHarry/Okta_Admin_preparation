@@ -1,6 +1,6 @@
 ## Lab 8 · Verify AD-sourced attributes, deactivation, and recovery { #lab-8 }
 
-Use a disposable linked AD user and an unaffected user outside the exercise. Change only the settings of an isolated AD integration. Keep a native Okta admin session. Record the original profile source priority, mappings, lifecycle settings and any app assignment you will monitor. Disable JIT for the test user path if you want to isolate import timing.
+Use a disposable linked AD user and an unaffected user outside the exercise. Change only the settings of an isolated AD integration. Keep a native Okta admin session. Record the original profile source priority, mappings, lifecycle settings and any app assignment you will monitor. For an import-only comparison, record the setting under **Provisioning → To Okta → General** and turn off **Create and update users on login** on the lab AD integration. That setting applies to the integration. Avoid changing a shared integration to isolate a single user. Restore the setting after the exercise.
 
 ### 1. Determine the winning field source
 
@@ -10,9 +10,11 @@ Use a disposable linked AD user and an unaffected user outside the exercise. Cha
 
 ### 2. Compare lifecycle decisions
 
+Each lifecycle action below applies to the AD integration. Use disposable identities and confirm AD is the highest-priority profile source for the linked user before comparing the outcomes.
+
 1. Select **Do Nothing** for source deactivation. Disable the test AD account and process the supported import. Compare the AD state, the resulting Okta state, and a fresh delegated sign-in. Verify the control user is unaffected, then re-enable the test AD account and reimport.
 2. Set **Suspend Okta user** and allow reactivation of suspended users for a clean comparison. Disable the test user again and import. Verify suspension and retained test app assignments where present. Re-enable the AD account and verify the configured Okta reactivation path.
 3. Repeat with **Deactivate Okta user** and the corresponding reactivation option. Check the Okta user, supported downstream provisioning outcome where applicable, and actual receiving account. Compare reactivation with restoration of app assignment. Check each independently.
-4. Restore the original integration settings and test data. If the test user is still inactive, determine the current matching and status before applying an admin reactivation. Use the disconnect documentation to predict the effect on a separate test-only user if you intend to practice disconnecting it.
+4. Restore the original lifecycle options, JIT setting if changed, and test data. Confirm the initial integration settings match what you recorded. If the test user is still inactive, determine the current matching and status before applying an admin reactivation. Use the disconnect documentation to predict the effect on a separate test-only user if you intend to practice disconnecting it.
 
 [Make AD the profile source](https://help.okta.com/oie/en-us/content/topics/directory/directory_ad_enable_profile_source.htm) · [Deactivate and delete user accounts](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-deactivate-user-account.htm)

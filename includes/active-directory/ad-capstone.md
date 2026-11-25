@@ -17,7 +17,7 @@ Use an isolated Okta Identity Engine org with **Add Active Directory** available
 ### 1. Connect, import, and activate
 
 - Set up the AD agent with scoped read access and verify the host, agent, and selected OUs. Create one in-scope AD security group that can source a test access rule.
-- Configure exact matching and review one proposed existing match and one new user. Keep the new user staged after confirmation. Inspect the existing link, staged new user, and absent control.
+- Record the integration's scope, lifecycle, delegated authentication, JIT, and schedule settings before changing them. Keep scheduled imports off until the first-sign-in comparison is complete. Configure exact matching and review one proposed existing match and one new user. Keep the new user staged after confirmation. Inspect the existing link, staged new user, and absent control.
 - Enable delegated authentication and JIT. Compare a fresh eligible user, the staged confirmed user, and the out-of-scope user in fresh browser sessions. Activate the staged user through its import or People path and verify sign-in separately.
 - Capture the relevant evidence without passwords or activation codes. Explain why account status, delegation result, and app access are separate observations.
 
@@ -26,7 +26,7 @@ Use an isolated Okta Identity Engine org with **Add Active Directory** available
 - Use the imported AD group as a source condition for a native Okta group. Assign only a disposable app, such as a Bookmark app linking to a safe test page, to the native group. Verify the AD source group, native group and Okta app assignment. An app tile verifies assignment in Okta. Use a separate supported provisioning-enabled target if you also need to prove an external app account changes.
 - Configure a scoped Password rule and have the agent reset a linked test user's AD password using its delegated AD permissions. Prove a fresh delegated sign-in with the new credential. Record the recovery and sign-in outcomes with no credential material.
 - Remove the JIT user from the AD source group and verify the rule-managed membership and app assignment change after the appropriate refresh. Check the user remains active if you only changed group membership.
-- Configure AD-driven deactivation for the disposable test users. Disable one AD test account and process the relevant sync or full import. Compare the AD account state, Okta user status, app assignment, and a fresh sign-in. Restore the test account or retire it according to the original lab settings.
+- On the isolated AD integration, set **When a user is deactivated in the app** to **Deactivate Okta user**. This changes behavior for the integration. Run the comparison using the disposable test users. Disable one AD test account and process the relevant sync or full import. Compare the AD account state, Okta user status, app assignment, and a fresh sign-in. Restore the test account or retire it according to the original lab settings.
 
 ### 3. Exercise resilience and additional directory paths
 
@@ -36,18 +36,43 @@ Use an isolated Okta Identity Engine org with **Add Active Directory** available
 | Scoped outbound AD write access | Provision `m4-cap-outbound` to a separate disposable target OU and update a test field. Push a separate group. | The same AD account before and after the attribute update, the pushed group membership, and the preserved provisioning assignment. |
 | Supported LDAP test server | Configure LDAP delegated authentication and prove a real sign-in using a linked standard LDAP user. | Agent status, linked user, credential test, and actual sign-in evidence. |
 
-### 4. Diagnose a fault with the laptop offline
+### 4. Assess the live result
 
-The rows below are simulated, independent observations. For each row, identify the first failing stage, the smallest corrective change, and the evidence to collect on a repeat attempt.
+Use the core evidence below before marking the live capstone complete. If you lack a second agent or LDAP server, record that extension as **Not run**. The simulated work below can demonstrate diagnosis without a live integration.
 
-| Observation | Evidence |
+| Core task | Evidence to mark it complete |
 | --- | --- |
-| A fresh AD user never reaches Okta | Agent available. Correct credentials pass the integration test. The user resides in an unselected OU. |
-| A confirmed user stays staged | The Import screen shows confirmation completed. No activation was selected. First sign-in fails with JIT enabled. |
-| The password works, but recovery cannot reset it | The user passes recovery verification and AD validation. The write fails for the user outside the OU with delegated reset rights. |
-| The AD source group is visible, but app assignment is absent | The expected user is missing from that imported group. Its nested child group is outside scope. |
-| The Okta app user shows the new Department, but AD still has the old value | **Update User Attributes** is enabled. The provisioning task shows a write authorization error on the identified AD account. |
-| The test user remains Active after source disablement | The AD source is highest priority. The disablement was processed. **Do Nothing** is configured. A directory password test fails. |
+| Agent and scope | The intended domain shows an available agent. The selected user and group OUs include the lab objects and exclude the control OU. |
+| Import and activation | The matched user keeps the same Okta ID. The newly confirmed user is staged before manual activation, then can complete the intended sign-in. |
+| JIT and control | The fresh AD user is absent in Okta before sign-in and linked correctly afterward. The previously confirmed staged user is ineligible for JIT activation. The outside-scope user remains absent after the attempt. |
+| Groups and assignment | The imported group's membership, rule-driven Okta group, and app assignment agree. Removing the AD membership removes the rule-driven access path after the update is processed. |
+| Recovery | Okta records successful recovery, and a fresh delegated sign-in accepts the new AD password. Capture outcomes without recording the password. |
+| Offboarding and rollback | The disabled test AD account produces the configured Okta state after processing. The app assignment and fresh sign-in are checked separately. The unaffected control and native Okta admin remain in their original states. |
+
+### 5. Diagnose a fault with the laptop offline
+
+The observations below are simulated. For each symptom, write the first evidence you would request. Reveal the evidence after you have chosen where to look. Then identify the cause, the smallest corrective change, and how you would verify the repair.
+
+| Case | Initial observation |
+| --- | --- |
+| 1 | A fresh AD user never reaches Okta. |
+| 2 | An imported user cannot finish their first sign-in. |
+| 3 | The current password works, but account recovery fails. |
+| 4 | The AD source group exists in Okta, but an expected app assignment is missing. |
+| 5 | The Okta app user shows the new Department, but AD still has the old value. |
+| 6 | The test user still shows Active in Okta after source disablement. |
+
+<details class="revision-answer">
+<summary>Reveal the evidence</summary>
+<ol>
+<li>The agent is available. AD shows the account enabled. The user's OU is absent from the integration's selected user OUs.</li>
+<li>Import confirmation completed. The Okta user is Staged. JIT is enabled.</li>
+<li>The user completes Okta recovery verification. The AD reset write fails for an account outside the OU with delegated reset rights.</li>
+<li>The expected user is absent from the imported group. The user belongs through a nested child group outside the regular import scope.</li>
+<li>Update User Attributes is enabled. The provisioning task reports a write authorization error on the target AD account.</li>
+<li>The AD disablement was processed. AD is the highest-priority source. The integration's lifecycle action is Do Nothing.</li>
+</ol>
+</details>
 
 <details class="revision-answer">
 <summary>Show the worked solution and verification criteria</summary>
@@ -65,4 +90,4 @@ The rows below are simulated, independent observations. For each row, identify t
 
 ### Restore the lab
 
-Restore service availability, import scope, policy and activation settings, source priority, and any changed test-user attributes. Remove or deactivate temporary rules and test assignments. Retire only the host registrations, groups, and permissions you created for the capstone if you no longer need them. Verify your native Okta admin and the unaffected control remain in their intended states.
+Restore service availability and the original AD integration scope, import schedule, JIT, delegated authentication, lifecycle and activation settings. Restore Password policies, source priority, and any changed test-user attributes. Remove or deactivate temporary rules and test assignments. Retire only the host registrations, groups, and permissions you created for the capstone if you no longer need them. Verify your native Okta admin and the unaffected control remain in their intended states.
