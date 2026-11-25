@@ -67,6 +67,8 @@
     ["App user profile","The values Okta keeps for one user on a particular app integration. The receiving app can have its own account record.",["app-user profile","app user profiles"]],
     ["Expression","A short formula Okta evaluates to produce a value or a true-or-false result.",["expressions"]],
     ["Okta Expression Language","The syntax Okta uses for formulas in places such as group rules, mappings, and claims. Each editor has its own supported references.",["OEL"]],
+    ["Authoritative source","The system trusted to supply a field value or lifecycle decision."],
+    ["Workday Real-Time Sync","A configured Workday business process notifies Okta about supported worker changes.",["RTS"]],
     ["Matching","Finding which existing user record belongs to an incoming account, based on the configured criteria.",["account matching"]],
     ["Profile source","The system Okta relies on to supply a user's profile or a particular field.",["profile sources","profile sourcing"]],
     ["Source priority","The order Okta uses to choose among sources that apply to a user or field.",["source precedence"]],

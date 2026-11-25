@@ -6,8 +6,6 @@ Read the profiles Okta stores, define the attributes each user type needs, and t
 
 ## Lessons
 
-All nine lessons and the capstone are available.
-
 1. [Read the three profile types](manage-profiles/01-read-the-three-profile-types.md)
 2. [Design and validate user attributes](manage-profiles/02-design-and-validate-user-attributes.md)
 3. [Manage Universal Directory user types](manage-profiles/03-manage-universal-directory-user-types.md)
@@ -17,6 +15,7 @@ All nine lessons and the capstone are available.
 7. [Configure profile sources and attribute priority](manage-profiles/07-configure-profile-sources-and-attribute-priority.md)
 8. [Send and verify SAML attributes and WS-Federation claims](manage-profiles/08-send-and-verify-saml-attributes-and-ws-federation-claims.md)
 9. [Troubleshoot profile changes end to end](manage-profiles/09-troubleshoot-profile-changes-end-to-end.md)
+10. [Follow HR sourcing through app access](manage-profiles/10-follow-hr-sourcing-through-app-access.md)
 
 ## Capstone
 

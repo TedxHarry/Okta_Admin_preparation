@@ -40,6 +40,10 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 
     Repair a stale mapping and verify a connector write and a Workflows update.
 
+- [10. Follow HR sourcing through app access](#lab-10)
+
+    Trace a hire, transfer, and termination from HR to the receiving account.
+
 - [Capstone · Verify profile changes from schema to app](#capstone)
 
     Map a contractor field, verify an employee’s claims, and repair a sign-in data issue.
@@ -61,6 +65,8 @@ Choose a tile to jump to the full exercise on this page. Use a disposable Okta I
 --8<-- "manage-profiles-lab-8.md"
 
 --8<-- "manage-profiles-lab-9.md"
+
+--8<-- "manage-profiles-lab-10.md"
 
 ## Capstone · Verify profile changes from schema to app { #capstone }
 
