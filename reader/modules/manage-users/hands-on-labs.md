@@ -82,4 +82,4 @@ Use the [official Administrator Performance Exam Study Guide](https://certificat
 
 ## Capstone
 
-The [end-to-end Manage Users project](user-lifecycle-project.md) covers all seven guided labs. It includes test data, a connected-system branch, and an independent access incident.
+The [end-to-end Manage Users project](user-lifecycle-project.md) covers all seven guided labs. It includes test data, a connected-system branch, and a guided access incident.

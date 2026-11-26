@@ -242,6 +242,16 @@ input {
   font-weight: 750;
 }
 
+[data-md-color-scheme="luxury-dark"] {
+  --md-admonition-bg-color: #151e30;
+  --md-admonition-fg-color: var(--md-default-fg-color);
+}
+
+[data-md-color-scheme="luxury-dark"] .md-typeset .admonition-title,
+[data-md-color-scheme="luxury-dark"] .md-typeset details > summary {
+  color: var(--md-default-fg-color);
+}
+
 .md-typeset details.revision-answer {
   background-color: var(--md-default-bg-color);
   color: var(--md-default-fg-color);
