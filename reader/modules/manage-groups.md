@@ -2,7 +2,9 @@
 
 Identify who controls a group, trace membership and app access, and practice managing groups in an Okta Identity Engine lab org.
 
-[Start the standalone hands-on labs](manage-groups/hands-on-labs.md).
+[Start the end-to-end Manage Groups project](manage-groups/group-access-project.md){ .md-button .md-button--primary }
+
+Use the [nine standalone labs](manage-groups/hands-on-labs.md) to practice individual tasks.
 
 ## Lessons
 
@@ -20,6 +22,6 @@ All nine lessons and the capstone are available.
 
 ## Capstone
 
-[Joiner, mover, and access review](manage-groups/hands-on-labs.md#capstone) combines group rules, overlapping app assignments, a transfer, and a missing-access ticket.
+[Joiner, mover, and access review](manage-groups/hands-on-labs.md#capstone) gives you an independent practice case after the guided project.
 
 Start with [Module 1 · Manage Users](manage-users.md) if you need practice finding users, reading their profiles, or tracing an app assignment. See [Okta · Manage groups](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-groups-main.htm) and the [course exam map](../exam/coverage.md).

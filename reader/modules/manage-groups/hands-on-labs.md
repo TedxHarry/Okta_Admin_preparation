@@ -1,5 +1,7 @@
 # Module 2 · Manage Groups hands-on labs
 
+[Start the end-to-end Manage Groups project](group-access-project.md){ .md-button .md-button--primary }
+
 Choose a lab to jump to its full instructions on this page. Work in a disposable Okta Identity Engine test org and use separate admin and test-user browser sessions.
 
 ## Choose a lab { #manage-groups-lab-grid }

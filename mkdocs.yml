@@ -65,6 +65,7 @@ extra_css:
 extra_javascript:
   - assets/javascripts/course-sidebar.js
   - assets/javascripts/course-term-help.js
+  - assets/javascripts/group-rule-explorer.js
 nav:
   - Course outline: index.md
   - Exam coverage: exam/coverage.md
@@ -91,6 +92,7 @@ nav:
       - Lesson 8 · Push groups and link an existing target group: modules/manage-groups/08-push-groups-and-link-an-existing-target-group.md
       - Lesson 9 · Verify groups across apps, policies, and governance: modules/manage-groups/09-verify-groups-across-apps-policies-and-governance.md
       - Hands-on labs: modules/manage-groups/hands-on-labs.md
+      - End-to-end project: modules/manage-groups/group-access-project.md
   - Module 3 · Manage Profiles:
       - Overview: modules/manage-profiles.md
       - Lesson 1 · Read the three profile types: modules/manage-profiles/01-read-the-three-profile-types.md

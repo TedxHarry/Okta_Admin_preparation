@@ -1,3 +1,18 @@
+.md-typeset #group-rule-explorer label {
+  display: block;
+  margin-top: 0.65rem;
+}
+
+.md-typeset #group-rule-explorer select {
+  display: block;
+  max-width: 100%;
+  padding: 0.3rem 0.45rem;
+  color: var(--md-default-fg-color);
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--light);
+  border-radius: 0.25rem;
+}
+
 /* Lesson lab tabs are nested inside the Hands-on Lab pane. Capstones use top-level tabs. */
 @media screen {
   .md-typeset .tabbed-content .tabbed-set,
