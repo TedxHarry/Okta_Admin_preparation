@@ -1,6 +1,8 @@
 # Module 1 · Manage Users hands-on labs
 
-Choose a tile to jump to the full exercise on this page. The capstone is on this page. You will create and activate users, bring in account data, trace who controls a profile value, and decide how to restore or remove access. Each lab ends with evidence you can use to explain the result.
+[Start the end-to-end Manage Users project](user-lifecycle-project.md){ .md-button .md-button--primary }
+
+Choose a tile to practice an individual task. Each guided exercise is available in full on this page and ends with evidence you can use to explain the result.
 
 ## Before you start
 
@@ -21,7 +23,7 @@ Use the [official Administrator Performance Exam Study Guide](https://certificat
 
 | Area | Practice here | Continue in the course |
 | --- | --- | --- |
-| User administration | Find and edit a user, create and activate users, import a People CSV, restore sign-in, and offboard a user. | Use the capstone to bring these tasks together without following a recipe. |
+| User administration | Find and edit a user, create and activate users, import a People CSV, restore sign-in, and offboard a user. | Use the [end-to-end project](user-lifecycle-project.md) to practice the full user lifecycle. |
 | Part I · AD and LDAP integration | Compare import and first sign-in, identify password ownership, and try the connected extension if you have a test directory. | [Active Directory and LDAP](../../week-04-ad-and-ldap/lessons/01-connect-active-directory.md) covers the agent setup. The [exam coverage map](../../exam/coverage.md) tracks the remaining directory exercises. |
 | Part I · Profiles, sourcing, and write-back | Trace a profile source, create a custom field, and diagnose an inbound mapping. Use the two-source extension if you have the necessary connections. | [Profile sourcing and priority](../../week-02-directory-and-lifecycle/lessons/04-profile-sourcing-and-source-priority.md), [provisioning](../../week-02-directory-and-lifecycle/lessons/05-application-provisioning.md), [Group Push](../../week-02-directory-and-lifecycle/lessons/06-group-push.md), and [Workflows](../../week-02-directory-and-lifecycle/lessons/07-okta-workflows.md). |
 | Part II · Custom app integration | Create a custom user field and assign a test app to a group. Use the bookmark to verify assignment and launch. | [Custom SAML attributes and group assignment](../../week-03-saml-and-mappings/lessons/02-custom-saml-attributes-and-group-assignment.md) covers the group rule, expression, SAML integration, mapping, and receiving-app verification. |
@@ -58,9 +60,9 @@ Use the [official Administrator Performance Exam Study Guide](https://certificat
 
     Compare clearing a session, suspending a user, and deactivating a user. Check sign-in, assignments, and the System Log.
 
-- [Capstone](#capstone)
+- [End-to-end project](user-lifecycle-project.md)
 
-    Practice one contractor’s onboarding, sign-in recovery, leave of absence, and offboarding.
+    Onboard a test workforce, investigate access and sign-in, and verify offboarding.
 
 --8<-- "lab-1.md"
 
@@ -80,16 +82,4 @@ Use the [official Administrator Performance Exam Study Guide](https://certificat
 
 ## Capstone
 
-**Ticket.** A new contractor needs the test bookmark. A week later the contractor reports a lost enrolled phone. After the account returns to normal, the contractor goes on leave and will come back with the same access. At the end of the contract, access must be removed.
-
-Use a fresh disposable account and the bookmark from Lab 6. Before granting the bookmark, sign in as the contractor, confirm the tile is missing, and explain which admin view proves the assignment is absent. Grant it and retest. Carry out the remaining lifecycle actions using the ticket as your brief. If a spare authenticator is unavailable, write the exact action and verification you would use for recovery.
-
-| Evidence to produce | What it should show |
-| --- | --- |
-| User record and first sign-in | The account was created, activated, and could sign in. |
-| Assignment and dashboard | The tile was missing before the grant. After the change, you can trace it to the direct grant or test group you chose and show the tile in the user's dashboard. |
-| Recovery action and result | The selected method is re-enrolled and a fresh sign-in succeeds, or your written procedure identifies the missing lab prerequisite. |
-| Leave and return | Sign-in was blocked while the bookmark assignment remained, and worked after the hold was lifted. |
-| Offboarding | The record is **Deactivated**, the bookmark assignment is gone, and the System Log identifies the action on the test user. |
-
-**Reset.** Remove any remaining lab-only app grants and group memberships. Remove the dedicated bookmark or groups only when your later labs do not need them. Clear the custom field values, restore any external test mappings you changed, and keep or retire the disposable users according to your lab cleanup plan.
+The [end-to-end Manage Users project](user-lifecycle-project.md) covers all seven guided labs. It includes test data, a connected-system branch, and an independent access incident.

@@ -16,7 +16,9 @@ Open a lesson’s **Revision** tab for a cheat sheet, exam connections, and shor
 
 ## Hands-on labs
 
-[Start the Manage Users lab track](manage-users/hands-on-labs.md). Follow seven exercises and finish with an independent user administration capstone.
+[Start the end-to-end Manage Users project](manage-users/user-lifecycle-project.md){ .md-button .md-button--primary }
+
+Use the project after reading the theory. Onboard test users, work recovery tickets, and verify access from the initial grant through offboarding. The [seven guided labs](manage-users/hands-on-labs.md) are available when you want to practice an individual task.
 
 ## Related lessons and labs
 
