@@ -15,6 +15,8 @@ Open each lesson's **Theory** tab first. Use **Revision** to check your understa
 
 ## Hands-on and practice
 
+[Start the end-to-end Behavior Detection project](behavior-detection/behavior-detection-project.md){ .md-button .md-button--primary }
+
 - [All hands-on labs](behavior-detection/hands-on-labs.md) has four guided exam exercises and an optional lab for combining behavior signals and resetting user history.
 - [Practice use cases and capstone](behavior-detection/practice-use-cases.md) has an independent configuration exercise, two troubleshooting exercises, and an offline evidence drill with answers.
 - [Exam objectives and official reading](behavior-detection/source-and-lab-plan.md) maps each study-guide task to the lesson, lab, and evidence.

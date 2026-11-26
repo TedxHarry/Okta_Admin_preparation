@@ -9,7 +9,7 @@ The [Okta Administrator Performance Exam Study Guide](https://certification.okta
 | Modify the Catch-All Rule for an authentication policy | [Lesson 3](../../week-05-behavior-detection/lessons/03-modify-the-catch-all-rule.md) · [Lab 3](hands-on-labs.md#lab-3) | The saved fallback requirement on the correct policy, below its more specific rule. |
 | Test the authentication policy and behavior detection rule | [Lesson 4](../../week-05-behavior-detection/lessons/04-test-the-policy-and-read-the-system-log.md) · [Lab 4](hands-on-labs.md#lab-4) | Comparable fresh sign-ins, the behavior result, policy selection, and actual factor verification. |
 
-[Practice use cases and capstone](practice-use-cases.md) combines the four tasks and includes diagnosis exercises. The [optional signals and history lab](hands-on-labs.md#lab-5) extends practice to New IP, AND and OR, and resetting a disposable user’s behavior profile.
+The [guided end-to-end project](behavior-detection-project.md) walks through all four tasks in one test-org workflow. The [independent practice cases](practice-use-cases.md) let you repeat the configuration and practice troubleshooting. The [optional signals and history lab](hands-on-labs.md#lab-5) extends practice to New IP, AND and OR, and resetting a disposable user’s behavior profile.
 
 ## Official preparation resources
 

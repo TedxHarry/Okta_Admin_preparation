@@ -131,6 +131,7 @@ nav:
       - Lesson 3 · Modify the Catch-All Rule: week-05-behavior-detection/lessons/03-modify-the-catch-all-rule.md
       - Lesson 4 · Test the policy and read the System Log: week-05-behavior-detection/lessons/04-test-the-policy-and-read-the-system-log.md
       - Hands-on labs: modules/behavior-detection/hands-on-labs.md
+      - End-to-end project: modules/behavior-detection/behavior-detection-project.md
       - Practice use cases and capstone: modules/behavior-detection/practice-use-cases.md
       - Exam objectives and official reading: modules/behavior-detection/source-and-lab-plan.md
   - Foundations:

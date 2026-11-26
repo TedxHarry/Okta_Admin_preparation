@@ -1,6 +1,8 @@
 # Module 5 · Behavior Detection hands-on labs
 
-Start after reading the [module theory](../behavior-detection.md). Each lab builds on the previous configuration. When you can explain the rule selected for each sign-in, open the [practice use cases](practice-use-cases.md).
+Start after reading the [module theory](../behavior-detection.md). Each lab builds on the previous configuration. After verifying both policy branches in the System Log, try the [independent practice cases](practice-use-cases.md).
+
+[Start the end-to-end Behavior Detection project](behavior-detection-project.md){ .md-button .md-button--primary }
 
 ## Choose a lab { #behavior-detection-lab-grid }
 
