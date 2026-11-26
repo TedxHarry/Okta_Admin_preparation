@@ -1,5 +1,7 @@
 # Module 3 · Manage Profiles hands-on labs
 
+[Start the end-to-end Manage Profiles project](profile-data-project.md){ .md-button .md-button--primary }
+
 Choose a tile to jump to the full exercise on this page. Use a disposable Okta Identity Engine org and the prerequisites shown in each lab.
 
 ## Choose a lab { #manage-profiles-lab-grid }

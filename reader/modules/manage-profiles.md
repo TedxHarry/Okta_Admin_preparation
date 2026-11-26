@@ -2,7 +2,9 @@
 
 Read the profiles Okta stores, define the attributes each user type needs, and trace a field from its source to an app account or sign-in claim.
 
-[Start the standalone hands-on labs](manage-profiles/hands-on-labs.md) · [Source and lab plan](manage-profiles/source-and-lab-plan.md)
+[Start the end-to-end Manage Profiles project](manage-profiles/profile-data-project.md){ .md-button .md-button--primary }
+
+[Standalone hands-on labs](manage-profiles/hands-on-labs.md) · [Source and lab plan](manage-profiles/source-and-lab-plan.md)
 
 ## Lessons
 

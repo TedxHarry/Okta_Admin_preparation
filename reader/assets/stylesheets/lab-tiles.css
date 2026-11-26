@@ -1,9 +1,9 @@
-.md-typeset #group-rule-explorer label {
+.md-typeset :is(#group-rule-explorer, #profile-mapping-explorer) label {
   display: block;
   margin-top: 0.65rem;
 }
 
-.md-typeset #group-rule-explorer select {
+.md-typeset :is(#group-rule-explorer, #profile-mapping-explorer) select {
   display: block;
   max-width: 100%;
   padding: 0.3rem 0.45rem;

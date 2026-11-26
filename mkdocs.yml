@@ -66,6 +66,7 @@ extra_javascript:
   - assets/javascripts/course-sidebar.js
   - assets/javascripts/course-term-help.js
   - assets/javascripts/group-rule-explorer.js
+  - assets/javascripts/profile-mapping-explorer.js
 nav:
   - Course outline: index.md
   - Exam coverage: exam/coverage.md
@@ -106,6 +107,7 @@ nav:
       - Lesson 9 · Troubleshoot profile changes end to end: modules/manage-profiles/09-troubleshoot-profile-changes-end-to-end.md
       - Lesson 10 · Follow HR sourcing through app access: modules/manage-profiles/10-follow-hr-sourcing-through-app-access.md
       - Hands-on labs: modules/manage-profiles/hands-on-labs.md
+      - End-to-end project: modules/manage-profiles/profile-data-project.md
       - Source and lab plan: modules/manage-profiles/source-and-lab-plan.md
   - Module 4 · Active Directory Integration:
       - Overview: modules/active-directory.md
