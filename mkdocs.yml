@@ -67,6 +67,7 @@ extra_javascript:
   - assets/javascripts/course-term-help.js
   - assets/javascripts/group-rule-explorer.js
   - assets/javascripts/profile-mapping-explorer.js
+  - assets/javascripts/directory-diagnosis-explorer.js
 nav:
   - Course outline: index.md
   - Exam coverage: exam/coverage.md
@@ -121,6 +122,7 @@ nav:
       - Lesson 8 · Manage AD profile sourcing and lifecycle: week-04-ad-and-ldap/lessons/08-manage-ad-profile-sourcing-and-lifecycle.md
       - Lesson 9 · Operate and troubleshoot directory integrations: week-04-ad-and-ldap/lessons/09-operate-and-troubleshoot-directory-integrations.md
       - Hands-on labs and capstone: modules/active-directory/hands-on-labs.md
+      - End-to-end project: modules/active-directory/directory-integration-project.md
       - Exam objectives and official reading: modules/active-directory/source-and-lab-plan.md
   - Module 5 · Behavior Detection:
       - Overview: modules/behavior-detection.md

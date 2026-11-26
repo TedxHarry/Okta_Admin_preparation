@@ -20,6 +20,8 @@ Start with the **Theory** tab in each lesson. Use **Revision** to check your und
 
 ## Lab environment
 
+[Start the end-to-end AD project](active-directory/directory-integration-project.md){ .md-button .md-button--primary }
+
 Read any **Theory** or **Revision** tab while your laptop is offline. Use the simulated capstone records to practice diagnosing an import, activation, recovery or write failure.
 
 When you are ready for hands-on practice and your laptop is online, start with the [VMware and agent preflight](active-directory/hands-on-labs.md#ad-lab-preflight). [All hands-on labs](active-directory/hands-on-labs.md) · [Capstone](active-directory/hands-on-labs.md#capstone)

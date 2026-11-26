@@ -2,6 +2,8 @@
 
 Choose an exercise for its full instructions. Use the offline capstone records if your AD environment is disconnected.
 
+[Start the end-to-end AD project](directory-integration-project.md){ .md-button .md-button--primary }
+
 ## Choose a lab { #active-directory-lab-grid }
 
 - [1. Connect Active Directory to Okta](#lab-1)
