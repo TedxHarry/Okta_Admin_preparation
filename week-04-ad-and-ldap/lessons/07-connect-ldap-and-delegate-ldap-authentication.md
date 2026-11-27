@@ -50,6 +50,58 @@
     | LDAP Interface | Lets LDAP clients connect to the Okta cloud endpoint. |
     | LDAP checks | Verify TLS, bind, search, import and end-user sign-in independently. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A legacy app must issue supported LDAP requests directly against Okta. Which architecture is appropriate to evaluate? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. LDAP Agent connected to an external directory</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. Okta LDAP Interface</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Group Push</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. AD Agent only</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> The LDAP Interface serves the client requests. The LDAP Agent connects Okta to an external directory.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. A full import sees an edit but incremental misses it. Which checks are relevant? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Server support and indexing for the timestamp search</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. Only the default Okta group rule</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Whether modifyTimestamp reflects the edit</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Incremental cutoff and configured clock skew</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and C and D.</strong> A successful full read makes change detection a stronger starting hypothesis than broad connectivity failure.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A successful LDAP import proves delegated authentication is configured and working. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Import proves an LDAP query path. Test delegated sign-in with the intended user and applicable settings.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **An application needs to issue LDAP requests against Okta. Which component serves those requests?**
@@ -74,8 +126,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A full LDAP import sees an edited user, but incremental import misses it. What must you compare before changing the search base?
 

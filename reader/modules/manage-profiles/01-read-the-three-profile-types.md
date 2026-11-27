@@ -45,6 +45,58 @@
     | What fields describe this Okta group? | Groups in Profile Editor. Check the group’s People list for membership. |
     | Which direction sends Okta values to the app schema? | Okta to app. Verify the app user record and any downstream write separately. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Where would you examine the value persisted for one user in a specific app integration before inspecting the receiver? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Group profile</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. App user profile</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Profile source order only</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Okta user schema</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> The app user profile represents that user&#x27;s assignment to the integration. Compare it with the Okta user profile and the receiving record.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which records distinguish schema, stored identity data, and a downstream write? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. The receiving account&#x27;s stored value</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. Mapping Preview as sole proof</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Profile Editor field definition</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. The intended user&#x27;s persisted Okta value</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and C and D.</strong> Each record answers a different question. Preview only predicts one mapping result.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A group profile attribute is automatically copied to the Okta user profile of every member. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Membership and group attribute storage are separate. An explicit supported mapping is needed to use the group value elsewhere.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. You need to see whether Department exists on the schema and whether Jules’s Department is populated. Where do you look?**
@@ -69,8 +121,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** HR says Jamie's Department is Finance, Okta People says Operations, and the app user record says Sales. Where do you start tracing the mismatch?
 

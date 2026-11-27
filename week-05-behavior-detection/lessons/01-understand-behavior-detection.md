@@ -41,6 +41,60 @@
     | Which proof opens the requested app? | Matching app sign-in rule |
     | Did the test user complete Push? | The user experience and the matching verification event |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Which evidence best establishes that the pilot user completed mobile Push? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Account shows as enrolled</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Push dispatch event</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C" data-correct> <span>C. Correlated successful verification identifying push</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Successful sign-in using a six-digit code</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> Enrollment, dispatch, and verification are distinct. Check the specific method on the successful correlated event.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. A user has enrolled in Okta Verify but Push is missing on one app. Which checks help narrow the cause? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. App rule and other applicable policy requirements</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. Compare only the user&#x27;s previous behavior history</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C"> <span>C. Use a dispatch event from a different account</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Verification methods enabled for Okta Verify</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and D.</strong> Check eligibility and the actual offered method before retrying delivery.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Testing with a different sign-in browser requires pairing a new mobile Okta Verify account. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> The browser supplies the sign-in context. The enrolled phone can still approve the challenge for that user.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    ### Check your recall
+
     ??? question "1. Why might an enrolled user see no Push option?"
 
         Check the configured Okta Verify methods, the authenticators allowed by the matched rule, and whether fresh verification is needed.
@@ -54,8 +108,6 @@
         In the authenticator enrollment policy that applies to the group. Confirm the org has already configured the authenticator and the test user's group matches the policy.
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A push dispatch event appears and the user signs in after typing a six-digit code. Did the test prove that Push worked?
 

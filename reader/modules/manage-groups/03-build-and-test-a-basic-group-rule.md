@@ -71,6 +71,58 @@
 
     **Exam focus.** Create a basic group rule, use test users to prove its condition, and verify target membership. The custom app integration use case builds on this skill by asking you to use Okta Expression Language and assign a group to an app. [Okta Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A Basic rule requires any of groups A or B and Department Finance. Which user qualifies? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A" data-correct> <span>A. Finance in group B only</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Operations in group A only</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Operations in both groups</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Finance in neither group</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A.</strong> The user must satisfy one listed group and the separate Department condition.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Before activating a rule that targets two groups, which previews detect common scope mistakes? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. Only a member of both source groups</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. One qualifying user in only the second source group</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. A user in a source group with the wrong Department</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. A Finance user in neither source group</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B and C and D.</strong> These cases test the OR inside the membership condition and the AND across conditions.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A matching Preview from an inactive rule proves the user now belongs to its targets. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Preview evaluates the condition. Verify processing and stored memberships after activation.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. A Preview matches, but the saved rule is inactive. Should the user already appear in the target because of this rule?**
@@ -95,8 +147,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A Basic rule says the user must be in any of East or West and have Department Finance. It targets Reports and Expenses. Predict the outcome for East-only Finance, West-only Operations, and Finance users in neither group.
 

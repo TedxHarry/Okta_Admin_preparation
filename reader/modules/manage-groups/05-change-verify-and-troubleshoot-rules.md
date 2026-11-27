@@ -66,6 +66,58 @@
 
     [Rule limitations](https://support.okta.com/help/s/article/okta-group-rule-limitations-and-restrictions?language=en_US) · [Group rules](https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-group-rules.htm)
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Which sequence changes an active rule and verifies the new outcome? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Edit active → save → assume membership</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Delete rule → replace all groups</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C" data-correct> <span>C. Deactivate → edit and preview → save → activate → verify</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Deactivate → test from an existing user only</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> Okta allows edits to inactive rules. After reactivation, verify actual qualification and membership changes.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. A user qualifies in Preview and is absent from the target. Which checks belong before rewriting the expression? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. User exclusions and eligibility</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Selected target and processing status</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C"> <span>C. Receiving app&#x27;s icon</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Rule active state</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and D.</strong> A valid condition can coexist with an inactive rule, exclusion, or a different target.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Stopping a rule by deactivating it immediately removes the memberships it assigned before the stop. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Deactivation stops future evaluation. Existing rule-assigned memberships remain.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. You deactivate a rule before editing it. What happens to the people it already added?**
@@ -90,8 +142,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A rule is deactivated for editing. Existing app users still have access, and a newly qualifying user has no grant. Explain both observations and the next check.
 

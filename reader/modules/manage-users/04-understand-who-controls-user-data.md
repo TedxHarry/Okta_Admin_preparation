@@ -83,6 +83,59 @@
 
     **Exam focus.** Be able to predict what happens with two linked sources, change a test field's source or mapping, and verify the result. For write-back, trace the outbound mapping and confirm the receiving system changed.
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. HR imports the right value. The Okta profile still shows the old one. Which mapping direction is the first relevant one? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Okta User to App</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. App to Okta User</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Group Push</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. SAML attribute statement</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Inspect the route into the stored Okta profile before investigating downstream behavior.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. A field changes back at the next import. Which checks can identify why? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. The inbound mapping from the applicable source</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. The value on the linked upstream record</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C"> <span>C. The outbound app mapping only</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Attribute source priority</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and D.</strong> A mapped source can supply the field on sync. Tile presentation is unrelated.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A local-only support field and an HR-managed department must coexist. Which pairing fits? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. Both inherited from the HR source</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. Support field inherits from Okta where supported, and Department is sourced from HR</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="C"> <span>C. Both populated only in the receiving app</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> The split gives separate ownership to the local support field and the HR field. Test that a sync preserves both outcomes.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. HR is the primary source, its Department mapping is missing, and AD has a value. What does Okta use?**
@@ -100,8 +153,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A user's cost center repeatedly returns to Finance after you edit it in Okta. Their other fields retain your edits. How do you find the writer?
 

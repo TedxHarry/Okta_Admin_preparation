@@ -52,6 +52,59 @@
     | Attribute priority | Can select a different source for one field. |
     | Reactivation | Verify the configured action, account status, return of app access, and target account state. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. AD supplied a single field through an override. HR is still the applicable primary source. Which setting controls sourced lifecycle behavior? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A" data-correct> <span>A. The applicable primary profile source and its lifecycle configuration</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Password policy order</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. AD field override</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. App group priority</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A.</strong> Attribute overrides choose a field source without transferring lifecycle authority.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. A disabled AD user still appears Active in Okta. Which checks help explain the gap? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. A successful verification from another user</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Linked directory and effective source authority</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Last processed sync and whether it processed the change</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Configured deactivation or suspension action</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B and C and D.</strong> Directory credential state and the Okta lifecycle result may differ. Inspect the processed action and test them separately.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. After re-enabling the directory record, which evidence closes the restoration ticket? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. Directory account enabled only</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. Configured Okta reactivation result, intended app grants, and a fresh permitted sign-in</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="C"> <span>C. Succeeded import with no user-level verification</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> A source-side change may not restore every downstream grant or sign-in by itself.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **Does an attribute override grant a lower-priority directory the right to deactivate the Okta user?**
@@ -76,8 +129,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** An enabled AD user was moved outside the selected OU and can no longer start a fresh Okta sign-in with JIT enabled. People still shows Active. Is that evidence of a broken integration?
 

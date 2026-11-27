@@ -65,6 +65,58 @@
     | Import an Okta-sourced record with a missing name | Verify that the corresponding name is optional. |
     | Diagnose a blank string in search | Distinguish an empty string from null. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A source identifier is 000042. What should determine its type? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Boolean, since it is either present or absent</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. String array, because leading zeros are distinct elements</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Integer, since every character is a digit</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. String, since the exact representation matters</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> A string preserves leading zeros and exact identity. Use numeric types only where numeric behavior is required.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Before enabling uniqueness on a populated attribute, which checks reduce surprises? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. Only whether the Sandbox UI allows you to tick the box</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Existing duplicate values</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Other user types with the relevant unique attribute</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Whether incoming identifiers preserve their intended exact form</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B and C and D.</strong> Verify data before changing the constraint, and reopen the definition after save to confirm it took effect.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. An empty string saved in the Admin Console and a null value always behave the same in a presence search. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> An empty string can still be stored as a value. Test both cases with known users.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. Staff Reference must preserve `000123`. Which type fits?**
@@ -89,8 +141,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A presence search returns a user whose Staff Reference looks blank. Another record with a visually blank value is absent. Why might both results be correct?
 

@@ -54,6 +54,60 @@
 
 === "Revision"
 
+    Use App to Okta User when the source supplies an Okta profile value. Use Okta User to App for the app user profile. Compare Preview with the persisted value and check receiving records when provisioning applies.
+
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Source and stored Okta values show West. Preview shows West. The saved app user still shows East. What is the first demonstrated mismatch? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. App policy authentication</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. Mapping result to persisted app user value</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Downstream write only</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Source to Okta import</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Inspect mapping timing and assignment-level overrides before blaming the connector.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which checks let you validate creation and update separately? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Review the relevant connector outcomes</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. Run Preview twice on one unchanged user</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Verify a new assignment&#x27;s saved and receiving values</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Change an existing assigned user&#x27;s source value and verify both destinations</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and C and D.</strong> Test both timing paths and inspect persistence on each side.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A green mapping preview proves the connector updated the receiving account. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> It proves the expression evaluated for the chosen preview input. Find the provisioning outcome and actual target value.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. The incoming HR value is correct but the Okta user field is empty. Which mapping direction do you inspect first?**
@@ -78,8 +132,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** Provisioning created a receiving account with Region East. After a transfer, the Okta user and mapping preview both show West. The app user record still shows East. Where is the first proven mismatch?
 

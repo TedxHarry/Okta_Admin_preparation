@@ -86,6 +86,58 @@
 
     **Exam focus.** Demonstrate the fix with a fresh sign-in and factor evidence when the policy prompts for one. A password reset can succeed while a separate sign-in factor or policy still blocks access. [Okta · Locate factor information](https://support.okta.com/help/s/article/how-to-locate-factor-information-in-okta-system-log)
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. The login completes password proof but the enrolled phone was replaced. Which action addresses the failed step? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Deactivate and reactivate the account</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. Reset only the affected authenticator enrollment after identity verification</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Change the app assignment</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Unlock the password</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> The failure is at the second proof. A scoped reset addresses that enrollment and preserves other methods.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. A user still cannot sign in after an Okta unlock. Which records help separate directory lockout from a lost-factor problem? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. The available and enrolled verification methods</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. The user&#x27;s app tile order</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. The failed attempt&#x27;s authentication details</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. The account&#x27;s status at the delegated directory</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and C and D.</strong> Locate where the attempt stops, then compare the password authority with the second-factor state.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A successful session-start event alone identifies the exact factor used. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Read correlated authentication or verification details for the method. Session creation alone does not identify it.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. The password is correct but the old Okta Verify phone is unavailable. Which action targets the problem?**
@@ -103,8 +155,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** An Okta unlock succeeded. A new password attempt still fails and the log points to delegated authentication. What do you check before resetting factors?
 

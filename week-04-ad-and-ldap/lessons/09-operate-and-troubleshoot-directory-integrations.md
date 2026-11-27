@@ -54,6 +54,58 @@
     | Logs | Compare host-side and Okta-side evidence for the same operation. |
     | Maintenance | Verify a fresh sign-in and a scoped import before proceeding to the next host. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. After maintenance, delegated sign-in works but imports fail. Which check is the most targeted first step? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Turn off delegation</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Reset the user&#x27;s password</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Change app policy</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. Compare the failing import with the last good run and inspect agent and directory-read evidence</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> Isolate the failed operation. Authentication success does not establish that the import&#x27;s query and scope work.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which tests should be in an AD agent change comparison when all these paths are enabled? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. A scoped import</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. A fresh delegated authentication</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. A scoped directory write and receiving verification</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D"> <span>D. Only agent availability in the console</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and C.</strong> One healthy service indicator cannot validate all agent-dependent operations.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A heartbeat loss shows that a specific user&#x27;s password was wrong. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> A heartbeat reports service connectivity. Require user-specific authentication evidence to judge credential validation.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **What does a failed agent heartbeat tell you about a user's password?**
@@ -78,8 +130,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** After an agent update, imports fail, but delegated sign-in works. What baseline would you capture before rolling back?
 

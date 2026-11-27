@@ -53,6 +53,60 @@
 
 === "Revision"
 
+    Verify claims in a fresh assertion or token. Check the receiving endpoint, intended audience, identity match, and how the app reads the claim.
+
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A fresh SAML assertion contains the correct Department. The app opens a different local account. What do you check first? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Group Push direction</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. The Department field length</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C" data-correct> <span>C. NameID and the receiver&#x27;s account-matching configuration</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. The AD agent installer identity</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> Correct attribute transmission does not establish the receiver matched the intended account.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which checks validate a new federation claim end to end? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. The claim name, value, and intended audience</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. How the receiving app interprets the claim for the test user</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C"> <span>C. The setup preview by itself</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. The actual test assertion or token</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and D.</strong> Fresh sign-in and receiver evidence prove the claim took effect beyond configuration.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. An attribute in a SAML assertion is evidence that provisioning wrote that value to the receiving account. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Federation transmits the value at sign-in. Check the connector and target record for a provisioning write.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. The wizard preview shows a valid assertion before you add claims on Sign On. How do you verify those new claims?**
@@ -77,8 +131,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A new SAML claim is correct in the actual assertion, but the app maps the user to the wrong local account. Which field would you inspect alongside the new claim?
 

@@ -101,6 +101,58 @@
 
     **Exam focus.** Translate the requirement into a Boolean condition, test a user who should miss, and verify the intended target after activation. This supports the custom app integration use case, which asks you to use OEL and assign a group to an app. [Okta Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Which expression shape makes Finance required on either group path? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. A AND B AND Finance</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. A OR (B AND Finance)</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Finance OR (A AND B)</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. Finance AND (A OR B)</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> The parentheses make Department apply to both source-group paths and allow either group.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which test inputs help catch bugs in an exact SEC-101 array match? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. An exact SEC-101 element</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. A suffixed SEC-101-ADV element</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. An empty or missing list</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D"> <span>D. Only a populated exact-match user</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and C.</strong> The exact case proves the intended inclusion. The suffix and blank cases expose substring and missing-data errors.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A user in both groups can distinguish A AND B from A OR B by itself. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Both expressions match that user. Test at least one single-group user to expose the difference.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. Which user proves that A OR B and A AND B behave differently?**
@@ -132,8 +184,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** Finance is required for users in East or West. An expression uses East OR (West AND Finance). Give a test case that exposes the error and the corrected grouping.
 

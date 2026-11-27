@@ -4,7 +4,7 @@ Connect a Windows AD domain to Okta. Follow a user from directory import or firs
 
 [Start Lesson 1 · Connect Active Directory to Okta](../week-04-ad-and-ldap/lessons/01-connect-active-directory.md){ .md-button .md-button--primary }
 
-Start with the **Theory** tab in each lesson. Use **Revision** to check your understanding before opening the hands-on instructions. [Exam objectives and official reading](active-directory/source-and-lab-plan.md)
+Start with the **Theory** tab in each lesson. Use **Quiz** to test your decisions before opening the hands-on instructions. [Exam objectives and official reading](active-directory/source-and-lab-plan.md)
 
 ## Lessons
 

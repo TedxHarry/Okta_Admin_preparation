@@ -62,6 +62,58 @@
     | Two groups have the same name | Compare the Okta IDs, integration sources, and assignment dependencies. |
     | Disabling an app’s group import is blocked | Inspect group policy rules, mappings, and app assignments. Verify removal after the next import. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. An AD parent group is visible. A user from a nested child group is absent. What is the best next hypothesis to test? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. The default app password is invalid</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. A Group Push retry imports the child</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. The parent group must be native</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. The user&#x27;s or child&#x27;s OU may be outside the import scope</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> Confirm the AD hierarchy and relevant user and group scopes before changing the Okta rule.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which checks help before turning off imported groups on an integration? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. Only how many groups have long names</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Existing group-derived app grants</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Policies or mappings that reference the groups</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. The source owner and applicable import timing</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B and C and D.</strong> Disabling import can affect dependencies. Inventory them and verify results at the next relevant import.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. You can assume every upstream membership was resolved as soon as the parent group object appears in Okta. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Inspect the actual members and nested scope. Importing a group object and resolving membership are different checks.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. Where do you add a person to an imported group whose membership is controlled by the source?**
@@ -86,8 +138,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** The source shows a child group membership. The in-scope parent imports, but the user is missing from the Okta view of the parent. What two boundaries do you check?
 

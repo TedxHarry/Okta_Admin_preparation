@@ -76,6 +76,60 @@
     | Custom expression | Which behavior results satisfy the expression |
     | Rule action | The proof Okta requires for a matching request |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. The app rule requires pilot membership and either New Device or New IP. Which attempt can match it? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Pilot with neither</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. Pilot with New IP only</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Control with New Device only</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Control with both behaviors</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> OR applies inside the expression. The separate group condition still must match.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which inputs test the group and expression conditions independently? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Control with a matching behavior and the same app assignment</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. Only a pilot with both behaviors</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Pilot with exactly one matching behavior</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Pilot with neither behavior</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and C and D.</strong> Use cases where one condition can change while the other stays comparable.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A positive behavior result proves the group-scoped step-up rule was selected. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Check the app&#x27;s actual policy evaluation. The group or an earlier rule can change the selected branch.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    ### Check your recall
+
     ??? question "1. Does a New Device result imply a new physical computer?"
 
         Okta measures the sign-in client. A different browser on the same computer can be seen as new.
@@ -89,8 +143,6 @@
         Both named conditions have to satisfy the expression for AND. Either condition can satisfy OR.
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** Your rule combines New Device OR New IP and scopes it to the pilot group. One pilot has only New IP true. A control has both true. What happens, assuming no earlier match?
 

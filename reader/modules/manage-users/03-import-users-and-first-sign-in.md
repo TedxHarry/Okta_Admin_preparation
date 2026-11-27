@@ -92,6 +92,58 @@
 
     **Exam focus.** Explain how import and JIT differ for AD. Verify the required settings and compare the final record in **People**. A People CSV exercise provides practice with file import. Live JIT requires a configured identity source.
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. An AD user is already confirmed and Staged. The goal is to let that exact account sign in. What action fits? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Turn off matching</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Import a duplicate</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Wait for JIT to activate the staged record</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. Activate the confirmed record and verify sign-in</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> Confirmation creates or links the record. Activation is a separate operation for a staged, confirmed user.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. An import proposes an unexpected surge in removals after a connector change. Which checks belong before approval? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Compare the current source filter and scope to the last good run</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Verify which removals were authorized</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Inspect import results and safeguard details</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D"> <span>D. Confirm all changes so the import finishes</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and C.</strong> A scope error can look like a mass departure. Validate the source population before applying removals.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. An exact identifier match and a matching display name carry the same evidence that two records belong together. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> A display name can collide or change. Validate a durable identity identifier under the configured matching rules.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. An incoming employee has a new surname and the same unique mapped employee ID. What do you inspect?**
@@ -109,8 +161,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** An import proposes five matches and one same-name record with a different username. You have never seen this integration's matching rules. What do you do with the sixth record?
 

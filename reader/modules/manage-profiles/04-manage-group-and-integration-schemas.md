@@ -47,6 +47,60 @@
 
 === "Revision"
 
+    Read the field definition in the correct schema first. Check the stored value on the group or app user, then identify mappings, assignments, or claims that depend on it.
+
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. An integration&#x27;s field is referenced in an outbound mapping and a SAML assertion. Which step comes first when retiring it? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Delete it and inspect the next failed sign-in</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Deprovision every assignment</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C" data-correct> <span>C. Find and update both dependencies, then test both flows</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Remove it from the Okta user schema only</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> Mapping and federation can use the field independently. Verify both paths using an approved test record.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which evidence can establish why an overlapping member gets a particular queue value? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Values assigned by each applicable group</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Group priority or array-combination setting</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C"> <span>C. The imported AD group&#x27;s source alone</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. App user attribute type and configuration</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and D.</strong> The destination type and assignment configuration determine how applicable values are resolved.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Removing a group-profile field affects only its display label, even if a configured mapping reads it. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> A mapping can depend on the field. Identify dependencies and test before deleting it.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. You need to change the Support Queue on one group. Where do you make the edit?**
@@ -71,8 +125,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** Two group assignments provide Support Queue values, and a user belongs to both. The app shows one queue. Where do you establish whether that is intended?
 

@@ -71,6 +71,60 @@
     | Registration identity | Okta admin with directory and agent permissions. |
     | Runtime identity | Windows service account with AD permissions scoped to the operation. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Which observation shows the agent can read the intended OU? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. The domain resolves in DNS</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Agent appears available in Okta</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. The installer could register the agent</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. A scoped import finds a known user and group from that OU</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> Availability covers the agent-to-Okta connection. A scoped import tests the AD read path and scope.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which checks split a failed AD import into useful hypotheses? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. The host&#x27;s path to Okta</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. The host&#x27;s path to the applicable domain controller</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Runtime service identity and effective directory read scope</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D"> <span>D. Only the installer account&#x27;s password policy</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and C.</strong> Registration, service connectivity, and directory access are different boundaries.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Which account needs scoped rights for the agent&#x27;s ongoing AD writes? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. Windows interactive installer</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. The account running the agent service</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="C"> <span>C. Every user imported from that OU</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="D"> <span>D. Okta registration admin</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Inspect the service&#x27;s Log On As identity and verify its effective rights on the test target.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **The agent is available in Okta. How do you verify it can also read directory objects?**
@@ -95,8 +149,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** The agent was available yesterday. A newly selected test OU yields no users, but an older OU still imports. What do you investigate first?
 

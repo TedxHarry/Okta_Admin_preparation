@@ -60,6 +60,58 @@
 
     **Exam focus.** Prove the result in four places when relevant: account status, a fresh sign-in, app assignments, and the System Log. For a connected app, also verify its account and session there. Downstream deprovisioning and Universal Logout depend on integration support and configuration.
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. The request is to block sign-in during a leave while retaining assignments. Which action fits? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Deactivate</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Delete</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Clear sessions only</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. Suspend</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> Suspension blocks sign-in and keeps assignments. Clearing sessions alone still permits a fresh sign-in.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. A user has left the company. Which checks belong after Okta deactivation? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Okta state and assignment removal</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Supported connector deprovisioning outcome</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Receiving account and existing app-side session state</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D"> <span>D. Only the last Okta password change</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and C.</strong> Deactivation proves the Okta lifecycle step. Target account and session controls need their own evidence.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Reactivating a deactivated user proves that every former direct app assignment was restored. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Check current group-derived and direct grants individually. Restore only the access that is still approved.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. Someone goes on leave and should keep their assignments. Which action fits?**
@@ -77,8 +129,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A former employee is Deactivated in Okta but a SaaS browser tab still works. What would you verify to establish containment?
 

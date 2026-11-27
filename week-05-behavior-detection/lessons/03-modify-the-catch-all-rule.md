@@ -36,6 +36,60 @@
     | Which request reaches the fallback? | The policy's ordered rules |
     | Why is the user still asked for another factor? | The matched app and global session rules and the user's authentication context |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Two apps share the same policy and only the pilot needs its fallback changed. What is the appropriate configuration? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A" data-correct> <span>A. Use and verify a dedicated app policy for the pilot where supported</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Change the enrollment policy for both apps</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Edit the shared Catch-All immediately</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Move the pilot user ahead of the app in policy priority</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A.</strong> The fallback applies to requests reaching it under that policy. Isolating the app association limits the change.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which checks belong in Catch-All rollback notes? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. Only the friendly policy name</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Affected app associations</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Existing fallback authentication and reauthentication requirements</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Earlier rule order and baseline policy evaluation</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B and C and D.</strong> Capture enough to restore which policy applies and what it required.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A password-only app fallback guarantees the browser will never ask for another factor. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Global session policy or enrollment can still require another step. Inspect each layer&#x27;s evidence.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    ### Check your recall
+
     ??? question "1. What happens to a request that already matched the earlier behavior rule?"
 
         The earlier rule supplies the authentication requirement. Okta reaches the fallback only for requests that skip all earlier rules.
@@ -49,8 +103,6 @@
         Verify the policy's app associations, rule order, and existing access and authentication settings.
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A pilot app and a production app share the same policy. The pilot requires you to set a password-only fallback. What change avoids applying it to both?
 

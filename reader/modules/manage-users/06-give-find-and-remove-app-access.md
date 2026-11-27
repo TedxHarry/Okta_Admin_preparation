@@ -57,6 +57,58 @@
 
     **Exam focus.** Practice assigning a group and verifying the result. The bookmark proves assignment and tile launch. The [custom SAML lab](../../week-03-saml-and-mappings/lessons/02-custom-saml-attributes-and-group-assignment.md) verifies mapped data at the receiving application.
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. User membership in Team A is removed. Team B still assigns the same app. What should you expect from the Okta assignment? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. It becomes a Group Push mapping</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. It turns into a disabled user</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Always removed</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. It can remain through Team B</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> The remaining group continues to provide an assignment.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which observations answer different access questions when the app tile is missing? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. Whether the push group exists, by itself</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Whether the user is assigned to the app</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Whether dashboard visibility is enabled for that integration</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Whether a fresh direct launch succeeds</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B and C and D.</strong> Assignment, presentation, and successful launch are separate observations.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. The app shows an assigned group with no current members. Does this establish that a specific user still has that app? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. Yes</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. No</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> A group-to-app configuration can remain without current members. Inspect the actual user assignment and other grant paths.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. A group still appears on the app after its last test user leaves. Is that expected?**
@@ -74,8 +126,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A user was removed from the Finance group. The app is still in their Assignments tab and another group also grants it. Which change actually removes the assignment?
 

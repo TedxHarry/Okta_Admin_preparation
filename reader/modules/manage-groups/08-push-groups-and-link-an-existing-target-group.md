@@ -68,6 +68,59 @@
     | Confirm success | Verify the downstream user, group ID, and member list. |
     | Preserve a target group | Deactivate to pause the mapping or unlink and leave to end management and retain the group. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A downstream user exists, but their intended team membership is missing. Which configuration do you inspect first? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. The SAML NameID alone</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. The user&#x27;s Okta password authenticator</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. The app tile ordering</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. The active Group Push mapping and push-group membership</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> An app user can exist before receiving any target group membership. Verify the separate push path.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Before concluding a Group Push repair worked, which checks establish the result? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. The exact receiving group is linked</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. The push result succeeded for the intended mapping</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. The receiving account appears as a member of that group</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D"> <span>D. The user only sees a dashboard tile</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and C.</strong> Use the downstream group as final evidence. A tile establishes a separate access path.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. You need to remove a managed membership and end the corresponding app grant. Which order protects the membership update? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. Delete the target group for everyone</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. Remove and verify pushed membership → remove the application grant → verify downstream lifecycle</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="C"> <span>C. Remove the user grant before processing the group membership</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Keep the target account available while removing its membership, then verify the impact of unassignment.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. A target group exists and one push-group member is missing. What do you verify first?**
@@ -92,8 +145,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A downstream user exists and can sign in. They lack a target team membership. Both the app and the target team are visible in Okta. Which evidence do you need?
 

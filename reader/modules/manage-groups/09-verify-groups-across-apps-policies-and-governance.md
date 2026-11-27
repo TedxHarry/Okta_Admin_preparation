@@ -52,6 +52,58 @@
     | Group-scoped device rule misses | Group membership, device registration, assurance result, and the fallback rule. |
     | Friendly name changed | Governance display configuration and the underlying group ID. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Both users are assigned to the app. One matches a different authentication rule. What identifies the applied rule? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Assigned group&#x27;s display label</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. App tile color</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C" data-correct> <span>C. The relevant policy evaluation event</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. The user&#x27;s profile description</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> Use the event for that attempt to identify the actual rule instead of inferring it from membership.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which checks help when a registered device fails a group-scoped authentication rule? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. The device posture or assurance requirement</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. The order and match results for the app&#x27;s rules</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C"> <span>C. The presence of an app assignment alone</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. The user&#x27;s actual group membership</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and D.</strong> Membership, registration, and device assurance are distinct conditions.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Governance shows a friendly group label. That label alone proves which concrete group and downstream grant were delivered. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Trace the request or review to the exact group, then verify membership and the target grant.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. Two users are assigned to the same app. Only one is denied. Which evidence shows whether a group-scoped rule caused the difference?**
@@ -76,8 +128,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A group member has app assignment and a registered device, but gets a different authentication rule from a peer. What evidence would resolve the discrepancy?
 

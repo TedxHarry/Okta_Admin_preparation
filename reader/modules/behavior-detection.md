@@ -4,7 +4,7 @@ Learn how Okta decides whether a sign-in context is familiar, how an app policy 
 
 [Start Lesson 1 · Behavior Detection and Okta Verify](../week-05-behavior-detection/lessons/01-understand-behavior-detection.md){ .md-button .md-button--primary }
 
-Open each lesson's **Theory** tab first. Use **Revision** to check your understanding. Then complete the guided **Hands-on Lab** tabs in order and attempt the independent practice cases.
+Open each lesson's **Theory** tab first. Use **Quiz** to test your understanding. Then complete the guided **Hands-on Lab** tabs in order and attempt the independent practice cases.
 
 ## Lessons
 

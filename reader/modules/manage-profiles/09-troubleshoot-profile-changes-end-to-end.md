@@ -34,6 +34,61 @@
 
 === "Revision"
 
+    Start at the first boundary where the stored value differs. Compare the source, Okta profile, app user, connector operation, and receiving account using the same test identity.
+
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. The Okta value and saved app user value are current. The receiver still has the old value. Which evidence narrows the next step? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. A new condition preview</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. The outbound provisioning operation for the exact target account</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. The user&#x27;s external identity claim alone</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. A successful import from a different employee</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> The earlier boundaries already hold the correct value. Check the attempted write and receiver.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which records help identify the first stale boundary in a cross-system profile issue? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Matching connector operation and receiving account</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. Only timestamps without matching the identity or app</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Linked source record with its current value</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Saved Okta user and app user values</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and C and D.</strong> Tie all observations to one identity and integration before comparing the stages.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Which workflow behavior prevents repeated no-op profile writes after a trigger fires again? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. Write the same desired value every time</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B"> <span>B. Wait and write without rereading</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="C" data-correct> <span>C. Compare the desired and stored values and write only when they differ</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> An idempotent check avoids a second write when the first already produced the desired state.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. Preview returns the right result, but the app user profile contains an older value. Where do you look?**
@@ -58,8 +113,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A support note says every screen is green. The user still has the wrong cost center. You have import, mapping preview, and provisioning timestamps. How do you isolate the stale stage?
 

@@ -45,6 +45,58 @@
     | Fresh sign-in | Adds the user state, enrollment and effective Okta policy requirements. |
     | Failover | Verify one agent is unavailable, another available, and a new password attempt succeeds. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A delegated authentication credential test succeeded, but a fresh app sign-in fails. What do you test next? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Whether the app has a different icon</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Only whether the AD group name changed</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Whether every directory user should reset the password</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. User state and matched Okta session or app policy requirements</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> The credential test proves directory validation for the tested input. Full sign-in has additional checks.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which observations support an agent failover test? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. An already-open app tab still loads</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. One agent is stopped while another remains available</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. A fresh sign-in actually exercises delegated password validation</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. The matching event or agent evidence and post-test service restoration</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B and C and D.</strong> An existing session can survive without exercising the route being tested.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. All agents available establishes that each user&#x27;s directory credentials are valid. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Agent availability is service health. Test an eligible account through the intended directory instance.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **The integration credential test succeeds, but the user cannot finish signing in. Where do you look next?**
@@ -69,8 +121,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A failover exercise reports success because an existing browser tab stayed open when one agent stopped. How would you test failover properly?
 

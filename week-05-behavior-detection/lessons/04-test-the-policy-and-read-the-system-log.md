@@ -37,6 +37,61 @@
     | Policy evaluation | Which rule or requirement Okta evaluated for the session or app |
     | Verification result | Whether an authenticator was used successfully |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. System Log shows BAD_REQUEST for a named device behavior. What check targets that result? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Treat it as proof that the user is outside the group</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Wait for more history only</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C" data-correct> <span>C. Restore usable device information for the test attempt</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Move the Catch-All above the pilot rule</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> BAD_REQUEST indicates missing information. UNKNOWN instead indicates insufficient history.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which records prove a changed device triggered the expected rule and the user completed Push? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Named behavior result from the attempt</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Selected app policy rule</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Correlated successful verification identifying push</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D"> <span>D. Push dispatch as the only proof</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and C.</strong> The evidence covers the signal, rule, and completed verification. A dispatch alone proves a request was sent.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Which comparison reduces the chance of making the unfamiliar browser familiar before the test? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. Clear site data from both profiles before each attempt</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B"> <span>B. Sign in on the Dashboard first, then open the app</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="C" data-correct> <span>C. Start the test at the app&#x27;s own entry point from an unused profile and compare with a known profile</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> Use the same account, network, and target. Change browser familiarity without first seeding history.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    ### Check your recall
+
     ??? question "1. How do UNKNOWN and BAD_REQUEST differ?"
 
         UNKNOWN indicates too little history. BAD_REQUEST indicates missing input in the current request. Retest after building history or restoring the missing signal, respectively.
@@ -50,8 +105,6 @@
         Otherwise app assignment can stop the request before the comparison proves whether group membership controls the rule.
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** The log records a positive device result, an app-policy CHALLENGE, and a push dispatch. What is still missing from the conclusion that mobile Push succeeded?
 

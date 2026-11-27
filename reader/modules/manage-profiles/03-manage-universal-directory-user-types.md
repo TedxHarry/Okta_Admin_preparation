@@ -57,6 +57,59 @@
     | Map users of different types to one app | Select the intended type and direction in Profile Editor. |
     | Delete a custom type | Verify it has zero assigned users before deletion. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A profile has a text classification of Contractor but no custom user type assignment. What decides the schema? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. The latest group rule</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. The text value alone</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. The first app assigned</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. The actual Okta user type</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> The actual user type selects the schema. A label stored on the profile is a separate field.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which preflight checks matter before converting a test user to another type? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Fields missing from the destination schema</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Dependent mappings or claims</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Expected group rule behavior for that type</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D"> <span>D. Only whether both types use the same display label</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and C.</strong> Conversion may affect field values and automation. Test the destination schema and dependent integrations.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. An app needs a category for users who otherwise share the same schema. Which approach is easier to evaluate first? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. Create a unique user type for each user</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. Use a classification attribute on the shared schema</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="C"> <span>C. Rename the app integration for each category</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Use a distinct schema only when the population needs it. A field may provide all the classification required.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. An employee’s `userType` text is Contractor. The profile header still shows the default type. Which schema applies?**
@@ -81,8 +134,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A transfer changes Jamie from Contractor to Employee. The new schema lacks Sponsor Reference and the second app expects it. What preflight would you run?
 

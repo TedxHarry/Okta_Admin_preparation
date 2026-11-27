@@ -59,6 +59,62 @@
 
 === "Revision"
 
+    Follow the saved Okta profile value into the group rule, app assignment, and receiving account. For leavers, verify the source lifecycle action, Okta account state, and downstream deprovisioning separately.
+
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A new Department is in Okta, the new app is assigned, and the old app is still assigned. What do you check next? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. The new app&#x27;s assertion preview</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. The user&#x27;s last password change</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Whether HR&#x27;s value still needs another inbound mapping</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D" data-correct> <span>D. The old rule-managed membership and any other app grant paths</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> The access chain can retain independent direct or group assignments after the profile changes.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which evidence covers an HR exit from source to target? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. The HR record alone</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. The configured lifecycle action and Okta status</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. The app assignment and supported deprovisioning outcome</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. The receiving account and any app-side sessions</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B and C and D.</strong> The source signal explains the trigger. The actual effect has to be checked at each layer.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. An HR source action that suspends the Okta user necessarily removes all app assignments. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Suspension retains assignments. Check the configured lifecycle action and verify the receiving account separately.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    ### Check your recall
+
     **1. The HR connector imported the new Department. The user's Okta profile still has the old one. What do you check first?**
 
     <details class="revision-answer">
@@ -88,8 +144,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A mover's new Department is correct in Okta and their new app is provisioned. The old app is still granted. What are the next two records to inspect?
 

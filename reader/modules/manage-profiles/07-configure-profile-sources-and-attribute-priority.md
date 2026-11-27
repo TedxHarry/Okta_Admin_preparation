@@ -42,6 +42,60 @@
 
 === "Revision"
 
+    Read the applicable primary source and the field's source priority together. Verify the inbound mapping and persisted value. Check lifecycle authority separately when a field uses an override.
+
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. HR is primary and a lower directory has a Department value. You need AD to supply Department while HR remains primary. What do you inspect first? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. The SAML claim name</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. App assignment group priority</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C" data-correct> <span>C. Department&#x27;s attribute-level source override</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Global session policy priority</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> An override can let another source supply a field without changing the user&#x27;s primary source.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which tests check the practical effect of a field override? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. User with both linked sources</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. User without the alternate source</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. An upstream edit followed by verification of the saved field</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D"> <span>D. Only a preview for a fully populated user</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and C.</strong> Compare both source populations and confirm which value persists after processing.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. An attribute source override also changes which source controls the user&#x27;s lifecycle. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Field ownership and lifecycle authority are distinct. Check the applicable primary source and lifecycle settings.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. HR is the primary source and has no mapping for Department. AD has a populated value and a mapping. What happens with Inherit from profile source?**
@@ -66,8 +120,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** HR supplies a blank Department, and a directory below HR has a value. The field should stay blank unless a separate business rule permits a directory fallback. What would you inspect?
 

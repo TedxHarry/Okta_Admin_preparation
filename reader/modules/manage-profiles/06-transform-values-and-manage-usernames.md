@@ -73,6 +73,60 @@
 
 === "Revision"
 
+    Check which editor evaluates the expression and which object it can read. Preserve the exact format of identifiers. Verify changes to the app username independently of the Okta login.
+
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Two renamed employees transform to the same app username. What do you fix first? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A" data-correct> <span>A. Choose and test a collision-resistant app username mapping</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Disable inbound import permanently</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Set the Okta field to a number</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Change claim formatting only</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A.</strong> Retain uniqueness at the receiver and verify the account linkage before switching the mapping.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which inputs should a username transformation test include? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. Only names already in their final format</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Different names that normalize to the same value</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. A missing source component</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. An existing linked user&#x27;s rename</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B and C and D.</strong> Check collisions, missing input, and the effect of renaming on an existing receiving account.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Changing the app username mapping necessarily changes the user&#x27;s Okta login. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> The app username and Okta login are separate settings. Compare each persisted value and a fresh app sign-in.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. In an inbound mapping, which references can read the incoming department code?**
@@ -104,8 +158,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A username transform is correct for a typical email but two test people produce the same app username. What would you change before rollout?
 

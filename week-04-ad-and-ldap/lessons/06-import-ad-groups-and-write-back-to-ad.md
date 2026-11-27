@@ -46,6 +46,58 @@
     | Native Okta group | Verify rule or direct membership and app assignment. |
     | Group Push | Use a separate group and verify actual membership in AD. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Where would you check the intended destination OU for a new account provisioned from Okta to AD? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Inbound AD group import scope only</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. The Okta enrollment policy</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C" data-correct> <span>C. The provisioning group&#x27;s directory target OU setting</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. The app sign-in rule priority</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> Object placement and attribute mappings address different parts of the create request.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which checks distinguish an AD group import issue from downstream push failure? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Imported and rule-managed memberships in Okta</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Push mapping, outcome, and membership at the receiver</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C"> <span>C. Only the last successful delegated login</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Membership in the source AD group</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and D.</strong> Check each boundary to see which copy stopped reflecting the source change.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. AD JIT imports eligible security group memberships and also synchronizes distribution-group memberships the same way. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Use the supported import path to test distribution membership. JIT uses security group membership.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **The Okta app user profile shows the mapped value, but AD shows the old one. What do you check?**
@@ -70,8 +122,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A newly onboarded user receives an AD account in the wrong OU, but the mapped display name is correct. Where do you look?
 

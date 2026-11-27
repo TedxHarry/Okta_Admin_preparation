@@ -67,6 +67,60 @@
 
     **Exam focus.** Group creation and membership are foundational to the custom app integration use case. Be able to create the intended group, prove the individual membership, and explain where you would look for app assignment or rule-based changes. [Okta Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A delegated admin can edit membership for an existing group. Which separate capability must you check before assigning group creation work? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A" data-correct> <span>A. Permission to create groups with the relevant scope</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Read an app assignment</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Change dashboard theme</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Manage password expired users</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A.</strong> Membership management does not confer creation privileges. Read the assigned role and scope.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. An approved removal is for one native group. Which evidence establishes the intended change? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. The matching removal event where available</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. A push success event for a different app</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. The exact group and user IDs</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. The group and user&#x27;s resulting membership views</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and C and D.</strong> Verify the object changed, the resulting state, and the audit trail separately.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A member is removed manually from a rule-managed group and still meets the condition. What is the best first check? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. Retest Group Push only</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B"> <span>B. Reset factors</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="C"> <span>C. Change the Department value</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="D" data-correct> <span>D. Inspect the rule&#x27;s excluded users</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>D.</strong> A manual removal can create an exclusion, which can keep the rule from re-adding the user.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. A Group Membership Admin can add users to an existing managed group. Does that role alone let them create a group?**
@@ -91,8 +145,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A delegated administrator can open a group but sees no Assign people action. Another admin can add a member to a similarly named group. What do you compare?
 

@@ -79,6 +79,59 @@
 
     **Exam focus.** Compare creation, activation, and first sign-in as separate events. AD-sourced activation has directory-specific settings and belongs in the [exam coverage map](../../exam/coverage.md).
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A new account was saved with Activate later. Which action advances onboarding? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A" data-correct> <span>A. Start activation from the user record</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Change the primary group</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Unlock the account</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Reset its authenticators</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A.</strong> A Staged account is awaiting activation. A recovery action does not start its intended onboarding flow.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which details can change what happens on a user&#x27;s first sign-in? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. The app assignment by itself, without checking policy or setup</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. The activation and initial-password choices</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. The enrollment policy that applies to the user</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Whether the user has finished required setup</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B and C and D.</strong> Activation starts the account lifecycle. Credential setup and policy requirements still determine what the user sees.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Which sequence demonstrates successful delayed onboarding? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A" data-correct> <span>A. Save staged → activate at the approved time → finish setup → test a fresh sign-in</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B"> <span>B. Create active user → reset every factor → mark staged</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="C"> <span>C. Send recovery email → create user → test</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A.</strong> The sequence preserves the delayed start and confirms that the user can actually sign in after setup.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. A user was saved with Activate later. Should you start with a password reset?**
@@ -96,8 +149,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** An activation email was sent yesterday. Today the user is still Pending user action. A second user is Staged. Would you give both the same instructions?
 

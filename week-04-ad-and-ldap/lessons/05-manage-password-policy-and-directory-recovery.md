@@ -55,6 +55,58 @@
     | Okta recovery | Check Password rule scope and enrolled recovery methods. |
     | AD reset permissions | Reset Password, plus Write Property for pwdLastSet and lockoutTime. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. The directory password works, but Okta cannot reset it. Which separate requirement is most relevant? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. The username mapping must change</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Admin Console installer needs to be the user</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C" data-correct> <span>C. Agent runtime identity needs effective reset rights on that AD user</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. The user&#x27;s app tile needs to launch first</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C.</strong> Directory validation and password writes require different access.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which checks isolate a delegated password recovery failure? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Applicable recovery policy and available enrollment</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Effective AD password requirements</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Agent runtime permissions on the target object</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D"> <span>D. A successful app group push</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and C.</strong> Recovery verification, password acceptance, and directory writes are separate steps.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A reset succeeds in one OU. That alone verifies the same rights are effective on protected accounts elsewhere. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Check the specific target user&#x27;s effective permissions. Group protection and differing inheritance can change the result.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **Why might delegated sign-in work while a reset through Okta fails?**
@@ -79,8 +131,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** A lab account resets its password through Okta, but an account in a protected AD group cannot. Both can authenticate. What would you inspect before expanding privileges?
 

@@ -93,6 +93,58 @@
 
     **Exam focus.** A status, Okta sign-in, app assignment, and target-app access are four different checks. A successful result in one view answers only that view's question.
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Which record key best establishes that the account in yesterday&#x27;s ticket and today&#x27;s renamed record are the same? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Current primary email</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. Okta user ID</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. User type</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Display name</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> The ID identifies the account across a rename. Names and email addresses can change or be shared as display information.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. An app works for one person and fails for another with the same display name. Which comparisons help isolate the failure? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A"> <span>A. Application account status inferred from Active in People</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. The last successful sign-in of an unrelated user</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. Exact Okta user IDs</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. App assignment paths</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>C and D.</strong> Check identity, entitlement, and policy separately. List position provides no identity or access evidence.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A successful Okta sign-in establishes that the app&#x27;s own sign-in succeeded. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Verify assignment, the app&#x27;s policy decision, and access to the receiving app as separate steps.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. Two users have the same display name. What do you compare first?**
@@ -110,8 +162,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** Two records share a display name. A ticket gives the old primary email and a recent failed sign-in. How would you identify the account before changing anything?
 

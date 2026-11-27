@@ -12,7 +12,7 @@ Start here to learn what Okta stores about a user, how that person gets an activ
 6. [Give, find, and remove app access](manage-users/06-give-find-and-remove-app-access.md)
 7. [Pause access, end sessions, and offboard a user](manage-users/07-pause-access-end-sessions-and-offboard-a-user.md)
 
-Open a lesson’s **Revision** tab for a cheat sheet, exam connections, and short recall questions with answers.
+Open a lesson’s **Revision** tab for a cheat sheet and exam connections. Use **Quiz** for scored choices, troubleshooting scenarios, and interview questions.
 
 ## Hands-on labs
 

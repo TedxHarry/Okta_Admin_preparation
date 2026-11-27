@@ -71,6 +71,58 @@
     | Priority vs. combining | Read the app’s group order for a priority-based field. Check the schema and attribute settings for eligible array combining. |
     | Policy order | Read the app sign-in policy’s rules in order to determine the authentication requirement. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. A scalar app attribute uses group priority. The user belongs to East and West. West becomes higher priority. What can change? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A" data-correct> <span>A. The app user&#x27;s effective scalar value changes to West&#x27;s value</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B"> <span>B. Both scalar values join into an array automatically</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. The user becomes unassigned</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. The user&#x27;s Okta login automatically changes</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A.</strong> Priority selects among applicable group-derived values. Assignment can continue through both groups.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which cases verify how an eligible array draws from group assignments? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. The same overlapping case with priority configured</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. A user with no app assignment as the only test</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. A user in both groups when combining is enabled</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. A user in only one applicable group</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and C and D.</strong> Compare overlap and single-group cases, and check the saved app user values.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Group priority is the same thing as app sign-in rule priority. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> One resolves group-derived app values. The other determines which app policy rule is evaluated first.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. A user leaves East and remains in West. Both groups assign Travel. Why is Travel still assigned?**
@@ -95,8 +147,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** Two assigned groups supply different Region values. Their order changes and the user remains in both. What can change and what should stay verified?
 

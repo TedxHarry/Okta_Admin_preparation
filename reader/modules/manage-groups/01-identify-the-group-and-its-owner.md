@@ -61,6 +61,58 @@
 
     **Exam focus.** Be ready to explain the difference between an Okta group and an AD-sourced group, identify the authority that controls membership, and prove whether the group grants an app. This is the starting point for group rules and custom app assignment. [Okta Administrator Performance Exam Study Guide](https://certification.okta.com/page/administrator-performance-exam-study-guide)
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. What is the strongest way to distinguish two identically named groups when tracing an app grant? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Which title appears first</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. The assigned group ID and source</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. The number of letters in the description</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. The age of the app</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> The ID identifies the exact group. Source tells you where membership is controlled.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. The group is imported. Which checks help explain why membership is missing? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Import scope and last successful sync</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. Whether the Group Push tab reports success</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C"> <span>C. Whether a user was added to a similarly named native group</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Upstream group membership</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and D.</strong> Compare the authoritative source, synchronization, and the identity of the group.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Renaming a native group creates a new group identity for every reference. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Use the stable group ID for reconciliation. A display-name change is not an object replacement.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **1. Two Finance groups look alike. How do you choose the one to investigate?**
@@ -85,8 +137,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** Two groups named Finance have different sources. The user belongs to both. Which one is contributing an app grant?
 

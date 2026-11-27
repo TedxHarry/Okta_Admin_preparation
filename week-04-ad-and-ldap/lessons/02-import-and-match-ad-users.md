@@ -62,6 +62,58 @@
     | Confirmation | Links an existing Okta user or creates a new one. |
     | Full import | Reconciles removed or out-of-scope records. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. An enabled AD user moved out of scope. Which comparison can detect that reconciliation case? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. Run another incremental import only</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. Run a full import and inspect scope and lifecycle handling</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. Reset the user&#x27;s factor</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. Disable AD delegation as the first step</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> A full import can detect an account missing from selected scope. Check the applicable lifecycle configuration.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which evidence establishes a confirmed import matched the intended existing identity? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. Confirmed link to the exact AD account</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B" data-correct> <span>B. Search for duplicate records and check the resulting profile</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C"> <span>C. Only the display name on the proposed row</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. Intended pre-import Okta user ID</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and B and D.</strong> The stable ID and source link establish identity. Display names can match different people.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. A confirmed imported row proves a fresh sign-in will succeed. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A"> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B" data-correct> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Confirmation and activation are separate. Test account state, credentials, and effective policy.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **A user moved out of the selected OU. Which import detects that removal?**
@@ -86,8 +138,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** An AD import proposes an existing account match, but the proposed record has a similar name and a different stable identity in your HR inventory. How do you handle it?
 

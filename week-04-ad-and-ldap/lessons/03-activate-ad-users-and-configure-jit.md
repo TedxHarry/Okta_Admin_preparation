@@ -50,6 +50,58 @@
     | JIT | Eligible user plus directory authentication, scope, and a first sign-in. |
     | JIT refresh | Existing sourced profile can refresh at sign-in or when viewed by an admin. |
 
+=== "Quiz"
+
+    ### Check your answers
+
+    Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>1. Which user best proves AD first-sign-in creation in a JIT lab? <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-1" value="A"> <span>A. A user already visible and Active in People</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="B" data-correct> <span>B. An in-scope AD user verified absent from Okta before the attempt</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="C"> <span>C. An out-of-scope user who has a cached session</span></label>
+    <label><input type="radio" name="lesson-quiz-1" value="D"> <span>D. A user confirmed in yesterday&#x27;s import</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>B.</strong> Check absence before sign-in and confirm the new linked record afterward.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>2. Which controls keep a JIT comparison interpretable? <small>(Select all that apply)</small></legend>
+    <label><input type="checkbox" name="lesson-quiz-2" value="A" data-correct> <span>A. No intervening user import for your previously absent test user</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="B"> <span>B. Reuse an existing active session for all accounts</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="C" data-correct> <span>C. In-scope and excluded-OU accounts</span></label>
+    <label><input type="checkbox" name="lesson-quiz-2" value="D" data-correct> <span>D. A confirmed Staged account as a separate comparison</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A and C and D.</strong> These cases separate eligibility, activation, and creation.</p>
+    </details>
+    </fieldset>
+    </div>
+
+    <div>
+    <fieldset class="lesson-quiz-question">
+    <legend>3. Loading or refreshing an existing user in the Admin Console can also trigger an AD profile update when JIT is enabled. <small>(Choose one)</small></legend>
+    <label><input type="radio" name="lesson-quiz-3" value="A" data-correct> <span>A. True</span></label>
+    <label><input type="radio" name="lesson-quiz-3" value="B"> <span>B. False</span></label>
+    <button type="button" hidden>Check answer</button>
+    <p role="status"></p>
+    <details class="revision-answer">
+    <summary>Show answer and explanation</summary>
+    <p><strong>A.</strong> An observed refresh is not necessarily evidence of first-login creation. Record which action led to the update.</p>
+    </details>
+    </fieldset>
+    </div>
+
     ### Check your recall
 
     **Can first sign-in activate a staged user after an admin confirmed their AD import?**
@@ -74,8 +126,6 @@
     </details>
 
     ### Scenario and interview practice
-
-    Decide what you would do and what evidence would confirm it. Then open each answer.
 
     **Troubleshooting scenario.** Two new AD users have correct passwords. One is absent from Okta and in scope. The other already has a confirmed Staged record. With JIT enabled, predict the different outcomes.
 

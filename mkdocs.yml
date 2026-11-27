@@ -59,6 +59,7 @@ extra_css:
   - assets/stylesheets/luxury.css
   - assets/stylesheets/readability-v3.css
   - assets/stylesheets/lab-tiles.css
+  - assets/stylesheets/lesson-quiz.css
   - assets/stylesheets/manage-users-lab-grid.css
   - assets/stylesheets/course-sidebar.css
   - assets/stylesheets/course-term-help.css
@@ -68,6 +69,7 @@ extra_javascript:
   - assets/javascripts/group-rule-explorer.js
   - assets/javascripts/profile-mapping-explorer.js
   - assets/javascripts/directory-diagnosis-explorer.js
+  - assets/javascripts/lesson-quiz.js
 nav:
   - Course outline: index.md
   - Exam coverage: exam/coverage.md
