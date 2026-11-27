@@ -72,3 +72,21 @@
     <summary aria-label="Show answer to question 2">Show answer</summary>
     <p>Check dashboard visibility, the exact integration, and the user session. Check the sign-in policy and target account separately if launch fails.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A user was removed from the Finance group. The app is still in their Assignments tab and another group also grants it. Which change actually removes the assignment?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Trace every group and direct grant on the user and the app. Remove the additional path only if the user is no longer entitled to it. Verify the final Okta assignment and, where provisioning applies, the downstream account result.</p>
+    </details>
+
+    **Interview question.** The dashboard tile is missing, but a direct app URL works. What does that tell you and what evidence would you collect?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Check assignment and the integration's dashboard visibility or supported launch mode. The direct launch proves that path works for the tested user. Compare it with the expected tile configuration before changing access grants.</p>
+    </details>

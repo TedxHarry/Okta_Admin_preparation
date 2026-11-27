@@ -84,3 +84,21 @@
     <summary>Show answer</summary>
     <p>Confirmation creates or links the intended Okta user. Activation is a separate lifecycle step.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** An AD import proposes an existing account match, but the proposed record has a similar name and a different stable identity in your HR inventory. How do you handle it?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Leave the row unconfirmed and review the integration's matching rules, incoming identifiers, and existing Okta user ID. Repair the matching data or confirm a separate account only after verifying the source identity.</p>
+    </details>
+
+    **Interview question.** Your change ticket says an import succeeded. How do you prove it linked the intended existing user and did not create a second account?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Compare the proposed match with the intended user ID, then verify the confirmed record retains that ID and shows the right linked AD account. Search for duplicate login or source records. Verify activation independently if sign-in is part of the ticket.</p>
+    </details>

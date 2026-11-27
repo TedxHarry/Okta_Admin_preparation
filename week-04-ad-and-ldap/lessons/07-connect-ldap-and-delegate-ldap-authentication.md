@@ -72,3 +72,21 @@
     <summary>Show answer</summary>
     <p>Check the LDAP directory directly. The Okta self-service unlock can leave the directory account locked.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A full LDAP import sees an edited user, but incremental import misses it. What must you compare before changing the search base?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Check that the entry's modifyTimestamp changed and that the server supports the expected timestamp behavior. Compare the import cutoff, clock skew, and index or filter behavior. Since the full import sees it, first investigate change detection.</p>
+    </details>
+
+    **Interview question.** A team installed an LDAP Agent because a legacy app needs to bind to Okta. How would you correct the architecture?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Ask which system should accept the LDAP request. The LDAP Agent connects Okta to an external LDAP directory. For an application that needs to make supported LDAP requests against Okta, evaluate the LDAP Interface and test the actual client flow.</p>
+    </details>

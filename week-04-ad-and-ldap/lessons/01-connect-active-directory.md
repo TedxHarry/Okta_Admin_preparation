@@ -93,3 +93,21 @@
     <summary>Show answer</summary>
     <p>The agent initiates the outbound connection to Okta. It also has a separate AD network path.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** The agent was available yesterday. A newly selected test OU yields no users, but an older OU still imports. What do you investigate first?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Compare the integration's selected user OUs with the test account's actual location and the Windows runtime account's effective read permissions there. Use a known user in each OU as a control to distinguish scope from a general agent outage.</p>
+    </details>
+
+    **Interview question.** An installer wants domain-wide privileges for the permanent agent identity because initial registration failed. How do you diagnose what permission is missing?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Identify whether the failing step is Windows installation, registration to Okta, or a directory operation. Check the account used in that step and grant only the required scope. Validate a scoped read before separately testing any write requirements.</p>
+    </details>

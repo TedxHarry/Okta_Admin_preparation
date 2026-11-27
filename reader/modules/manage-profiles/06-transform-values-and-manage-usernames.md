@@ -102,3 +102,21 @@
     <summary aria-label="Show answer to question 4">Show answer</summary>
     <p>Use Convert.toInt in the inbound profile mapping to populate an integer field. Verify 12 on the saved Okta profile, then compare the integer field to the rule's threshold.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A username transform is correct for a typical email but two test people produce the same app username. What would you change before rollout?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Choose an input or disambiguation rule that remains unique for the receiving app. Test case folding, missing inputs, and collision examples. Check how an existing receiving account is linked before changing its username.</p>
+    </details>
+
+    **Interview question.** A name change should update the app username without renaming the user's Okta login. How do you verify this was configured at the right layer?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Check the app's username mapping or sign-in settings and its update behavior. Compare the Okta login and saved app username separately, then verify a fresh sign-in and the actual account at the receiver.</p>
+    </details>

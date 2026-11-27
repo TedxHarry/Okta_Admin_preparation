@@ -69,3 +69,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Trace both references, replace or remove them as intended, and verify the affected value and claim before removing the schema field.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** Two group assignments provide Support Queue values, and a user belongs to both. The app shows one queue. Where do you establish whether that is intended?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Inspect the app user schema and the applicable group assignment values. Check group priority and the setting for priority or combining values if the destination is an eligible array. Verify the actual saved app-user value.</p>
+    </details>
+
+    **Interview question.** A connector field is about to be renamed. What would you capture so you can tell whether import, provisioning, or federation broke?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Record the integration schema field, mappings in each direction, claim expressions, and one known test user's stored values. Test import, target write, and a fresh assertion separately after the change.</p>
+    </details>

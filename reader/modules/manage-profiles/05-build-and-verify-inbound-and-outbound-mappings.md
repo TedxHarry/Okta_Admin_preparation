@@ -76,3 +76,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Verify the saved app user value, the provisioning operation, and the actual value on the receiving account. A valid preview establishes mapping evaluation.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** Provisioning created a receiving account with Region East. After a transfer, the Okta user and mapping preview both show West. The app user record still shows East. Where is the first proven mismatch?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>The gap is between the evaluated mapping and the saved app-user field. Check timing such as create-only, whether the mapping was applied, and any assignment-level value. Then verify whether the connector writes the corrected app profile to the target.</p>
+    </details>
+
+    **Interview question.** How would you test an outbound mapping change when both existing assignments and new hires must receive it?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Use a newly assigned user and an existing assigned user. Compare source values, mapping output, saved app user fields, and actual receiving records. Include both creation and an update, and inspect connector results for each.</p>
+    </details>

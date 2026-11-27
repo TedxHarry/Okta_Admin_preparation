@@ -68,3 +68,21 @@
     <summary>Show answer</summary>
     <p>The separate push group maintains membership. The provisioning group controls the account assignment.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A newly onboarded user receives an AD account in the wrong OU, but the mapped display name is correct. Where do you look?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Check the provisioning group's directory target OU and the actual assignment used to create the user. Verify the selected instance and scoped rights. A successful attribute mapping does not determine object placement.</p>
+    </details>
+
+    **Interview question.** A member disappears from an imported source group but remains in a downstream target group. How would you find where the removal stopped?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Trace source sync into Okta first, then inspect the native rule or push-group membership, the push mapping and result, and the receiving group. Check whether another grant remains before changing the push configuration.</p>
+    </details>

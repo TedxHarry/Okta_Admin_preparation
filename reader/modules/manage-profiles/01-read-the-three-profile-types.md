@@ -67,3 +67,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Confirm the downstream account link, whether the connector can update that field, and whether the update ran successfully.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** HR says Jamie's Department is Finance, Okta People says Operations, and the app user record says Sales. Where do you start tracing the mismatch?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Start with the source value and then the inbound mapping and saved Okta user profile. After fixing the first wrong boundary, check outbound mapping and saved app user value. Verify the receiving application separately if it still differs.</p>
+    </details>
+
+    **Interview question.** A team says the group profile has the right value. They assume the value also exists on every member. How would you verify that claim?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Open the group schema and group record to confirm the field is group data, then inspect a member's Okta user profile and any applicable app assignment mapping. Membership alone does not copy a group attribute onto the user.</p>
+    </details>

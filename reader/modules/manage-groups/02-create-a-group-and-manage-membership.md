@@ -89,3 +89,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Check the rule's exception list. A manual removal can place that user in the list and keep the rule from adding them back.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A delegated administrator can open a group but sees no Assign people action. Another admin can add a member to a similarly named group. What do you compare?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Check the exact group, its source and whether its membership is writable in Okta. Then inspect the administrator's role and group scope. A similarly named native group does not prove the same permissions or ownership apply.</p>
+    </details>
+
+    **Interview question.** You must remove a member from one group without changing another group's access. How do you document the outcome?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Record the verified user and group IDs, confirm memberships before and after, and find the removal event for the exact group. If the request is about an app, separately verify the surviving assignment path.</p>
+    </details>

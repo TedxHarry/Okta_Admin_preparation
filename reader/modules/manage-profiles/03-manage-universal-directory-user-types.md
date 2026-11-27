@@ -79,3 +79,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Validation uses the default schema and rejects the field. Okta also documents that group rules do not execute for non-default types.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A transfer changes Jamie from Contractor to Employee. The new schema lacks Sponsor Reference and the second app expects it. What preflight would you run?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Inventory populated fields and dependencies, identify schema differences and any mapped or claimed Sponsor Reference values, then test the conversion on a disposable user. Capture needed values before conversion and verify affected mappings and app access afterward.</p>
+    </details>
+
+    **Interview question.** An app needs to distinguish contractors and employees. When would an attribute be easier to operate than a custom user type?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Use an attribute when the users need the same schema and you mainly need classification for mappings or supported group rules. Choose a custom type when a distinct schema is necessary, after testing rule and integration limitations for that type.</p>
+    </details>

@@ -93,3 +93,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Choose Combine values across groups on the app attribute and inspect the resulting app profile.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** Two assigned groups supply different Region values. Their order changes and the user remains in both. What can change and what should stay verified?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>A priority-based scalar can change to the higher-priority applicable group's value while the user remains assigned. Check the individual app user record, any applicable override, and the downstream value if provisioning updates it.</p>
+    </details>
+
+    **Interview question.** When would you combine group values instead of using group priority? How do you prove the result?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Combine when an eligible array should contain values from all applicable groups. Use priority when one group's value should win. Test an overlapping member and a single-group member and compare their saved app profiles.</p>
+    </details>

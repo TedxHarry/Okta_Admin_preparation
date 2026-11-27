@@ -75,3 +75,21 @@
     <summary aria-label="Show answer to question 2">Show answer</summary>
     <p>Verify the connector’s deprovisioning support and settings, then check the target account and session separately.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A former employee is Deactivated in Okta but a SaaS browser tab still works. What would you verify to establish containment?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Check whether the app assignment was removed and whether the connector completed deprovisioning. Verify the target account status and revoke app-side sessions using the app's supported controls if needed. An Okta status alone covers the Okta identity.</p>
+    </details>
+
+    **Interview question.** A returning employee was deactivated and reactivated. Some apps returned and one did not. How would you restore only approved access?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Compare retained group memberships and current rules with the old direct grants. Confirm the approved entitlement before restoring a direct grant. Verify the target account and a fresh sign-in to each authorized app.</p>
+    </details>

@@ -77,3 +77,21 @@
     <summary>Show answer</summary>
     <p>Reset Password and Write Property on pwdLastSet and lockoutTime, scoped to the relevant AD user objects.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A lab account resets its password through Okta, but an account in a protected AD group cannot. Both can authenticate. What would you inspect before expanding privileges?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Compare effective permissions on the two actual accounts and check whether protection prevents inherited OU permissions. Review the approved recovery path for the protected account. A working delegated bind or successful reset for one user does not establish effective reset rights everywhere.</p>
+    </details>
+
+    **Interview question.** A user completed recovery verification but cannot set the proposed password. How do you tell a policy rejection from a failed write?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Check the effective AD password requirements and test an approved compliant value. Compare the recovery and agent outcomes, then verify the runtime account's rights on the target user if a compliant write is still rejected.</p>
+    </details>

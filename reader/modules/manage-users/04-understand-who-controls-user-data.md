@@ -98,3 +98,21 @@
     <summary aria-label="Show answer to question 2">Show answer</summary>
     <p>Verify the exact user and direction, then check whether the mapping was saved, updates applied, and any required import completed.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A user's cost center repeatedly returns to Finance after you edit it in Okta. Their other fields retain your edits. How do you find the writer?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Inspect the field's Source priority and the sources linked to that user. Then check the relevant inbound mapping and import or System Log timing. Correct the value upstream or use an approved field-level sourcing change.</p>
+    </details>
+
+    **Interview question.** HR should own Department, but the help desk should maintain a local support label. How would you design and prove that split?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Keep Department mapped from HR and configure the support field to inherit from Okta where supported. Change both values in a test record, run the next HR sync, then confirm Department follows HR while the local label persists.</p>
+    </details>

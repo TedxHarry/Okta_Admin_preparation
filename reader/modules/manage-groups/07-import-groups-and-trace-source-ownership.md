@@ -84,3 +84,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>During the next scheduled or manual import, once dependencies have been resolved and Okta accepts the setting change.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** The source shows a child group membership. The in-scope parent imports, but the user is missing from the Okta view of the parent. What two boundaries do you check?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Check the user's import scope and the group scope for both parent and child, then compare actual AD nesting and the import mode. A visible parent record does not establish that every nested membership was imported.</p>
+    </details>
+
+    **Interview question.** An imported app group is no longer needed. Your colleague plans to disable all group import immediately. What would you review first?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Check which group grants, mappings, and policies rely on imported groups and identify who owns the source. Confirm the intended scope and verify the result after the next applicable import. Disabling the integration setting affects more than one group.</p>
+    </details>

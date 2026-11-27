@@ -93,3 +93,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Confirm Department on the user's Okta profile. If it is sourced upstream, verify that the source change and mapping have reached Okta before diagnosing the rule.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A Basic rule says the user must be in any of East or West and have Department Finance. It targets Reports and Expenses. Predict the outcome for East-only Finance, West-only Operations, and Finance users in neither group.
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>The East-only Finance user meets the group test and the department test, so the rule targets both groups. The other two each fail one required condition. Preview one case for each condition before activating.</p>
+    </details>
+
+    **Interview question.** You inherit a Basic group rule tied to an app. What test proves its scope before a change goes live?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Read the actual condition and target groups. Preview qualifying and nonqualifying users, including single-source-group cases, and inspect exceptions. After an approved activation, verify the saved memberships and app assignment on the test cohort.</p>
+    </details>

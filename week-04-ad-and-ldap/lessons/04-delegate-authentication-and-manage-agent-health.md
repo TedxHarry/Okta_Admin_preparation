@@ -67,3 +67,21 @@
     <summary>Show answer</summary>
     <p>Agent time includes domain-controller time. The domain-controller field reports time at that controller.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A failover exercise reports success because an existing browser tab stayed open when one agent stopped. How would you test failover properly?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Use a fresh session and perform a delegated password sign-in with the first agent stopped and another agent available. Verify the fresh attempt and collect available agent evidence. Restore the stopped agent and verify health.</p>
+    </details>
+
+    **Interview question.** All agents appear available but only users from one directory instance fail. What would you isolate first?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Check the affected users' links and specific instance, test delegated authentication with a known user there, and check the relevant agents and AD connectivity. Compare a working instance to separate a directory-specific failure from an Okta-wide policy problem.</p>
+    </details>

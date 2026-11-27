@@ -107,3 +107,21 @@
     <summary aria-label="Show answer to question 2">Show answer</summary>
     <p>No. Check the user's import and activation state and use the appropriate activation workflow.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** An import proposes five matches and one same-name record with a different username. You have never seen this integration's matching rules. What do you do with the sixth record?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Review its configured matching fields, unique identifiers, and source record before confirming anything for that row. Resolve the ambiguity before choosing the existing account or a new one. A false match can attach the wrong source to an existing identity.</p>
+    </details>
+
+    **Interview question.** An HR feed shrinks after its search filter changes. The import safeguard stops processing. What would you do before allowing the job to continue?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Compare the source population and connector filter with the last good run. Reconcile the proposed unassignments against approved changes, restore a bad filter, and rerun. Only approve verified removals. A stopped import is a signal to investigate scope.</p>
+    </details>

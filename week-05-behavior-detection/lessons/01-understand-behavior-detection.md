@@ -52,3 +52,21 @@
     ??? question "3. Where do you make Okta Verify required for a test group?"
 
         In the authenticator enrollment policy that applies to the group. Confirm the org has already configured the authenticator and the test user's group matches the policy.
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A push dispatch event appears and the user signs in after typing a six-digit code. Did the test prove that Push worked?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>It proved dispatch and code verification if those are the matching records. Repeat the test by selecting Push, approve the new request on the intended phone account, and correlate the successful verification event that reports push.</p>
+    </details>
+
+    **Interview question.** An enrolled mobile user sees Push in one app and only FastPass in another. Where would you look?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Compare the applicable app sign-in rules and their eligible methods, then check the global session requirements and the user's enrollment. A shared enrollment can satisfy different rules using different verification methods.</p>
+    </details>

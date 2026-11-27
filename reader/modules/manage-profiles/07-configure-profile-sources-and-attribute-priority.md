@@ -64,3 +64,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Verify that the import linked to the correct Okta user and updated that user’s stored Department. Then inspect the active rule and its exceptions.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** HR supplies a blank Department, and a directory below HR has a value. The field should stay blank unless a separate business rule permits a directory fallback. What would you inspect?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Read the field's Source priority, applicable source order, and any configured fallback expression. Verify the stored results for an HR blank and for an HR populated record. Inherited sourcing does not mean Okta automatically takes the first nonempty value from any source.</p>
+    </details>
+
+    **Interview question.** A team wants one AD field to override HR for only one use case. What would you check before recommending an attribute override?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Confirm the population and authoritative value, the field's applicability, and the effect on all consumers of the Okta field. Test a user with both sources and one without the alternate source. Verify lifecycle sourcing independently.</p>
+    </details>

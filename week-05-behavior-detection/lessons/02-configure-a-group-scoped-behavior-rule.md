@@ -87,3 +87,21 @@
     ??? question "3. What changes if you replace OR with AND in the behavior expression?"
 
         Both named conditions have to satisfy the expression for AND. Either condition can satisfy OR.
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** Your rule combines New Device OR New IP and scopes it to the pilot group. One pilot has only New IP true. A control has both true. What happens, assuming no earlier match?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>The pilot satisfies the expression and membership condition. The control satisfies the expression but fails the group condition. Confirm the selected rule for each in System Log and keep both users assigned to the target.</p>
+    </details>
+
+    **Interview question.** An interviewer asks how you would test AND versus OR without relying on prompts. What would you use?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Hold the group and app constant, run a case where one named behavior matches and the other does not, and compare the actual behavior statuses and selected rules. Include a both-match case and account for the separate session policy.</p>
+    </details>

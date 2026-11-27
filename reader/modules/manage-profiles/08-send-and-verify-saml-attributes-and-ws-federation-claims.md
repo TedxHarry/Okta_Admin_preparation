@@ -75,3 +75,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>ReplyTo URL. Verify the Realm and Audience Restriction separately against the receiver configuration.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A new SAML claim is correct in the actual assertion, but the app maps the user to the wrong local account. Which field would you inspect alongside the new claim?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Inspect NameID and the service provider's account-matching configuration alongside the actual attribute name and value. A correct claim can coexist with the wrong account match at the receiver.</p>
+    </details>
+
+    **Interview question.** The tenant uses SAML for one app and WS-Federation for another. How do you verify a similar claim change in both?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Capture a fresh test assertion or token with authorized tools, check the expected attribute or claim name and value, and confirm it reached the intended receiver and identity. Validate the receiving app's claim mapping separately.</p>
+    </details>

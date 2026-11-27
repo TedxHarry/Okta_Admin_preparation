@@ -74,3 +74,21 @@
     <summary>Show answer</summary>
     <p>Check the integration's reactivation setting, the Okta user status, fresh sign-in, and any app assignments and downstream accounts the user needs.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** An enabled AD user was moved outside the selected OU and can no longer start a fresh Okta sign-in with JIT enabled. People still shows Active. Is that evidence of a broken integration?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>The sign-in path can reject a user who is out of JIT scope before account-state reconciliation. Check the actual OU, JIT configuration, and last import mode. An incremental import does not detect the scope removal for deactivation. Verify the full-import result and applicable lifecycle policy.</p>
+    </details>
+
+    **Interview question.** HR remains the primary profile source and AD supplies one field. Who controls Okta lifecycle, and how would you prove the answer in a lab?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Verify primary source order for the linked user and configured source lifecycle actions. Compare a field change from AD with a separately approved source lifecycle change on a disposable account. The attribute override grants field authority only.</p>
+    </details>

@@ -108,3 +108,21 @@
     <summary aria-label="Show answer to question 2">Show answer</summary>
     <p>Check the app assignment, its assigned groups, and the user’s group memberships. If assigned, check dashboard visibility and app sign-in requirements.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** Two records share a display name. A ticket gives the old primary email and a recent failed sign-in. How would you identify the account before changing anything?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Find candidates by exact login and compare the user IDs and alternate identifiers in the recent System Log events. Cross-check the intended person's current login and primary email. An email change can make an old ticket look like a different person. Act on the verified user ID.</p>
+    </details>
+
+    **Interview question.** A user appears Active in People but says a colleague with the same name can open the app. Walk me through your first three checks.
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Confirm the failing user's ID and exact login, verify a fresh Okta sign-in, then inspect the actual app assignment path and app policy result. This separates account identity, Okta authentication, and application access.</p>
+    </details>

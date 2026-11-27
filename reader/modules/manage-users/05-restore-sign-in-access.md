@@ -101,3 +101,21 @@
     <summary aria-label="Show answer to question 2">Show answer</summary>
     <p>Find the relevant authenticator verification event and inspect factor or factorType in the event details.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** An Okta unlock succeeded. A new password attempt still fails and the log points to delegated authentication. What do you check before resetting factors?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Identify whether the directory account is still locked or its password expired. Check the directory state and the failed delegated event. If password proof later succeeds and the user cannot complete another factor, investigate that enrollment separately.</p>
+    </details>
+
+    **Interview question.** A user reports an unexpected Push prompt and asks you to reset their phone enrollment. How do you handle the ticket?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Verify the identity through the approved recovery process, inspect recent sign-ins and factor activity, and follow the incident procedure if the attempts are suspicious. Reset only the intended enrollment when authorized, then verify fresh enrollment and a known test sign-in.</p>
+    </details>

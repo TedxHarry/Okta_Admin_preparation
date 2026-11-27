@@ -56,3 +56,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Compare the current destination value with the intended value. Stop the run before Update User when they match.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A support note says every screen is green. The user still has the wrong cost center. You have import, mapping preview, and provisioning timestamps. How do you isolate the stale stage?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Compare all timestamps for the same user and integration, then inspect persisted values after each boundary in order. The first stage with the prior value establishes where to look. A later success can refer to a different operation or account.</p>
+    </details>
+
+    **Interview question.** A workflow normalizes Department on every update and creates repeated events. What verification would you require before re-enabling it?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Check the trigger and add a comparison so the workflow writes only when the desired value differs. Test a changed input and a no-op input, and confirm the resulting update does not create another write.</p>
+    </details>

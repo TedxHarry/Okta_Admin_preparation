@@ -48,3 +48,21 @@
     ??? question "3. Why does the control user need access to the same test app?"
 
         Otherwise app assignment can stop the request before the comparison proves whether group membership controls the rule.
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** The log records a positive device result, an app-policy CHALLENGE, and a push dispatch. What is still missing from the conclusion that mobile Push succeeded?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Find the correlated successful authentication event identifying push. Use actor, time, and transaction or session identifiers where available. The challenge and dispatch establish earlier steps only.</p>
+    </details>
+
+    **Interview question.** A teammate opened the dashboard from a new profile before launching the target app. The target then logged NEGATIVE. How would you design a better comparison?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Start a new unfamiliar browser profile at the target's own entry point, keep the app and network fixed, and compare it against a fresh attempt in a known regular profile. Use the named behavior and recorded rule to compare the outcomes.</p>
+    </details>

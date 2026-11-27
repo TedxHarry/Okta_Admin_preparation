@@ -86,3 +86,21 @@
     <summary aria-label="Show answer to question 4">Show answer</summary>
     <p>The field override changes who supplies Department. The highest-priority profile source for the user controls the sourced deactivation or suspension decision.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A mover's new Department is correct in Okta and their new app is provisioned. The old app is still granted. What are the next two records to inspect?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Check the old rule-managed group and the old app's assignment paths. If a direct or second group grant remains, establish whether it is authorized. After the final grant is removed, verify downstream deprovisioning where supported.</p>
+    </details>
+
+    **Interview question.** You need a change review for HR-driven joiners and leavers. What evidence would you ask an engineer to produce?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Trace a test joiner from source import through saved attributes, group, app assignment, and target account. Trace a leaver through the configured source lifecycle action, Okta state, assignment result, and receiving account and sessions. Include one case where a separate grant changes the outcome.</p>
+    </details>

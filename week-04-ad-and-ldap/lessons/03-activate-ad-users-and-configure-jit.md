@@ -72,3 +72,21 @@
     <summary>Show answer</summary>
     <p>Okta documents a refresh when an administrator loads or refreshes that profile in the Admin Console.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** Two new AD users have correct passwords. One is absent from Okta and in scope. The other already has a confirmed Staged record. With JIT enabled, predict the different outcomes.
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>The in-scope, previously absent user can be created through eligible first sign-in with delegated authentication. A confirmed Staged user needs activation. Check the saved account and linked source after each attempt.</p>
+    </details>
+
+    **Interview question.** A team says its first-login creation test passed, but a scheduled import ran just before it. How would you make the retest conclusive?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Create a brand-new in-scope AD test user after the last import, prevent intervening user imports in the lab, verify the user is absent, then start a fresh sign-in. Confirm the new linked record and related events.</p>
+    </details>

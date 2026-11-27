@@ -87,3 +87,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>No. The types share a namespace for that unique attribute name.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A presence search returns a user whose Staff Reference looks blank. Another record with a visually blank value is absent. Why might both results be correct?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>The first record might store an empty string, while the second value is unset or null. Inspect the actual stored values and test both cases when building a presence filter or fallback expression.</p>
+    </details>
+
+    **Interview question.** A source team wants Staff Reference required and unique next week. What records would you test before tightening the schema?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Find duplicate and missing values across relevant user types. Include leading zeros and an intentionally blank string. Decide how to remediate them upstream and verify allowed values and permissions on test records before changing the constraint.</p>
+    </details>

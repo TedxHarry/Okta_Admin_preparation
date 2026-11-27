@@ -76,3 +76,21 @@
     <summary>Show answer</summary>
     <p>The separate AD Password Sync Agent installed on the integrated domain controllers. The standard AD integration agent handles operations such as imports and delegated authentication.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** After an agent update, imports fail, but delegated sign-in works. What baseline would you capture before rolling back?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Compare affected instances, agent versions, the last good import, failing job messages, and agent logs. Test a small known import and verify directory read scope and agent connectivity. Sign-in is useful evidence for a separate operation.</p>
+    </details>
+
+    **Interview question.** How do you validate a maintenance change for a directory integration that handles imports, sign-in, and writes?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Exercise each required path with test records before and after the change. Record agent availability, one fresh delegated authentication, a scoped import, and a scoped write where enabled. Compare the same objects and operation results.</p>
+    </details>

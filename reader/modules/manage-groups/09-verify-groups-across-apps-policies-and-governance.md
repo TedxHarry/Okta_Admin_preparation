@@ -74,3 +74,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Trace the active request condition to the group’s ID. Inspect that group’s app or role assignments and verify the user’s actual membership.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A group member has app assignment and a registered device, but gets a different authentication rule from a peer. What evidence would resolve the discrepancy?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Compare the actual app policy, rule order, group membership, device assurance result, and each policy-evaluation event. Registration and device posture are different checks. Use the recorded rule to decide which condition needs investigation.</p>
+    </details>
+
+    **Interview question.** A reviewer approved a friendly group label. How would you prove the intended entitlement reached the user?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Identify the exact group referenced by the request configuration. Verify the approved user was granted that group and trace the app assignment and relevant downstream evidence. A display label alone does not identify the entitlement.</p>
+    </details>

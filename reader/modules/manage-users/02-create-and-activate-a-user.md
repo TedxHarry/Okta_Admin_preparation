@@ -94,3 +94,21 @@
     <summary aria-label="Show answer to question 2">Show answer</summary>
     <p>Yes. Check whether the administrator required a change when setting the initial password.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** An activation email was sent yesterday. Today the user is still Pending user action. A second user is Staged. Would you give both the same instructions?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>For Pending user action, check delivery and whether the user completed the existing activation flow. For Staged, initiate activation from the user record. Recheck the state and test a fresh sign-in before closing either request.</p>
+    </details>
+
+    **Interview question.** A bulk onboarding request requires accounts to exist Friday but sign-in to begin Monday. How would you stage and verify the handoff?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Create the intended users without activating, verify the Staged state and scope, then activate only the approved population on Monday. Verify a completed first sign-in and distinguish the users still waiting to complete setup.</p>
+    </details>

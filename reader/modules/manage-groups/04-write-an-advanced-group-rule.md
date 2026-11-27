@@ -130,3 +130,21 @@
     <summary aria-label="Show answer to question 4">Show answer</summary>
     <p>It only matches when the array contains the exact element SEC-101. The longer code is a different value.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** Finance is required for users in East or West. An expression uses East OR (West AND Finance). Give a test case that exposes the error and the corrected grouping.
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>A user in East who is outside Finance qualifies with the flawed expression. Use (East OR West) AND Finance. Preview that same user plus Finance users in East only and West only.</p>
+    </details>
+
+    **Interview question.** An optional training-code list contains SEC-101-ADV and sometimes is unset. How would you test a rule intended for exact SEC-101 certification?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Use an exact array membership test and account for an empty or null array. Test exact SEC-101, suffixed SEC-101-ADV, a different code, and no list. Verify the saved Okta profile values before judging the expression.</p>
+    </details>

@@ -83,3 +83,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Check the app's Assignments tab for the group and for Jordan. If assigned, confirm the correct dashboard session and check app tile visibility.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** Two groups named Finance have different sources. The user belongs to both. Which one is contributing an app grant?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>On the app's Assignments tab, identify the exact assigned group. Compare the group ID and source with the user's memberships. Edit the authoritative membership only after identifying the group that actually contributes the grant.</p>
+    </details>
+
+    **Interview question.** A developer proposes keying an integration on the display name of every group. What would you use instead and why?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Use the stable identifier for the group in the relevant org, and retain its source when reconciling imported objects. Duplicate names and renames make display names unreliable identity keys.</p>
+    </details>

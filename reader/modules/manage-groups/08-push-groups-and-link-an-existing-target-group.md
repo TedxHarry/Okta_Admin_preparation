@@ -90,3 +90,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Choose Unlink pushed group and Leave the group in the target app. Confirm the group remains and that later Okta membership changes stop syncing.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A downstream user exists and can sign in. They lack a target team membership. Both the app and the target team are visible in Okta. Which evidence do you need?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Check the separate push group's membership, its active mapping to the exact target group, and the push outcome. Verify that account's target team membership. User provisioning and app assignment establish different results.</p>
+    </details>
+
+    **Interview question.** You must end a user's application access and remove their managed target-team membership. In what order would you act?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Remove them from the push group first and verify the receiving membership is gone. Then remove their app assignment if approved and verify the downstream user lifecycle result. The target account should remain available while the membership removal is being processed.</p>
+    </details>

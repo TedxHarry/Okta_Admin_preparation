@@ -88,3 +88,21 @@
     <summary aria-label="Show answer to question 3">Show answer</summary>
     <p>Find the group.user_membership.add event for the user and group. Inspect triggeredByGroupRuleId in Debug Data.</p>
     </details>
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A rule is deactivated for editing. Existing app users still have access, and a newly qualifying user has no grant. Explain both observations and the next check.
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Deactivation pauses evaluation and preserves memberships already assigned by the rule. Edit, preview, save, and reactivate when authorized. Compare the new user's target membership and the app grant after processing.</p>
+    </details>
+
+    **Interview question.** Preview says a user qualifies, but they never join the target. What would you check before editing the condition?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Check active state, correct target, user eligibility, and the exception list. Review membership and rule events. If another operator removed the user and created an exception, resolve the exception deliberately before changing the expression.</p>
+    </details>

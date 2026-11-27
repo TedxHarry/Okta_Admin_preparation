@@ -47,3 +47,21 @@
     ??? question "3. What do you inspect before editing the fallback?"
 
         Verify the policy's app associations, rule order, and existing access and authentication settings.
+
+    ### Scenario and interview practice
+
+    Decide what you would do and what evidence would confirm it. Then open each answer.
+
+    **Troubleshooting scenario.** A pilot app and a production app share the same policy. The pilot requires you to set a password-only fallback. What change avoids applying it to both?
+
+    <details class="revision-answer">
+    <summary aria-label="Show troubleshooting scenario answer">Show answer</summary>
+    <p>Use a dedicated policy for the eligible pilot app and verify its application association before editing. Record the original association and rule settings for rollback. Verify the actual fallback on the pilot and confirm the production app retains its intended policy.</p>
+    </details>
+
+    **Interview question.** A log shows Catch-All on a familiar browser, but the user still completes MFA. How do you explain the evidence to a teammate?
+
+    <details class="revision-answer">
+    <summary aria-label="Show interview question answer">Show answer</summary>
+    <p>Identify the app rule and the global session rule in the relevant evaluations. The app rule can require password while the session layer or enrollment asks for an additional step. Check the recorded verification method for that sign-in.</p>
+    </details>
