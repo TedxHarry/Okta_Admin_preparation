@@ -43,6 +43,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Enrolled, prompted, and verified are three different states**
+
+    The pilot can see the mobile account in Okta Verify. The Dashboard allows a code. A second app requires FastPass. A Push dispatch appears in the log from an earlier attempt.
+
+    1. Which changes determine whether the pilot can see Push on the second app?
+    2. How would you test mobile Push from a fresh browser?
+    3. What evidence closes the test?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Check the configured Okta Verify methods and the applicable app rule&#x27;s method requirements. The enrollment policy governs setup. Changing its required status alone does not change the app&#x27;s allowed proof.</li>
+    <li>Use the intended test account in a fresh attempt with a rule that allows Push. Select Push and approve the request on the same enrolled phone. The test browser supplies the sign-in context.</li>
+    <li>Correlate the verification success identifying push with the same account, time and available session or transaction data. Evidence from a code or a dispatch alone answers a different question.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

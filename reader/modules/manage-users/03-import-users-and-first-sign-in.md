@@ -94,6 +94,31 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Three ways in, one unexpected import**
+
+    HR gives you a CSV for native accounts. An app owner gives you a second CSV for an integration's import workflow. An employee is expected to enter Okta on first delegated AD sign-in.
+
+    1. Which entry path fits each request?
+    2. The app import proposes a link to an account with the same name but an inconsistent identifier. What do you do?
+    3. An unrelated source filter change also produces a large unassignment proposal. What makes it safe to resume?
+    4. The roster owner leaves Department blank for an existing employee and expects the next People CSV import to erase it. What will you tell them?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Use the People import for roster-based native users. Use the integration&#x27;s Import workflow for supported app account matching and assignments. For the AD user, verify JIT, delegated authentication, and selected OU eligibility before testing a previously absent record.</li>
+    <li>Hold the proposed row, compare configured matching fields and durable identifiers, and confirm only the verified existing match or a verified new record. Check activation separately.</li>
+    <li>Compare old and new scope with the approved roster and review the affected identities. Restore an erroneous filter and rerun. Approve only removals you can reconcile with expected changes.</li>
+    <li>A blank CSV cell leaves the existing value in place. Verify the supported clear operation for the account and its source, then check the persisted value. <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-import-users-csv.htm">Okta · Import users from a CSV file</a></li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

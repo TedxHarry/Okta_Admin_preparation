@@ -57,6 +57,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A correct assertion with a wrong account**
+
+    An actual assertion contains the intended CostCenter. The SAML receiver opens a different local account. A second app uses WS-Federation and its token goes to the wrong endpoint.
+
+    1. Which SAML evidence takes priority?
+    2. Which setting is relevant for the WS-Federation endpoint issue?
+    3. How would you check whether either claim was also written into the local account store?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Check the actual NameID and receiver account matching before changing CostCenter. Verify the audience, attributes, and receiver behavior on the intended account.</li>
+    <li>Check ReplyTo against the receiving endpoint. Verify Realm and audience independently and inspect the fresh token or receiver evidence.</li>
+    <li>Inspect receiving persisted values and the relevant provisioning operation where configured. A transmitted claim is evidence about sign-in.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

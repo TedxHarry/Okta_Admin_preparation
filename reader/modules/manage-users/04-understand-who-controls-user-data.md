@@ -85,6 +85,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **The profile changed, the owner did not**
+
+    HR owns the user profile. A connected AD directory owns Department through an attribute override. A local support label should stay editable in Okta. The AD account is disabled.
+
+    1. Which system controls each data path?
+    2. Does the override let AD send a lifecycle decision for this user?
+    3. What three observations verify the intended split after a sync?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Verify the primary source for overall ownership, Department&#x27;s override and AD-to-Okta mapping for that field, and an Okta-sourced setting for the local label where available.</li>
+    <li>The override assigns authority to supply Department. Check the applicable primary profile source and its lifecycle configuration before concluding that the AD disable should change Okta&#x27;s status.</li>
+    <li>Read the changed upstream Department, the persisted Okta Department and local label, and the effective Okta user state. Check the AD credential path separately if it is used.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

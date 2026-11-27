@@ -95,6 +95,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **The wrong record in the ticket**
+
+    People contains two records for Riley. ID 71 was renamed yesterday and is Active. ID 82 is Pending user action. The failed app event names ID 71, while the help desk searched by ID 82's email.
+
+    1. What establishes which record you should investigate?
+    2. What does Active establish, and what still needs evidence?
+    3. If ID 71 is assigned and the policy succeeds, but the receiver opens the wrong account, where do you look?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>The actor ID from the failed attempt identifies the affected Okta account. Verify the user&#x27;s current login and email on ID 71 before changing anything. The email lookup returned a different record.</li>
+    <li>Active describes ID 71&#x27;s Okta lifecycle state. Verify fresh Okta authentication, the app assignment path, the app policy decision, and access at the receiver as separate observations.</li>
+    <li>Compare the app username or federation identity with the intended receiving account. An activation action on ID 82 would leave this failure untouched.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

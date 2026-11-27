@@ -52,6 +52,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Three first attempts, one positive result**
+
+    User A is in scope and never imported. User B is in scope with a confirmed Staged record. User C is outside the selected OUs. JIT and delegated authentication are enabled.
+
+    1. Predict the first-sign-in behavior for A, B, and C.
+    2. How would you prove that A really came through JIT?
+    3. What if the record exists but an app still fails?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>A can be created on eligible first sign-in. B requires activation. C should not get a new JIT account through an out-of-scope attempt under this setup.</li>
+    <li>Verify A does not exist in Okta just before the attempt and no intervening user import occurs. Sign in from a fresh session and inspect the new linked record and matching events.</li>
+    <li>Check identity state, app assignment, and policy proof. JIT creation establishes the account, while the app still needs its own conditions and grants.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

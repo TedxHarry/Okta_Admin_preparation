@@ -63,6 +63,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Joiner, mover, leaver on one timeline**
+
+    Workday creates a Finance worker. A transfer to Sales leaves the old app assigned through a direct grant. The HR termination action is set to Suspend.
+
+    1. Which records show the joiner reached the target?
+    2. Why can the old app survive the transfer?
+    3. What does Suspend establish after HR termination?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Check linked worker import, persisted Okta fields, intended rule-managed group and app assignment, connector results, and the receiving account.</li>
+    <li>The direct grant independently keeps the assignment. Confirm its current approval status before an authorized removal and check downstream behavior after the final grant ends.</li>
+    <li>Verify Okta suspension and blocked fresh sign-in. Assignments remain. Inspect receiving account and app sessions for separately required offboarding.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

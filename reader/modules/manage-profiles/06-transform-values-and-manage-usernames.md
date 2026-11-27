@@ -77,6 +77,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A rename creates a collision**
+
+    A transform lowercases names to build app usernames. Two distinct source values produce the same output and one linked receiver already exists. A group rule also uses a converted numeric field.
+
+    1. Which problems need independent fixes?
+    2. What identifiers should remain stable during an app rename?
+    3. Which inputs are mandatory in the retest?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Choose a collision-resistant app username and establish receiver linkage before change. Verify the expression editor and source object for the group field, and persist the supported type for that rule.</li>
+    <li>Verify the Okta user ID and intended login, the app username, and the receiving account identifier separately. Confirm the update changed the intended account without creating another.</li>
+    <li>A valid standard value, equivalent normalized values that collide, a missing source input, and a rename of a linked account. Check the computed and stored outcomes.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

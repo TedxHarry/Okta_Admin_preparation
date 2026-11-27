@@ -58,6 +58,31 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A creation mapping passes, an update fails**
+
+    A new user was created in an app with Region East. Okta now shows West and Preview returns West. Existing app user still says East. A newly assigned test user shows West.
+
+    1. What would produce this pattern?
+    2. Which observation comes before chasing a connector write?
+    3. What is a complete retest?
+    4. The new West value is written to the receiver, but the next import changes the Okta value back to East. Which evidence now takes priority?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Check create-only mapping timing on Region and applicable assignment overrides. A valid expression can give different results at creation and update boundaries.</li>
+    <li>Verify West has persisted on the intended existing app-user record. If it has not, inspect the mapping timing, effective input, and assignment first.</li>
+    <li>Check a new assignment and a changed existing assignment. Verify saved app-user values, operation results, and the actual receiving records.</li>
+    <li>Compare the last processed inbound operation with the exact linked source record, effective attribute source, and inbound map. When both directions are enabled, a successful outbound write alone does not establish the intended authority or final state. <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-about-profile-sourcing.htm">Okta · Profile sourcing</a></li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

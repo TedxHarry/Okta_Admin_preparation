@@ -56,6 +56,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Maintenance checks disagree**
+
+    After an update, heartbeat is healthy and delegated sign-in works. An incremental import fails and a scoped write returns an access error.
+
+    1. Which evidence do you gather before rolling back the agent?
+    2. Do the import and write errors prove the same cause?
+    3. Which result would justify calling the change fully validated?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Compare agent version, last good operation, instance and timestamps, then review logs for each failing path. Record a small test import, a fresh delegated sign-in, and a scoped write with target verification.</li>
+    <li>Treat them as separate until logs link them. Check import query and scope for the read. Check effective service permissions, target object and operation for the write.</li>
+    <li>Compare before and after evidence for every enabled path affected by the work. One healthy heartbeat or successful user sign-in covers only its own operation.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

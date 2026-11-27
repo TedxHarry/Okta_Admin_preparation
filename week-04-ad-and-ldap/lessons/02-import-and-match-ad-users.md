@@ -64,6 +64,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **One source change, two import modes**
+
+    An existing AD account has a mapped field update. Another enabled user has been moved beyond selected OUs. A third import row has a plausible but uncertain existing match.
+
+    1. Which import evidence distinguishes the first two cases?
+    2. When is it safe to confirm the third row?
+    3. What do you record after a confirmed match?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>A supported incremental import can pick up a change within scope. A full import can reconcile the missing in-scope account. Check the resulting lifecycle action for the moved account.</li>
+    <li>Only after verifying the source ID and intended Okta identity under the configured matching rules. Leave an ambiguous row unconfirmed while you investigate.</li>
+    <li>Verify retained Okta ID and correct source link, saved values, and no duplicate. Verify activation separately if sign-in access is required.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

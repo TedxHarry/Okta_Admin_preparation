@@ -73,6 +73,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Priority change without assignment removal**
+
+    Two groups assign Travel. Group East and Group West supply different scalar Region values. The app has an eligible multivalue Queue attribute, and one user also has an individual assignment.
+
+    1. What changes for a purely group-assigned member of both if West becomes highest priority?
+    2. How do you validate Queue with combining enabled?
+    3. Can you predict the individual user's fields solely from group order?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>A priority-based Region can take West&#x27;s value. The user remains assigned through applicable groups. Verify the stored app user record and downstream value where written.</li>
+    <li>Compare a single-group user with a member of both. Check the group-derived Queue values and the saved app-user array under both combine and priority settings.</li>
+    <li>Inspect the actual assignment type and individual overrides. Test effective saved values and confirm whether the receiving account was updated.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

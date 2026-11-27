@@ -47,6 +47,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Failover evidence from two attempts**
+
+    With one agent stopped, an existing app tab still works. A new delegated credential test succeeds. A fresh application sign-in then fails at a policy step.
+
+    1. Which observation exercises the directory route?
+    2. What is the next troubleshooting step for the failed sign-in?
+    3. What verifies end-to-end failover and recovery?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>The fresh delegated credential test exercises password validation. The existing app tab may reuse an established session and provides little evidence about fresh requests.</li>
+    <li>Inspect the matching Okta user and policy events to see which check blocked the attempt. Directory validation success and app access are separate results.</li>
+    <li>With the approved agent stop in place, complete a fresh delegated sign-in and record relevant agent or event evidence. Restart the stopped agent and confirm health and another fresh test.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

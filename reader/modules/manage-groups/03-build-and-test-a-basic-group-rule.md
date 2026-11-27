@@ -73,6 +73,31 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Qualify once, grant two targets**
+
+    A rule requires Department Finance and membership in any of A or B. It targets Reports and Expenses. Four users are Finance/A only, Finance/B only, Finance/neither, and Operations/both.
+
+    1. Predict the two target memberships for all four users.
+    2. What checks precede activation if Reports already assigns a live app?
+    3. One qualifying user misses both targets after rollout. What could still explain it?
+    4. You narrow the rule and expect an import safeguard to stop a large app-membership drop. Is that a sound rollout plan?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>The first two qualify for both targets. The third fails membership and the fourth fails Department. The target list describes where the rule adds a match.</li>
+    <li>Preview all four cases, check exclusions and the actual target IDs, and review the app impact. Use isolated targets for experimentation and approved scope for rollout.</li>
+    <li>Inspect rule state and processing, user eligibility and exclusions, and the persisted Okta Department and source memberships. Then verify both actual targets after the fix.</li>
+    <li>Okta documents that a group rule lowering app membership does not trigger the import safeguards. Preview known users, review intended membership changes and app grants, and monitor the approved rollout. <a href="https://help.okta.com/oie/en-us/content/topics/users-groups-profiles/usgp-group-rules-best.htm">Okta · Group rules best practices</a></li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

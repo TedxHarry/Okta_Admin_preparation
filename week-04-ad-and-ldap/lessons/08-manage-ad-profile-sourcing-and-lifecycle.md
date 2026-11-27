@@ -54,6 +54,31 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Disable, move, and delete have different evidence**
+
+    Three users are AD-sourced. The first is disabled in scope, the second remains enabled but moves to an excluded OU, and the third is deleted at the source.
+
+    1. Which actions change the directory credential path immediately?
+    2. Why can the Okta account state lag behind the source change?
+    3. What evidence closes restoration for the first user?
+    4. With JIT enabled, the second user is still Active in Okta after an out-of-scope sign-in attempt. Can both observations be right?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Disabled and deleted accounts cannot validate through that AD account. For the enabled out-of-scope user, test the JIT eligibility separately from the underlying AD credential state.</li>
+    <li>It depends on the change being recognized, the import mode and scope, and the applicable profile-source lifecycle action. Compare a fresh sign-in and full import evidence for deletion or scope removal.</li>
+    <li>Verify AD state and the configured Okta reactivation result, then check approved access and a fresh delegated sign-in. Re-enabling in AD is the starting point.</li>
+    <li>Yes. For an enabled account in an excluded OU, the AD FAQ describes a JIT sign-in denial with the Okta account remaining Active. Compare the full import and lifecycle result separately. <a href="https://help.okta.com/en-us/content/topics/directory/directory_faq_okta_and_ad_groups.htm">Okta · Active Directory integration FAQ</a></li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

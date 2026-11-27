@@ -88,6 +88,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A lockout ticket changes halfway through**
+
+    A user knows a valid password, but the delegated directory reports Locked. After the directory unlock, password proof succeeds and the user cannot use their old phone.
+
+    1. What is the smallest action at each stage?
+    2. Would expiring the password help after password proof already succeeds?
+    3. What do you capture after recovery?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Use the approved directory unlock first because that is where the password is rejected. After password proof succeeds, verify identity and use the scoped recovery or reset procedure for the unavailable factor.</li>
+    <li>Expiration changes what happens to password proof at the next sign-in. The remaining problem is the required additional proof, so investigate enrollment or an approved alternative.</li>
+    <li>Record a fresh sign-in by the intended account, the actual verification method and success, and the applicable policy outcome. A successful reset action alone does not prove login worked.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

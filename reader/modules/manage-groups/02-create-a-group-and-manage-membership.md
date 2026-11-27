@@ -69,6 +69,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **The group is editable, except for this member**
+
+    A scoped group admin can edit one native group's membership. The requested user entered that group through a rule. A second group with the same label is sourced from a directory.
+
+    1. How do you identify the source of each proposed change?
+    2. What side effect can a manual removal have for the rule-managed user?
+    3. What should a change audit record?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Verify exact group IDs, source and membership method, then check admin scope. A native group can contain rule-managed membership, while imported membership belongs at its source.</li>
+    <li>It can add the user to the rule&#x27;s exclusion list. Decide whether this is an approved lasting exception or whether the rule&#x27;s eligibility should change.</li>
+    <li>The affected user and group identifiers, the membership state before and after, the applicable exclusion or source change, and the matching System Log event where available.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

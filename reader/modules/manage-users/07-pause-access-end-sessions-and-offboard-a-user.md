@@ -62,6 +62,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Choose the correct lifecycle operation**
+
+    A user left a browser signed in at a shared desk. A second user is on leave and needs their assignments preserved. A third has left the company and still has a session at a SaaS app.
+
+    1. Which action serves each request?
+    2. When would delete belong in the third workflow?
+    3. What will you check if the suspended user returns?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Clear the first user&#x27;s Okta sessions and verify a fresh sign-in is required. Suspend the second user to block Okta access while retaining assignments. Deactivate the third and verify assignment removal, supported app deprovisioning, and revocation of receiving sessions as needed.</li>
+    <li>Only after deactivation and when the approved retention and cleanup procedure calls for permanent deletion. Verify the exact account and required records before deletion.</li>
+    <li>Verify the restoration action and fresh sign-in to the intended app. Check retained assignments against current approved access.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

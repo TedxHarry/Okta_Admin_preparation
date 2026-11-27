@@ -64,6 +64,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Membership has different owners**
+
+    An AD nested group's membership is incomplete. A separately imported Office 365 group has a user who should be removed. A native group with the same display name is present.
+
+    1. What do you check on the AD branch?
+    2. Where do you correct the other imported membership?
+    3. What do you review before disabling group import for an integration?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Verify upstream nesting and user, parent, and child scope, then compare the applicable import or JIT behavior. Identify the exact imported group by its source and ID.</li>
+    <li>Determine the owning system and edit the authoritative upstream membership if that integration imports it. Sync with the supported operation and verify the exact group and its members in Okta.</li>
+    <li>Inventory affected app grants, mappings, and policy references. Verify the connector&#x27;s removal timing and follow up on the next applicable import.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

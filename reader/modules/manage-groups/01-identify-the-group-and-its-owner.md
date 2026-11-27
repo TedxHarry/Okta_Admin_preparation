@@ -63,6 +63,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Two Finance groups and a broad policy**
+
+    A native Finance group and an AD Finance group have the same name. An app assignment references the AD group's ID. A broad policy references Everyone.
+
+    1. Which membership would you change for an approved app grant?
+    2. What extra check matters if the user reaches the assigned AD group through a child group?
+    3. Can Everyone be used as a manually curated set of exceptions?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Trace the exact app assignment ID and change membership where the AD group is authoritative, then verify import and the app grant. The native group&#x27;s name is irrelevant to this path.</li>
+    <li>Confirm actual nesting, both group scopes, the user scope, and the imported membership on the exact parent. A parent object appearing in Okta does not verify every nested member.</li>
+    <li>Everyone is a built-in broad group. Use a dedicated group and an applicable rule condition or exclusion for the intended narrower population.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

@@ -103,6 +103,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A Boolean condition that grants too much**
+
+    The requirement is Finance, no matter whether a user enters through East or West. An editor saves East OR (West AND Finance). A training list later adds a second eligibility check.
+
+    1. Which single user exposes the grouping error?
+    2. What inputs prove exact membership in an optional list?
+    3. How do you verify an expression imported from an external spreadsheet?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>A non-Finance member of East. The left branch can evaluate true alone. Require (East OR West) AND Finance, then test each source separately and test neither.</li>
+    <li>Use a record with SEC-101, one with only SEC-101-ADV, and a blank or absent list. Test exact element membership and explicit missing-data handling.</li>
+    <li>Compare the actual persisted Okta fields and exact groups referenced, preview matches and misses, and verify rule-driven membership after approved activation.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

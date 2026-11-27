@@ -54,6 +54,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **An approval, a device, and an app denial**
+
+    A request is approved for a named access label, a user is assigned to the app, and the user's registered device still fails an earlier policy rule.
+
+    1. What proves the approved entitlement was delivered?
+    2. Why can the sign-in fail even after the grant and device registration succeed?
+    3. Does a governance approval prove that a role or delegated admin action succeeded?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Trace the approval to its exact access configuration and group ID, then verify the actual membership, assignment, and receiving grant where applicable.</li>
+    <li>Application assignment, group-scoped policy selection, device registration, and device assurance are separate. Inspect the matched rule and its decision for the fresh attempt.</li>
+    <li>Verify the specific grant, role and scope, plus the audit records for the individual operation. Approval evidence alone does not show enforcement or an executed action.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

@@ -48,6 +48,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A group sync is not a write-back test**
+
+    A JIT user gets a security group but not a distribution group. A separate Okta-created AD user lands in the wrong OU. A receiver team is listed but missing an expected member.
+
+    1. Which evidence is relevant to the distribution group?
+    2. What drives destination placement for the provisioned user?
+    3. Which records establish why the receiver's team is missing a member?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>AD JIT handles eligible security membership. Use the supported regular import path for relevant distribution membership and verify actual imported membership and scope.</li>
+    <li>Check the assigned provisioning group&#x27;s Directory settings and exact target OU, alongside scoped runtime rights. A correctly mapped display name proves a separate attribute path.</li>
+    <li>Check the applicable Okta push membership, linked target group and provisioning result. Verify actual downstream membership on the receiving account.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

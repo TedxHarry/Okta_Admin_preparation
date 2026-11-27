@@ -52,6 +52,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Three LDAP operations, three evidence paths**
+
+    Full import finds a user. Incremental misses a recent edit. The user also fails a delegated sign-in, and a legacy application needs to issue LDAP requests to Okta.
+
+    1. What best tests the missed update?
+    2. How would you isolate the failed delegated sign-in?
+    3. Which Okta component is relevant for the legacy app's requests?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Compare the source entry&#x27;s modifyTimestamp with the last successful import cutoff, clock skew, and supported search/index behavior. Full import already reads the record.</li>
+    <li>Verify the linked account and configured base or search settings, agent reachability, and the user&#x27;s directory bind and state. Then review the applicable Okta policy outcome.</li>
+    <li>Evaluate the LDAP Interface when the application is the LDAP client and Okta is the endpoint. The LDAP Agent is the route to an external directory.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

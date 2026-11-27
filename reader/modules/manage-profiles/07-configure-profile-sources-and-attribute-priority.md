@@ -46,6 +46,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A field override changes access**
+
+    HR stays primary. AD supplies Department for a linked user through a field override. Another user has no linked AD account. A rule grants app access when the stored Department is Finance.
+
+    1. Predict what the rule can use for each user.
+    2. What's the first check if AD changes Department but the rule does not move the user?
+    3. What decision stays with the primary source?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>The rule uses each actual stored Okta field. Compare applicable source and override behavior with and without a linked alternate source before predicting membership for the second user.</li>
+    <li>Read the persisted Okta Department on that exact user and compare the source override and inbound map. If the stored change is right, check rule state, eligibility, and processing.</li>
+    <li>The configured sourced lifecycle action. A one-field override does not transfer lifecycle ownership.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

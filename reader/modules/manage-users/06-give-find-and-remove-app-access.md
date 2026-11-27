@@ -59,6 +59,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **One app, three grant paths**
+
+    An employee has a direct Travel app assignment and belongs to two groups that also assign Travel. The ticket authorizes removal of one Finance grant only.
+
+    1. What change matches the ticket?
+    2. After the change, the app still appears in Okta. Is this evidence the removal failed?
+    3. Which observations establish that full removal actually took effect if the wider change is approved?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Identify the Finance membership or assignment path and change only the approved grant. Verify the direct and other group paths remain if still authorized.</li>
+    <li>The remaining grants can still assign it. Verify Finance membership and source separately from the retained assignment. If the request later changes to full removal, reconcile every remaining grant.</li>
+    <li>Verify the user has no Okta grant, supported downstream deprovisioning completed, and the receiving account and sessions reflect the intended access state.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

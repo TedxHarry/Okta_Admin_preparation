@@ -78,6 +78,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A rule that uses two signals and a control**
+
+    A dedicated app rule requires membership in Pilot and an expression that matches New Device OR New IP. User A is a pilot with New Device only. User B is a pilot with both. User C is a control with both.
+
+    1. What changes when OR becomes AND?
+    2. A member's behavior is positive but Catch-All applies. What do you check?
+    3. The expression field is missing on one test org. What do you check before configuring another policy?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Under OR, A and B can match. Under AND, only B can match. C fails the separate group condition in both tests. These predictions assume the correct app policy and no earlier matching rule.</li>
+    <li>Check the actual app policy and rule order, the group membership, the exact active behavior name in the expression, and the other saved conditions. Compare the named behavior and selected rule in the same attempt.</li>
+    <li>Verify Adaptive MFA and the App sign-in policy editor in that org, then confirm required permissions and controls. Global session behavior configuration answers a different policy question.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

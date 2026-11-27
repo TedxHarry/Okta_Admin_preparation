@@ -39,6 +39,31 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Four evidence rows, four next steps**
+
+    In four distinct attempts, the device result is UNKNOWN, BAD_REQUEST, NEGATIVE, or POSITIVE. A Push dispatch was recorded for the positive attempt. The control user was never assigned to the app.
+
+    1. What does each behavior result justify investigating?
+    2. What else must be present to conclude the positive attempt passed step-up through Push?
+    3. How do you rebuild a fair control and avoid changing device history accidentally?
+    4. You reset one user’s Behavior Profile and the next attempt returns UNKNOWN. Did the active behavior definition change?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>For UNKNOWN build usable history. For BAD_REQUEST fix missing attempt context. NEGATIVE means no change detected, so inspect other rules for any challenge. POSITIVE means a change was detected and you still need the policy decision.</li>
+    <li>Find the actual target app policy and selected step-up rule, then correlate successful verification identifying push. Dispatch alone shows an earlier step.</li>
+    <li>Assign both users the same test app, keep only the pilot in the step-up group, and start directly at the target from familiar and unused browser profiles as appropriate. Use fresh sessions and correlate the records by attempt.</li>
+    <li>The reset clears that user’s tracked history. It does not change the active definition or the app rule. Rebuild usable history and inspect the recorded rule before interpreting the next challenge. <a href="https://help.okta.com/oie/en-us/content/topics/security/behavior-detection/reset-behavior-detection.htm">Okta · Reset a user behavior profile</a></li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

@@ -68,6 +68,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Preview is correct, access is still wrong**
+
+    The rule is inactive during a change. A current member is still in its target. A second eligible user had been removed manually. A third receives the same target from another rule.
+
+    1. Predict what an inactive rule does in these cases.
+    2. What check explains why the second user might still be absent after activation?
+    3. What happens if the owner deletes the rule instead?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Existing membership remains and new changes are not evaluated through the inactive rule. Another active grant path can independently keep the third user in the target.</li>
+    <li>Check the user&#x27;s exclusion in the saved rule, actual profile input, eligibility, and processing. Resolve a manual exclusion only when the exception is no longer approved.</li>
+    <li>Inspect the keep/remove-memberships choice during deletion. Verify any other membership and app grant paths separately after completing the approved change.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

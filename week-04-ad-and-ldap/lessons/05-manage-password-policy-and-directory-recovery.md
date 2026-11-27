@@ -57,6 +57,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Reset fails after successful recovery proof**
+
+    A user completes recovery verification. A compliant AD password is still rejected through Okta. The agent can reset another user under a different OU.
+
+    1. What possibilities did the observations narrow?
+    2. Why might one OU's delegation not cover this person?
+    3. What proves that the expected password changed in AD?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Recovery proof worked and the candidate meets verified AD requirements. Focus on the specific AD write operation, runtime identity, and effective rights on the affected user.</li>
+    <li>Inheritance can differ and protected accounts may not inherit the same rights. Verify the applicable secure recovery procedure and the rights on the actual object before any approved change.</li>
+    <li>Complete an authorized reset, then use the new password in a fresh delegated authentication for the same linked user. Verify the matching events.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

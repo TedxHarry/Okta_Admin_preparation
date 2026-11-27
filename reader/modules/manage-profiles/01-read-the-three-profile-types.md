@@ -47,6 +47,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Four records disagree**
+
+    Profile Editor defines Department. HR shows Finance, People shows Operations, and the app-user record shows Sales. The receiving account still has an older value.
+
+    1. Which record establishes whether Department is available for this user's type?
+    2. Where is the earliest demonstrated break if HR should supply the field?
+    3. Which two downstream checks still matter after that fix?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>The applicable Okta user schema in Profile Editor defines the field. The People record holds the value for the specific user.</li>
+    <li>Between the linked HR record and the persisted Okta profile. Verify source selection, applicable inbound mapping, and processing for that user before editing an outbound mapping.</li>
+    <li>Verify the saved app-user field and the receiving account. If provisioning applies, correlate the outbound operation to the same identity.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

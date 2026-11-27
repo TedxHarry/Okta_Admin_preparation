@@ -81,6 +81,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **One onboarding deadline, three account states**
+
+    One employee is Staged because activation was delayed. Another is Pending user action after an invitation was issued. A third is Active and sees a password-change prompt.
+
+    1. What would you do for each employee?
+    2. If the pending employee asks you to create a new user with another email, what would you check first?
+    3. What evidence closes onboarding for each person?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Start activation for the staged record at the approved time. For the pending record, verify invitation delivery and completion or use the supported resend path. For the active record, verify the initial-password option and complete the expected change.</li>
+    <li>Verify the exact login, user ID, and primary email on the existing intended record. Correct the approved contact or activation workflow rather than risking a duplicate.</li>
+    <li>The intended user reaches the expected lifecycle state and completes a fresh sign-in after any required credential setup and enrollment.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

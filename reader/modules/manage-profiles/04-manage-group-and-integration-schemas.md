@@ -51,6 +51,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **The field is in the source but absent in the editor**
+
+    AD has a target field that is missing from the integration's schema picker. A native group's Support Queue is well defined. A federation claim reads one of the integration properties.
+
+    1. Where do you add or source each field?
+    2. How do you test whether a selected group value gets to one app user?
+    3. What could break if you retire an integration field used by a claim?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Define the native group field on the group schema, then save its value on the specific group. Verify directory schema discovery and the integration profile before mapping the AD field.</li>
+    <li>Use a member in one assignment group and a member in two. Verify the eligible destination type, assignment values, and effective app-user record.</li>
+    <li>Both profile maps and sign-in claims can depend on it. Inventory references and use separate persisted-value and fresh-sign-in tests after the approved change.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

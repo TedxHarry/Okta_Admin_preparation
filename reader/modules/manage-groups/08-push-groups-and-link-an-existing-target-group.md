@@ -70,6 +70,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A working account with the wrong team**
+
+    A target user provisioned successfully. Two groups use similar names. The intended team already exists at the receiver and its prior local members matter.
+
+    1. Which group should assign the app, and which should manage the target team?
+    2. What would you confirm before linking or unlinking?
+    3. A leaver needs the target membership and the app grant removed. What is the safer order to verify?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Use separate assignment and push groups. Verify the link by the exact target group and use linking only when the connector supports it.</li>
+    <li>Record the receiving group and membership, review the connector&#x27;s linkage and membership behavior, and choose the option that preserves the receiving group if ending the mapping. Verify actual state after the change.</li>
+    <li>Remove managed membership and confirm it at the receiver while the account remains available. Then remove the approved grant and verify downstream lifecycle handling.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

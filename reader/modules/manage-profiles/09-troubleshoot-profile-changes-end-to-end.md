@@ -38,6 +38,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **The first stale boundary**
+
+    A source update succeeds at 09:00. People shows the new value. The saved app user also shows it. A 09:05 provisioning success is for a different target account. The intended receiver remains stale.
+
+    1. Which evidence do you need next?
+    2. Would a second green Preview add useful evidence at this point?
+    3. A workflow fixes the value but repeats on the event it generates. How do you retest a repair?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Find the outbound operation for the exact intended assignment and receiving identity. Verify write settings, credentials and outcome for that path, then inspect the receiver.</li>
+    <li>The stored app user already confirms the mapping result reached that boundary. A new Preview does not show whether the receiver accepted a write.</li>
+    <li>Compare desired and stored values before writing. Test one needed update and the next no-op event, then verify there is no repeated write.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

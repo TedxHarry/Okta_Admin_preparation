@@ -73,6 +73,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Agent online, one OU invisible**
+
+    The cloud console shows the agent Available. Users import from an older OU but not a newly selected test OU. The installation account was a Windows admin.
+
+    1. Which operation has already been proved and which still needs a test?
+    2. Which account's rights matter for the import?
+    3. How do you prove a fix without granting broad rights?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>The reported availability supports agent-to-Okta communication. A scoped import of a known user and group is the evidence for AD search, scope, and effective read permissions.</li>
+    <li>Inspect the Windows service runtime identity. Check it can read the actual objects in the selected scope. Registration and installation identities serve different purposes.</li>
+    <li>Compare actual user and group locations and the selected OUs. Change only approved scope or needed runtime permissions, then test both an included object and an excluded control.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

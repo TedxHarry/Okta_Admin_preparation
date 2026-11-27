@@ -59,6 +59,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A user type change affects access**
+
+    A contractor has a Sponsor Reference on a custom schema. The employee schema lacks it. An app reads that field and an admin expects a group rule to follow the text label Contractor.
+
+    1. Which field or setting picks the actual schema?
+    2. What preflight stops a transfer from losing data or app access?
+    3. When would you choose classification over a new user type?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>The Okta user type assigned to the person. An editable classification value does not select a schema.</li>
+    <li>Identify fields absent from the destination type, capture required values, and test the conversion and dependent mappings on a disposable user. Verify the resulting app identity and claims.</li>
+    <li>When the same schema fits both populations and supported mappings or rules only need a category. If a distinct schema is needed, test the lesson&#x27;s default-type restrictions before relying on group rules.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

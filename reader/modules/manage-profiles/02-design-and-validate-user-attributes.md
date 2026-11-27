@@ -67,6 +67,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **A schema change with three edge cases**
+
+    An exact staff ID includes leading zeros. Existing records include a duplicate, a blank string, and an unset field. The business wants the ID required and unique.
+
+    1. Which type should preserve the intended identifier and why?
+    2. What changes should precede the new constraint?
+    3. Why should a search test include both blank records?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>Use a string and test that 000042 remains distinct from 42 if those represent different source values. Numeric conversion would lose the formatting.</li>
+    <li>Audit duplicates and missing values across relevant types, reconcile them with the authoritative source, and test onboarding and updates with permitted values. Reopen the schema to verify uniqueness was saved.</li>
+    <li>A saved empty string may satisfy a presence check while an unset value does not. Verify actual persistence and the search behavior on the named test records.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.

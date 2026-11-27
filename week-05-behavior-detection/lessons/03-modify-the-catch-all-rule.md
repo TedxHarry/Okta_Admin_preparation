@@ -38,6 +38,29 @@
 
 === "Quiz"
 
+    [Case challenge](#case-challenge) · [Quick checks](#check-your-answers) · [Interview and troubleshooting](#scenario-and-interview-practice)
+
+    Work the case before revealing its solution. For each decision, name the evidence you would use to verify it.
+
+    ### Case challenge
+
+    **Three requests hit a two-rule policy**
+
+    The group-scoped app rule comes first and requires Password plus another factor for a matching new-device condition. Catch-All requires Password. Session MFA applies globally to this test population.
+
+    1. Which app rule applies to an unfamiliar pilot, a familiar pilot, and an unfamiliar non-pilot?
+    2. Can all three runs display a second-factor prompt?
+    3. How would you alter and then restore only the lab's fallback?
+
+    <details class="revision-answer">
+    <summary>Reveal the worked solution</summary>
+    <ol>
+    <li>The unfamiliar pilot can match the earlier rule. The familiar pilot and non-pilot reach the fallback when no other earlier rule matches. These predictions depend on the evaluated condition, so confirm the actual selected rule.</li>
+    <li>Yes, global session requirements or enrollment can cause an additional prompt even when the app fallback requires only password. Compare recorded session and app decisions before attributing each prompt.</li>
+    <li>Verify the intended policy and affected apps, record rule order and current authentication settings, and isolate the lab app where supported. Save and reopen the rule, test both branches, and restore the recorded conditions and associations.</li>
+    </ol>
+    </details>
+
     ### Check your answers
 
     Choose your answers, then select **Check answer** for feedback. Try the written questions before revealing the model answers.
